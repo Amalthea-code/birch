@@ -1,0 +1,164 @@
+<template>
+  <div :class="['shift-selection-item', 'shift-selection-item-' + index]">
+    <div class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
+    <div class="shift-selection-item__box">
+      <p class="shift-selection-item__date"> {{ date }} </p>
+      <hr align="center" width="40%" size="1" class="shift-selection-item__line"/>
+      <div class="shift-selection-item__price"> {{ price }} руб.</div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    props: {
+      price: {
+        default: 0,
+        type: Number
+      },
+      date: {
+        default: '',
+        type: String,
+      },
+      number: {
+        default: 0,
+        type: Number,
+      },
+      index: {
+        default: 0,
+        type: Number,
+      }
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+.shift-selection-item {
+  padding: 48px 0 0;
+  position: relative;
+  width: 32%;
+  margin-bottom: 20px;
+    @media screen and (max-width: 1300px) {
+      width: 48%;
+    }
+    @media screen and (max-width: 680px) {
+      width: 100%;
+      margin-bottom: 60px;
+    }
+  &__title {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 210px;
+    font-family: RF Dewi Expanded;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 43px;
+    color: white;
+    padding: 20px 32px;
+    border-radius: 30px;
+
+    span {
+      font-size: 30px;
+      line-height: 25px;
+    }
+    @media screen and (max-width: 1300px) {
+      width: 146px;
+    }
+  }
+  &__box {
+    border: 2px solid;
+    border-radius: 30px;
+    padding: 100px 10px 44px;
+  }
+  &__date {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__price {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 26px;
+  }
+
+  &-0 {
+    .shift-selection-item__title {
+      background-color: #3FD33C;
+    }
+    .shift-selection-item__box {
+      border-color: #3FD33C;
+    }
+    .shift-selection-item__line {
+      border-style: solid;
+      border-color: #3FD33C;
+    }
+  }
+  &-1 {
+    .shift-selection-item__title {
+      background-color: #9DCEFC;
+    }
+    .shift-selection-item__box {
+      border-color: #9DCEFC;
+    }
+    .shift-selection-item__line {
+      border-style: solid;
+      border-color: #9DCEFC;
+    }
+  }
+  &-2 {
+    .shift-selection-item__title {
+      background-color: #F98419;
+    }
+    .shift-selection-item__box {
+      border-color: #F98419;
+    }
+    .shift-selection-item__line {
+      border-style: solid;
+      border-color: #F98419;
+    }
+  }
+  &-3 {
+    .shift-selection-item__title {
+      background-color: #FB6F8A;
+    }
+    .shift-selection-item__box {
+      border-color: #FB6F8A;
+    }
+    .shift-selection-item__line {
+      border-style: solid;
+      border-color: #FB6F8A;
+    }
+  }
+  &-4 {
+    .shift-selection-item__title {
+      background-color: #F7B618;
+    }
+    .shift-selection-item__box {
+      border-color: #F7B618;
+    }
+    .shift-selection-item__line {
+      border-style: solid;
+      border-color: #F7B618;
+    }
+  }
+  &-5 {
+    .shift-selection-item__title {
+      background-color: #9C84D2;
+    }
+    .shift-selection-item__box {
+      border-color: #9C84D2;
+    }
+    .shift-selection-item__line {
+      border-style: solid;
+      border-color: #9C84D2;
+    }
+  }
+}
+</style>
