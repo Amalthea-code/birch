@@ -682,27 +682,55 @@
     max-width: 1080px;
     margin: 0 auto;
     padding: 48px 0 100px;
+    @media screen and (max-width: 1300px) {
+      max-width: 620px;
+      padding: 0 0 100px;
+    }
+    @media screen and (max-width: 680px) {
+      max-width: 300px;
+    }
+    
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 64px;
       font-weight: 900;
       line-height: 77px;
       text-transform: uppercase;
+      @media screen and (max-width: 1300px) {
+        font-size: 46px;
+        line-height: 55px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 24px;
+        line-height: 29px;
+      }
     }
     &__box {
       display: flex;
       justify-content: space-between;
+      @media screen and (max-width: 1300px) {
+        flex-wrap: wrap;
+      }
     }
     &__item {
       position: relative;
       width: 48%;
       padding: 72px 0 0;
       margin: 40px 0 0;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+      }
       &-svg {
         position: absolute;
         top: -22px;
         left: 50%;
         transform: translate(-50%, 0);
+        @media screen and (max-width: 680px) {
+          svg {
+            width: 196px;
+            height: 220px;
+          }
+        }
       }
       &-title {
         font-family: RF Dewi Expanded;
@@ -711,6 +739,10 @@
         line-height: 24px;
         text-transform: uppercase;
         margin-bottom: 10px;
+        @media screen and (max-width: 680px) {
+          font-size: 18px;
+          line-height: 22px;
+        }
       }
       &-box {
         border: 2px solid;
@@ -719,6 +751,9 @@
         ul {
           padding-inline-start: 20px;
         }
+        @media screen and (max-width: 680px) {
+          padding: 140px 24px 24px;
+        }
       }
       &-text {
         font-family: Montserrat;
@@ -726,6 +761,10 @@
         font-weight: 400;
         line-height: 21px;
         margin-bottom: 18px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 16px;
+        }
       }
       &:nth-child(1) {
         .events__item-title {
@@ -761,32 +800,79 @@
         background-size: cover;
         width: calc(100% - 112px);
         background-image: url("~@/assets/images/photo/events-title.png");
+        @media screen and (max-width: 1300px) {
+          font-size: 36px;
+          line-height: 43px;
+          padding: 30px 54px;
+          width: calc(100% - 108px);
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 20px;
+          line-height: 24px;
+          padding: 30px 30px;
+          width: calc(100% - 60px);
+        }
       }
       &-box {
         display: flex;
-        padding: 200px 20px 20px;
+        padding: 170px 20px 40px;
         justify-content: space-between;
         border: 2px solid #FF9C41;
         border-radius: 24px;
+        @media screen and (max-width: 1300px) {
+          flex-wrap: wrap;
+          padding: 160px 20px 20px;
+          justify-content: center;
+        }
+        @media screen and (max-width: 680px) {
+          padding: 110px 20px 20px;
+        }
       }
       &-item {
         display: flex;
-        width: 50%;
+        width: 40%;
+        &:last-child {
+          width: 54%;
+        }
+        @media screen and (max-width: 1300px) {
+          width: 94%;
+          margin: 0 0 52px auto;
+          &:last-child {
+            width: 94%;
+          }
+        }
+        @media screen and (max-width: 680px) {
+          flex-wrap: wrap;
+          justify-content: center;
+
+        }
         img {
           width: 150px;
           object-fit: contain;
           padding: 0 20px 0 0;
+          @media screen and (max-width: 680px) {
+            padding: 0 0 30px;
+          }
         }
       }
     }
     &__time {
-      &-box {}
-
       font-family: Montserrat;
       font-size: 18px;
       font-weight: 400;
       line-height: 30px;
 
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 24px;
+      }
+
+      &-box {
+
+        @media screen and (max-width: 680px) {
+          width: 100%;
+        }
+      }
       span {
         font-family: Montserrat;
         font-size: 18px;
@@ -795,6 +881,11 @@
         width: 68px;
         display: inline-block;
         margin-right: 10px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 24px;
+          width: 50px;
+        }
       }
     }
 

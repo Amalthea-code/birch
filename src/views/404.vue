@@ -27,6 +27,10 @@
       line-height: 176px;
       color: #9a95a7;
       text-align: center;
+      @media screen and (max-width: 680px) {
+        font-size: 100px;
+        line-height: 130px;
+      }
     }
     &__text {
       font-family: RF Dewi Expanded;
@@ -34,11 +38,18 @@
       font-weight: 900;
       line-height: 29px;
       text-align: center;
+      @media screen and (max-width: 680px) {
+        font-size: 16px;
+        line-height: 12px;
+      }
     }
     &__link {
       display: flex;
       justify-content: center;
       margin: 58px 0 0;
+      @media screen and (max-width: 680px) {
+        margin: 34px 0 0;
+      }
       a {
         font-family: RF Dewi Expanded;
         font-size: 18px;
@@ -50,6 +61,10 @@
         border: 2px solid black;
         padding: 26px 68px;
         border-radius: 50px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          padding: 12px 30px;
+        }
       }
     }
   }

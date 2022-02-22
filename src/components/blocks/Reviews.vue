@@ -46,11 +46,6 @@
   import { Swiper, SwiperSlide } from "swiper/vue";
   import "swiper/swiper-bundle.min.css";
   import "swiper/swiper.min.css";
-  import SwiperCore, {
-    Navigation,
-    Pagination
-  } from 'swiper';
-  SwiperCore.use([Navigation, Pagination]);
 
   export default {
     components: {
@@ -121,11 +116,20 @@
 
 <style lang="scss" scoped>
   .reviews {
-    background-image: url('~@/assets/images/photo/reviews-bg.png');
-    background-color: #a68ed5;
-    background-size: cover;
+    background: linear-gradient(268.41deg, rgba(156, 132, 210, 0.96) 6.43%, #BAA3E4 95.7%);
     padding: 42px 0 104px;
     position: relative;
+    &::before {
+      content: '';
+      background-image: url('~@/assets/images/photo/reviews-bg.png');
+      position: absolute;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 64px;
@@ -134,12 +138,15 @@
       color: white;
       text-transform: uppercase;
       text-align: center;
+      position: relative;
+      z-index: 2;
       @media screen and (max-width: 1300px){
         font-size: 46px;
         line-height: 55px;
       }
     }
     &__slider {
+      z-index: 2;
       &-next {
         cursor: pointer;
         z-index: 2;

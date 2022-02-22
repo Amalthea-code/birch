@@ -13,7 +13,7 @@
       />
     </div>
     <div class="shift-selection__button">
-      <router-link to="#">купить путёвку</router-link>
+      <router-link to="/payment">купить путёвку</router-link>
     </div>
     <div class="shift-selection__contein">
       <div class="shift-selection__contein-box">
@@ -34,45 +34,15 @@
 
 <script>
 import shiftSelectionItem from '@/components/elements/ShiftSelectionItem'
+import { mapGetters } from 'vuex'
   export default {
     components: {
       shiftSelectionItem
     },
-    data () {
-      return {
-        selections: [
-          {
-            number: 1,
-            date: '2 июня — 14 июня',
-            price: 29900
-          },
-          {
-            number: 2,
-            date: '17 июня — 29 июня',
-            price: 29900
-          },
-          {
-            number: 3,
-            date: '2 июля — 14 июля',
-            price: 29900
-          },
-          {
-            number: 4,
-            date: '17 июля — 29 июля',
-            price: 29900
-          },
-          {
-            number: 5,
-            date: '1 августа — 13 августа',
-            price: 29900
-          },
-          {
-            number: 6,
-            date: '16 августа — 28 августа',
-            price: 29900
-          },
-        ]
-      }
+    computed: {
+      ...mapGetters({
+        selections: 'shifts/GET_SHIFTS'
+      })
     }
   }
 </script>
@@ -161,7 +131,7 @@ import shiftSelectionItem from '@/components/elements/ShiftSelectionItem'
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      width: 45%;
+      width: 47%;
       @media screen and (max-width: 1300px) {
         width: 100%;
       }

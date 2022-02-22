@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <router-link to="/" class="header__logo">
-    <img src="@/assets/images/icons/logo.jpg" alt="">
+      <logo/>
     </router-link>
     <nav class="header__nav">
       <router-link
@@ -13,10 +13,10 @@
         {{ link.title }}
       </router-link>
     </nav>
-    <router-link class="header__button-cabinet" to="/cabinet"><person/>Личный кабинет</router-link>
-    <div class="header-mobile">
+    <router-link class="header__button-cabinet" to="/autorization"><person/>Личный кабинет</router-link>
+    <div v-click-outside="outsideMenu" class="header-mobile">
       <router-link to="/" class="header-mobile__logo">
-        <img src="@/assets/images/icons/mobile-logo.png" alt="">
+        <logo/>
       </router-link>
       <div
         :class="{
@@ -37,10 +37,11 @@
             :key="index"
             :class="['header__link', 'header__link-' + link.color]"
             :to="link.to"
+            @click="switchSideMenu"
           >
             {{ link.title }}
           </router-link>
-          <router-link class="header__button-cabinet" to="/cabinet"><person/>Личный кабинет</router-link>
+          <router-link @click="switchSideMenu" class="header__button-cabinet" to="/autorization"><person/>Личный кабинет</router-link>
         </nav>
       </div>
     </div>
@@ -49,10 +50,12 @@
 
 <script>
 import person from '@/assets/images/icons/person'
+import logo from '@/assets/images/icons/logo'
 
   export default {
     components: {
-      person
+      person,
+      logo
     },
     data () {
       return {
@@ -72,6 +75,12 @@ import person from '@/assets/images/icons/person'
     methods: {
       switchSideMenu () {
         this.isSideMenu = !this.isSideMenu
+      },
+      outsideMenu () {
+        if (this.isSideMenu) {
+          this.isSideMenu = !this.isSideMenu
+        }
+        return
       }
     }
   }
@@ -98,7 +107,12 @@ import person from '@/assets/images/icons/person'
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;
-    
+    &__logo {
+        svg {
+          width: 100px;
+          height: 62px;
+        }
+    }
     &__nav {
       display: flex;
     }
@@ -112,26 +126,58 @@ import person from '@/assets/images/icons/person'
       &:hover {
         color: white;
       }
+      &-orange.router-link-exact-active {
+        background-color: #F98419;
+        color: white;
+      }
       &-orange:hover {
         background-color: #F98419;
+      }
+      &-blue.router-link-exact-active {
+        background-color: #9DCEFC;
+        color: white;
       }
       &-blue:hover {
         background-color: #9DCEFC;
       }
+      &-turquoise.router-link-exact-active {
+        background-color: #5EC0A9;
+        color: white;
+      }
       &-turquoise:hover {
         background-color: #5EC0A9;
+      }
+      &-violet.router-link-exact-active {
+        background-color: #BAA3E4;
+        color: white;
       }
       &-violet:hover {
         background-color: #BAA3E4;
       }
+      &-red.router-link-exact-active {
+        background-color: #FB6F8A;
+        color: white;
+      }
       &-red:hover {
         background-color: #FB6F8A;
+      }
+      &-blue.router-link-exact-active {
+        background-color: #5493CC;
+        color: white;
       }
       &-blue:hover {
         background-color: #5493CC;
       }
+      &-green.router-link-exact-active {
+        background-color: #3FD33C;
+        color: white;
+      }
       &-green:hover {
         background-color: #3FD33C;
+      }
+      &-yellow.router-link-exact-active {
+        background-color: #F7B618;
+        color: white;
       }
       &-yellow:hover {
         background-color: #F7B618;
@@ -150,6 +196,12 @@ import person from '@/assets/images/icons/person'
       display: none;
       justify-content: space-between;
       align-items: center;
+      &__logo {
+        svg {
+          width: 100px;
+          height: 62px;
+        }
+      }
       &__burger {
         z-index: 2;
         position: relative;
@@ -161,7 +213,7 @@ import person from '@/assets/images/icons/person'
           position: absolute;
           width: 60px;
           height: 6px;
-          background-color: white;
+          background-color: black;
           right: 0;
           top: 18px;
           transition: background-color .5s, top .5s, transform .5s;
@@ -171,7 +223,7 @@ import person from '@/assets/images/icons/person'
           position: absolute;
           width: 42px;
           height: 6px;
-          background-color: white;
+          background-color: black;
           right: 0;
           top: 33px;
           transition: background-color .5s, width .5s, top .5s, transform .5s;
@@ -192,8 +244,6 @@ import person from '@/assets/images/icons/person'
       }
     }
     @media screen and (max-width: 1300px) {
-        background-color: transparent;
-        box-shadow: none;
 
         &__logo {
           display: none;

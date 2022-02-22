@@ -1,14 +1,23 @@
 <template>
-  <div class="slider">
+  <div :class="['slider', 'slider__' + isVisibly]">
     <swiper
       class="slider-body"
-      :slidesPerView="slidesView"
       :spaceBetween="30"
       :loop="true"
       :loopFillGroupWithBlank="true"
       :navigation="{
         nextEl: '.slider__navigation-next',
         prevEl: '.slider__navigation-prev',
+      }"
+      :breakpoints="{
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      1300: {
+        slidesPerView: slidesView,
+        spaceBetween: 20
+      }
       }"
       :pagination="{
         type: 'bullets',
@@ -56,22 +65,27 @@
       slidesView: {
         type: Number,
         default: 1
+      },
+      isVisibly: {
+        type: String,
+        default: 'null',
       }
     },
-    mounted () {
-
-    }
   }
 </script>
 
 <style lang="scss" scoped>
-    :root {
-      --color: red;
-    }
     .slider {
       height: 100%;
       position: relative;
-      &-body {}
+      @media screen and (max-width: 1300px) {
+        &__tablet {
+          ::v-deep .swiper-container {
+            overflow: visible;
+          }
+        }
+      }
+
       &__image {
         width: 100%;
         height: 400px;

@@ -4,79 +4,83 @@
       class="docs-info__card"
       title="Дети при себе должны иметь:"
       color="#5BA8EF"
+      backgroundColor='linear-gradient(89.75deg, #9DCEFC -42.68%, #5BA8EF 99.94%)'
     >
-    <span class="docs-info__card-title">Cменное белье, одежду и обувь с обеспечением на всю смену </span>
+    <span class="docs-info__card-title">Дети при себе должны иметь с обеспечением на всю смену:</span>
     <ul>
+      <li class="docs-info__card-text">сменное белье, носки, одежду и обувь </li>
       <li class="docs-info__card-text">спортивная одежда и спортивная обувь</li>
-      <li class="docs-info__card-text">теплые вещи (на случай плохой погоды)</li>
-      <li class="docs-info__card-text">куртка, плащ или зонт (на случай дождя)</li>
-      <li class="docs-info__card-text">обувь (открытая и закрытая)</li>
-      <li class="docs-info__card-text">панама или кепка от солнца шорты, футболки и лёгкая летняя обувь (например, сандалии)</li>
+      <li class="docs-info__card-text">теплые вещи, куртка, плащ или зонт на случай плохой погоды</li>
+      <li class="docs-info__card-text">обувь открытая и закрытая</li>
+      <li class="docs-info__card-text">панама или кепка от солнца, детский защитный крем от солнца, на который у ребенка нет аллергии</li>
+      <li class="docs-info__card-text">шорты, футболки и лёгкая летняя обувь (например, сандалии)</li>
       <li class="docs-info__card-text">сменная комнатная обувь</li>
-      <li class="docs-info__card-text">принадлежности для купания, банное полотенце, резиновые тапочки</li>
-      <li class="docs-info__card-text">нарядная одежда для выступлений и дискотек</li>
-      <li class="docs-info__card-text">предметы личной гигиены (зубная щетка (желательно в футляре), паста, мыло (в закрывающейся мыльнице), шампунь, мочалка, расческа, влажные салфетки</li>
+      <li class="docs-info__card-text">купальник/плавки, принадлежности для купания, банное полотенце, резиновые тапочки</li>
+      <li class="docs-info__card-text">нарядная одежда для праздничных мероприятий </li>
+      <li class="docs-info__card-text">предметы личной гигиены: зубная щетка, желательно в футляре, зубная паста, мыло в закрывающейся  мыльнице, шампунь, мочалка, расческа, влажные салфетки</li>
       <li class="docs-info__card-text">средство от комаров, на которое у ребенка нет аллергии</li>
       <li class="docs-info__card-text">пакет для грязного белья</li>
-      <li class="docs-info__card-text">несколько смен белья и носков</li>
     </ul>
     </info>
     <info
       class="docs-info__card"
       title="Что НЕ стоит брать ребенку в детский СОЦ «Березка»:"
       color="#FD9BAE"
+      backgroundColor='linear-gradient(89.71deg, #FB6F8A 2.04%, #F6496B 109.6%)'
     >
-    <span class="docs-info__card-title">Любые вещи, которые было бы жаль поломать или потерять</span>
+    <span class="docs-info__card-title">Любые вещи, которые было&nbsp;бы жаль поломать или потерять</span>
     <p class="docs-info__card-text">
-      Это ювелирные изделия, семейные ценности, мобильный телефон, электронные игры. Такие вещи часто бьются или теряются. Не рекомендуется давать ребенку с собой дорогие одежду, косметику, обувь и украшения. Мы настоятельно рекомендуем родителям не давать детям с собой видеокамеру, дорогой цифровой фотоаппарат.
+      Это ювелирные изделия, семейные ценности, мобильный телефон, планшет, электронные игры. Такие вещи часто бьются или теряются. Не&nbsp;рекомендуется давать ребенку с&nbsp;собой дорогие одежду, косметику, обувь и&nbsp;украшения. Мы&nbsp;настоятельно рекомендуем родителям не&nbsp;давать детям с&nbsp;собой дорогостоящие гаджеты.
     </p>
-    <span class="docs-info__card-title">Лекарства</span>
+    <span class="docs-info__card-title">Категорически запрещено хранить любые лекарства в&nbsp;отряде!</span>
     <p class="docs-info__card-text">
-      Категорически запрещено хранить любые лекарства в отряде! Индивидуальные, необходимые для регулярного приема лекарства, передаются законным представителем лично врачу лагеря вместе с инструкцией по применению и дозировке и хранятся только в медпункте.
+      Индивидуальные, необходимые для регулярного приема лекарства, передаются законным представителем лично врачу лагеря вместе с&nbsp;инструкцией по&nbsp;применению и&nbsp;дозировке и&nbsp;хранятся только в&nbsp;медпункте.
     </p>
     </info>
     <h2 class="docs-info__alert">Важно</h2>
-    <p class="docs-info__alert-text docs-info__alert-text_color">В связи с эпидемиологической обстановкой в стране, на основании постановления Правительства РФ и Главного санитарного врача РФ от 29.03.2021 №10 3.1/2.4.3598-20, с 2021 года изменены правила пребывания детей в загородных лагерях:</p>
-    <p class="docs-info__alert-text">Посещение детей родителями и родственниками, передача продуктов и вещей, на протяжение всей смены запрещены!</p>
-    <p class="docs-info__alert-text">Временный выезд детей из СОЦ в период всей смены запрещен.</p>
+    <p class="docs-info__alert-text docs-info__alert-text_color">В&nbsp;связи с&nbsp;эпидемиологической обстановкой в&nbsp;стране, на&nbsp;основании постановления Правительства РФ&nbsp;и&nbsp;Главного санитарного врача&nbsp;РФ от&nbsp;29.03.2021 &#8470;&nbsp;10 3.1/2.4.3598-20, с&nbsp;2021 года изменены правила пребывания детей в&nbsp;загородных лагерях:</p>
+    <p class="docs-info__alert-text">Посещение детей родителями и&nbsp;родственниками, передача продуктов и&nbsp;вещей, на&nbsp;протяжение всей смены запрещены!</p>
+    <p class="docs-info__alert-text">Временный выезд детей из&nbsp;СОЦ в&nbsp;период всей смены запрещен.</p>
     <div class="docs-info__box">
       <div class="docs-info__box-item">
         <img src="@/assets/images/photo/docs-info-1.jpg" alt="" class="docs-info__box-image">
         <div class="docs-info__box-block">
-          <div class="docs-info__box-title">Телефон</div>
+          <div class="docs-info__box-title docs-info__box-title_green">Телефоны</div>
           <p class="docs-info__box-text">
-            При заезде в лагерь мы настоятельно рекомендуем родителям передать телефонный аппарат ребенка вожатому его отряда на хранение. Чтобы получить максимальные пользу и удовольствие от пребывания в лагере, пользование телефонами и другими гаджетами не приветствуется, так как это очень отвлекает детей от живого общения, участия в подвижных играх и мероприятиях. 
+            При заезде в&nbsp;лагерь мы&nbsp;настоятельно рекомендуем родителям передать телефонный аппарат ребенка вожатому его отряда на&nbsp;хранение. Чтобы получить максимальные пользу и&nbsp;удовольствие от&nbsp;пребывания в&nbsp;лагере, пользование телефонами и&nbsp;другими гаджетами не&nbsp;приветствуется, так как это очень отвлекает детей от&nbsp;живого общения, участия в&nbsp;подвижных играх и&nbsp;мероприятиях.
             <br /><br />
-            Родители могут в установленное время с 11 до 12 часов и с 17 до 18 часов позвонить на телефон вожатого и пригласить ребенка или спросить у вожатого о нем. Номер вожатого вы можете узнать при знакомстве с ним на заезде.
+            Родители могут в&nbsp;установленное время с&nbsp;11&nbsp;до&nbsp;12&nbsp;часов и&nbsp;с&nbsp;17&nbsp;до&nbsp;18&nbsp;часов позвонить на&nbsp;телефон вожатого и&nbsp;пригласить ребенка или спросить у&nbsp;вожатого о&nbsp;нем. Номер вожатого вы&nbsp;можете узнать при знакомстве с&nbsp;ним на&nbsp;заезде.
           </p>
         </div>
       </div>
       <div class="docs-info__box-item">
         <img src="@/assets/images/photo/docs-info-2.jpg" alt="" class="docs-info__box-image">
         <div class="docs-info__box-block">
-          <div class="docs-info__box-title">Адаптация</div>
+          <div class="docs-info__box-title docs-info__box-title_yellow">Адаптация</div>
           <p class="docs-info__box-text">
-            При заезде в лагерь мы настоятельно рекомендуем родителям передать телефонный аппарат ребенка вожатому его отряда на хранение. Чтобы получить максимальные пользу и удовольствие от пребывания в лагере, пользование телефонами и другими гаджетами не приветствуется, так как это очень отвлекает детей от живого общения, участия в подвижных играх и мероприятиях. 
+            Для успешной адаптации ребенка в&nbsp;новом коллективе и&nbsp;на&nbsp;новом месте психологи рекомендуют не&nbsp;беспокоить его звонками в&nbsp;первые 3-4&nbsp;дня. В&nbsp;этот период у&nbsp;ребенка может меняться настроение, он&nbsp;может скучать по&nbsp;дому и&nbsp;просить забрать его. Исходя из&nbsp;нашего многолетнего опыта, мы&nbsp;можем сказать, что в&nbsp;99% случаев ребенок, войдя в&nbsp;режим и&nbsp;принимая активное участие в&nbsp;жизни лагеря, перестает тревожиться и&nbsp;начинает получать удовольствие от&nbsp;пребывания в&nbsp;нем.
             <br /><br />
-            Родители могут в установленное время с 11 до 12 часов и с 17 до 18 часов позвонить на телефон вожатого и пригласить ребенка или спросить у вожатого о нем. Номер вожатого вы можете узнать при знакомстве с ним на заезде.
+            Поинтересоваться самочувствием и&nbsp;настроением своего ребенка&nbsp;Вы можете у&nbsp;вожатого по&nbsp;телефону в&nbsp;установленное время. Также вожатыми в&nbsp;мессенджерах создаются отрядные чаты с&nbsp;родителями и&nbsp;ежедневно ведутся отрядные блоги в&nbsp;Инстаграме.
           </p>
         </div>
       </div>
       <div class="docs-info__box-item">
         <img src="@/assets/images/photo/docs-info-3.jpg" alt="" class="docs-info__box-image">
         <div class="docs-info__box-block">
-          <div class="docs-info__box-title">Медпункт</div>
+          <div class="docs-info__box-title docs-info__box-title_red">Медпункт</div>
           <p class="docs-info__box-text">
-            Для успешной адаптации ребенка в новом коллективе и на новом месте психологи рекомендуют не беспокоить его звонками в первые 3-4 дня. В этот период у ребенка может меняться настроение, он может скучать по дому и просить забрать его. Исходя из нашего многолетнего опыта, мы можем сказать, что в 99% случаев ребенок, войдя в режим и принимая активное участие в жизни лагеря, перестает тревожиться и начинает получать удовольствие от пребывания в нем. 
+            Для контроля здоровья детей в&nbsp;лагере круглосуточно работает медпункт. Сотрудники медпункта отслеживают вес, рост и&nbsp;физическое состояние детей, контролируют назначенное лечение и&nbsp;прием лекарств при необходимости, а&nbsp;также контролируют работу пищеблока, бассейна и&nbsp;соблюдение СанПиН.
             <br /><br />
-            Поинтересоваться самочувствием и настроением своего ребенка Вы можете у вожатого по телефону в установленное время. Также вожатыми в мессенджерах создаются отрядные чаты с родителями и ежедневно ведутся отрядные блоги в Инстаграме.
+            Медпункт оснащен всем необходимым оборудованием и&nbsp;медикаментами для оказания первой помощи.
+            <br /><br />
+            Связаться с&nbsp;врачом по&nbsp;вопросам справок для приема в&nbsp;лагерь, а&nbsp;также по&nbsp;самочувствию детей можно по&nbsp;рабочему номеру медпункта: +79271592895.
           </p>
         </div>
       </div>
     </div>
-    <div class="docs-info__structure">
+    <div class="docs-info__structure" id="structure">
       <h3 class="docs-info__structure-title">Cтруктура лагеря</h3>
-      <div class="docs-info__structure-text">В лагере в зависимости от заполняемости смены формируются отряды по 20-25 детей в каждом.  Дети распределяются в отряды по возрастам с разницей 1-2 года.</div>
+      <div class="docs-info__structure-text">В&nbsp;лагере в&nbsp;зависимости от&nbsp;заполняемости смены формируются отряды по&nbsp;20-25 детей в&nbsp;каждом. Дети распределяются в&nbsp;отряды по&nbsp;возрастам с&nbsp;разницей 1-2&nbsp;года.</div>
       <div class="docs-info__structure-box">
         <ul>
           <li class="docs-info__structure-list">Дети проживают в деревянных корпусах
@@ -478,7 +482,7 @@
         </div>
       </div>
     </div>
-    <div class="docs-info__counselors">
+    <div class="docs-info__counselors" id="counselors">
       <h3 class="docs-info__counselors-title">О вожатых</h3>
       <div class="docs-info__counselors-box">
         <img src="@/assets/images/photo/counselors-1.jpg" alt="" class="docs-info__counselors-image">
@@ -504,7 +508,7 @@
         <div class="docs-info__program-alert">*Возраст вожатых от 18 лет и старше</div>
       </div>
     </div>
-    <div class="docs-info__nutrition">
+    <div class="docs-info__nutrition" id="nutrition">
       <h3 class="docs-info__nutrition-title">Питание</h3>
       <div class="docs-info__nutrition-box">
         <p class="docs-info__nutrition-text">
@@ -516,82 +520,85 @@
           <br /><br />
           Березка всегда славилась своей вкусной кухней и легендарной собственной выпечкой. 
         </p>
-        <img src="" alt="" class="docs-info__nutrition-image">
+        <img src="@/assets/images/photo/nutrition.jpg" alt="" class="docs-info__nutrition-image">
       </div>
       <info
         title='Примерное меню на день'
         color='#72C391'
+        backgroundColor='#7ED7AF'
         class="docs-info__diet-block"
       >
       <div class="docs-info__diet">
-        <div class="docs-info__diet-item">
-          <img src="@/assets/images/photo/diet-1.jpg" alt="" class="docs-info__diet-image">
-          <div class="docs-info__diet-box">
-            <div class="docs-info__diet-title">Завтрак</div>
-            <ul>
-              <li class="docs-info__diet-list">Запеканка творожная с джемом</li>
-              <li class="docs-info__diet-list">Масло сливочное порционное</li>
-              <li class="docs-info__diet-list">Яйцо</li>
-              <li class="docs-info__diet-list">Какао с молоком</li>
-              <li class="docs-info__diet-list">Батон нарезной</li>
-            </ul>
+        <div class="docs-info__diet-left">
+          <div class="docs-info__diet-item">
+            <img src="@/assets/images/photo/diet-1.jpg" alt="" class="docs-info__diet-image">
+            <div class="docs-info__diet-box">
+              <div class="docs-info__diet-title">Завтрак</div>
+              <ul>
+                <li class="docs-info__diet-list">Запеканка творожная с джемом</li>
+                <li class="docs-info__diet-list">Масло сливочное порционное</li>
+                <li class="docs-info__diet-list">Яйцо</li>
+                <li class="docs-info__diet-list">Какао с молоком</li>
+                <li class="docs-info__diet-list">Батон нарезной</li>
+              </ul>
+            </div>
+          </div>
+          <div class="docs-info__diet-item">
+            <img src="@/assets/images/photo/diet-2.jpg" alt="" class="docs-info__diet-image">
+            <div class="docs-info__diet-box">
+              <div class="docs-info__diet-title">Обед</div>
+              <ul>
+                <li class="docs-info__diet-list">Помидор свежий</li>
+                <li class="docs-info__diet-list">Рассольник «Ленинградский» на к/б сметанной</li>
+                <li class="docs-info__diet-list">Куры тушеные в сметанном соусе</li>
+                <li class="docs-info__diet-list">Компот из смеси сухофруктов</li>
+                <li class="docs-info__diet-list">Хлеб ржаной</li>
+                <li class="docs-info__diet-list">Хлеб пшеничный</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="docs-info__diet-item">
-          <img src="@/assets/images/photo/diet-2.jpg" alt="" class="docs-info__diet-image">
-          <div class="docs-info__diet-box">
-            <div class="docs-info__diet-title">Обед</div>
-            <ul>
-              <li class="docs-info__diet-list">Помидор свежий</li>
-              <li class="docs-info__diet-list">Рассольник «Ленинградский» на к/б сметанной</li>
-              <li class="docs-info__diet-list">Куры тушеные в сметанном соусе</li>
-              <li class="docs-info__diet-list">Компот из смеси сухофруктов</li>
-              <li class="docs-info__diet-list">Хлеб ржаной</li>
-              <li class="docs-info__diet-list">Хлеб пшеничный</li>
-            </ul>
+        <div class="docs-info__diet-right">
+          <div class="docs-info__diet-item">
+            <img src="@/assets/images/photo/diet-3.jpg" alt="" class="docs-info__diet-image">
+            <div class="docs-info__diet-box">
+              <div class="docs-info__diet-title">Полдник</div>
+              <ul>
+                <li class="docs-info__diet-list">Булочка «Устрица» с маком</li>
+                <li class="docs-info__diet-list">Сок фруктовый</li>
+                <li class="docs-info__diet-list">Фрукт</li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="docs-info__diet-item">
-          <img src="@/assets/images/photo/diet-3.jpg" alt="" class="docs-info__diet-image">
-          <div class="docs-info__diet-box">
-            <div class="docs-info__diet-title">Ужин</div>
-            <ul>
-              <li class="docs-info__diet-list">Свежий огурец</li>
-              <li class="docs-info__diet-list">Тефтели из говядины</li>
-              <li class="docs-info__diet-list">Картофель по-деревенски</li>
-              <li class="docs-info__diet-list">Чай с сахаром и лимоном</li>
-              <li class="docs-info__diet-list">Хлеб пшеничный</li>
-              <li class="docs-info__diet-list">Хачапури</li>
-            </ul>
+          <div class="docs-info__diet-item">
+            <img src="@/assets/images/photo/diet-4.jpg" alt="" class="docs-info__diet-image">
+            <div class="docs-info__diet-box">
+              <div class="docs-info__diet-title">Ужин</div>
+              <ul>
+                <li class="docs-info__diet-list">Свежий огурец</li>
+                <li class="docs-info__diet-list">Тефтели из говядины</li>
+                <li class="docs-info__diet-list">Картофель по-деревенски</li>
+                <li class="docs-info__diet-list">Чай с сахаром и лимоном</li>
+                <li class="docs-info__diet-list">Хлеб пшеничный</li>
+                <li class="docs-info__diet-list">Хачапури</li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="docs-info__diet-item">
-          <img src="@/assets/images/photo/diet-4.jpg" alt="" class="docs-info__diet-image">
-          <div class="docs-info__diet-box">
-            <div class="docs-info__diet-title">Сонник</div>
-            <ul>
-              <li class="docs-info__diet-list">Бантик из слоеного теста</li>
-              <li class="docs-info__diet-list">Кисломолочный напиток</li>
-            </ul>
-          </div>
-        </div>
-        <div class="docs-info__diet-item">
-          <img src="@/assets/images/photo/diet-5.jpg" alt="" class="docs-info__diet-image">
-          <div class="docs-info__diet-box">
-            <div class="docs-info__diet-title">Завтрак</div>
-            <ul>
-              <li class="docs-info__diet-list">Запеканка творожная с джемом</li>
-              <li class="docs-info__diet-list">Масло сливочное порционное</li>
-              <li class="docs-info__diet-list">Яйцо</li>
-              <li class="docs-info__diet-list">Какао с молоком</li>
-              <li class="docs-info__diet-list">Батон нарезной</li>
-            </ul>
+          <div class="docs-info__diet-item">
+            <img src="@/assets/images/photo/diet-5.jpg" alt="" class="docs-info__diet-image">
+            <div class="docs-info__diet-box">
+              <div class="docs-info__diet-title">Сонник</div>
+              <ul>
+                <li class="docs-info__diet-list">Бантик из слоеного теста</li>
+                <li class="docs-info__diet-list">Кисломолочный напиток</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
       </info>
     </div>
-    <div class="docs-info__safety">
+    <div class="docs-info__safety" id="safety">
       <h3 class="docs-info__safety-title">Безопасность</h3>
       <div class="docs-info__safety-box">
         <p class="docs-info__safety-text">
@@ -626,20 +633,36 @@
     padding: 68px 0 0;
     max-width: 1080px;
     margin: 0 auto;
-   
+    @media screen and (max-width: 1300px) {
+      max-width: 620px;
+    }
+    @media screen and (max-width: 680px) {
+      max-width: 300px;
+    }
     &__card {
       padding: 0 0 68px;
+      ul {
+        padding-inline-start: 20px;
+      }
       &-title {
       font-family: Montserrat;
       font-size: 18px;
       font-weight: 600;
       line-height: 22px;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 17px;
+      }
       }
       &-text {
         font-family: Montserrat;
         font-size: 18px;
         font-weight: 400;
         line-height: 29px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
     }
     &__alert {
@@ -648,7 +671,16 @@
       font-weight: 900;
       line-height: 77px;
       color: #F05156;
-      
+      text-transform: uppercase;
+      @media screen and (max-width: 1300px) {
+        font-size: 46px;
+        line-height: 55px;
+        margin: 0 0 30px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 24px;
+        line-height: 29px;
+      }
 
       &-text {
         font-family: Montserrat;
@@ -664,6 +696,7 @@
     }
     &__box {
       margin-top: 90px;
+
       &-item {
         display: flex;
         padding: 44px 60px;
@@ -671,19 +704,40 @@
         &:last-child {
           border-bottom: 1px solid #DFDFDF;
         }
+        @media screen and (max-width: 1300px) {
+          padding: 44px 0;
+        }
+        @media screen and (max-width: 680px) {
+          flex-wrap: wrap;
+        }
+
       }
       &-image {
         width: 182px;
-        margin-right: 54px;
+        margin: 0 24px 0 0;
         object-fit: contain;
+        @media screen and (max-width: 680px) {
+          flex-wrap: wrap;
+        }
       }
-      &-block {}
       &-title {
         font-family: RF Dewi Expanded;
         font-size: 24px;
         font-weight: 900;
         line-height: 29px;
         text-transform: uppercase;
+        @media screen and (max-width: 680px) {
+          margin: 42px 0 24px;
+        }
+        &_red {
+          color: #EC7081;
+        }
+        &_yellow {
+          color: #FFC200;
+        }
+        &_green {
+          color: #0EDBBE;
+        }
       }
       &-text {
         font-family: Montserrat;
@@ -698,21 +752,48 @@
         font-size: 64px;
         font-weight: 900;
         line-height: 77px;
+        text-transform: uppercase;
+        @media screen and (max-width: 1300px) {
+          font-size: 45px;
+          line-height: 54px;
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 24px;
+          line-height: 29px;
+        }
       }
       &-text {
         font-family: Montserrat;
         font-size: 18px;
         font-weight: 400;
         line-height: 23px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
       &-box {
         display: flex;
+        ul {
+          padding-inline-start: 20px;
+        }
+        @media screen and (max-width: 1300px) {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
       }
       &-list {
         font-family: Montserrat;
         font-size: 18px;
         font-weight: 400;
         line-height: 23px;
+        @media screen and (max-width: 1300px) {
+          margin: 0 0 24px;
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+        }
 
         &_blue {
           color: #1e67ad;
@@ -736,7 +817,13 @@
         }
       }
       &-svg {
-        width: 334px;
+        @media screen and (max-width: 680px) {
+          svg {
+            width: 180px;
+            height: 180px;
+          }
+          
+        }
       }
     }
     &__counselors {
@@ -745,20 +832,40 @@
         font-size: 64px;
         font-weight: 900;
         line-height: 77px;
+        text-transform: uppercase;
+        @media screen and (max-width: 1300px) {
+          font-size: 45px;
+          line-height: 54px;
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 24px;
+          line-height: 29px;
+        }
       }
       &-box {
         display: flex;
+        @media screen and (max-width: 1300px) {
+          flex-wrap: wrap-reverse;
+        }
       }
       &-image {
         border-radius: 20px;
         object-fit: contain;
         margin: 0 30px 0 0;
+        @media screen and (max-width: 1300px) {
+          margin: 44px 0 0;
+          width: 100%;
+        }
       }
       &-text {
         font-family: Montserrat;
         font-size: 18px;
         font-weight: 400;
         line-height: 22px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 17px;
+        }
       }
     }
     &__program {
@@ -768,6 +875,11 @@
         font-weight: 900;
         line-height: 22px;
         margin: 74px 0 42px;
+
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 17px;
+        }
       }
       &-box {
         display: flex;
@@ -784,6 +896,15 @@
         border-radius: 50px;
         margin: 0 24px 50px 0;
         max-width: 650px;
+
+        @media screen and (max-width: 1300px) {
+          font-size: 16px;
+          line-height: 20px;
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 17px;
+        }
 
         &:nth-child(1) {
           background-color: #9DCEFC;
@@ -812,6 +933,10 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 22px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 17px;
+        }
       }
     }
     &__nutrition {
@@ -820,9 +945,21 @@
         font-size: 64px;
         font-weight: 900;
         line-height: 77px;
+        text-transform: uppercase;
+        @media screen and (max-width: 1300px) {
+          font-size: 45px;
+          line-height: 54px;
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 24px;
+          line-height: 29px;
+        }
       }
       &-box {
         display: flex;
+        @media screen and (max-width: 1300px) {
+          flex-wrap: wrap;
+        }
       }
       &-text {
         margin: 0 42px 0 0;
@@ -830,40 +967,86 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 23px;
+
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+          margin: 0 0 50px;
+        }
       }
       &-image {
         border-radius: 20px;
         object-fit: contain;
+        width: 50%;
+        @media screen and (max-width: 1300px) {
+          width: 100%;
+        }
       }
     }
     &__diet {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+      @media screen and (max-width: 1300px) {
+        flex-wrap: wrap;
+      }
+      &-left {
+        display: flex;
+        flex-wrap: wrap;
+        width: 52%;
+        @media screen and (max-width: 1300px) {
+          width: 100%;
+        }
+      }
+      &-right {
+        display: flex;
+        flex-wrap: wrap;
+        width: 48%;
+        @media screen and (max-width: 1300px) {
+          width: 100%;
+        }
+      }
       &-block {
         margin-top: 80px;
       }
       &-item {
         display: flex;
         align-items: center;
-        width: 50%;
+        margin: 0 0 50px;
+        @media screen and (max-width: 680px) {
+          margin: 0 0 30px;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
       }
       &-image {
         object-fit: contain;
       }
-      &-box {}
+      &-box {
+        @media screen and (max-width: 680px) {
+          width: 100%;
+          ul {
+            padding-inline-start: 20px;
+          }
+        }
+      }
       &-title {
         font-family: Montserrat;
         font-size: 20px;
         font-weight: 600;
         line-height: 26px;
+        @media screen and (max-width: 680px) {
+          font-size: 18px;
+          line-height: 23px;
+        }
       }
       &-list {
         font-family: Montserrat;
         font-size: 18px;
         font-weight: 400;
         line-height: 29px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 22px;
+        }
       }
     }
     &__safety {
@@ -873,21 +1056,53 @@
         font-size: 64px;
         font-weight: 900;
         line-height: 77px;
+        @media screen and (max-width: 1300px) {
+          font-size: 45px;
+          line-height: 54px;
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 24px;
+          line-height: 29px;
+        }
       }
       &-box {
         display: flex;
         padding: 0 0 60px;
         border-bottom: solid 1px #dfdfdf;
+        @media screen and (max-width: 1300px) {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        @media screen and (max-width: 680px) {
+
+        }
       }
       &-text {
         font-family: Montserrat;
         font-size: 18px;
         font-weight: 400;
         line-height: 23px;
+        @media screen and (max-width: 1300px) {
+          width: 100%;
+        }
+
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
       &-image {
-        margin-left: 68px;
+        margin: 0 0 0 68px;
         object-fit: contain;
+        @media screen and (max-width: 1300px) {
+          width: 240px;
+          height: 240px;
+          margin: 0;
+        }
+        @media screen and (max-width: 680px) {
+          width: 182px;
+          height: 182px;
+        }
       }
       &-info {
         font-family: Montserrat;
@@ -895,6 +1110,11 @@
         font-weight: 400;
         line-height: 23px;
         margin: 60px 0 62px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+          margin: 34px 0 62px;
+        }
       }
     }
   }

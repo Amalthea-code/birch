@@ -4,12 +4,13 @@
     <info
       title="Автономная некоммерческая организация «Спортивно-оздоровительный центр «Березка»"
       color="#BAA3E4"
+      backgroundColor="linear-gradient(268.41deg, rgba(156, 132, 210, 0.96) 6.43%, #BAA3E4 95.7%)"
     >
       <div class="contacts__box">
         <div class="contacts__address"><span>Юр. адрес:</span>  410012, Саратовская область, г. Саратов, ул. Аткарская, д. 29 оф. 30</div>
         <div class="contacts__address"><span>Адрес местонахождения:</span> 410071, Саратовская область, г. Саратов, ул. Большая Кумысная поляна</div>
         <p class="contacts__text">
-          Телефон: 8 8452 563107<br />
+          Телефон:<a href="tel:88452563107"> 8(8452) 56-31-07</a><br />
           ИНН / КПП 6455072031/645501001<br />
           ОГРН:1196451005684; ОКПО: 36517428<br />
           р/с 40703810614240000002 ФИЛИАЛ "ЦЕНТРАЛЬНЫЙ" БАНКА ВТБ (ПАО)<br />
@@ -25,17 +26,17 @@
           <div class="contacts__item">
             <div class="contacts__item-title">Номер телефона</div>
             <p class="contacts__item-text">
-              Администрация: +7(8452) 56-31-07<br />
-              Отдел продаж: +7 937 225 62 44<br />
-              Отдел продаж: +7(8452) 25-62-44<br />
+              Администрация: <a href="tel:+78452563107">+7(8452) 56-31-07</a><br />
+              Отдел продаж путевок: <a href="tel:+79372256244">+7(937) 225-62-44</a><br />
+              Отдел продаж путевок: <a href="tel:+78452256244">+7(8452) 25-62-44</a><br />
             </p>
           </div>
           <div class="contacts__item">
             <div class="contacts__item-title">Электронная почта</div>
             <p class="contacts__item-text">
-              Администрация: admin@berezka64.ru<br />
-              Отдел продаж: sales@berezka64.ru<br />
-              Бухгалтерия: nazarova.elena@berezka64.ru<br />
+              Администрация: <a href="mailto:admin@berezka64.ru">admin@berezka64.ru</a><br />
+              Отдел продаж: <a href="mailto: sales@berezka64.ru">sales@berezka64.ru</a><br />
+              Бухгалтерия: <a href="mailto:nazarova.elena@berezka64.ru">nazarova.elena@berezka64.ru</a><br />
             </p>
           </div>
         </div>
@@ -57,6 +58,12 @@
   .contacts {
     margin: 0 auto 92px auto;
     max-width: 1080px;
+    @media screen and (max-width: 1300px) {
+      max-width: 620px;
+    }
+    @media screen and (max-width: 680px) {
+      max-width: 300px;
+    }
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 64px;
@@ -64,13 +71,33 @@
       line-height: 77px;
       text-transform: uppercase;
       margin: 70px 0 58px;
+
+      @media screen and (max-width: 1300px) {
+        font-size: 46px;
+        line-height: 55px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 24px;
+        line-height: 29px;
+      }
     }
-    &__box {}
+    &__box {
+      @media screen and (max-width: 1300px) {
+        padding: 20px 0 0;
+      }
+      @media screen and (max-width: 680px) {
+        padding: 50px 0 0;
+      }
+    }
     &__address {
       font-family: Montserrat;
       font-size: 18px;
       font-weight: 400;
       line-height: 29px;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 22px;
+      }
 
       span {
         font-weight: 600;
@@ -81,6 +108,14 @@
       font-family: Montserrat;
       font-size: 18px;
       line-height: 23px;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
     &__person {
       font-family: Montserrat;
@@ -90,7 +125,11 @@
 
       span {
         font-weight: 600;
-      } 
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 22px;
+      }
     }
     &__block {
       display: flex;
@@ -98,19 +137,41 @@
       border-top: 1px solid #DFDFDF;
       padding: 38px 0 0;
       margin: 40px 0 0;
+      @media screen and (max-width: 1300px) {
+        flex-wrap: wrap;
+      }
+      @media screen and (max-width: 680px) {
+        padding: 18px 0 0;
+        margin: 18px 0 0;
+      }
     }
     &__item {
       width: 50%;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+      }
       &-title {
         font-family: RF Dewi Expanded;
         font-size: 24px;
         font-weight: 900;
         line-height: 29px;
+        @media screen and (max-width: 680px) {
+          font-size: 16px;
+          line-height: 19px;
+        }
       }
       &-text {
         font-family: Montserrat;
         font-size: 18px;
         line-height: 23px;
+        a {
+          color: black;
+          text-decoration: none;
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 22px;
+        }
       }
     }
   }

@@ -1,6 +1,9 @@
 <template>
   <div class="contacts">
-    <main-section />
+    <main-section
+      subTitle='Контакты'
+      color='#F7B618'
+    />
     <contacts />
     <maps />
   </div>

@@ -43,6 +43,10 @@
     position: relative;
     color: black;
 
+    @media screen and (max-width: 1300px) {
+      width: 298px;
+      height: 490px;
+    }
     &__image {
       object-fit: cover;
       object-position: center;
@@ -60,6 +64,9 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
       overflow: hidden;
+      @media screen and (max-width: 1300px) {
+        margin: 18px 20px 0;
+      }
     }
     &__text {
       margin: 18px 32px 0;
@@ -71,6 +78,9 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 8;
       overflow: hidden;
+      @media screen and (max-width: 1300px) {
+        margin: 18px 20px 0;
+      }
     }
     &__date {
       font-family: Montserrat;
@@ -81,6 +91,9 @@
       position: absolute;
       bottom: 28px;
       left: 32px;
+      @media screen and (max-width: 1300px) {
+        left: 20px;
+      }
     }
   }
 </style>

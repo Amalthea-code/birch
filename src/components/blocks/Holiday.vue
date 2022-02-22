@@ -11,6 +11,7 @@
       :slider="item.slider"
       :infoBox="item.infoBox"
       :images="item.images"
+      :backgroundColor='item.backgroundColor'
     />
     <div class="holiday-outro">
       <div class="holiday-outro__box">
@@ -28,9 +29,9 @@
       <div class="holiday-outro__box">
         <div class="holiday-outro__title">КОНТАКТЫ</div>
         <div class="holiday-outro__text">
-          <strong>Велопрокат:</strong> <a href="tel:+79873038754">+79873038754</a><br /><br />
-          <strong>Прокат лыж:</strong> <a href="tel:+78452563107">+7(8452)563107</a><br /><br />
-          <strong>Кафе/банкеты/проживание/сауна:</strong><br /> <a href="tel:+79878090745">+7 987 809 07 45</a> (Стрелкова Ольга Сергеевна)<br /><br />
+          <strong>Велопрокат:</strong> <a href="tel:+79873038754">+7(987) 303-87-54</a><br /><br />
+          <strong>Прокат лыж:</strong> <a href="tel:+78452563107">+7(8452) 56-31-07</a><br /><br />
+          <strong>Кафе/банкеты/проживание/сауна:</strong><br /> <a href="tel:+79878090745">+7(987) 809-07-45</a> (Стрелкова Ольга Сергеевна)<br /><br />
           <strong>Администратор:</strong> <a href="tel:+78452563107">+7(8452) 56-31-07</a>
         </div>
       </div>
@@ -40,10 +41,10 @@
 </template>
 
 <script>
-  import infoBlock from '@/components/elements/infoBlock'
+  import InfoBlock from '@/components/elements/InfoBlock'
   export default {
     components: {
-      infoBlock
+      InfoBlock
     },
     data () {
       return {
@@ -51,52 +52,46 @@
           {
             title: 'ВЕЛОПРОКАТ',
             color: '#43D440',
-            text: 'Располагается рядом с лагерем, соседние ворота.<br /><br />Работает с весны по осень в сухую погоду. <br /><br />График работы можно уточнить по номеру телефона <a href="tel:+79873038754" style="color: black">+79873038754</a>. <br /><br />Стоимость проката: 200-300 руб./час',
+            text: 'Располагается рядом с лагерем, соседние ворота.<br /><br />Работает с весны по осень в сухую погоду. <br /><br />График работы можно уточнить по номеру телефона <a href="tel:+79873038754" style="color: black">+7(987) 303-87-54</a>. <br /><br />Стоимость проката: 200-300 руб./час',
             aligin: 'right',
             slider: true,
             infoBox: true,
+            backgroundColor: 'linear-gradient(266.46deg, #3FD33C 0.89%, #5FD65C 99.37%)',
             images: [
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/1.jpg'
-              },
-              {
-                alt: '',
-                url: 'https://randomfox.ca/images/2.jpg'
-              },
-              {
-                alt: '',
-                url: 'https://randomfox.ca/images/3.jpg'
-              },
-              {
-                alt: '',
-                url: 'https://randomfox.ca/images/4.jpg'
+                url: require('@/assets/images/relaxation/1.jpg')
               },
             ]
           },
           {
             title: 'ПРОКАТ ЛЫЖ',
             color: '#60ABF0',
-            text: 'Прокат лыж начинает работать с устойчивым покровом снега и располагается в Зимнем корпусе.<br /><br />В прокате представлены лыжи различных марок. В помещении работают раздевалка и туалеты.<br /><br /><strong>Стоимость проката:</strong> 250 руб./первый час, последующие 30 мин./50 руб. Дети до 10 лет: 150 руб./час, последующие 30 мин./50 руб.<br /><br /><strong>График работы:</strong> ср. - вск. с 9:00 до 17:00<br /><br /><strong>Телефон:</strong><a href="tel:+78452563107" style="color: black">+7(8452)563107</a>',
+            text: 'Прокат лыж начинает работать с устойчивым покровом снега и располагается в Зимнем корпусе.<br /><br />В прокате представлены лыжи различных марок. В помещении работают раздевалка и туалеты.<br /><br /><strong>Стоимость проката:</strong> 250 руб./первый час, последующие 30 мин./50 руб. Дети до 10 лет: 150 руб./час, последующие 30 мин./50 руб.<br /><br /><strong>График работы:</strong> ср. - вск. с 9:00 до 17:00<br /><br /><strong>Телефон:</strong><a href="tel:+78452563107" style="color: black">+7(8452) 56-31-07</a>',
             aligin: 'left',
             slider: true,
             infoBox: true,
+            backgroundColor: 'linear-gradient(89.75deg, #9DCEFC -42.68%, #5BA8EF 99.94%)',
             images: [
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/5.jpg'
+                url: require('@/assets/images/relaxation/p1.png')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/6.jpg'
+                url: require('@/assets/images/relaxation/p2.png')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/7.jpg'
+                url: require('@/assets/images/relaxation/p3.png')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/8.jpg'
+                url: require('@/assets/images/relaxation/p4.png')
+              },
+              {
+                alt: '',
+                url: require('@/assets/images/relaxation/p5.png')
               },
             ]
           },
@@ -107,74 +102,85 @@
             aligin: 'right',
             slider: true,
             infoBox: true,
+            backgroundColor: 'linear-gradient(258.58deg, #F98419 8.47%, #FF9C41 100%)',
             images: [
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/9.jpg'
+                url: require('@/assets/images/relaxation/k1.png')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/10.jpg'
+                url: require('@/assets/images/relaxation/k2.png')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/11.jpg'
+                url: require('@/assets/images/relaxation/k3.png')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/12.jpg'
+                url: require('@/assets/images/relaxation/k4.png')
+              },
+              {
+                alt: '',
+                url: require('@/assets/images/relaxation/k5.jpg')
               },
             ]
           },
           {
             title: 'БАНКЕТЫ',
             color: '#A18AD5',
-            text: 'В Березке Вы можете провести мероприятие и заказать банкет. Для этого мы располагаем несколькими залами разной вместимости, разнообразным банкетным меню, штатом профессиональных поваров и официантов.<br /><br /><strong>Контакты:</strong><br /><br /><a href="tel:+79878090745" style="color: black">+7 987 809 07 45</a> (Ольга Сергеевна)',
+            text: 'В Березке Вы можете провести мероприятие и заказать банкет. Для этого мы располагаем несколькими залами разной вместимости, разнообразным банкетным меню, штатом профессиональных поваров и официантов.<br /><br /><strong>Контакты:</strong><br /><br /><a href="tel:+79878090745" style="color: black">+7(987) 809-07-45</a> (Стрелкова Ольга Сергеевна)',
             aligin: 'left',
             slider: true,
             infoBox: true,
+            backgroundColor: 'linear-gradient(268.41deg, rgba(156, 132, 210, 0.96) 6.43%, #BAA3E4 95.7%)',
             images: [
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/13.jpg'
+                url: require('@/assets/images/relaxation/b1.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/14.jpg'
+                url: require('@/assets/images/relaxation/b2.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/15.jpg'
+                url: require('@/assets/images/relaxation/b3.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/16.jpg'
+                url: require('@/assets/images/relaxation/b5.png')
+              },
+              {
+                alt: '',
+                url: require('@/assets/images/relaxation/b7.png')
               },
             ]
           },
           {
             title: 'СЕМЕЙНЫЕ НОМЕРА И САУНА',
             color: '#F7B618',
-            text: 'В Зимнем корпусе есть возможность проживания в семейных номерах со всеми удобствами и аренды сауны с бассейном.<br /><br /><strong>Контакты:</strong><br /><br /><a href="tel:+79878090745" style="color: black">+7 987 809 07 45</a> (Ольга Сергеевна)',
+            text: 'В Зимнем корпусе есть возможность проживания в семейных номерах со всеми удобствами и аренды сауны с бассейном.<br /><br /><strong>Контакты:</strong><br /><br /><a href="tel:+79878090745" style="color: black">+7(987) 809-07-45</a> (Стрелкова Ольга Сергеевна)',
             aligin: 'right',
             slider: true,
             infoBox: true,
+            backgroundColor: 'linear-gradient(258.87deg, #F7B618 0%, #F5C54E 94.92%)',
             images: [
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/17.jpg'
+                url: require('@/assets/images/relaxation/s1.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/18.jpg'
+                url: require('@/assets/images/relaxation/s2.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/19.jpg'
+                url: require('@/assets/images/relaxation/s3.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/20.jpg'
+                url: require('@/assets/images/relaxation/s4.jpg')
               },
             ]
           },
@@ -187,28 +193,59 @@
 <style lang="scss" scoped>
   .holiday {
     padding: 70px calc((100vw - 1080px)/2) 20px;
+    @media screen and (max-width: 1300px) {
+      padding: 70px calc((100vw - 620px)/2) 20px;
+    }
+    @media screen and (max-width: 680px) {
+      padding: 70px calc((100vw - 300px)/2) 20px;
+    }
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 64px;
       line-height: 77px;
       text-transform: uppercase;
       margin: 0 0 62px;
+      @media screen and (max-width: 1300px) {
+        font-size: 46px;
+        line-height: 55px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 24px;
+        line-height: 29px;
+      }
     }
     &-outro {
       display: flex;
       justify-content: space-between;
       margin: 0 0 80px;
+      @media screen and (max-width: 680px) {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
       &:nth-child(1) {
         margin: 120px 0 80px;
       }
       &__box {
         width: 60%;
+        @media screen and (max-width: 680px) {
+          width: 100%;
+        }
       }
       &__title {
         font-family: RF Dewi Expanded;
         font-size: 64px;
         line-height: 77px;
+        font-weight: 900;
         margin: 40px 0 24px;
+        @media screen and (max-width: 1300px) {
+          font-size: 46px;
+          line-height: 55px;
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 24px;
+          line-height: 29px;
+          margin: 0 0 24px;
+        }
       }
       &__text {
         font-family: Montserrat;
@@ -218,9 +255,21 @@
           color: black;
           text-decoration: none;
         }
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 17px;
+        }
       }
       &__image {
         width: 280px;
+        object-fit: contain;
+        @media screen and (max-width: 1300px) {
+          width: 194px;
+        }
+        @media screen and (max-width: 680px) {
+          margin: 30px 0 0;
+          width: 140px;
+        }
       }
     }
   }

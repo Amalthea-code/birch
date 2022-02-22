@@ -18,7 +18,7 @@
       <div class="regulations-leisure__item">
         <img src="@/assets/images/photo/regulations-leisure-1.jpg" alt="" class="regulations-leisure__item-image">
         <div class="regulations-leisure__item-box">
-          <div class="regulations-leisure__item-title">Библеотека</div>
+          <div class="regulations-leisure__item-title">Библиотека</div>
           <div class="regulations-leisure__item-text">
             Наша библиотека оснащена самыми разнообразными книгами на любой вкус для детей и подростков всех возрастных категорий.  Каждый ребенок сможет найти книгу для души и по школьным программам из более чем 3500 книг.
             <br /><br />
@@ -118,6 +118,13 @@
     margin: 0 auto;
     padding: 74px 0 0;
 
+    @media screen and (max-width: 1300px) {
+      max-width: 620px;
+    }
+    @media screen and (max-width: 680px) {
+      max-width: 300px;
+    }
+
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 32px;
@@ -125,16 +132,39 @@
       line-height: 38px;
       text-align: center;
       text-transform: uppercase;
+      @media screen and (max-width: 1300px) {
+        font-size: 24px;
+        line-height: 29px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
     &__text {
       font-family: Montserrat;
       font-size: 18px;
       font-weight: 400;
       line-height: 23px;
+      @media screen and (max-width: 1300px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &__info {
       display: flex;
       justify-content: space-between;
+      ul {
+        padding-inline-start: 10px;
+      }
+      @media screen and (max-width: 1300px) {
+        flex-wrap: wrap;
+      }
+
     }
     &__list {
       font-family: Montserrat;
@@ -142,12 +172,25 @@
       font-weight: 400;
       line-height: 23px;
       margin: 0 0 18px;
+      @media screen and (max-width: 1300px) {
+        flex-wrap: wrap;
+        font-size: 18px;
+        line-height: 23px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &__img {
       margin: 0 0 0 14px;
       border-radius: 20px;
       width: 510px;
       object-fit: contain;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+        margin: 0;
+      }
     }
     &-leisure {
       &__title {
@@ -157,6 +200,16 @@
         line-height: 77px;
         text-transform: uppercase;
         padding: 116px 0 82px;
+        @media screen and (max-width: 1300px) {
+          padding: 60px 0 54px;
+          font-size: 46px;
+          line-height: 55px;
+        }
+        @media screen and (max-width: 680px) {
+          padding: 72px 0 40px;
+          font-size: 24px;
+          line-height: 29px;
+        }
       }
       &__box {
       }
@@ -165,13 +218,33 @@
         justify-content: space-around;
         padding: 62px 40px 46px;
         border-top: 1px solid #DFDFDF;
+        @media screen and (max-width: 1300px) {
+          padding: 34px 20px 38px;
+          align-items: center;
+        }
+        @media screen and (max-width: 680px) {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          padding: 24px 10px 34px;
+        }
+
         &-box {
           display: flex;
           flex-wrap: wrap;
+          @media screen and (max-width: 680px) {
+            width: 100%;
+          }
         }
         &-image {
           width: 162px;
           padding: 0 58px 0 0;
+          @media screen and (max-width: 1300px) {
+            width: 160px;
+            height: 160px;
+          }
+          @media screen and (max-width: 680px) {
+
+          }
         }
         &-title {
           font-family: RF Dewi Expanded;
@@ -180,6 +253,16 @@
           line-height: 29px;
           width: 100%;
           text-transform: uppercase;
+          @media screen and (max-width: 1300px) {
+            font-size: 22px;
+            line-height: 27px;
+            padding: 0 0 16px;
+          }
+          @media screen and (max-width: 680px) {
+            padding: 30px 0 18px;
+            font-size: 18px;
+            line-height: 22px;
+          }
         }
         &-text {
           font-family: Montserrat;
@@ -187,6 +270,10 @@
           font-weight: 400;
           line-height: 23px;
           width: 100%;
+          @media screen and (max-width: 680px) {
+            font-size: 14px;
+            line-height: 18px;
+          }
         }
         &:nth-child(1) {
           .regulations-leisure__item-title {

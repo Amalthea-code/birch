@@ -29,12 +29,24 @@
     padding: 20px calc((100vw - 1080px)/2);
     display: flex;
     align-items: center;
+    
+    @media screen and (max-width: 1300px) {
+      padding: 20px calc((100vw - 620px)/2);
+    }
+    @media screen and (max-width: 680px) {
+      padding: 20px calc((100vw - 300px)/2);
+    }
 
     margin: 0;
     &__image {
       width: 120px;
       height: 120px;
       margin: 0 40px 0 0;
+      @media screen and (max-width: 680px) {
+        width: 74px;
+        height: 74px;
+        margin: 0 10px 0 0;
+      }
     }
     &__text {
       color: white;
@@ -42,6 +54,14 @@
       font-size: 18px;
       font-weight: 900;
       line-height: 23px;
+      @media screen and (max-width: 1300px) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
   }
 </style>

@@ -1,6 +1,9 @@
 <template>
   <div class="kids">
-    <main-section />
+    <main-section 
+      subTitle='Детям'
+      color='#5EC0A9'
+    />
     <events />
     <pool />
     <regulations />

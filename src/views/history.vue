@@ -1,6 +1,9 @@
 <template>
   <div class="history">
-    <main-section />
+    <main-section 
+      subTitle='О лагере'
+      color='#5493CC'
+    />
     <history />
   </div>
 </template>

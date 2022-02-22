@@ -10,7 +10,7 @@
         :class="['gallery__image', 'gallery__image-' + image.id]">
     </div>
     <div class="gallery__button">
-      <router-link to="#">показать еще</router-link>
+      <router-link to='/gallery'>показать еще</router-link>
     </div>
   </div>
 </template>

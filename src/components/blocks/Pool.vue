@@ -67,9 +67,27 @@
       justify-content: space-between;
       max-width: 1080px;
       margin: 0 auto;
+      @media screen and (max-width: 1300px) {
+        max-width: 620px;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+      }
+      @media screen and (max-width: 680px) {
+        max-width: 300px;
+      }
     }
     &__svg {
-      margin-right: 82px;
+      margin: 0 82px 0 0;
+      @media screen and (max-width: 1300px) {
+        margin: 10px 0 0;
+      }
+      @media screen and (max-width: 680px) {
+        margin: 30px 0 0;
+        svg {
+          width: 240px;
+          height: 200px;
+        }
+      }
     }
     &__info {}
     &__title {
@@ -80,6 +98,14 @@
       text-transform: uppercase;
       color: white;
       margin: 0 0 24px;
+      @media screen and (max-width: 1300px) {
+        font-size: 46px;
+        line-height: 55px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 24px;
+        line-height: 29px;
+      }
     }
     &__text {
       font-family: Montserrat;
@@ -87,6 +113,13 @@
       font-weight: 400;
       line-height: 24px;
       color: white;
+      @media screen and (max-width: 1300px) {
+        line-height: 23px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
   }
 </style>

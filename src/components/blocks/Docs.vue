@@ -2,15 +2,17 @@
   <div class="docs">
     <div class="docs__nav">
       <a href="#docs" class="docs__nav-link">Документы</a>
-      <a href="#docs" class="docs__nav-link">Cтруктура</a>
-      <a href="#docs" class="docs__nav-link">О вожатых</a>
-      <a href="#docs" class="docs__nav-link">Питание</a>
-      <a href="#docs" class="docs__nav-link">Безопасность</a>
+      <a href="#structure" class="docs__nav-link">Cтруктура</a>
+      <a href="#counselors" class="docs__nav-link">О вожатых</a>
+      <a href="#nutrition" class="docs__nav-link">Питание</a>
+      <a href="#safety" class="docs__nav-link">Безопасность</a>
     </div>
     <div class="docs__title" id="docs">ДОКУМЕНТЫ</div>
     <info
+      class="docs__card"
       title="Для заезда в лагерь необходимо предоставить следующие документы и справки:"
       color="#F98419"
+      backgroundColor='linear-gradient(258.58deg, #F98419 8.47%, #FF9C41 100%)'
     >
     <ul>
       <li class="docs__info-text">путевку*;</li>
@@ -47,12 +49,26 @@
     padding: 48px 0 62px;
     max-width: 1080px;
     margin: 0 auto;
+    @media screen and (max-width: 1300px) {
+      max-width: 620px;
+    }
+    @media screen and (max-width: 680px) {
+      max-width: 300px;
+    }
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 64px;
       font-weight: 900;
       line-height: 77px;
       margin: 34px 0 54px;
+      @media screen and (max-width: 1300px) {
+        font-size: 46px;
+        line-height: 55px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 24px;
+        line-height: 29px;
+      }
     }
     &__nav {
       &-link {
@@ -61,13 +77,18 @@
         font-weight: 600;
         line-height: 20px;
         display: inline-block;
-        margin-right: 12px;
+        margin: 0 12px 0 0;
         border: 2px solid;
         padding: 12px 24px;
         border-radius: 50px;
         text-decoration: none;
         transition: background-color .3s, color .3s;
-
+        @media screen and (max-width: 1300px) {
+          font-size: 14px;
+          line-height: 18px;
+          padding: 8px 14px;
+          margin: 0 12px 18px 0;
+        }
         &:nth-child(1) {
           color: #9DCEFC;
           border-color: #9DCEFC;
@@ -93,18 +114,18 @@
           }
         }
         &:nth-child(4) {
-          color: #676FB2;
-          border-color: #676FB2;
+          color: #5EC0A9;
+          border-color: #5EC0A9;
           &:hover {
-            background-color: #676FB2;
+            background-color: #5EC0A9;
             color: white;
           }
         }
         &:nth-child(5) {
-          color: #9DCEFC;
-          border-color: #9DCEFC;
+          color: #676FB2;
+          border-color: #676FB2;
           &:hover {
-            background-color: #9DCEFC;
+            background-color: #676FB2;
             color: white;
           }
         }
@@ -113,17 +134,30 @@
     &__info {
       padding: 42px 0 0;
     }
+    &__card {
+      ul {
+        padding-inline-start: 20px;
+      }
+    }
     &__text {
       font-family: Montserrat;
       font-size: 18px;
       font-weight: 400;
       line-height: 23px;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &__info-text {
       font-family: Montserrat;
       font-size: 18px;
       font-weight: 400;
       line-height: 29px;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &__sub-info {
       display: inline-block;
@@ -135,6 +169,10 @@
       text-align: center;
       border-top: 1px solid #DFDFDF;
       padding: 16px 0 0;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 17px;
+      }
     }
   }
 </style>

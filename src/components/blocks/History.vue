@@ -2,11 +2,11 @@
   <div class="history">
     <div class="history__box">
       <div class="history__nav">
-        <a href="#docs" class="history__nav-link">История</a>
-        <a href="#docs" class="history__nav-link">Администрация</a>
-        <a href="#docs" class="history__nav-link">Инфраструктура</a>
+        <a href="#history" class="history__nav-link">История</a>
+        <a href="#administration" class="history__nav-link">Администрация</a>
+        <a href="#infrastructure" class="history__nav-link">Инфраструктура</a>
       </div>
-      <div class="history__title">история «Березки»</div>
+      <div id="history" class="history__title">история «Березки»</div>
       <info-block
         v-for="(story,index) in storys"
         :key="index"
@@ -200,19 +200,17 @@
         <slider
           :images="veterans"
           :slidesView="3"
+          isVisibly="tablet"
         />
       </div>
-      <div class="administration">
+      <div id="administration" class="administration">
         <div class="administration__title">АДМИНИСТРАЦИЯ:</div>
         <div class="administration__text"><strong>Амхир Борис Константинович</strong> – директор лагеря с 1976 г.</div>
         <div class="administration__text"><strong>Крук Илья Леонидович</strong> – исполнительный директор с 2021 г.</div>
         <div class="administration__text"><strong>Стрелкова Ольга Сергеевна</strong> – заместитель директора по хозяйственно - административным вопросам с 1977 г.</div>
         <div class="administration__text"><strong>Горобец Елена Ивановна</strong> – заместитель директора по воспитательной работе с 1995 г.</div>
-        <div class="administration__text"><strong>Назарова Елена Петровна</strong> – главный бухгалтер с 2021 г.</div>
-        <div class="administration__text"><strong>Филонов Егор Васильевич</strong> – секретарь-референт с 2021 г.</div>
-        <div class="administration__text"><strong>Персидская Елена Васильевна</strong> – менеджер по продаже путевок с 2021 г.</div>
       </div>
-      <div class="infrastructure">
+      <div id="infrastructure" class="infrastructure">
         <div class="infrastructure__title">Инфраструктура</div>
         <div class="infrastructure__box">
           <div
@@ -230,12 +228,12 @@
 </template>
 
 <script>
-  import infoBlock from '@/components/elements/infoBlock'
+  import InfoBlock from '@/components/elements/InfoBlock'
   import Slider from '@/components/elements/Slider'
   import Insert from '@/components/elements/Insert'
   export default {
     components: {
-      infoBlock,
+      InfoBlock,
       Slider,
       Insert
     },
@@ -249,16 +247,20 @@
             images: [
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/1.jpg'
+                url: require('@/assets/images/history/1.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/2.jpg'
+                url:  require('@/assets/images/history/2.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/3.jpg'
-              }
+                url: require('@/assets/images/history/3.jpg')
+              },
+              {
+                alt: '',
+                url: require('@/assets/images/history/4.jpg')
+              },
             ]
           },
           {
@@ -268,16 +270,24 @@
             images: [
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/4.jpg'
+                url: require('@/assets/images/history/6.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/5.jpg'
+                url: require('@/assets/images/history/7.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/6.jpg'
-              }
+                url: require('@/assets/images/history/8.jpg')
+              },
+              {
+                alt: '',
+                url: require('@/assets/images/history/9.jpg')
+              },
+              {
+                alt: '',
+                url: require('@/assets/images/history/10.jpg')
+              },
             ]
           },
           {
@@ -287,32 +297,48 @@
             images: [
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/7.jpg'
+                url: require('@/assets/images/history/11.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/8.jpg'
+                url: require('@/assets/images/history/12.jpg')
               },
               {
                 alt: '',
-                url: 'https://randomfox.ca/images/9.jpg'
-              }
+                url: require('@/assets/images/history/13.jpg')
+              },
+              {
+                alt: '',
+                url: require('@/assets/images/history/14.jpg')
+              },
+              {
+                alt: '',
+                url: require('@/assets/images/history/15.jpg')
+              },
             ]
           }
         ],
         guests: [
           {
             alt: '',
-            url: 'https://randomfox.ca/images/10.jpg'
+            url: require('@/assets/images/history/16.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/11.jpg'
+            url: require('@/assets/images/history/17.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/12.jpg'
-          }
+            url: require('@/assets/images/history/18.jpg')
+          },
+          {
+            alt: '',
+            url: require('@/assets/images/history/19.jpg')
+          },
+          {
+            alt: '',
+            url: require('@/assets/images/history/20.jpg')
+          },
         ],
         infrastructure: [
           {
@@ -411,71 +437,75 @@
         veterans: [
           {
             alt: '',
-            url: 'https://randomfox.ca/images/13.jpg'
+            url: require('@/assets/images/history/21.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/14.jpg'
+            url: require('@/assets/images/history/22.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/15.jpg'
+            url: require('@/assets/images/history/23.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/16.jpg'
+            url: require('@/assets/images/history/24.jpg')
+          },
+           {
+            alt: '',
+            url: require('@/assets/images/history/25.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/17.jpg'
+            url: require('@/assets/images/history/26.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/18.jpg'
-          },
-          {
-            alt: '',
-            url: 'https://randomfox.ca/images/19.jpg'
-          },
-          {
-            alt: '',
-            url: 'https://randomfox.ca/images/20.jpg'
-          },
-          {
-            alt: '',
-            url: 'https://randomfox.ca/images/21.jpg'
-          },
-          {
-            alt: '',
-            url: 'https://randomfox.ca/images/22.jpg'
-          },
+            url: require('@/assets/images/history/27.jpg')
+          }
         ],
         athletes: [
           {
             alt: '',
-            url: 'https://randomfox.ca/images/23.jpg'
+            url: require('@/assets/images/history/28.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/24.jpg'
+            url: require('@/assets/images/history/29.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/25.jpg'
+            url: require('@/assets/images/history/30.jpg')
+          },
+          {
+            alt: '',
+            url: require('@/assets/images/history/31.jpg')
+          },
+          {
+            alt: '',
+            url: require('@/assets/images/history/32.jpg')
           },
         ],
         artists: [
           {
             alt: '',
-            url: 'https://randomfox.ca/images/26.jpg'
+            url: require('@/assets/images/history/33.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/27.jpg'
+            url: require('@/assets/images/history/34.jpg')
           },
           {
             alt: '',
-            url: 'https://randomfox.ca/images/28.jpg'
+            url: require('@/assets/images/history/35.jpg')
+          },
+          {
+            alt: '',
+            url: require('@/assets/images/history/36.jpg')
+          },
+          {
+            alt: '',
+            url: require('@/assets/images/history/37.jpg')
           },
         ]
       }
@@ -502,6 +532,15 @@
       line-height: 77px;
       margin: 30px 0 40px;
       text-transform: uppercase;
+      @media screen and (max-width: 1300px) {
+        font-size: 46px;
+        line-height: 55px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 24px;
+        line-height: 29px;
+        margin: 28px 0;
+      }
     }
     &__nav {
       &-link {
@@ -510,12 +549,19 @@
         font-weight: 600;
         line-height: 20px;
         display: inline-block;
-        margin-right: 12px;
+        margin: 0 12px 0 0;
         border: 2px solid;
         padding: 12px 24px;
         border-radius: 50px;
         text-decoration: none;
         transition: background-color .3s, color .3s;
+
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+          margin: 0 12px 10px 0;
+          padding: 10px 20px;
+        }
 
         &:nth-child(1) {
           color: #F6496B;
@@ -551,15 +597,39 @@
       font-size: 18px;
       font-weight: 900;
       line-height: 23px;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &__list {
+      padding-inline-start: 20px;
       &-line {
         display: flex;
+        padding-inline-start: 20px;
         .building__list-element {
           margin: 0 0 0 40px;
         }
         .building__list-element:first-child {
           margin: 0;
+          @media screen and (max-width: 680px) {
+            margin: 0 0 14px;
+          }
+        }
+        @media screen and (max-width: 1300px) {
+          flex-wrap: wrap;
+          margin: 42px 0 0;
+          .building__list-element {
+            margin: 0;
+            width: 33%;
+          }
+        }
+        @media screen and (max-width: 680px) {
+          margin: 34px 0 0;
+          .building__list-element {
+            margin: 0 0 14px;
+            width: 100%;
+          }
         }
       }
       &-element {
@@ -567,8 +637,10 @@
         font-size: 18px;
         line-height: 29px;
         margin: 0 0 14px;
-        &::marker {
-          padding-inline-start: 20px;
+
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 22px;
         }
       }
     }
@@ -579,10 +651,25 @@
     border-top: 1px solid #DFDFDF;
     border-bottom: 1px solid #DFDFDF;
     margin: 0 0 60px;
+    @media screen and (max-width: 1300px) {
+      justify-content: center;
+      padding: 40px 0 12px;
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width: 680px) {
+      padding: 20px 0 10px;
+    }
     &__text {
       font-family: Montserrat;
       font-size: 18px;
       line-height: 23px;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &__image {
       width: 220px;
@@ -591,6 +678,12 @@
   .guests {
     display: flex;
     margin: 86px 0 70px;
+    @media screen and (max-width: 1300px) {
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width: 680px) {
+      margin: 32px 0 70px;
+    }
     &-also {
       margin: 0 0 70px;
       &__title {
@@ -598,18 +691,29 @@
         font-size: 18px;
         font-weight: 900;
         line-height: 23px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
       &__list {
+        padding-inline-start: 20px;
         &-element {
           font-family: Montserrat;
           font-size: 18px;
-          line-height: 23px;
-          margin: 0 0 14px;
+          line-height: 36px;
+          @media screen and (max-width: 680px) {
+            font-size: 14px;
+            line-height: 18px;
+          }
         }
       }
     }
     &__info {
       width: 50%;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+      }
     } 
     &__title {
       font-family: RF Dewi Expanded;
@@ -617,6 +721,10 @@
       font-weight: 900;
       line-height: 23px;
       margin: 0 0 18px;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &__list {
       font-family: Montserrat;
@@ -624,19 +732,48 @@
       font-weight: 400;
       line-height: 23px;
       margin: 0 0 14px;
+      padding-inline-start: 20px;
+      &-element {
+        margin: 0 0 14px;
+      }
+      @media screen and (max-width: 1300px) {
+        margin: 0 0 44px;
+        &-element {
+          margin: 0 0 14px;
+        }
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+
+        &-element {
+       
+          margin: 0 0 14px;
+        }
+      }
     }
     &__slider {
       width: 50%;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+      }
     }
   }
   .veterans {
     margin: 62px 0 134px;
+    @media screen and (max-width: 1300px) {
+      margin: 54px 0 90px;
+    }
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 18px;
       font-weight: 900;
       line-height: 23px;
       margin: 0 0 16px;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &__list {
       font-family: Montserrat;
@@ -644,8 +781,14 @@
       font-weight: 400;
       line-height: 23px;
       margin: 0 0 40px;
+      padding-inline-start: 20px;
       &-element {
         margin: 0 0 14px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+        padding-inline-start: 10px;
       }
     }
     &__person {
@@ -657,14 +800,32 @@
       font-weight: 400;
       line-height: 23px;
       margin: 0 0 56px;
+      padding-inline-start: 20px;
+      
       &-element {
         width: 25%;
         margin: 0 0 14px;
+      }
+      @media screen and (max-width: 1300px) {
+        &-element {
+          width: 50%;
+        }
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+        padding-inline-start: 10px;
+        &-element {
+          width: 44%;
+        }
       }
     }
   }
   .administration {
     margin: 0 0 140px;
+    @media screen and (max-width: 1300px) {
+      margin: 0 0 34px;
+    }
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 64px;
@@ -672,6 +833,13 @@
       line-height: 77px;
       text-transform: uppercase;
       margin: 0 0 44px;
+      @media screen and (max-width: 1300px) {
+        font-size: 46px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 22px;
+        line-height: 26px;
+      }
     }
     &__text {
       font-family: Montserrat;
@@ -679,10 +847,20 @@
       font-weight: 400;
       line-height: 29px;
       margin: 0 0 14px;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 22px;
+        strong {
+          display: block;
+        }
+      }
     }
   }
   .infrastructure {
     margin: 0 0 92px;
+    @media screen and (max-width: 680px) {
+      margin: 60px 0;
+    }
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 64px;
@@ -690,6 +868,15 @@
       line-height: 77px;
       text-transform: uppercase;
       margin: 0 0 52px;
+      @media screen and (max-width: 1300px) {
+        font-size: 46px;
+        line-height: 55px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 22px;
+        line-height: 26px;
+        margin: 0 0 20px;
+      }
     }
     &__box {
       display: flex;
@@ -702,15 +889,27 @@
       align-items: center;
       width: calc(50% - 15px);
       border-bottom: 1px dashed #5ec0a961;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+      }
       &-image {
         width: 62px;
         height: 62px;
+        @media screen and (max-width: 680px) {
+          width: 42px;
+          height: 42px;
+        }
       }
       &-text {
         margin: 0 0 0 30px;
         font-family: Montserrat;
         font-size: 18px;
         line-height: 23px;
+        @media screen and (max-width: 680px) {
+          margin: 0 0 0 14px;
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
     }
   }
@@ -720,17 +919,33 @@
       font-size: 18px;
       font-weight: 900;
       line-height: 23px;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &__list {
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
+      padding-inline-start: 20px;
       &-element {
         font-family: Montserrat;
         font-size: 18px;
         line-height: 23px;
         width: 33%;
         margin: 0 0 14px;
+        @media screen and (max-width: 1300px) {
+          width: calc(50% - 40px);
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+          width: 100%;
+        }
+      }
+      @media screen and (max-width: 1300px) {
+        justify-content: space-between;
       }
     }
   }
@@ -738,17 +953,29 @@
     display: flex;
     justify-content: space-between;
     margin: 78px 0 114px;
-
+    @media screen and (max-width: 1300px) {
+      flex-wrap: wrap;
+      margin: 50px 0 70px;
+    }
     &__box {
       width: 49%;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+        margin: 0 0 28px;
+      }
     }
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 18px;
       font-weight: 900;
       line-height: 23px;
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
     &__list {
+      padding-inline-start: 20px;
       &-element {
         font-family: Montserrat;
         font-size: 18px;
@@ -756,41 +983,96 @@
         line-height: 23px;
         margin: 0 0 14px;
       }
+      @media screen and (max-width: 1300px) {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &-element {
+          width: 50%;
+        }
+      }
+      @media screen and (max-width: 680px) {
+        &-element {
+          font-size: 14px;
+          line-height: 18px;
+          width: 100%;
+        }
+      }
     }
     &__slider {
       width: 49%;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+      }
     }
   }
   .artists {
     margin: 84px 0 80px;
+    @media screen and (max-width: 1300px) {
+      margin: 50px 0 80px;
+    }
+    @media screen and (max-width: 680px) {
+      margin: 42px 0 46px;
+    }
     &__slider {
       width: 49%;
       margin: 0 2% 0 0;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+        margin: 0;
+      }
       &-box {
         display: flex;
         justify-content: space-between;
         margin: 0 0 110px;
+        @media screen and (max-width: 1300px) {
+          flex-wrap: wrap-reverse;
+          margin: 0 0 70px;
+        }
       }
     }
     &__info {
       width: 49%;
+      @media screen and (max-width: 1300px) {
+        width: 100%;
+      }
       &-title {
         font-family: RF Dewi Expanded;
         font-size: 18px;
         font-weight: 900;
         line-height: 23px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
     }
     &__list {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      padding-inline-start: 20px;
 
       &-element {
         font-family: Montserrat;
         font-size: 18px;
         line-height: 23px;
         width: 50%;
+        margin: 0 0 14px;
+      }
+      @media screen and (max-width: 1300px) {
+        margin: 0 0 40px;
+        &-element {
+          margin: 0 0 14px;
+        }
+      }
+      @media screen and (max-width: 680px) {
+        margin: 20px 0 0;
+        &-element {
+          font-size: 14px;
+          line-height: 18px;
+          width: 100%;
+        }
       }
     }
     &-musicians {
@@ -799,16 +1081,36 @@
         font-size: 18px;
         font-weight: 900;
         line-height: 23px;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
       &__list {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex-wrap: wrap;
+        padding-inline-start: 20px;
+
         &-element {
           width: 33%;
           font-family: Montserrat;
           font-size: 18px;
           line-height: 23px;
+          margin: 0 0 14px;
+        }
+        @media screen and (max-width: 1300px) {
+          &-element {
+            width: calc(50% - 40px);
+            margin: 0 0 14px;
+          }
+        }
+        @media screen and (max-width: 680px) {
+          &-element {
+            width: 100%;
+            font-size: 14px;
+            line-height: 18px;
+          }
         }
       }
     }

@@ -1,6 +1,9 @@
 <template>
   <div class="parents">
-    <main-section />
+    <main-section
+      subTitle='Родителям'
+      color='#BAA3E4'
+    />
     <docs />
     <conditions />
     <docs-info />

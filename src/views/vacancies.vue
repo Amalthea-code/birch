@@ -1,6 +1,9 @@
 <template>
   <div class="vacancies">
-    <main-section />
+    <main-section
+      subTitle='Вакансии'
+      color='#FB6F8A'
+    />
     <vacancies />
   </div>
 </template>

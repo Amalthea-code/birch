@@ -2,7 +2,7 @@
   <div :class="['shift-selection-item', 'shift-selection-item-' + index]">
     <div class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
     <div class="shift-selection-item__box">
-      <p class="shift-selection-item__date"> {{ date }} </p>
+      <p class="shift-selection-item__date" v-html="date" />
       <hr align="center" width="40%" size="1" class="shift-selection-item__line"/>
       <div class="shift-selection-item__price"> {{ price }} руб.</div>
     </div>
@@ -57,15 +57,15 @@
     font-weight: 900;
     line-height: 43px;
     color: white;
-    padding: 20px 32px;
+    padding: 20px 6px;
     border-radius: 30px;
-
+    @media screen and (max-width: 1300px) {
+      width: 146px;
+      padding: 20px;
+    }
     span {
       font-size: 30px;
       line-height: 25px;
-    }
-    @media screen and (max-width: 1300px) {
-      width: 146px;
     }
   }
   &__box {

@@ -1,10 +1,12 @@
 <template>
+<a target="blank" href="https://yandex.ru/maps/-/CCUyvXaXGD">
   <div class="maps">
     <div class="maps__card">
       <div class="maps__logo"><maps-logo /></div>
-      <a target="_blank" class="maps__link" href="https://yandex.ru/maps/-/CCUyvXaXGD">Саратовская обл. г.Саратов, Большая Кумысная поляна, а/я 25</a>
+      <p class="maps__link">Саратовская обл. г.Саратов, Большая Кумысная поляна, а/я 1344</p>
     </div>
   </div>
+</a>
 </template>
 
 <script>
@@ -17,9 +19,12 @@
 </script>
 
 <style lang="scss" scoped>
+  a {
+    text-decoration: none;
+  }
   .maps {
     padding: 198px calc((100vw - 1080px)/2) 200px;
-    background-image: url('~@/assets/images/photo/maps-bg.png');
+    background-image: url('~@/assets/images/photo/maps.png');
     background-size: cover;
     background-position: bottom;
     position: relative;

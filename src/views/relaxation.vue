@@ -1,6 +1,9 @@
 <template>
   <div class="relaxation">
-    <main-section />
+    <main-section
+      subTitle='Семейный отдых'
+      color='#3FD33C'
+    />
     <holiday />
   </div>
 </template>
