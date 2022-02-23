@@ -102,8 +102,9 @@ export default {
               tour: order.order_name,
               type: order.order_type,
               cashback: order.order_cashback,
-              parent: order.parent,
-              child: order.child,
+              parents: order.parent,
+              children: order.child,
+              user: order.user,
               users_permissions_user: String(rootGetters['profile/GET_AUTORIZEDUSER'].id)
           }
       }),

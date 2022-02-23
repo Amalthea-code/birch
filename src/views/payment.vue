@@ -208,6 +208,20 @@
             child_birthсertificate: this.childen[this.isChildSelect].birthCertificate,
             child_gender: this.childen[this.isChildSelect].gender,
           },
+          user: {
+            user_name: this.user.username,
+            user_sname: this.user.sName,
+            user_tname: this.user.tName,
+            user_phone: this.user.phone,
+            user_email: this.user.email,
+            user_city: this.user.city,
+            user_street: this.user.street,
+            user_apartment: this.user.apartament,
+            user_home: this.user.home,
+            user_series: this.user.series,
+            user_datepassport: this.user.datePassport,
+            user_issued: this.user.issued
+          }
         }
         console.log('order')
         this.fetchOrder(order)
