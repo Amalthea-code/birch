@@ -8,7 +8,7 @@
       v-if="!create"
       class="person-card__title"
     >
-      {{ lastName }} {{ name }} {{ surName }}
+      {{ surName }} {{ name }} {{ lastName }}
     </div>
     <router-link class="person-card__create-button" :to="(parent ? '/registrationParent' : '/registrationChild')" v-else>
       <span v-if="child">Добавить ребенка</span>

@@ -1,7 +1,7 @@
 <template>
   <div class="cabinet">
     <div class="cabinet__box">
-      <div v-if="GET_AUTORIZEDUSER" class="cabinet__title">{{ GET_AUTORIZEDUSER.tName + ' ' + GET_AUTORIZEDUSER.username + ' ' +  GET_AUTORIZEDUSER.sName}}</div>
+      <div v-if="GET_AUTORIZEDUSER" class="cabinet__title">{{ GET_AUTORIZEDUSER.sName + ' ' + GET_AUTORIZEDUSER.username + ' ' + GET_AUTORIZEDUSER.tName}}</div>
       <cabinet-slider />
       <div class="cabinet__link">
         <router-link to="/payment">ОФОРМИТЬ ПУТЕВКУ</router-link>
@@ -106,6 +106,10 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
       line-height: 18px;
       &:hover {
         text-decoration: underline;
+      }
+      @media screen and (max-width: 680px) {
+        top: -25px;
+        left: 0px;
       }
     }
   }
