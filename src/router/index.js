@@ -13,59 +13,91 @@ const routes = [
       {
         path: '',
         name: 'home',
-        component: () => import('../views/index.vue')
+        component: () => import('../views/index.vue'),
+        meta: {
+          title: ''
+        }
       },
       {
         path: '/kids',
         name: 'kids',
-        component: () => import('../views/kids.vue')
+        component: () => import('../views/kids.vue'),
+        meta: {
+          title: ' - Детям'
+        }
+        
       },
       {
         path: '/parents',
         name: 'parents',
-        component: () => import('../views/parents.vue')
+        component: () => import('../views/parents.vue'),
+        meta: {
+          title: ' - Родителям'
+        }
       },
       {
         path: '/relaxation',
         name: 'relaxation',
-        component: () => import('../views/relaxation.vue')
+        component: () => import('../views/relaxation.vue'),
+        meta: {
+          title: ' - Семейный отдых'
+        }
       },
       {
         path: '/media-center',
         name: 'media-center',
-        component: () => import('../views/media.vue')
+        component: () => import('../views/media.vue'),
+        meta: {
+          title: ' - Медиацентр'
+        }
       },
       {
         path: '/history',
         name: 'history',
-        component: () => import('../views/history.vue')
+        component: () => import('../views/history.vue'),
+        meta: {
+          title: ' - О лагере'
+        }
       },
       {
         path: '/gallery',
         name: 'gallery',
-        component: () => import('../views/gallery.vue')
+        component: () => import('../views/gallery.vue'),
+        meta: {
+          title: ' - Фотогалерея'
+        }
       },
       {
         path: '/contacts',
         name: 'contacts',
-        component: () => import('../views/contacts.vue')
+        component: () => import('../views/contacts.vue'),
+        meta: {
+          title: ' - Контакты'
+        }
       },
       {
         path: '/vacancies',
         name: 'vacancies',
-        component: () => import('../views/vacancies.vue')
+        component: () => import('../views/vacancies.vue'),
+        meta: {
+          title: ' - Вакансии'
+        }
       },
       {
         path: '/registration',
         name: 'registrationPerson',
         component: () => import('../views/registrationPerson.vue'),
+        meta: {
+          title: ' - Регистрация'
+        }
       },
       {
         path: '/registrationParent',
         name: 'registration-parent',
         component: () => import('../views/registrationParent.vue'),
         meta: { 
-          requiresAuth: true
+          requiresAuth: true,
+          title: ' - Регистрация'
         }
       },
       {
@@ -73,7 +105,8 @@ const routes = [
         name: 'registration-child',
         component: () => import('../views/registrationChild.vue'),
         meta: { 
-          requiresAuth: true
+          requiresAuth: true,
+          title: ' - Регистрация'
         }
       },
       {
@@ -81,7 +114,8 @@ const routes = [
         name: 'cabinet',
         component: () => import('../views/cabinet.vue'),
         meta: { 
-          requiresAuth: true
+          requiresAuth: true,
+          title: ' - Личный кабинет'
         }
       },
       {
@@ -89,31 +123,43 @@ const routes = [
         name: 'payment',
         component: () => import('../views/payment.vue'),
         meta: { 
-          requiresAuth: true
+          requiresAuth: true,
+          title: ' - Оплата'
         }
       },
       {
         path: '/news',
         name: 'news',
-        component: () => import('../views/news.vue')
+        component: () => import('../views/news.vue'),
+        meta: {
+          title: ' - Новости'
+        }
       },
       {
         path: '/news/:id',
         name: 'news-page',
-        component: () => import('../views/newspage.vue')
+        component: () => import('../views/newspage.vue'),
+        meta: {
+          title: ' - Новость'
+        }
       },
       {
         path: '/detalTrip/:id',
         name: 'detal-trip',
         component: () => import('../views/detalTrip.vue'),
         meta: { 
-          requiresAuth: true
+          requiresAuth: true,
+          title: ' - Новость'
         }
       },
       { 
         path: '/404', 
         name: '404', 
-        component: () => import('../views/404.vue')
+        component: () => import('../views/404.vue'),
+        meta: { 
+          requiresAuth: true,
+          title: ' - 404'
+        }
       },
       { 
         path: '/:pathMatch(.*)*',
@@ -132,28 +178,43 @@ const routes = [
       {
         path: '/autorization',
         name: 'authorization',
-        component: () => import('../views/authorization.vue')
+        component: () => import('../views/authorization.vue'),
+        meta: {
+          title: ' - Авторизация'
+        }
       },
       {
         path: '/confidence',
         name: 'confidence',
-        component: () => import('../views/confidence.vue')
+        component: () => import('../views/confidence.vue'),
+        meta: {
+          title: ' - О детском телефоне доверия'
+        }
       },
       {
         path: '/answer',
         name: 'answer',
         props: true,
-        component: () => import('../views/answerPage.vue')
+        component: () => import('../views/answerPage.vue'),
+        meta: {
+          title: ' - Ответ'
+        }
       },
       {
         path: '/promotion',
         name: 'promotion',
-        component: () => import('../views/promotion.vue')
+        component: () => import('../views/promotion.vue'),
+        meta: {
+          title: ' - Кешбэк'
+        }
       },
       {
         path: '/recovery',
         name: 'recovery',
-        component: () => import('../views/recovery.vue')
+        component: () => import('../views/recovery.vue'),
+        meta: {
+          title: ' - Восстановлене'
+        }
       },
       {
         path: '/parent/:id',
@@ -161,7 +222,8 @@ const routes = [
         props: true,
         component: () => import('../views/detalCard.vue'),
         meta: { 
-          requiresAuth: true
+          requiresAuth: true,
+          title: ' - Родитель/Опекун'
         }
       },
       {
@@ -170,14 +232,15 @@ const routes = [
         props: true,
         component: () => import('../views/detalCard.vue'),
         meta: { 
-          requiresAuth: true
+          requiresAuth: true,
+          title: ' - Ребенок'
         }
       },
     ]
   }
 ]
 
-
+const DEFAULT_TITLE = 'Лагерь "Березка"';
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
@@ -202,4 +265,7 @@ router.beforeEach((to, from, next) => {
     next() 
   }
 })
+router.afterEach((to) => {
+  document.title = DEFAULT_TITLE +  to.meta.title || DEFAULT_TITLE;
+});
 export default router

@@ -247,15 +247,11 @@
             images: [
               {
                 alt: '',
-                url: require('@/assets/images/history/1.jpg')
+                url: require('@/assets/images/history/2.jpg')
               },
               {
                 alt: '',
-                url:  require('@/assets/images/history/2.jpg')
-              },
-              {
-                alt: '',
-                url: require('@/assets/images/history/3.jpg')
+                url:  require('@/assets/images/history/3.jpg')
               },
               {
                 alt: '',
@@ -274,19 +270,11 @@
               },
               {
                 alt: '',
-                url: require('@/assets/images/history/7.jpg')
+                url: require('@/assets/images/history/58.jpg')
               },
               {
                 alt: '',
-                url: require('@/assets/images/history/8.jpg')
-              },
-              {
-                alt: '',
-                url: require('@/assets/images/history/9.jpg')
-              },
-              {
-                alt: '',
-                url: require('@/assets/images/history/10.jpg')
+                url: require('@/assets/images/history/23.jpg')
               },
             ]
           },
@@ -297,23 +285,15 @@
             images: [
               {
                 alt: '',
-                url: require('@/assets/images/history/11.jpg')
+                url: require('@/assets/images/history/7.jpg')
               },
               {
                 alt: '',
-                url: require('@/assets/images/history/12.jpg')
+                url: require('@/assets/images/history/8.jpg')
               },
               {
                 alt: '',
-                url: require('@/assets/images/history/13.jpg')
-              },
-              {
-                alt: '',
-                url: require('@/assets/images/history/14.jpg')
-              },
-              {
-                alt: '',
-                url: require('@/assets/images/history/15.jpg')
+                url: require('@/assets/images/history/9.jpg')
               },
             ]
           }
