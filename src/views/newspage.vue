@@ -1,9 +1,9 @@
 <template>
   <div class="newspage">
     <h1 class="newspage__title">{{ title }}</h1>
-    <div class="newspage__date">{{ date }}</div>
+    <div class="newspage__date">{{ date.replace(/-/g, '.') }}</div>
     <img :src="image" alt="" class="newspage__image">
-    <p class="newspage__text">{{ text }}</p>
+    <p class="newspage__text" v-html="text"/>
   </div>
 </template>
 
@@ -20,12 +20,14 @@ import { mapActions, mapGetters } from 'vuex'
     },
     computed: {
       ...mapGetters({
-        foundNews: 'news/GET_FOUNDNEWS'
-      })
+        foundNews: 'news/GET_FOUNDNEWS',
+        GET_NEWS: 'news/GET_NEWS'
+      }),
     },
     methods: {
       ...mapActions({
-        searchNews: 'news/searchNews'
+        searchNews: 'news/searchNews',
+        fetchNews: 'news/fetchNews'
       }),
       getProps () {
         this.title = this.foundNews.attributes.title
@@ -36,9 +38,8 @@ import { mapActions, mapGetters } from 'vuex'
 
     },
     created () {
+      this.fetchNews()
       this.searchNews(this.$route.params.id)
-    },
-    mounted () {
       this.getProps()
     }
   }

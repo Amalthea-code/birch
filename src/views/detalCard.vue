@@ -9,9 +9,9 @@
     <div class="detal-card__block">
       <div class="detal-card__block-title">Персональные данные</div>
       <div class="detal-card__box">
-        <div class="detal-card__item"><span>Отчество:</span><span>{{ surName }}</span></div>
-        <div class="detal-card__item"><span>Фамилия:</span><span>{{ lastName }}</span></div>
+        <div class="detal-card__item"><span>Фамилия:</span><span>{{ surName }}</span></div>
         <div class="detal-card__item"><span>Имя:</span><span>{{ name }}</span></div>
+        <div class="detal-card__item"><span>Отчество:</span><span>{{ lastName }}</span></div>
         <div v-if="mail" class="detal-card__item"><span>E-mail:</span><span>{{ mail }}</span></div>
         <div v-if="phone" class="detal-card__item"><span>Телефон:</span><span>{{ phone }}</span></div>
       </div>
@@ -105,7 +105,7 @@ import { mapActions, mapGetters } from 'vuex'
         } else {
           this.deleteParent(this.id)
         }
-        this.$router.go(-1)
+        this.$router.push({ name: 'cabinet', params: { returnFetch: true }})
       }
     },
     created () {

@@ -112,6 +112,7 @@ const routes = [
       {
         path: '/cabinet',
         name: 'cabinet',
+        props: true,
         component: () => import('../views/cabinet.vue'),
         meta: { 
           requiresAuth: true,
@@ -122,7 +123,7 @@ const routes = [
         path: '/payment',
         name: 'payment',
         component: () => import('../views/payment.vue'),
-        meta: { 
+        meta: {
           requiresAuth: true,
           title: ' - Оплата'
         }
@@ -256,7 +257,6 @@ router.beforeEach((to, from, next) => {
       store.dispatch('profile/fetchUserData')
     }
     if (store.getters['profile/GET_TOKEN']) {
-      console.log('qwer')
       next()
       return
     }

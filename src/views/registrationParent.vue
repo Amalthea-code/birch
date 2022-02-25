@@ -86,7 +86,7 @@
         this.lastName = val.replace(/[^\\а-яёА-ЯЁ ]/g, '')
       },
       mail(val) {
-        this.mail = val.replace(/[^\\a-zA-Z, @, . ]/g, '')
+        this.mail = val.replace(/[^\\a-zA-Z, @, 0-9, -, _, . ]/g, '')
       },
       series(val) {
         this.series = val.replace(/[^0-9, -]/g, '')
@@ -141,7 +141,7 @@
           this.collector()
           this.SET_PARENT(this.parent)
           this.fetchCreateParent()
-          this.$router.push({ name: 'cabinet'})
+          this.$router.push({ name: 'cabinet', params: { returnFetch: true }})
         }
         if (this.v$.$invalid) {
           return;

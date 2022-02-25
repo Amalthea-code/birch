@@ -21,6 +21,12 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
       CabinetSlider,
       Trips
     },
+    props: {
+      returnFetch: {
+        default: false,
+        type: Boolean
+      }
+    },
     computed: {
       ...mapGetters({
         GET_AUTORIZEDUSER: 'profile/GET_AUTORIZEDUSER'
@@ -40,7 +46,13 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
       this.$router.push({ path: '/autorization'})
     }
     },
-
+    mounted () {
+      console.log('проверка пошла')
+      if (this.returnFetch) {
+        console.log('проверка')
+        this.fetchUserData()
+      }
+    }
   }
 </script>
 
