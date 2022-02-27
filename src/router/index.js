@@ -218,6 +218,14 @@ const routes = [
         }
       },
       {
+        path: '/recoveryPassword',
+        name: 'recoveryPassword',
+        component: () => import('../views/recoveryPassword.vue'),
+        meta: {
+          title: ' - Восстановлене пароля'
+        }
+      },
+      {
         path: '/parent/:id',
         name: 'detal-card-parent',
         props: true,

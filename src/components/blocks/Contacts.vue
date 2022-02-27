@@ -35,7 +35,7 @@
             <div class="contacts__item-title">Электронная почта</div>
             <p class="contacts__item-text">
               Администрация: <a href="mailto:admin@berezka64.ru">admin@berezka64.ru</a><br />
-              Отдел продаж: <a href="mailto: sales@berezka64.ru">sales@berezka64.ru</a><br />
+              Отдел продаж путевок: <a href="mailto: sales@berezka64.ru">sales@berezka64.ru</a><br />
               Бухгалтерия: <a href="mailto:nazarova.elena@berezka64.ru">nazarova.elena@berezka64.ru</a><br />
             </p>
           </div>

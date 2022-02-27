@@ -11,7 +11,7 @@
         <div class="footer__info-mails">
           <div class="footer__info-mails-title">Электронная почта</div>
           <a target="_blank" href="mailto:admin@berezka64.ru" class="footer__info-mail">Администрация: admin@berezka64.ru</a>
-          <a target="_blank" href="mailto:sales@berezka64.ru" class="footer__info-mail">Отдел продаж: sales@berezka64.ru</a>
+          <a target="_blank" href="mailto:sales@berezka64.ru" class="footer__info-mail">Отдел продаж путевок: sales@berezka64.ru</a>
           <a target="_blank" href="mailto:nazarova.elena@berezka64.ru" class="footer__info-mail">Бухгалтерия: nazarova.elena@berezka64.ru</a>
         </div>
         <div class="footer__info-socials">
@@ -51,7 +51,9 @@
       </div>
       <div class="footer__info-docs">
         <div class="footer__info-docs-box">
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1sbHQ76V-GRaCdt_lIBcjj8ki0d9zU7EP/view"><doc/> Предварительный договор</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1Fv5VQhWLZQFDqaqGs7Le98KqQrso_kFg/view"><doc/> Памятка для родителей</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1FrksnbaRWJDTsq2wEeAWZivOnWehMLHM/view"><doc/> Медсогласие</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1jByG5oxEtUt7YCxWyZuXO_EDRW-uLtzm/view"><doc/> Предварительный договор</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1tmMeqM9jiz2EecX0EAOOQiUfle5Eacxy/view"><doc/> Оферта</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view"><doc/> Политика конфиденциальности</a>
         </div>
@@ -172,6 +174,9 @@
         justify-content: space-between;
         &-box {
           display: flex;
+          @media screen and (max-width: 1300px) {
+            flex-wrap: wrap;
+          }
           @media screen and (max-width: 680px) {
             width: 100%;
             flex-wrap: wrap;

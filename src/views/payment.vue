@@ -24,7 +24,7 @@
                 'select__item_active': index === isParentSelect
               }"
             >
-              <input type="radio" class="select__input" name="parent" :data-value="parent.tName + parent.fName + parent.sName" :id="('parent' + index)" v-model="selectParent"><label @click="switchActiveSelect(index, 'parent')" class="select__radio" :for="('parent' + index)">{{ parent.tName }} {{ parent.fName }} {{ parent.sName }}</label>
+              <input type="radio" class="select__input" name="parent" :data-value="parent.tName + parent.fName + parent.sName" :id="('parent' + index)" v-model="selectParent"><label @click="switchActiveSelect(index, 'parent')" class="select__radio" :for="('parent' + index)">{{ parent.sName }} {{ parent.fName }} {{ parent.tName }}</label>
             </div>
             <select-arrow class="select__arrow"/>
           </div>
@@ -52,7 +52,7 @@
               }"
               @click="switchActiveSelect(index, 'child')"
             >
-              <input type="radio" class="select__input" name="child" :id="('child' + index)" :value="child.tName + child.fName + child.sName" v-model="selectChild"><label @click="switchActiveSelect(index, 'child')" class="select__radio" :for="('child' + index)">{{ child.tName }} {{ child.fName }} {{ child.sName }}</label>
+              <input type="radio" class="select__input" name="child" :id="('child' + index)" :value="child.tName + child.fName + child.sName" v-model="selectChild"><label @click="switchActiveSelect(index, 'child')" class="select__radio" :for="('child' + index)">{{ child.sName }} {{ child.fName }} {{ child.tName }}</label>
             </div>
             <select-arrow class="select__arrow"/>
           </div>
@@ -78,8 +78,8 @@
           <div class="payment__step-info">
             Оставшиеся 50% от общей стоимости путевки оплачиваются не позднее 14 календарных дней до начала смены.
           </div>
-          <div class="payment__step-box">
-            <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a href="">договора оферты</a> и даю согласие на <a href="">обработку персональных данных</a></label>
+          <div class="payment__step-box_agreement">
+            <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1tmMeqM9jiz2EecX0EAOOQiUfle5Eacxy/view">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view">обработку персональных данных</a></label>
           </div>
         </div>
       </div>
@@ -396,7 +396,11 @@
           line-height: 18px;
         }
       }
-      &-box {}
+      &-box {
+        &_agreement {
+          margin: 120px 0 0;
+        }
+      }
       &-element {
         margin: 0 0 18px;
       }
