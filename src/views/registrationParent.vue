@@ -29,6 +29,7 @@
             <input :class="{'registration-parent__input': true, 'registration-parent__input_error':(v$.street.$dirty && v$.street.$error)}" placeholder="Улица" type="text" v-model="street" :maxlength="maxLength">
             <input :class="{'registration-parent__input': true, 'registration-parent__input_error':(v$.home.$dirty && v$.home.$error)}" placeholder="Дом, корпус" type="text" v-model="home" :maxlength="maxLength">
             <input :class="{'registration-parent__input': true, 'registration-parent__input_error':(v$.apartment.$dirty && v$.apartment.$error)}" placeholder="Квартира" type="text" v-model="apartment" :maxlength="maxLength">
+            <div class="apartment-alert">Если это частный дом укажите в&nbsp;поле Квартира&nbsp;&mdash; 0</div>
             <button type="button" class="registration-parent__button" @click="createParent">Сохранить</button>
           </div>
           <div class="registration-parent__box">
@@ -167,6 +168,12 @@
 </script>
 
 <style lang="scss" scoped>
+  .apartment-alert {
+    font-family: Montserrat;
+    font-size: 16px;
+    line-height: 20px;
+    color: #F05156;
+  }
   .registration-parent {
     margin: 0 auto;
     max-width: 1080px;

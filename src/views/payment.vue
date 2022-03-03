@@ -75,6 +75,7 @@
         <div class="payment__step-box">
           <div class="payment__step-element"><input name="payment" value="1" type="radio" id="payment-1" class="payment__step-radio" v-model="factor"><label for="payment-1" class="payment__step-label">Полностью</label></div>
           <div class="payment__step-element"><input name="payment" value="0.5" type="radio" id="payment-2" class="payment__step-radio" v-model="factor"><label for="payment-2" class="payment__step-label">Аванс (50%)</label></div>
+          <div class="payment__step-element"><input name="payment" value="0.7" type="radio" id="payment-3" class="payment__step-radio" v-model="factor"><label for="payment-3" class="payment__step-label">Доплата (50%)</label></div>
           <div class="payment__step-info">
             Оставшиеся 50% от общей стоимости путевки оплачиваются не позднее 14 календарных дней до начала смены.
           </div>
@@ -91,7 +92,7 @@
           <div class="payment__step-element"><input name="cashback" type="radio" id="cashback-1" class="payment__step-radio" checked><label for="cashback-1" class="payment__step-label">без кэшбека</label></div>
           <div class="payment__step-element"><input name="cashback" type="radio" id="cashback-2" class="payment__step-radio payment__step-radio_disable"><label for="cashback-2" class="payment__step-label payment__step-label_disable">с кэшбеком по карте МИР</label></div>
           <div class="payment__step-hardly">Для получения кешбэка необходимо оплатить полную стоимость путевки картой МИР (недоступно)</div>
-          <div class="payment__step-hardly"><router-link to="/promotion">Подробнее о кэшбеке по карте МИР</router-link></div>
+          <div v-if="false" class="payment__step-hardly"><router-link to="/promotion">Подробнее о кэшбеке по карте МИР</router-link></div>
         </div>
         <div class="payment__step-right">
           <input class="payment__hidden-input" type="hidden" name='sum' :value='sum'/>
@@ -130,10 +131,10 @@
         user: 'profile/GET_AUTORIZEDUSER'
       }),
       sum () {
-        return this.shifts[this.itemShift].price * this.factor
+        return this.shifts[this.itemShift].price * (Number(this.factor) === 1 ? 1 : 0.5)
       },
       value () {
-        return this.shifts[this.itemShift].service_name + (this.factor === 1 ? '(Поланая оплата)' : '(Аванс 50%)')
+        return this.shifts[this.itemShift].service_name + (Number(this.factor) === 1 ? '(Поланая оплата)' : Number(this.factor) === 0.5 ? '(Аванс 50%)' : '(Доплата 50%)')
       },
       name () {
         return this.user.tName + ' ' + this.user.username + ' ' +  this.user.sName
@@ -242,8 +243,6 @@
     @media screen and (max-width: 680px) {
       max-width: 300px;
       padding: 120px 0 0;
-    }
-    &__hidden {
     }
     &__title {
       font-family: Montserrat;

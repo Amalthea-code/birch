@@ -63,6 +63,10 @@
       width: 146px;
       padding: 20px;
     }
+    @media screen and (max-width: 680px) {
+      font-size: 44px;
+      line-height: 30px;
+    }
     span {
       font-size: 30px;
       line-height: 25px;
@@ -72,6 +76,9 @@
     border: 2px solid;
     border-radius: 30px;
     padding: 100px 10px 44px;
+    @media screen and (max-width: 680px) {
+      padding: 58px 10px 44px;
+    }
   }
   &__date {
     font-family: Montserrat;

@@ -23,6 +23,7 @@
             <input :class="{'registration-person__input': true, 'registration-person__input_error':(v$.street.$dirty && v$.street.$error)}" placeholder="Улица" type="text" v-model="street" :maxlength="maxLength">
             <input :class="{'registration-person__input': true, 'registration-person__input_error':(v$.home.$dirty && v$.home.$error)}" placeholder="Дом, корпус" type="text" v-model="home" :maxlength="maxLength">
             <input :class="{'registration-person__input': true, 'registration-person__input_error':(v$.apartment.$dirty && v$.apartment.$error)}" placeholder="Квартира" type="text" v-model="apartment" :maxlength="maxLength">
+            <div class="apartment-alert">Если это частный дом укажите в&nbsp;поле Квартира&nbsp;&mdash; 0</div>
             <input id="registration-person" class="registration-person__input-checkbox" type="checkbox" v-model="isTreatment"/>
             <label for="registration-person" class="registration-person__input-label">Я согласен на <a href="">обработку персональных данных</a></label>
             <button type="button" @click="registration" class="registration-person__button">зарегестрироваться</button>
@@ -183,6 +184,12 @@
 </script>
 
 <style lang="scss" scoped>
+  .apartment-alert {
+    font-family: Montserrat;
+    font-size: 16px;
+    line-height: 20px;
+    color: #F05156;
+  }
   .password-hidden {
     cursor: pointer;
     display: inline-block;

@@ -101,8 +101,10 @@ export default {
       }
       &__sub-title {
         span {
-          font-size: 16px;
-          line-height: 20px;
+          width: calc(100% - 80px);
+          padding: 20px 24px;
+          font-size: 14px;
+          line-height: 18px;
         }
       }
     }

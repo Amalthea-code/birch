@@ -30,13 +30,7 @@ export default {
         number: 5,
         date: '1&nbsp;августа — 13&nbsp;августа',
         price: 29900,
-        service_name: '5 смена 1 августа — 13 августа'
-      },
-      {
-        number: 6,
-        date: '16&nbsp;августа — 28&nbsp;августа',
-        price: 29900,
-        service_name: '6 смена 16 августа — 28 августа'
+        service_name: '5 смена 1 августа — 21 августа'
       },
     ]
   },

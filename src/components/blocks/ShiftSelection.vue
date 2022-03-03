@@ -89,7 +89,7 @@ import { mapGetters } from 'vuex'
     }
     &__box {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       flex-wrap: wrap;
       margin-top: 90px;
       margin: 0 0 70px;
