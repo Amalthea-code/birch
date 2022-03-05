@@ -23,8 +23,7 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
     },
     props: {
       returnFetch: {
-        default: false,
-        type: Boolean
+        default: false
       }
     },
     computed: {
@@ -47,7 +46,6 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
     }
     },
     mounted () {
-      console.log('проверка пошла')
       if (this.returnFetch) {
         console.log('проверка')
         this.fetchUserData()
@@ -118,6 +116,9 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
       line-height: 18px;
       &:hover {
         text-decoration: underline;
+      }
+      @media screen and (max-width: 1300px) {
+        top: -30px;
       }
       @media screen and (max-width: 680px) {
         top: -25px;

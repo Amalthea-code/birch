@@ -18,7 +18,7 @@
       <span v-if="GET_ANSWER === 'fail'">Произошла ошибка.<br />Попробуйте ещё раз.</span>
     </div>
     <div class="answer-page__button">
-      <router-link :to="GET_ANSWER === 'succes' && mode === 'autorisation' ? '/cabinet' :'/autorization'">ВОЙТИ</router-link>
+      <button @click="enter">ВОЙТИ</button>
     </div>
   </div>
 </template>
@@ -36,6 +36,16 @@
       ...mapGetters({
         GET_ANSWER: 'profile/GET_ANSWER'
       })
+    },
+    methods: {
+      enter () {
+        if (this.GET_ANSWER === 'succes' && this.mode === 'autorisation') {
+          this.$router.push({ name: 'cabinet', params: { returnFetch: true }})
+        } else {
+          console.log('qwer')
+          this.$router.push({ name: 'authorization'})
+        }
+      }
     }
   }
 </script>
@@ -138,7 +148,8 @@
     }
     &__button {
       margin: 30px 0 0;
-      a {
+      button {
+        background-color: #fff;
         display: block;
         font-family: RF Dewi Expanded;
         font-size: 16px;
@@ -149,6 +160,7 @@
         border: 2px solid #000;
         color: #000;
         text-decoration: none;
+        cursor: pointer;
         @media screen and (max-width: 680px) {
           padding: 14px 52px;
         }
