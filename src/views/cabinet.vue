@@ -41,13 +41,11 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
       output () {
       localStorage.removeItem('token')
       this.SET_TOKEN(null)
-      console.log('qwerrr')
       this.$router.push({ path: '/autorization'})
     }
     },
     mounted () {
       if (this.returnFetch) {
-        console.log('проверка')
         this.fetchUserData()
       }
     }

@@ -21,7 +21,7 @@ export default {
       commit('SET_FOUNDCHILD', getters.GET_CHILDREN.find((item, index) => index == id)) 
     },
     fetchChildren ({ commit, rootGetters }) {
-      fetch('http://89.108.98.57:1337/api/childrens?filters[user]=' + rootGetters['profile/GET_AUTORIZEDUSER'].id, {
+      fetch(process.env.VUE_APP_DOMAIN + '/childrens?filters[user]=' + rootGetters['profile/GET_AUTORIZEDUSER'].id, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -30,12 +30,11 @@ export default {
       }).then((response) => {
         return response.json();
       }).then((data) => {
-        console.log(data)
         commit('SET_CHILDREN', data.data)
       })
     },
     fetchCreateChild ({ getters, rootGetters}) {
-      fetch('http://89.108.98.57:1337/api/childrens', {
+      fetch(process.env.VUE_APP_DOMAIN + '/childrens', {
         method: 'POST',
         body: JSON.stringify({
           data: {
@@ -62,12 +61,10 @@ export default {
         }
       }).then((response) => {
         return response.json();
-      }).then((data) => {
-        console.log(data)
       })
     },
     deleteChild ({rootGetters}, id) {
-      fetch('http://89.108.98.57:1337/api/childrens/' + id, {
+      fetch(process.env.VUE_APP_DOMAIN + '/childrens/' + id, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -75,8 +72,6 @@ export default {
         }
       }).then((response) => {
         return response.json();
-      }).then((data) => {
-        console.log(data)
       })
     }
   },

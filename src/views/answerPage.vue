@@ -3,7 +3,8 @@
     :class="{
       'answer-page': true,
       'answer-page_succes': GET_ANSWER === 'succes',
-      'answer-page_fail': GET_ANSWER === 'fail'
+      'answer-page_fail': GET_ANSWER === 'fail' || GET_ANSWER === 'mailerr'
+
     }"
   >
     <div class="answer-page__logo">
@@ -13,6 +14,7 @@
     <div class="answer-page__title">
       <span v-if="GET_ANSWER === 'expect'">Ожидаем ответ...</span>
       <span v-if="GET_ANSWER === 'succes' && mode === 'reg'">Личный кабинет<br /> успешно создан</span>
+      <span v-if="GET_ANSWER === 'mailerr' && mode === 'reg'">Пользователь с&nbsp;таким email уже&nbsp;существует</span>
       <span v-if="GET_ANSWER === 'succes' && mode === 'mail'">Письмо отправлено на почту</span>
       <span v-if="GET_ANSWER === 'succes' && mode === 'autorisation'">Авторизация прошла успешно!</span>
       <span v-if="GET_ANSWER === 'fail'">Произошла ошибка.<br />Попробуйте ещё раз.</span>
@@ -29,7 +31,7 @@
     props: {
       mode: {
         type: String,
-        default: ''
+        default: 'expect'
       }
     },
     computed: {
@@ -42,7 +44,6 @@
         if (this.GET_ANSWER === 'succes' && this.mode === 'autorisation') {
           this.$router.push({ name: 'cabinet', params: { returnFetch: true }})
         } else {
-          console.log('qwer')
           this.$router.push({ name: 'authorization'})
         }
       }

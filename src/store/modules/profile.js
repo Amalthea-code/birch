@@ -27,7 +27,7 @@ export default {
   actions: {
     fetchAutorisation ({ commit, getters }) {
       commit('SET_ANSWER', 'expect')
-      fetch('http://89.108.98.57:1337/api/auth/local', {
+      fetch(process.env.VUE_APP_DOMAIN + '/auth/local', {
         method: 'POST',
         body: JSON.stringify(getters.GET_AUTORISATION),
         headers: {
@@ -46,7 +46,7 @@ export default {
     },
     fetchRegistration ({ commit, getters }) {
       commit('SET_ANSWER', 'expect')
-      fetch('http://89.108.98.57:1337/api/auth/local/register', {
+      fetch(process.env.VUE_APP_DOMAIN + '/auth/local/register', {
         method: 'POST',
         body: JSON.stringify({
           sName: getters.GET_PROFILE.sName,
@@ -69,14 +69,16 @@ export default {
       }).then((response) => {
         return response.json();
       }).then((data) => {
-        console.log(data)
         if (data.jwt) {
           commit('SET_ANSWER', 'succes');
         }
-      }).catch(commit('SET_ANSWER', 'fail'));
+        if (data.error.message === 'Username already taken') {
+          commit('SET_ANSWER', 'mailerr');
+        }
+      });
     },
     fetchUserData ({ commit, rootGetters }) {
-      fetch('http://89.108.98.57:1337/api/users/me', {
+      fetch(process.env.VUE_APP_DOMAIN + '/users/me', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -85,14 +87,13 @@ export default {
       }).then((response) => {
         return response.json();
       }).then((data) => {
-        console.log(data)
         commit('SET_AUTORIZEDUSER', data)
         commit('parents/SET_PARENTS', data.parents, { root: true })
         commit('children/SET_CHILDREN', data.childrens, { root: true })
       })
     },
     fetchOrder ({ rootGetters }, order) {
-      fetch('http://89.108.98.57:1337/api/orders', {
+      fetch(process.env.VUE_APP_DOMAIN + '/orders', {
         method: 'POST',
         body: JSON.stringify({
             data: {
@@ -114,8 +115,6 @@ export default {
         }
       }).then((response) => {
         return response.json();
-      }).then((data) => {
-        console.log(data)
       })
     }
   },

@@ -21,7 +21,7 @@ export default {
       commit('SET_FOUNDPARENT', getters.GET_PARENTS.find((item, index) => index == id)) 
     },
     fetchParents ({ commit, rootGetters }) {
-      fetch('http://89.108.98.57:1337/api/parents?filters[user]=' + rootGetters['profile/GET_AUTORIZEDUSER'].id, {
+      fetch(process.env.VUE_APP_DOMAIN + '/parents?filters[user]=' + rootGetters['profile/GET_AUTORIZEDUSER'].id, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -30,12 +30,11 @@ export default {
       }).then((response) => {
         return response.json();
       }).then((data) => {
-        console.log(data)
         commit('SET_PARENTS', data.data)
       })
     },
     fetchCreateParent ({ commit, getters, rootGetters}) {
-      fetch('http://89.108.98.57:1337/api/parents', {
+      fetch(process.env.VUE_APP_DOMAIN + '/parents', {
         method: 'POST',
         body: JSON.stringify({
           data: {
@@ -62,12 +61,11 @@ export default {
       }).then((response) => {
         return response.json();
       }).then((data) => {
-        console.log(data)
         commit('SET_PARENT', data.data)
       })
     },
     deleteParent ({rootGetters}, id) {
-      fetch('http://89.108.98.57:1337/api/parents/' + id, {
+      fetch(process.env.VUE_APP_DOMAIN + '/parents/' + id, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -75,8 +73,6 @@ export default {
         }
       }).then((response) => {
         return response.json();
-      }).then((data) => {
-        console.log(data)
       })
     }
   },

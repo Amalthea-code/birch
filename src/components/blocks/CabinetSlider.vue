@@ -105,9 +105,6 @@
         parents: 'parents/GET_PARENTS'
 
       }),
-    },
-    mounted () {
-      console.log(this.childen, this.parents)
     }
   }
 </script>

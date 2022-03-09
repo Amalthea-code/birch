@@ -224,7 +224,6 @@
             user_issued: this.user.issued
           }
         }
-        console.log('order')
         this.fetchOrder(order)
       }
     }

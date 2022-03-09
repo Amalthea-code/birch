@@ -4,7 +4,7 @@
     <div class="authorization__title">Авторизация</div>
     <div class="authorization__box">
       <input :class="{'authorization__input': true, 'authorization__input_error':(v$.email.$dirty && v$.email.$error)}" autocomplete="email" placeholder="E-mail" type="text" v-model="email">
-      <input :class="{'authorization__input': true, 'authorization__input_error':(v$.password.$dirty && v$.password.$error)}" autocomplete="current-password" placeholder="Пароль" type="password" v-model="password">
+      <input :class="{'authorization__input': true, 'authorization__input_password': true, 'authorization__input_error':(v$.password.$dirty && v$.password.$error)}" autocomplete="current-password" placeholder="Пароль" :type="isPassword" v-model="password"><span @click="switchPassword" class="password-hidden"><hidden/></span>
     </div>
     <button type="button" class="authorization__button" @click="enter">ВОЙТИ</button>
     <div class="authorization__link">
@@ -20,6 +20,7 @@
 <script>
 import { mapActions, mapMutations } from 'vuex'
 import Alert from '@/components/elements/Alert'
+import hidden from '@/assets/images/icons/hidden'
 import useVuelidate from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
 import Authorization from '@/assets/images/icons/authorization'
@@ -29,12 +30,14 @@ import Authorization from '@/assets/images/icons/authorization'
     },
     components: {
       Authorization,
-      Alert
+      Alert,
+      hidden
     },
     data () {
       return {
         email: '',
         password: '',
+        isPassword: 'password'
       }
     },
     watch: {
@@ -72,6 +75,9 @@ import Authorization from '@/assets/images/icons/authorization'
           return;
         }
       },
+      switchPassword () {
+        this.isPassword === 'password' ? this.isPassword = 'text' : this.isPassword = 'password' 
+      }
     },
     mounted () {
       if (localStorage.getItem('token')) {
@@ -82,6 +88,23 @@ import Authorization from '@/assets/images/icons/authorization'
 </script>
 
 <style lang="scss" scoped>
+  .password-hidden {
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid #000;
+    width: 34px;
+    height: 35px;
+    @media screen and (max-width: 680px) {
+      height: 34.5px;
+    }
+    svg {
+      position: relative;
+      top: 5px;
+      left: 5px;
+      width: 24px;
+      height: 24px;
+    }
+  }
   .authorization {
     position: relative;
     z-index: 1;
@@ -151,9 +174,12 @@ import Authorization from '@/assets/images/icons/authorization'
     font-size: 18px;
     line-height: 25px;
     width: 100%;
+    &_password {
+      width: calc(100% - 36px);
+    }
     @media screen and (max-width: 680px) {
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 16px;
+      line-height: 24px;
     }
     &_error {
       border-color: red;

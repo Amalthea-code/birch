@@ -20,7 +20,7 @@ export default {
       commit('SET_FOUNDNEWS', getters.GET_NEWS.find( item => item.id == id))
     },
     fetchNews ({commit}, page = 1) {
-      fetch('http://89.108.98.57:1337/api/articles?populate=*&pagination[page]=' + page, {
+      fetch(process.env.VUE_APP_DOMAIN + '/articles?populate=*&pagination[page]=' + page, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
