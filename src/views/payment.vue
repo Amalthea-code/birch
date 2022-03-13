@@ -1,6 +1,6 @@
 <template>
 <!-- https://berezka64.server.paykeeper.ru/ -->
-  <form accept-charset="utf-8" class="payment" method='POST' action='https://berezka64.server.paykeeper.ru/create'>
+  <form accept-charset="utf-8" class="payment" method='POST' :action="paymentAction">
     <div class="payment__title">{{ user.tName + ' ' + user.username + ' ' +  user.sName}}</div>
     <div class="payment__text">Счет формируется на каждую путевку отдельно</div>
     <div class="payment__steps">
@@ -89,8 +89,8 @@
         <div class="payment__step-left">
           <div class="payment__step-title">ШАГ 5</div>
           <div class="payment__step-text">СУММА</div>
-          <div class="payment__step-element"><input name="cashback" type="radio" id="cashback-1" class="payment__step-radio" checked><label for="cashback-1" class="payment__step-label">без кэшбека</label></div>
-          <div class="payment__step-element"><input name="cashback" type="radio" id="cashback-2" class="payment__step-radio payment__step-radio_disable"><label for="cashback-2" class="payment__step-label payment__step-label_disable">с кэшбеком по карте МИР</label></div>
+          <div class="payment__step-element"><input name="cashback" :value="false" v-model="paymentSum" type="radio" id="cashback-1" class="payment__step-radio" checked><label for="cashback-1" class="payment__step-label">без кэшбека</label></div>
+          <div class="payment__step-element"><input name="cashback" :value="true" v-model="paymentSum" type="radio" id="cashback-2" class="payment__step-radio payment__step-radio_disable"><label for="cashback-2" class="payment__step-label payment__step-label_disable">с кэшбеком по карте МИР</label></div>
           <div class="payment__step-hardly">Для получения кешбэка необходимо оплатить полную стоимость путевки картой МИР (недоступно)</div>
           <div v-if="false" class="payment__step-hardly"><router-link to="/promotion">Подробнее о кэшбеке по карте МИР</router-link></div>
         </div>
@@ -130,6 +130,9 @@
         shifts: 'shifts/GET_SHIFTS',
         user: 'profile/GET_AUTORIZEDUSER'
       }),
+      paymentAction () {
+        return this.paymentSum ? 'https://berezka64.server.paykeeper.ru/create' : 'https://mirberezka64.server.paykeeper.ru/create'
+      },
       sum () {
         return this.shifts[this.itemShift].price * (Number(this.factor) === 1 ? 1 : 0.5)
       },
@@ -150,7 +153,8 @@
         factor: 0,
         isAgreement: null,
         selectParent: null,
-        selectChild: null
+        selectChild: null,
+        paymentSum: null
       }
     },
     methods: {
