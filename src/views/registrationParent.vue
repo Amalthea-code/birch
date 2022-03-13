@@ -4,8 +4,8 @@
       <div class="registration-parent__radio">
         <div class="registration-parent__radio-title">Плательщиком является родитель/официальный опекун?</div>
         <div class="registration-parent__radio-box">
-          <input type="radio" value="да" id="parent-1" name="parent" class="registration-parent__radio-input" v-model="isTreatment">
-          <label for="parent-1" class="registration-parent__radio-label">Да</label>
+          <input @click="filledParent" type="radio" value="да" id="parent-1" name="parent" class="registration-parent__radio-input" v-model="isTreatment">
+          <label @click="filledParent" for="parent-1" class="registration-parent__radio-label">Да</label>
           <input type="radio" value="нет" id="parent-2" name="parent" class="registration-parent__radio-input" v-model="isTreatment">
           <label for="parent-2" class="registration-parent__radio-label">Нет</label>
         </div>
@@ -48,7 +48,7 @@
 <script>
   import useVuelidate from '@vuelidate/core'
   import { email, required, minLength, maxLength } from '@vuelidate/validators'
-  import { mapActions, mapMutations } from 'vuex'
+  import { mapActions, mapGetters, mapMutations } from 'vuex'
   import Alert from '@/components/elements/Alert'
   export default {
     setup () {
@@ -75,6 +75,11 @@
           date: '',
           issued: ''
       }
+    },
+    computed: {
+      ...mapGetters({
+        GET_AUTORIZEDUSER: 'profile/GET_AUTORIZEDUSER'
+      })
     },
     watch: {
       surName(val) {
@@ -134,6 +139,21 @@
       ...mapMutations({
         SET_PARENT: 'parents/SET_PARENT',
       }),
+      filledParent () {
+          this.isTreatment = 'да'
+          this.surName = this.GET_AUTORIZEDUSER.sName
+          this.name = this.GET_AUTORIZEDUSER.username
+          this.lastName = this.GET_AUTORIZEDUSER.tName
+          this.phone = this.GET_AUTORIZEDUSER.phone
+          this.mail = this.GET_AUTORIZEDUSER.email
+          this.street = this.GET_AUTORIZEDUSER.street
+          this.home = this.GET_AUTORIZEDUSER.home
+          this.apartment = this.GET_AUTORIZEDUSER.apartment
+          this.city = this.GET_AUTORIZEDUSER.city
+          this.series = this.GET_AUTORIZEDUSER.series
+          this.date = this.GET_AUTORIZEDUSER.datePassport
+          this.issued = this.GET_AUTORIZEDUSER.issued
+      },
       createParent () {
         this.v$.$touch()
         if (this.v$.$errors.length || (this.isTreatment !== 'нет' && this.isTreatment !== 'да')) {

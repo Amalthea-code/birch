@@ -11,11 +11,12 @@
         class="vacancies__item"
       >
         <info
-          :title="vacancie.title"
+          :title="vacancie.attributes.title"
           :color="vacancie.color"
           backgroundColor='linear-gradient(258.87deg, #F7B618 0%, #F5C54E 94.92%)'
         >
-          <div class="vacancies__item-text" v-html="vacancie.content" />
+          <div class="vacancies__item-text" v-html="vacancie.attributes.description" />
+          <div class="vacancies__item-price" v-if="vacancie.attributes.price">Заработная плата: {{ vacancie.attributes.price }} р.</div>
         </info>
       </div>
     </div>
@@ -29,7 +30,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import Info from '@/components/elements/Info'
 
   export default {
@@ -40,6 +41,14 @@ import Info from '@/components/elements/Info'
       ...mapGetters({
         vacancies: 'vacancies/GET_VACANCIES'
       })
+    },
+    methods: {
+      ...mapActions({
+        fetchVacancies: 'vacancies/fetchVacancies'
+      })
+    },
+    created () {
+      this.fetchVacancies()
     }
   }
 </script>
@@ -87,6 +96,13 @@ import Info from '@/components/elements/Info'
         font-family: Montserrat;
         font-size: 18px;
         line-height: 23px;
+      }
+      &-price {
+        font-family: Montserrat;
+        font-size: 18px;
+        line-height: 23px;
+        font-weight: 600;
+        margin: 12px 0 0;
       }
     }
     &__err {

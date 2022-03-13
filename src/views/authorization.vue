@@ -13,6 +13,9 @@
     <div v-if="false" class="authorization__link">
       <router-link to='/recovery'>Забыли пароль?</router-link>
     </div>
+    <div class="authorization__mein-button">
+      <router-link to="/">Назад</router-link>
+    </div>
     <alert ref="alert" />
   </form>
 </template>
@@ -188,5 +191,22 @@ import Authorization from '@/assets/images/icons/authorization'
       outline: none;
     }
     }
+    &__mein-button {
+        position: absolute;
+        z-index: 2;
+        border-radius: 20px;
+        font-family: Montserrat;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 6px 8px;
+        background-color: #fff;
+        box-shadow: 0 4px 25px rgb(0 0 0 / 25%);
+        top: 10px;
+        right: 10px;
+        a {
+          color: #000;
+          text-decoration: none;
+        }
+      }
   }
 </style>

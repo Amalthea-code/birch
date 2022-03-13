@@ -10,8 +10,8 @@ export default {
 
   },
   actions: {
-    fetchShifts ({ commit }) {
-      fetch(process.env.VUE_APP_DOMAIN, {
+    fetchVacancies ({ commit }) {
+      fetch(process.env.VUE_APP_DOMAIN + '/vacancies', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -19,7 +19,8 @@ export default {
       }).then((response) => {
         return response.json();
       }).then((data) => {
-        commit('SET_VACANCIES', data)
+        console.log(data)
+        commit('SET_VACANCIES', data.data)
       });
     },
   },
