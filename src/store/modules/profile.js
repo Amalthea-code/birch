@@ -42,7 +42,7 @@ export default {
           commit('SET_TOKEN', data.jwt)
           commit('SET_AUTORIZEDUSER', data.user);
         }
-      }).catch(commit('SET_ANSWER', 'fail'));
+      });
     },
     fetchRegistration ({ commit, getters }) {
       commit('SET_ANSWER', 'expect')
@@ -72,7 +72,8 @@ export default {
         if (data.jwt) {
           commit('SET_ANSWER', 'succes');
         }
-        if (data.error.message === 'Username already taken') {
+        console.log(data)
+        if (data.error.message === 'Email is already taken') {
           commit('SET_ANSWER', 'mailerr');
         }
       });
