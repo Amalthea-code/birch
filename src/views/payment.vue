@@ -1,7 +1,7 @@
 <template>
 <!-- https://berezka64.server.paykeeper.ru/ -->
   <form accept-charset="utf-8" class="payment" method='POST' :action="paymentAction">
-    <div class="payment__title">{{ user.tName + ' ' + user.username + ' ' +  user.sName}}</div>
+    <div class="payment__title">{{ user.tName + ' ' + user.fName + ' ' +  user.sName}}</div>
     <div class="payment__text">Счет формируется на каждую путевку отдельно</div>
     <div class="payment__steps">
       <div class="payment__step">
@@ -214,7 +214,7 @@
             child_gender: this.childen[this.isChildSelect].gender,
           },
           user: {
-            user_name: this.user.username,
+            user_name: this.user.fName,
             user_sname: this.user.sName,
             user_tname: this.user.tName,
             user_phone: this.user.phone,
