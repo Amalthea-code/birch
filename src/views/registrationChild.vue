@@ -91,7 +91,7 @@
         this.lastName = val.replace(/[^\\а-яёА-ЯЁ ]/g, '')
       },
       mail(val) {
-        this.mail = val.replace(/[^\\a-zA-Z, @, 0-9, ., /,, ;, :, (, ), -]/g, '')
+        this.mail = val.replace(/[^\\a-zA-Z, @, 0-9, ., /,, ;, :, (, ), _, -]/g, '')
       },
       birthCertificate(val) {
         this.birthCertificate = val.replace(/[^0-9, -]/g, '')

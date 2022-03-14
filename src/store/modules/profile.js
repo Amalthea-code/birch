@@ -50,7 +50,8 @@ export default {
         method: 'POST',
         body: JSON.stringify({
           sName: getters.GET_PROFILE.sName,
-          username: getters.GET_PROFILE.username,
+          username: getters.GET_PROFILE.email,
+          fName: getters.GET_PROFILE.username,
           tName: getters.GET_PROFILE.tName,
           phone: getters.GET_PROFILE.phone,
           email: getters.GET_PROFILE.email,

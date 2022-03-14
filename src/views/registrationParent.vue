@@ -92,7 +92,7 @@
         this.lastName = val.replace(/[^\\а-яёА-ЯЁ ]/g, '')
       },
       mail(val) {
-        this.mail = val.replace(/[^\\a-zA-Z, @, 0-9, ., /,, ;, :, (, ), -]/g, '')
+        this.mail = val.replace(/[^\\a-zA-Z, @, 0-9, ., /,, ;, :, (, ), _, -]/g, '')
       },
       series(val) {
         this.series = val.replace(/[^0-9, -]/g, '')
@@ -142,7 +142,7 @@
       filledParent () {
           this.isTreatment = 'да'
           this.surName = this.GET_AUTORIZEDUSER.sName
-          this.name = this.GET_AUTORIZEDUSER.username
+          this.name = this.GET_AUTORIZEDUSER.fName
           this.lastName = this.GET_AUTORIZEDUSER.tName
           this.phone = this.GET_AUTORIZEDUSER.phone
           this.mail = this.GET_AUTORIZEDUSER.email
