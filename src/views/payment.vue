@@ -102,6 +102,7 @@
           <input class="payment__hidden-input" type="hidden" name='service_name' :value="value"/>
           <div class="payment__step-sum">{{ sum }} руб.</div>
           <button
+            v-if="false"
             type='submit'
             :class="{
               'payment__step-button': true,

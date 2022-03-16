@@ -3,8 +3,8 @@
     <div class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
     <div class="shift-selection-item__box">
       <p class="shift-selection-item__date" v-html="date" />
-      <hr align="center" width="40%" size="1" class="shift-selection-item__line"/>
-      <div class="shift-selection-item__price"> {{ price }} руб.</div>
+      <hr v-if="price" align="center" width="40%" size="1" class="shift-selection-item__line"/>
+      <div v-if="price" class="shift-selection-item__price"> {{ price }} руб.</div>
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="shift-selection">
-    <h1 class="shift-selection__title">ВЫБЕРИ СМЕНУ</h1>
-    <p class="shift-selection__sub-title">Предварительные даты смен на лето 2022</p>
+    <h1 class="shift-selection__title shift-selection_red">УВАЖАЕМЫЕ БЕРЁЗОВЦЫ!</h1>
+    <p class="shift-selection__sub-title shift-selection_red">Мы временно приостанавливаем продажи путёвок до начала работы государственной программы КЕШБЭК, которая стартует 31 марта. Все путёвки, которые были забронированы на сегодняшний момент, сохранятся за покупателями. Информации по кешбэку для этих путёвок через Госуслуги пока нет, возможно она появится позже.</p>
     <div class="shift-selection__box">
       <shift-selection-item
         v-for="(selection, index) in selections"
@@ -12,7 +12,7 @@
         :price="selection.price"
       />
     </div>
-    <div class="shift-selection__button">
+    <div v-if="false" class="shift-selection__button">
       <router-link to="/payment">купить путёвку</router-link>
     </div>
     <div class="shift-selection__contein">
@@ -52,6 +52,9 @@ import { mapGetters } from 'vuex'
       max-width: 1080px;
       margin: 0 auto;
       padding: 20px 0 100px;
+      &_red {
+        color: #F05156;
+      }
       @media screen and (max-width: 1300px) {
         max-width: 620px;
       }
