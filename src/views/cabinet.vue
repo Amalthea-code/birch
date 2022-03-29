@@ -33,7 +33,8 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
     },
     methods: {
       ...mapActions({
-        fetchUserData: 'profile/fetchUserData'
+        fetchUserData: 'profile/fetchUserData',
+        fetchShifts: 'shifts/fetchShifts'
       }),
       ...mapMutations({
         SET_TOKEN: 'profile/SET_TOKEN'
@@ -43,6 +44,9 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
       this.SET_TOKEN(null)
       this.$router.push({ path: '/autorization'})
     }
+    },
+    created () {
+      this.fetchShifts()
     },
     mounted () {
       if (this.returnFetch) {

@@ -65,7 +65,7 @@
         <div class="payment__step-box">
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
             <input :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
-            <label :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.number }} смена</strong> (<span v-html="shift.date" />)</label>
+            <label :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
           </div>
         </div>
       </div>

@@ -2,14 +2,14 @@
   <div class="shift-selection">
     <h1 class="shift-selection__title shift-selection_red">УВАЖАЕМЫЕ БЕРЁЗОВЦЫ!</h1>
     <p class="shift-selection__sub-title shift-selection_red">Мы временно приостанавливаем продажи путёвок до начала работы государственной программы КЕШБЭК, которая стартует 31 марта. Все путёвки, которые были забронированы на сегодняшний момент, сохранятся за покупателями. Информации по кешбэку для этих путёвок через Госуслуги пока нет, возможно она появится позже.</p>
-    <div class="shift-selection__box">
+    <div class="shift-selection__box" v-if="selections.length">
       <shift-selection-item
         v-for="(selection, index) in selections"
         :key="index"
         :index="index"
-        :number="selection.number"
-        :date="selection.date"
-        :price="selection.price"
+        :number="selection.attributes.number"
+        :date="selection.attributes.date"
+        :price="selection.attributes.price"
       />
     </div>
     <div v-if="false" class="shift-selection__button">
@@ -34,7 +34,7 @@
 
 <script>
 import shiftSelectionItem from '@/components/elements/ShiftSelectionItem'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
   export default {
     components: {
       shiftSelectionItem
@@ -43,6 +43,14 @@ import { mapGetters } from 'vuex'
       ...mapGetters({
         selections: 'shifts/GET_SHIFTS'
       })
+    },
+    methods: {
+      ...mapActions({
+        fetchShifts: 'shifts/fetchShifts'
+      })
+    },
+    created () {
+      this.fetchShifts()
     }
   }
 </script>
