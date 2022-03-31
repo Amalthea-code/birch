@@ -101,7 +101,7 @@ export default {
       }
       &__sub-title {
         span {
-          width: calc(100% - 80px);
+          width: auto;
           padding: 20px 24px;
           font-size: 14px;
           line-height: 18px;

@@ -28,11 +28,15 @@
 
 <style lang="scss" scoped>
   .info {
+    border: 2px solid;
     position: relative;
+    border-radius: 24px;
     &__title {
-      position: absolute;
-      top: 0;
-      width: calc(100% - 100px);
+      box-sizing: border-box;
+      position: relative;
+      top: -4px;
+      left: -2px;
+      width: calc(100% + 4px);
       font-family: RF Dewi Expanded;
       font-size: 20px;
       font-weight: 900;
@@ -57,16 +61,13 @@
         font-size: 14px;
         line-height: 17px;
         padding: 24px 26px;
-        width: calc(100% - 52px);
+        width: calc(100% + 4px);
       }
     }
     &__box {
-      padding: 110px 60px 44px;
-      border: 2px solid;
-      border-radius: 24px;
-      height: calc(100% - 158px);
+      padding: 24px 60px 44px;
       @media screen and (max-width: 680px) {
-        padding: 100px 24px 34px;
+        padding: 24px 24px 30px;
         font-family: Montserrat;
         font-size: 14px;
         line-height: 18px;
