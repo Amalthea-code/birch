@@ -93,9 +93,6 @@
       mail(val) {
         this.mail = val.replace(/[^\\a-zA-Z, @, 0-9, ., /,, ;, :, (, ), _, -]/g, '')
       },
-      birthCertificate(val) {
-        this.birthCertificate = val.replace(/[^0-9, -]/g, '')
-      },
       series(val) {
         this.series = val.replace(/[^0-9, -]/g, '')
       },
