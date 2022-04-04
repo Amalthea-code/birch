@@ -40,6 +40,9 @@
             </p>
           </div>
         </div>
+        <p class="contacts__text">
+          <strong>Время работы отдела продаж путёвок:</strong> вт - сб с 11:00 до 16:00
+        </p>
       </div>
     </info>
   </div>
