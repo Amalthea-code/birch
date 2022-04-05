@@ -228,7 +228,7 @@
 </template>
 
 <script>
-  import InfoBlock from '@/components/elements/InfoBlock'
+  import InfoBlock from '@/components/elements/infoBlock'
   import Slider from '@/components/elements/Slider'
   import Insert from '@/components/elements/Insert'
   export default {

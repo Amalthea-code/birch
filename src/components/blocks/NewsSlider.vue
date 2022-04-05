@@ -48,7 +48,7 @@
           :title='oneNews.attributes.title'
           :text='oneNews.attributes.description'
           :date='oneNews.attributes.publish_date'
-          :image='"http://89.108.98.57:1337" + oneNews.attributes.preview.data.attributes.url'
+          :image='"https://berezka64.ru/server" + oneNews.attributes.preview.data.attributes.url'
           :id='oneNews.id'
         />
       </router-link>

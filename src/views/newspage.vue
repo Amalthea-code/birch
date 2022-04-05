@@ -33,7 +33,7 @@ import { mapActions, mapGetters } from 'vuex'
         this.title = this.foundNews.attributes.title
         this.date = this.foundNews.attributes.publish_date
         this.text = this.foundNews.attributes.description
-        this.image = "http://89.108.98.57:1337" + this.foundNews.attributes.preview.data.attributes.url
+        this.image = "https://berezka64.ru/server/api" + this.foundNews.attributes.preview.data.attributes.url
       }
 
     },

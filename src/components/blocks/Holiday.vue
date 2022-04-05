@@ -41,7 +41,7 @@
 </template>
 
 <script>
-  import InfoBlock from '@/components/elements/InfoBlock'
+  import InfoBlock from '@/components/elements/infoBlock'
   export default {
     components: {
       InfoBlock

@@ -98,9 +98,12 @@
           <input class="payment__hidden-input" type="hidden" name='sum' :value='sum'/>
           <input class="payment__hidden-input" type="hidden" name='client_email' :value='user.email'/>
           <input class="payment__hidden-input" type="hidden" name='client_phone' :value="user.phone"/>
-          <input class="payment__hidden-input" type="hidden" name='clientid' :value="name"/>
+          <input class="payment__hidden-input" type="hidden" name='clientid' :value="nameFull"/>
           <input class="payment__hidden-input" type="hidden" name='service_name' :value="value"/>
-          <div class="payment__step-sum">{{ sum }} руб.</div>
+          <div :class="{
+            'payment__step-sum': true,
+            'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' ? true : false
+          }">{{ sum }} руб.</div>
           <button
             v-if="false"
             type='submit'
@@ -135,12 +138,12 @@
         return 'https://berezka64.server.paykeeper.ru/create'
       },
       sum () {
-        return this.shifts[this.itemShift].price * (Number(this.factor) === 1 ? 1 : 0.5)
+        return (this.user.vip === 'vip2' ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price)) * (Number(this.factor) === 1 ? 1 : 0.5)
       },
       value () {
         return this.shifts[this.itemShift].service_name + (Number(this.factor) === 1 ? '(Поланая оплата)' : Number(this.factor) === 0.5 ? '(Аванс 50%)' : '(Доплата 50%)')
       },
-      name () {
+      nameFull () {
         return this.user.tName + ' ' + this.user.username + ' ' +  this.user.sName
       }
     },
@@ -347,6 +350,26 @@
         line-height: 36px;
         text-align: right;
         margin: 30px 0 0;
+        position: relative;
+        &_special {
+          &::before {
+            content: 'Персональные условия';
+            border: 2px solid #84D0B8;
+            padding: 6px 8px;
+            border-radius: 10px;
+            position: absolute;
+            font-family: Montserrat;
+            font-size: 12px;
+            line-height: 16px;
+            right: 0;
+            bottom: -52px;
+            color: #84D0B8;
+            @media screen and (max-width: 680px) {
+              left: 0;
+              right: auto;
+            }
+          }
+        }
         @media screen and (max-width: 680px) {
           font-size: 20px;
           line-height: 26px;
