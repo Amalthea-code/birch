@@ -45,7 +45,7 @@ import Authorization from '@/assets/images/icons/authorization'
     },
     watch: {
       email(val) {
-        this.email = val.replace(/[^\\a-zA-Z, @, 0-9, -, _, . ]/g, '')
+        this.email = val.replace(/[^\\a-zA-Z, @, 0-9, -/, _, ./ ]/g, '')
       },
 
     },
