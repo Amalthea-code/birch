@@ -1,5 +1,6 @@
 <template>
 <!-- https://berezka64.server.paykeeper.ru/ -->
+<!-- https://mir-berezka64.server.paykeeper.ru/payments/ -->
   <form accept-charset="utf-8" class="payment" method='POST' :action="paymentAction">
     <div class="payment__title">{{ user.tName + ' ' + user.fName + ' ' +  user.sName}}</div>
     <div class="payment__text">Счет формируется на каждую путевку отдельно</div>
@@ -11,11 +12,14 @@
           v-if='parents.length'
           :class="{
             'select': true,
-            'select_active': isChildrenSelect
+            'select_active': isParentsSelect
           }"
           @click="switchOpenSelect(0)"
         >
           <div class="select__box">
+            <div v-if="!isParentsSelect" class="select__item-slug select__item-slug_parent">
+              Родитель не выбран
+            </div>
             <div
               v-for="(parent, index) in parents"
               :key="index"
@@ -38,11 +42,14 @@
           v-if='childen.length'
           :class="{
             'select': true,
-            'select_active': isParentsSelect
+            'select_active': isChildrenSelect
           }"
           @click="switchOpenSelect(1)"
         >
           <div class="select__box">
+            <div v-if="!isChildrenSelect" class="select__item-slug">
+              Ребенок не выбран
+            </div>
             <div
               v-for="(child, index) in childen"
               :key="index"
@@ -52,7 +59,7 @@
               }"
               @click="switchActiveSelect(index, 'child')"
             >
-              <input type="radio" class="select__input" name="child" :id="('child' + index)" :value="child.tName + child.fName + child.sName" v-model="selectChild"><label @click="switchActiveSelect(index, 'child')" class="select__radio" :for="('child' + index)">{{ child.sName }} {{ child.fName }} {{ child.tName }}</label>
+              <input type="radio" class="select__input" name="child" :id="('child' + index)" :value="child.tName + child.fName + child.sName" v-model="selectChild" ><label @click="switchActiveSelect(index, 'child')" class="select__radio" :for="('child' + index)">{{ child.sName }} {{ child.fName }} {{ child.tName }}</label>
             </div>
             <select-arrow class="select__arrow"/>
           </div>
@@ -105,7 +112,7 @@
             'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' ? true : false
           }">{{ sum }} руб.</div>
           <button
-            v-if="false"
+            v-if="true"
             type='submit'
             :class="{
               'payment__step-button': true,
@@ -136,12 +143,13 @@
       }),
       paymentAction () {
         return 'https://berezka64.server.paykeeper.ru/create'
+        // 'https://mir-berezka64.server.paykeeper.ru/create'
       },
       sum () {
         return (this.user.vip === 'vip2' ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price)) * (Number(this.factor) === 1 ? 1 : 0.5)
       },
       value () {
-        return this.shifts[this.itemShift].service_name + (Number(this.factor) === 1 ? '(Поланая оплата)' : Number(this.factor) === 0.5 ? '(Аванс 50%)' : '(Доплата 50%)')
+        return this.shifts[this.itemShift].attributes.service_name + (Number(this.factor) === 1 ? '(Поланая оплата)' : Number(this.factor) === 0.5 ? '(Аванс 50%)' : '(Доплата 50%)')
       },
       nameFull () {
         return this.user.tName + ' ' + this.user.username + ' ' +  this.user.sName
@@ -152,8 +160,8 @@
         itemShift: 0,
         isChildrenSelect: false,
         isParentsSelect: false,
-        isChildSelect: 0,
-        isParentSelect: 0,
+        isChildSelect: null,
+        isParentSelect: null,
         factor: 0,
         isAgreement: null,
         selectParent: null,
@@ -166,7 +174,7 @@
         fetchOrder: 'profile/fetchOrder'
       }),
       switchOpenSelect (props) {
-        props === 0 ? this.isChildrenSelect = !this.isChildrenSelect : this.isParentsSelect = !this.isParentsSelect
+        props === 1 ? this.isChildrenSelect = !this.isChildrenSelect : this.isParentsSelect = !this.isParentsSelect
       },
       switchActiveSelect (props, selects) {
         if (selects === 'parent') {
@@ -285,6 +293,7 @@
       @media screen and (max-width: 1300px) {
         width: 100%;
       }
+      
       &-title {
         font-family: RF Dewi Expanded;
         font-size: 20px;
@@ -586,10 +595,38 @@
       margin: 0;
       border-radius: 50px;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
+      line-clamp: 2;
       overflow: hidden;
       cursor:pointer;
       color: #000;
+      &-slug {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 68px;
+        padding: 0 40px 0 22px;
+        font-family: RF Dewi Expanded;
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 23px;
+        width: 100%;
+        margin: 0;
+        border-radius: 50px;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+        overflow: hidden;
+        cursor:pointer;
+        color: #fff;
+        background-color: #84d0b8;
+        &_parent {
+          background-color: #BAA3E4;
+        }
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 18px;
+          width: 238px;
+        }
+      }
       @media screen and (max-width: 680px) {
         font-size: 14px;
         line-height: 18px;
