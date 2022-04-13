@@ -1,7 +1,7 @@
 <template>
   <div class="cabinet">
     <div class="cabinet__box">
-      <div v-if="GET_AUTORIZEDUSER" class="cabinet__title">{{ GET_AUTORIZEDUSER.sName + ' ' + GET_AUTORIZEDUSER.fName + ' ' + GET_AUTORIZEDUSER.tName}}</div>
+      <div v-if="GET_AUTORIZEDUSER" class="cabinet__title">{{GET_AUTORIZEDUSER.tName + ' ' + GET_AUTORIZEDUSER.fName + ' ' + GET_AUTORIZEDUSER.sName}}</div>
       <cabinet-slider />
       <div v-if="false" class="cabinet__link">
         <router-link to="/payment">ОФОРМИТЬ ПУТЕВКУ</router-link>
