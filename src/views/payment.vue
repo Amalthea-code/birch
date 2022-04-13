@@ -2,7 +2,7 @@
 <!-- https://berezka64.server.paykeeper.ru/ -->
 <!-- https://mir-berezka64.server.paykeeper.ru/payments/ -->
   <form accept-charset="utf-8" class="payment" method='POST' :action="paymentAction">
-    <div class="payment__title">{{ user.tName + ' ' + user.fName + ' ' +  user.sName}}</div>
+    <div class="payment__title">{{user.sName + ' ' + user.fName + ' ' + user.tName}}</div>
     <div class="payment__text">Счет формируется на каждую путевку отдельно</div>
     <div class="payment__steps">
       <div class="payment__step">
@@ -112,7 +112,7 @@
             'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' ? true : false
           }">{{ sum }} руб.</div>
           <button
-            v-if="true"
+            v-if="false"
             type='submit'
             :class="{
               'payment__step-button': true,

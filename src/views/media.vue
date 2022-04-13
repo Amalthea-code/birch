@@ -12,12 +12,12 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import Maps from '@/components/blocks/Maps'
 import MainSection from '@/components/blocks/MainSection'
 import Networks from '@/components/blocks/Networks'
 import Gallery from '@/components/blocks/Gallery'
 import NewsSlider from '@/components/blocks/NewsSlider'
-import { mapActions } from 'vuex'
 
   export default {
     components: { 

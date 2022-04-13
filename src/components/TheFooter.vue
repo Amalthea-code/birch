@@ -45,8 +45,8 @@
         <div class="footer__info-docs-box">
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1Fv5VQhWLZQFDqaqGs7Le98KqQrso_kFg/view"><doc/> Памятка для родителей</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1FrksnbaRWJDTsq2wEeAWZivOnWehMLHM/view"><doc/> Медсогласие</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1jByG5oxEtUt7YCxWyZuXO_EDRW-uLtzm/view"><doc/> Предварительный договор</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1tmMeqM9jiz2EecX0EAOOQiUfle5Eacxy/view"><doc/> Оферта</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1PjHdAT07xJCjJ7e2_isf0cju0-pX5crS/view"><doc/> Предварительный договор</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1PxVb96X240Iz68PeX9I41ugLT97Qw1Tg/view"><doc/> Оферта</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view"><doc/> Политика конфиденциальности</a>
         </div>
         <div class="footer__info-org">

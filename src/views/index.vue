@@ -4,26 +4,35 @@
     <mir-section />
     <shift-selection />
     <reviews />
-    <gallery />
+    <news-slider/>
     <maps />
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import ShiftSelection from '@/components/blocks/ShiftSelection'
 import MainSection from '@/components/blocks/MainSection'
 import MirSection from '@/components/blocks/MirSection'
+import NewsSlider from '@/components/blocks/NewsSlider'
 import Maps from '@/components/blocks/Maps'
 import Reviews from '@/components/blocks/Reviews'
-import Gallery from '@/components/blocks/Gallery'
 export default {
   components: { 
     MainSection,
     ShiftSelection,
+    NewsSlider,
     MirSection,
     Reviews,
-    Gallery,
     Maps
   },
+  methods: {
+    ...mapActions({
+      fetchNews: 'news/fetchNews'
+    })
+  },
+  created () {
+    this.fetchNews()
+  }
 }
 </script>
