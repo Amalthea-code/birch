@@ -1,7 +1,7 @@
 <template>
   <div class="shift-selection">
-    <h1 class="shift-selection__title shift-selection_red">УВАЖАЕМЫЕ БЕРЁЗОВЦЫ!</h1>
-    <p class="shift-selection__sub-title shift-selection_red">Дорогие берёзовцы!  Ростуризм подтвердил наше участие в программе КЕШБЭК! Сейчас проходит техническое подключение. И мы запускаем продажи на нашем сайте с 15 апреля. Для участия в программе вам понадобится любая действующая карта МИР, зарегистрированная в программе лояльность. По путёвкам, купленным до начала программы КЕШБЭК вы можете обратиться по телефону 25-62-44 Вт - Сб с 11:00 до 16:00</p>
+    <h1 class="shift-selection__title shift-selection_green">УВАЖАЕМЫЕ БЕРЁЗОВЦЫ!</h1>
+    <p class="shift-selection__sub-title">Продажи путевок по программе кешбэк открыты!<br /> По путёвкам, купленным до начала программы КЕШБЭК вы можете обратиться по телефону <a href="tel:25-62-44">25-62-44</a> Вт - Сб с 11:00 до 16:00</p>
     <div class="shift-selection__box" v-if="selections.length">
       <shift-selection-item
         v-for="(selection, index) in selections"
@@ -12,7 +12,7 @@
         :price="selection.attributes.price"
       />
     </div>
-    <div v-if="false" class="shift-selection__button">
+    <div class="shift-selection__button">
       <router-link to="/payment">купить путёвку</router-link>
     </div>
     <div class="shift-selection__contein">
@@ -60,8 +60,8 @@ import { mapGetters, mapActions } from 'vuex'
       max-width: 1080px;
       margin: 0 auto;
       padding: 20px 0 100px;
-      &_red {
-        color: #F05156;
+      &_green {
+        color: #64c2ac;
       }
       @media screen and (max-width: 1300px) {
         max-width: 620px;
@@ -89,6 +89,7 @@ import { mapGetters, mapActions } from 'vuex'
       font-size: 24px;
       font-weight: 400;
       line-height: 29px;
+      margin: 22px 0 60px;
       @media screen and (max-width: 1300px) {
         font-size: 22px;
         line-height: 27px;

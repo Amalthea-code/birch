@@ -77,29 +77,19 @@
         </div>
       </div>
       <div class="payment__step">
-        <div class="payment__step-title">ШАГ 4</div>
-        <div class="payment__step-text">ТИП ОПЛАТЫ</div>
-        <div class="payment__step-box">
-          <div class="payment__step-element"><input name="payment" value="1" type="radio" id="payment-1" class="payment__step-radio" v-model="factor"><label for="payment-1" class="payment__step-label">Полностью</label></div>
-          <div class="payment__step-element"><input name="payment" value="0.5" type="radio" id="payment-2" class="payment__step-radio" v-model="factor"><label for="payment-2" class="payment__step-label">Аванс (50%)</label></div>
-          <div class="payment__step-element"><input name="payment" value="0.7" type="radio" id="payment-3" class="payment__step-radio" v-model="factor"><label for="payment-3" class="payment__step-label">Доплата (50%)</label></div>
-          <div class="payment__step-info">
-            Оставшиеся 50% от общей стоимости путевки оплачиваются не позднее 14 календарных дней до начала смены.
-          </div>
-          <div class="payment__step-box_agreement">
-            <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1tmMeqM9jiz2EecX0EAOOQiUfle5Eacxy/view">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view">обработку персональных данных</a></label>
-          </div>
+        <div class="payment__step-box_agreement">
+          <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1tmMeqM9jiz2EecX0EAOOQiUfle5Eacxy/view">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view">обработку персональных данных</a></label>
         </div>
       </div>
     </div>
     <div class="payment__step-lust">
         <div class="payment__step-left">
-          <div class="payment__step-title">ШАГ 5</div>
+          <div class="payment__step-title">ШАГ 4</div>
           <div class="payment__step-text">СУММА</div>
           <div class="payment__step-element"><input name="cashback" :value="false" v-model="paymentSum" type="radio" id="cashback-1" class="payment__step-radio" checked><label for="cashback-1" class="payment__step-label">без кэшбека</label></div>
-          <div v-if="false" class="payment__step-element"><input name="cashback" :value="true" v-model="paymentSum" type="radio" id="cashback-2" class="payment__step-radio payment__step-radio_disable"><label for="cashback-2" class="payment__step-label payment__step-label_disable">с кэшбеком по карте МИР</label></div>
-          <div v-if="false" class="payment__step-hardly">Для получения кешбэка необходимо оплатить полную стоимость путевки картой МИР (недоступно)</div>
-          <div v-if="false" class="payment__step-hardly"><router-link to="/promotion">Подробнее о кэшбеке по карте МИР</router-link></div>
+          <div class="payment__step-element"><input name="cashback" :value="true" v-model="paymentSum" type="radio" id="cashback-2" class="payment__step-radio"><label for="cashback-2" class="payment__step-label">с кэшбеком по карте МИР</label></div>
+          <div class="payment__step-hardly">Для получения кешбэка необходимо оплатить полную стоимость путевки картой МИР</div>
+          <div class="payment__step-hardly"><router-link to="/promotion">Подробнее о кэшбеке по карте МИР</router-link></div>
         </div>
         <div class="payment__step-right">
           <input class="payment__hidden-input" type="hidden" name='sum' :value='sum'/>
@@ -112,11 +102,10 @@
             'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' ? true : false
           }">{{ sum }} руб.</div>
           <button
-            v-if="false"
             type='submit'
             :class="{
               'payment__step-button': true,
-              'payment__step-button_disable': sum === 0 || !isAgreement || !selectChild,
+              'payment__step-button_disable': sum === 0 || !isAgreement || !selectChild || !selectParent,
             }"
             @click="createOrder"
           >
@@ -142,14 +131,13 @@
         user: 'profile/GET_AUTORIZEDUSER'
       }),
       paymentAction () {
-        return 'https://berezka64.server.paykeeper.ru/create'
-        // 'https://mir-berezka64.server.paykeeper.ru/create'
+        return this.paymentSum ? 'https://mir-berezka64.server.paykeeper.ru/create' : 'https://berezka64.server.paykeeper.ru/create'
       },
       sum () {
-        return (this.user.vip === 'vip2' ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price)) * (Number(this.factor) === 1 ? 1 : 0.5)
+        return (this.user.vip === 'vip2' ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
       },
       value () {
-        return this.shifts[this.itemShift].attributes.service_name + (Number(this.factor) === 1 ? '(Поланая оплата)' : Number(this.factor) === 0.5 ? '(Аванс 50%)' : '(Доплата 50%)')
+        return this.shifts[this.itemShift].attributes.service_name
       },
       nameFull () {
         return this.user.tName + ' ' + this.user.username + ' ' +  this.user.sName
@@ -162,7 +150,6 @@
         isParentsSelect: false,
         isChildSelect: null,
         isParentSelect: null,
-        factor: 0,
         isAgreement: null,
         selectParent: null,
         selectChild: null,
@@ -190,8 +177,8 @@
         let order = {
           date: date,
           number: date,
-          price: String(this.shifts[this.itemShift].price * this.factor),
-          order_type: this.factor === 1 ? '(Поланая оплата)' : '(Аванс 50%)',
+          price: String(this.shifts[this.itemShift].price),
+          order_type:'(Поланая оплата)',
           order_name: this.shifts[this.itemShift].service_name,
           order_cashback: false,
           parent: {
