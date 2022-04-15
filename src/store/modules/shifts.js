@@ -9,8 +9,8 @@ export default {
     }
   },
   actions: {
-    fetchShifts ({ commit }) {
-      fetch(process.env.VUE_APP_DOMAIN + '/vouchers', {
+    async fetchShifts ({ commit }) {
+      await fetch(process.env.VUE_APP_DOMAIN + '/vouchers', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ export default {
       }).then((data) => {
         commit('SET_SHIFTS', data.data)
       });
-    },
+    }
   },
   getters: {
     GET_SHIFTS: (state) => {

@@ -96,7 +96,7 @@
           <input class="payment__hidden-input" type="hidden" name='client_phone' :value="user.phone"/>
           <input class="payment__hidden-input" type="hidden" name='clientid' :value="nameFull"/>
           <input class="payment__hidden-input" type="hidden" name='service_name' :value="value"/>
-          <div :class="{
+          <div @click="fetchPutShifts" :class="{
             'payment__step-sum': true,
             'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' ? true : false
           }">{{ sum }} руб.</div>
@@ -127,7 +127,8 @@
         childen: 'children/GET_CHILDREN',
         parents: 'parents/GET_PARENTS',
         shifts: 'shifts/GET_SHIFTS',
-        user: 'profile/GET_AUTORIZEDUSER'
+        user: 'profile/GET_AUTORIZEDUSER',
+        token: 'profile/GET_TOKEN'
       }),
       sum () {
         return (this.user.vip === 'vip2' ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
@@ -154,7 +155,8 @@
     },
     methods: {
       ...mapActions({
-        fetchOrder: 'profile/fetchOrder'
+        fetchOrder: 'profile/fetchOrder',
+        fetchShifts: 'shifts/fetchShifts'
       }),
       switchOpenSelect (props) {
         props === 1 ? this.isChildrenSelect = !this.isChildrenSelect : this.isParentsSelect = !this.isParentsSelect
@@ -224,7 +226,29 @@
           }
         }
         this.fetchOrder(order)
-      }
+      },
+      fetchPutShifts () {
+        Promise.allSettled([
+            this.fetchShifts()
+          ]).then(() => {
+            fetch(process.env.VUE_APP_DOMAIN + '/vouchers/' + this.shifts[this.itemShift].id, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': ('Bearer ' + this.token)
+              },
+              body: JSON.stringify({
+                "data": {
+                  "count": Number(this.shifts[this.itemShift].attributes.count) - 1
+                }
+              }),
+              redirect: 'follow'
+            })
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+            })
+        }
     }
   }
 </script>

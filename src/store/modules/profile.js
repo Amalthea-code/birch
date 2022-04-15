@@ -9,19 +9,19 @@ export default {
   },
   mutations: {
     SET_PROFILE(state, payload) {
-      state.profile = payload;
+      state.profile = payload
     },
     SET_TOKEN(state, payload) {
-      state.token = payload;
+      state.token = payload
     },
     SET_AUTORISATION(state, payload) {
-      state.autorisation = payload;
+      state.autorisation = payload
     },
     SET_ANSWER(state, payload) {
-      state.answer = payload;
+      state.answer = payload
     },
     SET_AUTORIZEDUSER(state, payload) {
-      state.authorizedUser = payload;
+      state.authorizedUser = payload
     },
   },
   actions: {
@@ -68,16 +68,16 @@ export default {
           'Content-Type': 'application/json'
         }
       }).then((response) => {
-        return response.json();
+        return response.json()
       }).then((data) => {
         if (data.jwt) {
-          commit('SET_ANSWER', 'succes');
+          commit('SET_ANSWER', 'succes')
         }
         console.log(data)
         if (data.error.message === 'Email is already taken') {
-          commit('SET_ANSWER', 'mailerr');
+          commit('SET_ANSWER', 'mailerr')
         }
-      });
+      })
     },
     fetchUserData ({ commit, rootGetters }) {
       fetch(process.env.VUE_APP_DOMAIN + '/users/me', {
@@ -116,25 +116,25 @@ export default {
           'Authorization': ('Bearer ' + rootGetters['profile/GET_TOKEN'])
         }
       }).then((response) => {
-        return response.json();
+        return response.json()
       })
     }
   },
   getters: {
     GET_PROFILE: (state) => {
-      return state.profile;
+      return state.profile
     },
     GET_TOKEN: (state) => {
-      return state.token;
+      return state.token
     },
     GET_AUTORISATION: (state) => {
-      return state.autorisation;
+      return state.autorisation
     },
     GET_ANSWER: (state) => {
-      return state.answer;
+      return state.answer
     },
     GET_AUTORIZEDUSER: (state) => {
-      return state.authorizedUser;
+      return state.authorizedUser
     },
   }
 };
