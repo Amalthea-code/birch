@@ -1,7 +1,7 @@
 <template>
 <!-- https://berezka64.server.paykeeper.ru/ -->
 <!-- https://mir-berezka64.server.paykeeper.ru/payments/ -->
-  <form accept-charset="utf-8" class="payment" method='POST' :action="paymentAction">
+  <form accept-charset="utf-8" class="payment" method='POST' action="https://mir-berezka64.server.paykeeper.ru/create">
     <div class="payment__title">{{user.sName + ' ' + user.fName + ' ' + user.tName}}</div>
     <div class="payment__text">Счет формируется на каждую путевку отдельно</div>
     <div class="payment__steps">
@@ -130,9 +130,6 @@
         shifts: 'shifts/GET_SHIFTS',
         user: 'profile/GET_AUTORIZEDUSER'
       }),
-      paymentAction () {
-        return this.paymentSum ? 'https://mir-berezka64.server.paykeeper.ru/create' : 'https://berezka64.server.paykeeper.ru/create'
-      },
       sum () {
         return (this.user.vip === 'vip2' ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
       },
