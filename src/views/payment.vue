@@ -78,7 +78,7 @@
       </div>
       <div class="payment__step">
         <div class="payment__step-box_agreement">
-          <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1tmMeqM9jiz2EecX0EAOOQiUfle5Eacxy/view">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view">обработку персональных данных</a></label>
+          <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1PxVb96X240Iz68PeX9I41ugLT97Qw1Tg/view">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view">обработку персональных данных</a></label>
         </div>
       </div>
     </div>
@@ -86,8 +86,8 @@
         <div class="payment__step-left">
           <div class="payment__step-title">ШАГ 4</div>
           <div class="payment__step-text">СУММА</div>
-          <div class="payment__step-element"><input name="cashback" :value="false" v-model="paymentSum" type="radio" id="cashback-1" class="payment__step-radio" checked><label for="cashback-1" class="payment__step-label">без кэшбека</label></div>
-          <div class="payment__step-element"><input name="cashback" :value="true" v-model="paymentSum" type="radio" id="cashback-2" class="payment__step-radio"><label for="cashback-2" class="payment__step-label">с кэшбеком по карте МИР</label></div>
+          <!-- <div class="payment__step-element"><input name="cashback" :value="false" v-model="paymentSum" type="radio" id="cashback-1" class="payment__step-radio"><label for="cashback-1" class="payment__step-label">без кэшбека</label></div> -->
+          <div class="payment__step-element"><input name="cashback" :value="true" v-model="paymentSum" type="radio" id="cashback-2" class="payment__step-radio" checked><label for="cashback-2" class="payment__step-label">с кэшбеком по карте МИР</label></div>
           <div class="payment__step-hardly">Для получения кешбэка необходимо оплатить полную стоимость путевки картой МИР</div>
           <div class="payment__step-hardly"><router-link to="/promotion">Подробнее о кэшбеке по карте МИР</router-link></div>
         </div>
@@ -140,7 +140,7 @@
         return this.shifts[this.itemShift].attributes.service_name
       },
       nameFull () {
-        return this.user.tName + ' ' + this.user.username + ' ' +  this.user.sName
+        return this.user.tName + ' ' + this.user.fName + ' ' +  this.user.sName
       }
     },
     data () {
