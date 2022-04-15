@@ -86,7 +86,6 @@
         <div class="payment__step-left">
           <div class="payment__step-title">ШАГ 4</div>
           <div class="payment__step-text">СУММА</div>
-          <!-- <div class="payment__step-element"><input name="cashback" :value="false" v-model="paymentSum" type="radio" id="cashback-1" class="payment__step-radio"><label for="cashback-1" class="payment__step-label">без кэшбека</label></div> -->
           <div class="payment__step-element"><input name="cashback" :value="true" v-model="paymentSum" type="radio" id="cashback-2" class="payment__step-radio" checked><label for="cashback-2" class="payment__step-label">с кэшбеком по карте МИР</label></div>
           <div class="payment__step-hardly">Для получения кешбэка необходимо оплатить полную стоимость путевки картой МИР</div>
           <div class="payment__step-hardly"><router-link to="/promotion">Подробнее о кэшбеке по карте МИР</router-link></div>
