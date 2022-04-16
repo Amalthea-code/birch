@@ -1,7 +1,7 @@
 <template>
 <!-- https://berezka64.server.paykeeper.ru/ -->
 <!-- https://mir-berezka64.server.paykeeper.ru/payments/ -->
-  <form accept-charset="utf-8" class="payment" method='POST' action="https://mir-berezka64.server.paykeeper.ru/create">
+  <form ref="form" accept-charset="utf-8" class="payment" method='POST' action="https://mir-berezka64.server.paykeeper.ru/create">
     <div class="payment__title">{{user.sName + ' ' + user.fName + ' ' + user.tName}}</div>
     <div class="payment__text">Счет формируется на каждую путевку отдельно</div>
     <div class="payment__steps">
@@ -17,7 +17,13 @@
           @click="switchOpenSelect(0)"
         >
           <div class="select__box">
-            <div v-if="!isParentsSelect" class="select__item-slug select__item-slug_parent">
+            <div
+              @click.stop="switchActiveSelect(null, 'parent')"
+              :class="{
+                'select__item-slug': true,
+                'select__item-slug_parent': true,
+                'select__item-slug_noActive': isParentsSelect
+              }">
               Родитель не выбран
             </div>
             <div
@@ -47,7 +53,12 @@
           @click="switchOpenSelect(1)"
         >
           <div class="select__box">
-            <div v-if="!isChildrenSelect" class="select__item-slug">
+            <div
+              @click.stop="switchActiveSelect(null, 'child')"
+              :class="{
+                'select__item-slug': true,
+                'select__item-slug_noActive': isChildrenSelect
+              }">
               Ребенок не выбран
             </div>
             <div
@@ -71,8 +82,8 @@
         <div class="payment__step-text">ВЫБЕРИТЕ ПУТЕВКУ</div>
         <div class="payment__step-box">
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
-            <input :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
-            <label :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
+            <input v-if="shift.attributes.count > 0" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
+            <label v-if="shift.attributes.count > 0" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
           </div>
         </div>
       </div>
@@ -96,31 +107,34 @@
           <input class="payment__hidden-input" type="hidden" name='client_phone' :value="user.phone"/>
           <input class="payment__hidden-input" type="hidden" name='clientid' :value="nameFull"/>
           <input class="payment__hidden-input" type="hidden" name='service_name' :value="value"/>
-          <div @click="fetchPutShifts" :class="{
+          <div @click="fetchPayKeeper" :class="{
             'payment__step-sum': true,
             'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' ? true : false
           }">{{ sum }} руб.</div>
           <button
-            type='submit'
             :class="{
               'payment__step-button': true,
               'payment__step-button_disable': sum === 0 || !isAgreement || !selectChild || !selectParent,
             }"
             @click="createOrder"
+            type="button"
           >
             ОПЛАТИТЬ
           </button>
         </div>
     </div>
+    <alert ref="alert" />
   </form>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
   import selectArrow from '@/assets/images/icons/selectArrow'
+    import Alert from '@/components/elements/Alert'
   export default {
     components: {
-      selectArrow
+      selectArrow,
+      Alert
     },
     computed: {
       ...mapGetters({
@@ -171,84 +185,98 @@
         }
       },
       createOrder () {
-        let date = new Date()
-        let order = {
-          date: date,
-          number: date,
-          price: String(this.shifts[this.itemShift].price),
-          order_type:'(Поланая оплата)',
-          order_name: this.shifts[this.itemShift].service_name,
-          order_cashback: false,
-          parent: {
-            parent_name: this.parents[this.isParentSelect].fName,
-            parent_sname: this.parents[this.isParentSelect].sName,
-            parent_tname: this.parents[this.isParentSelect].tName,
-            parent_email: this.parents[this.isParentSelect].email,
-            parent_phone: this.parents[this.isParentSelect].phone,
-            parent_city: this.parents[this.isParentSelect].city,
-            parent_street: this.parents[this.isParentSelect].street,
-            parent_home: this.parents[this.isParentSelect].home,
-            parent_apartment: this.parents[this.isParentSelect].apartment,
-            parent_series: this.parents[this.isParentSelect].series,
-            parent_issued: this.parents[this.isParentSelect].issued,
-            parent_datepassport: this.parents[this.isParentSelect].datepassport,
-            parent_isparent: this.parents[this.isParentSelect].isparent,
-          },
-          child: {
-            child_name: this.childen[this.isChildSelect].fName,
-            child_sname: this.childen[this.isChildSelect].sName,
-            child_tname: this.childen[this.isChildSelect].tName,
-            child_totalyear: this.childen[this.isChildSelect].totalYear,
-            child_birthday: this.childen[this.isChildSelect].birth,
-            child_city: this.childen[this.isChildSelect].city,
-            child_street: this.childen[this.isChildSelect].street,
-            child_home: this.childen[this.isChildSelect].home,
-            child_apartment: this.childen[this.isChildSelect].apartment,
-            child_series: this.childen[this.isChildSelect].series,
-            child_issued: this.childen[this.isChildSelect].issued,
-            child_datepassport: this.childen[this.isChildSelect].datepassport,
-            child_birthсertificate: this.childen[this.isChildSelect].birthCertificate,
-            child_gender: this.childen[this.isChildSelect].gender,
-          },
-          user: {
-            user_name: this.user.fName,
-            user_sname: this.user.sName,
-            user_tname: this.user.tName,
-            user_phone: this.user.phone,
-            user_email: this.user.email,
-            user_city: this.user.city,
-            user_street: this.user.street,
-            user_apartment: this.user.apartament,
-            user_home: this.user.home,
-            user_series: this.user.series,
-            user_datepassport: this.user.datePassport,
-            user_issued: this.user.issued
+        if (this.fetchPutShifts()) {
+          let date = new Date()
+          let order = {
+            date: date,
+            number: date,
+            price: String(this.shifts[this.itemShift].price),
+            order_type:'(Поланая оплата)',
+            order_name: this.shifts[this.itemShift].service_name,
+            order_cashback: false,
+            parent: {
+              parent_name: this.parents[this.isParentSelect].fName,
+              parent_sname: this.parents[this.isParentSelect].sName,
+              parent_tname: this.parents[this.isParentSelect].tName,
+              parent_email: this.parents[this.isParentSelect].email,
+              parent_phone: this.parents[this.isParentSelect].phone,
+              parent_city: this.parents[this.isParentSelect].city,
+              parent_street: this.parents[this.isParentSelect].street,
+              parent_home: this.parents[this.isParentSelect].home,
+              parent_apartment: this.parents[this.isParentSelect].apartment,
+              parent_series: this.parents[this.isParentSelect].series,
+              parent_issued: this.parents[this.isParentSelect].issued,
+              parent_datepassport: this.parents[this.isParentSelect].datepassport,
+              parent_isparent: this.parents[this.isParentSelect].isparent,
+            },
+            child: {
+              child_name: this.childen[this.isChildSelect].fName,
+              child_sname: this.childen[this.isChildSelect].sName,
+              child_tname: this.childen[this.isChildSelect].tName,
+              child_totalyear: this.childen[this.isChildSelect].totalYear,
+              child_birthday: this.childen[this.isChildSelect].birth,
+              child_city: this.childen[this.isChildSelect].city,
+              child_street: this.childen[this.isChildSelect].street,
+              child_home: this.childen[this.isChildSelect].home,
+              child_apartment: this.childen[this.isChildSelect].apartment,
+              child_series: this.childen[this.isChildSelect].series,
+              child_issued: this.childen[this.isChildSelect].issued,
+              child_datepassport: this.childen[this.isChildSelect].datepassport,
+              child_birthсertificate: this.childen[this.isChildSelect].birthCertificate,
+              child_gender: this.childen[this.isChildSelect].gender,
+            },
+            user: {
+              user_name: this.user.fName,
+              user_sname: this.user.sName,
+              user_tname: this.user.tName,
+              user_phone: this.user.phone,
+              user_email: this.user.email,
+              user_city: this.user.city,
+              user_street: this.user.street,
+              user_apartment: this.user.apartament,
+              user_home: this.user.home,
+              user_series: this.user.series,
+              user_datepassport: this.user.datePassport,
+              user_issued: this.user.issued
+            }
           }
+          Promise.allSettled([
+            this.fetchOrder(order)
+          ]).then(() => {
+            this.$refs.form.submit()
+          })
+        } else {
+          this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
         }
-        this.fetchOrder(order)
       },
       fetchPutShifts () {
-        Promise.allSettled([
+        return Promise.allSettled([
             this.fetchShifts()
           ]).then(() => {
-            fetch(process.env.VUE_APP_DOMAIN + '/vouchers/' + this.shifts[this.itemShift].id, {
-              method: 'PUT',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': ('Bearer ' + this.token)
-              },
-              body: JSON.stringify({
-                "data": {
-                  "count": Number(this.shifts[this.itemShift].attributes.count) - 1
-                }
-              }),
-              redirect: 'follow'
-            })
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-            })
-        }
+            if (this.shifts[this.itemShift].attributes.count <= 0) {
+              return false
+            } else {
+              console.log('fetchRQER')
+              fetch(process.env.VUE_APP_DOMAIN + '/vouchers/' + this.shifts[this.itemShift].id, {
+                method: 'PUT',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': ('Bearer ' + this.token)
+                },
+                body: JSON.stringify({
+                  "data": {
+                    "count": (Number(this.shifts[this.itemShift].attributes.count) - 1)
+                  }
+                }),
+                redirect: 'follow'
+              })
+              .then(response => response.json())
+              .then(() => {
+              })
+              return true
+            }
+          })
+      }
     }
   }
 </script>
@@ -627,6 +655,10 @@
         background-color: #84d0b8;
         &_parent {
           background-color: #BAA3E4;
+        }
+        &_noActive {
+          color: #000;
+          background-color: #fff;
         }
         @media screen and (max-width: 680px) {
           font-size: 14px;

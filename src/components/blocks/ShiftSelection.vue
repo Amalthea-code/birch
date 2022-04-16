@@ -1,7 +1,7 @@
 <template>
   <div class="shift-selection">
     <h1 class="shift-selection__title shift-selection_green">УВАЖАЕМЫЕ БЕРЁЗОВЦЫ!</h1>
-    <p class="shift-selection__sub-title">По техническим причинам оплата путёвок временно недоступна. Приносим свои извинения!<br /> По путёвкам, купленным до начала программы КЕШБЭК вы можете обратиться по телефону <a href="tel:25-62-44">25-62-44</a> Вт - Сб с 11:00 до 16:00</p>
+    <p class="shift-selection__sub-title">Продажи путевок по программе кешбэк открыты!<br /> По путёвкам, купленным до начала программы КЕШБЭК вы можете обратиться по телефону <a href="tel:25-62-44">25-62-44</a> Вт - Сб с 11:00 до 16:00</p>
     <div class="shift-selection__box" v-if="selections.length">
       <shift-selection-item
         v-for="(selection, index) in selections"
@@ -12,7 +12,7 @@
         :price="selection.attributes.price"
       />
     </div>
-    <div class="shift-selection__button" v-if="false">
+    <div class="shift-selection__button">
       <router-link to="/payment">купить путёвку</router-link>
     </div>
     <div class="shift-selection__contein">

@@ -4,8 +4,10 @@
     'alert_active' : isActive,
     'alert_disable' : isDisable
     }">
-    <div class="alert__title">Ошибка!</div>
-    <div class="alert__text">Поля выделенные <span>красным</span> заполнены неверно.<br />Попробуйте еще раз.</div>
+    <div v-if="text" class="alert__title">Извините</div> 
+    <div v-else class="alert__title">Ошибка!</div>
+    <div v-if="text" class="alert__text">{{this.text}}</div>
+    <div v-else class="alert__text">Поля выделенные <span>красным</span> заполнены неверно.<br />Попробуйте еще раз.</div>
     <button @click="switchActive()" type="button" class="alert__button">Хорошо</button>
   </div>
 </template>
@@ -16,10 +18,16 @@
       return {
         isActive: false,
         isDisable: false,
+        text: false
       }
     },
     methods: {
-      switchActive() {
+      switchActive(props) {
+        if (props) {
+          this.text = props
+        } else {
+          this.text = false
+        }
         if (this.isActive) {
           this.isDisable = !this.isDisable
           setTimeout(() => {
@@ -53,6 +61,7 @@
     border-radius: 20px;
     padding: 14px;
     width: 410px;
+    z-index: 4;
     @media screen and (max-width: 680px) {
       width: 280px;
       padding: 10px;
