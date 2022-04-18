@@ -148,6 +148,7 @@ import { mapActions, mapGetters } from 'vuex'
       font-family: Montserrat;
       font-size: 14px;
       line-height: 18px;
+      color: #F05156;
 
       &:hover {
         text-decoration: underline;

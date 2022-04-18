@@ -151,7 +151,7 @@
         return this.shifts[this.itemShift].attributes.service_name
       },
       nameFull () {
-        return this.user.tName + ' ' + this.user.fName + ' ' +  this.user.sName
+        return this.user.sName + ' ' + this.user.fName + ' ' + this.user.tName
       }
     },
     data () {
