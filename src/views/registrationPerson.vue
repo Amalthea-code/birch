@@ -26,7 +26,7 @@
             <div class="apartment-alert">Если это частный дом укажите в&nbsp;поле Квартира&nbsp;&mdash; 0</div>
             <input id="registration-person" class="registration-person__input-checkbox" type="checkbox" v-model="isTreatment"/>
             <label for="registration-person" class="registration-person__input-label">Я согласен на <a href="">обработку персональных данных</a></label>
-            <button type="button" @click="registration" class="registration-person__button">зарегестрироваться</button>
+            <button type="button" @click="registration" class="registration-person__button">зарегистрироваться</button>
           </div>
           <div class="registration-person__box">
             <div class="registration-person__box-title">Паспортные данные</div>
