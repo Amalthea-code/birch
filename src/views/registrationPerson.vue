@@ -2,7 +2,7 @@
   <form class="registration-person">
     <div class="registration-person__title">Учетная запись плательщика</div>
       <div class="registration-person__forms">
-        <div class="registration-person__alert">Запомните E-mail и Пароль, в дальнейшем они понадобятся для входа в личный кабинет!</div>
+        <div class="registration-person__alert">ПОЖАЛУЙСТА, ПРОВЕРЬТЕ ПРАВИЛЬНОСТЬ НАПИСАНИЯ ВАШЕЙ ДЕЙСТВУЮЩЕЙ ЭЛЕКТРОННОЙ ПОЧТЫ И СОХРАНИТЕ СЕБЕ ЛОГИН И ПАРОЛЬ ОТ ЛИЧНОГО КАБИНЕТА ДОПОЛНИТЕЛЬНО!</div>
         <div class="registration-person__block">
           <div class="registration-person__box">
             <input :class="{'registration-person__input': true, 'registration-person__input_error':(v$.surName.$dirty && v$.surName.$error)}" placeholder="Фамилия" type="text" v-model="surName" :maxlength="maxLength">
