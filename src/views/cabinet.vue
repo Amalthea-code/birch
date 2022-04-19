@@ -4,7 +4,7 @@
       <div v-if="GET_AUTORIZEDUSER" class="cabinet__title">{{GET_AUTORIZEDUSER.sName + ' ' + GET_AUTORIZEDUSER.fName + ' ' + GET_AUTORIZEDUSER.tName}}</div>
       <cabinet-slider />
       <div class="cabinet__info">
-        <h4 class="cabinet__info-title">Поздравляем Вас с приобретением путёвки в наш лагерь!</h4>
+        <h4 class="cabinet__info-title">Информация о путевке</h4>
         Информацию о Вашей покупке с указанием смены и сроков поездки вы можете увидеть в чеке, который придёт Вам на электронную почту. Забрать путёвку Вы сможете в лагере в часы работы менеджера 11.00 - 16.00 вт-сб. Или в день заезда в смену. ВСЮ ИНФОРМАЦИЮ ПО ДОКУМЕНТАМ, СПРАВКАМ, СМЕНАМ ЕСТЬ НА САЙТЕ В РАЗДЕЛЕ "РОДИТЕЛЯМ"
       </div>
       <div class="cabinet__link">
@@ -136,6 +136,7 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
         font-family: RF Dewi Expanded;
         font-size: 24px;
         font-weight: 900;
+        color: #f05156;
       }
       display: block;
       font-family: Montserrat;
