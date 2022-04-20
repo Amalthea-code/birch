@@ -98,8 +98,8 @@
           <div class="payment__step-title">ШАГ 4</div>
           <div class="payment__step-text">СУММА</div>
           <div class="payment__step-element"><input name="cashback" :value="true" v-model="paymentSum" type="radio" id="cashback-2" class="payment__step-radio" checked><label for="cashback-2" class="payment__step-label">с кэшбеком по карте МИР</label></div>
-          <div class="payment__step-hardly">Для получения кешбэка необходимо оплатить полную стоимость путевки картой МИР</div>
-          <div class="payment__step-hardly"><router-link to="/promotion">Подробнее о кэшбеке по карте МИР</router-link></div>
+          <div class="payment__step-hardly">Внимание! Перед оплатой нужно зарегистрировать карту МИР в программе лояльности для получения Кешбэка.</div>
+          <div class="payment__step-hardly"><router-link to="/promotion">Ознакомьтесь с ИНСТРУКЦИЕЙ.</router-link></div>
         </div>
         <div class="payment__step-right">
           <input class="payment__hidden-input" type="hidden" name='sum' :value='sum'/>
@@ -362,13 +362,14 @@
         }
       }
       &-left {
-        width: 50%;
+        width: 45%;
         @media screen and (max-width: 680px) {
           width: 100%;
         }
       }
       &-right {
-        width: 50%;
+
+        width: 45%;
         @media screen and (max-width: 680px) {
           width: 100%;
         }
@@ -378,13 +379,13 @@
         font-size: 16px;
         line-height: 20px;
         margin: 12px 0 0;
-        color: #C4C4C4;
+        color: #f05156;
         @media screen and (max-width: 680px) {
           font-size: 14px;
           line-height: 18px;
         }
         a {
-          color: #C4C4C4;
+          color: #f05156;
         }
       }
       &-sum {
