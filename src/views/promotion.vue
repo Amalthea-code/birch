@@ -18,7 +18,7 @@
       </div>
       <div class="promotion__info-title">Чтобы получить кешбэк:</div>
       <ul class="promotion__info-list">
-        <li class="promotion__info-element"><a href="https://privetmir.ru/russiatravel" target="blank">Зарегистрируйте</a> вашу карту «Мир» <a href="https://privetmir.ru/upload/Bank.pdf" target="blank">банка-участника</a> в Программе лояльности для держателей карт «Мир» или проверьте, что карта уже зарегистрирована. *</li>
+        <li class="promotion__info-element"><a href="https://privetmir.ru/register/" target="blank">Зарегистрируйте</a> вашу карту «Мир» <a href="https://privetmir.ru/upload/Bank.pdf" target="blank">банка-участника</a> в Программе лояльности для держателей карт «Мир» или проверьте, что карта уже зарегистрирована. *</li>
         <li class="promotion__info-element">Выберите смену в период с 1 мая по 30 сентября включительно.</li>
         <li class="promotion__info-element">С 00:01 мск 31 марта по 23:59 31 августа оплатите полную стоимость поездки на сайте.</li>
       </ul>
