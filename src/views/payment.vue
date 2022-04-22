@@ -82,8 +82,8 @@
         <div class="payment__step-text">ВЫБЕРИТЕ ПУТЕВКУ</div>
         <div class="payment__step-box">
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
-            <input v-if="shift.attributes.count > 0" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
-            <label v-if="shift.attributes.count > 0" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
+            <input v-if="shift.attributes.count > 0 || this.user.vip === 'vip1'" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
+            <label v-if="shift.attributes.count > 0 || this.user.vip === 'vip1'" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
           </div>
         </div>
       </div>

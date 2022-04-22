@@ -80,7 +80,7 @@
     </div>
     <div class="docs-info__structure" id="structure">
       <h3 class="docs-info__structure-title">Cтруктура лагеря</h3>
-      <div class="docs-info__structure-text">В&nbsp;лагере в&nbsp;зависимости от&nbsp;заполняемости смены формируются отряды по&nbsp;20-25 детей в&nbsp;каждом. Дети распределяются в&nbsp;отряды по&nbsp;возрастам с&nbsp;разницей 1-2&nbsp;года.</div>
+      <div class="docs-info__structure-text">Берёзка принимает ребят от&nbsp;6&nbsp;до&nbsp;17&nbsp;лет. В&nbsp;лагере в&nbsp;зависимости от&nbsp;заполняемости смены формируются отряды по&nbsp;20-25 детей в&nbsp;каждом. Дети распределяются в&nbsp;отряды по&nbsp;возрастам с&nbsp;разницей 1-2&nbsp;года.</div>
       <div class="docs-info__structure-box">
         <ul>
           <li class="docs-info__structure-list">Дети проживают в деревянных корпусах

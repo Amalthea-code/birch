@@ -31,6 +31,10 @@
     border: 2px solid;
     position: relative;
     border-radius: 24px;
+    margin: 0 0 50px;
+    @media screen and (max-width: 680px) {
+      margin: 0 0 20px;
+    }
     &__title {
       box-sizing: border-box;
       position: relative;
