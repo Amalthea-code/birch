@@ -4,7 +4,7 @@
     <div class="trips__block">
       <div class="net">
         <div class="net__titles">
-          <div class="net__title">№ ДОГОВОРА</div>
+          <div class="net__title">№ ПЛАТЕЖА</div>
           <div class="net__title">СТОИМОСТЬ</div>
           <div class="net__title">СТАТУС</div>
           <div class="net__title">ДАТЫ</div>

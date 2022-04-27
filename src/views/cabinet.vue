@@ -65,7 +65,6 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
     &__box {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 0 0 130px;
       position: relative;
 
       @media screen and (max-width: 1300px) {
@@ -73,7 +72,6 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
       }
       @media screen and (max-width: 680px) {
         max-width: 300px;
-        padding: 0;
       }
     }
     &__title {

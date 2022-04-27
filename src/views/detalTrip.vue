@@ -2,7 +2,7 @@
   <div class="detal-trip">
     <div class="detal-trip__box">
       <div class="detal-trip__item">
-        <div class="detal-trip__item-title">№ ДОГОВОРА</div>
+        <div class="detal-trip__item-title">№ ПЛАТЕЖА</div>
         <div class="detal-trip__item-info">{{ keeperField }}</div>
       </div>
       <div class="detal-trip__item">
@@ -25,13 +25,13 @@
     <div class="detal-trip__how">
       <div class="detal-trip__how-title">Как вернуть</div>
       <div class="detal-trip__how-text">
-        <!-- Распечатайте, заполните и подпишите заявление на возврат. -->
-        <!-- <br /><br /> -->
+        Распечатайте, заполните и подпишите заявление на возврат.
+        <br /><br />
         Скан или фото заявления пришлите на электронную почту sales@berezka64.ru
         <br /><br />
         Для уточнения информации по сумме возврата согласно договору свяжитесь с менеджером по телефону +79372256244 или напишите запрос на электронную почту: sales@berezka64.ru
       </div>
-      <button v-if="false" class="detal-trip__how-button">СКАЧАТЬ ЗАЯВЛЕНИЕ НА ВОЗВРАТ</button>
+      <a href="https://drive.google.com/file/d/1Vv60LD-8diLFWno6WwQikpp_XDfjPFbO/view" target="blank" class="detal-trip__how-button">СКАЧАТЬ ЗАЯВЛЕНИЕ НА ВОЗВРАТ</a>
     </div>
   </div>
 </template>
@@ -194,6 +194,9 @@ import { mapActions, mapGetters } from 'vuex'
         padding: 22px 38px;
         background-color: white;
         margin: 40px 0 0;
+        display: inline-block;
+        color: #000;
+        text-decoration: none;
         @media screen and (max-width: 680px)  {
           font-size: 16px;
           line-height: 20px;
