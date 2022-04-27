@@ -12,7 +12,7 @@
       </div>
       <div class="cabinet__button" @click="output">Выйти из аккаунта</div>
     </div>
-    <trips />
+    <trips v-if="GET_AUTORIZEDUSER" :trips="GET_AUTORIZEDUSER.orders" />
   </div>
 </template>
 

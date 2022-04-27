@@ -11,15 +11,21 @@
         </div>
         <div class="net__list">
           <router-link
-              v-for="(trip, index) in trips"
-              :key="index"
-              :to="('/detalTrip/' + trip.id)"
+            v-for="(trip, index) in trips"
+            :to="('/detalTrip/' + trip.id)"
+            :key="index"
           >
-            <div class="net__list-element">
-              <div class="net__list-number">{{ trip.number }}</div>
-              <div class="net__list-price">{{ String(trip.price).replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ') }} руб.</div>
-              <div class="net__list-status">{{ trip.status }}</div>
-              <div class="net__list-dates">{{ trip.date }}</div>
+            <div class="net__list-element" v-if="trip.status === 'success'">
+              <div class="net__list-number">{{ trip.keeperField }}</div>
+              <div class="net__list-price">{{trip.price > 0 ? String(trip.price).replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ') + ' руб.' : '' }}</div>
+              <div
+                :class="{
+                  'net__list-status': true
+                }"
+              >
+                {{ trip.status === 'success' ? 'Оплачено' : 'Отменено' }}
+              </div>
+              <div class="net__list-dates">{{ trip.tour }}</div>
             </div>
           </router-link>
         </div>
@@ -29,12 +35,18 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
   export default {
-    computed: {
-      ...mapGetters({
-        trips: 'trips/GET_TRIPS'
-      }),
+    props: {
+      trips: {
+        type: Array,
+        default: () => []
+      }
+    },
+    methods: {
+      stringDate: (value) => {
+        const stringDate = new Date(value)
+        return stringDate.getDate() + '.' + (stringDate.getMonth() + 1) + '.' + stringDate.getFullYear()
+      }
     }
   }
 </script>
@@ -110,6 +122,8 @@
       width: 25%;
     }
     &__list {
+      display: flex;
+      flex-direction: column-reverse;
       a {
         text-decoration: none;
         color: #000;
@@ -138,6 +152,8 @@
       }
       &-status {
         width: 25%;
+        &_process {}
+
       }
       &-dates {
         width: 25%;

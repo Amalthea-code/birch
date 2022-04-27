@@ -3,11 +3,11 @@
     <div class="detal-trip__box">
       <div class="detal-trip__item">
         <div class="detal-trip__item-title">№ ДОГОВОРА</div>
-        <div class="detal-trip__item-info">{{ number }}</div>
+        <div class="detal-trip__item-info">{{ keeperField }}</div>
       </div>
       <div class="detal-trip__item">
         <div class="detal-trip__item-title">ДАТЫ</div>
-        <div class="detal-trip__item-info">{{ date }}</div>
+        <div class="detal-trip__item-info">{{ tour }}</div>
       </div>
       <div class="detal-trip__item">
         <div class="detal-trip__item-title">СТОИМОСТЬ</div>
@@ -15,23 +15,23 @@
       </div>
       <div class="detal-trip__item">
         <div class="detal-trip__item-title">СТАТУС</div>
-        <div class="detal-trip__item-info">{{ status }}</div>
+        <div class="detal-trip__item-info">{{ status === 'success' ? 'Оплачено' : 'Отменено' }}</div>
       </div>
     </div>
-    <div class="detal-trip__info">
+    <div v-if="false" class="detal-trip__info">
       <div class="detal-trip__info-text">Оставшиеся 50% от общей стоимости путевки оплачиваются не позднее 14 календарных дней до начала смены.</div>
       <button class="detal-trip__info-button">ОПЛАТИТЬ</button>
     </div>
     <div class="detal-trip__how">
       <div class="detal-trip__how-title">Как вернуть</div>
       <div class="detal-trip__how-text">
-        Распечатайте, заполните и подпишите заявление на возврат. 
-        <br /><br />
+        <!-- Распечатайте, заполните и подпишите заявление на возврат. -->
+        <!-- <br /><br /> -->
         Скан или фото заявления пришлите на электронную почту sales@berezka64.ru
         <br /><br />
         Для уточнения информации по сумме возврата согласно договору свяжитесь с менеджером по телефону +79372256244 или напишите запрос на электронную почту: sales@berezka64.ru
       </div>
-      <button class="detal-trip__how-button">СКАЧАТЬ ЗАЯВЛЕНИЕ НА ВОЗВРАТ</button>
+      <button v-if="false" class="detal-trip__how-button">СКАЧАТЬ ЗАЯВЛЕНИЕ НА ВОЗВРАТ</button>
     </div>
   </div>
 </template>
@@ -41,8 +41,8 @@ import { mapActions, mapGetters } from 'vuex'
   export default {
     data () {
       return {
-        number: null,
-        date: null,
+        keeperField: null,
+        tour: null,
         price: null,
         status: null,
       }
@@ -57,8 +57,8 @@ import { mapActions, mapGetters } from 'vuex'
         searchTrips: 'trips/searchTrips'
       }),
       getProps () {
-        this.number = this.foundTrips.number
-        this.date = this.foundTrips.date
+        this.keeperField = this.foundTrips.keeperField
+        this.tour = this.foundTrips.tour
         this.price = this.foundTrips.price
         this.status = this.foundTrips.status
       }
@@ -78,6 +78,7 @@ import { mapActions, mapGetters } from 'vuex'
     margin: 0 auto;
     max-width: 1080px;
     padding: 176px;
+    min-height: 100vh;
 
     @media screen and (max-width: 1300px) {
       max-width: 620px;

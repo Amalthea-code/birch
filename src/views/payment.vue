@@ -82,8 +82,8 @@
         <div class="payment__step-text">ВЫБЕРИТЕ ПУТЕВКУ</div>
         <div class="payment__step-box">
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
-            <input v-if="shift.attributes.count > 0 || this.user.vip === 'vip1'" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
-            <label v-if="shift.attributes.count > 0 || this.user.vip === 'vip1'" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
+            <input v-if="shift.attributes.count > 0 || this.user.vip === 'vip1' || this.user.vip === 'vipAll'" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
+            <label v-if="shift.attributes.count > 0 || this.user.vip === 'vip1' || this.user.vip === 'vipAll'" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
           </div>
         </div>
       </div>
@@ -107,10 +107,13 @@
           <input class="payment__hidden-input" type="hidden" name='client_phone' :value="user.phone"/>
           <input class="payment__hidden-input" type="hidden" name='clientid' :value="nameFull"/>
           <input class="payment__hidden-input" type="hidden" name='service_name' :value="value"/>
-          <div @click="fetchPayKeeper" :class="{
-            'payment__step-sum': true,
-            'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' ? true : false
-          }">{{ sum }} руб.</div>
+          <input class="payment__hidden-input" type="hidden" name='orderid' :value="orderId"/>
+          <div @click="fetchPayKeeper" 
+            :class="{
+              'payment__step-sum': true,
+              'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' || this.user.vip === 'vipAll' ? true : false
+            }"
+          >{{ sum }} руб.</div>
           <button
             :class="{
               'payment__step-button': true,
@@ -145,7 +148,7 @@
         token: 'profile/GET_TOKEN'
       }),
       sum () {
-        return (this.user.vip === 'vip2' ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
+        return (this.user.vip === 'vip2' || this.user.vip === 'vipAll' ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
       },
       value () {
         return this.shifts[this.itemShift].attributes.service_name
@@ -164,7 +167,8 @@
         isAgreement: null,
         selectParent: null,
         selectChild: null,
-        paymentSum: null
+        paymentSum: null,
+        orderId: null
       }
     },
     methods: {
@@ -172,6 +176,33 @@
         fetchOrder: 'profile/fetchOrder',
         fetchShifts: 'shifts/fetchShifts'
       }),
+      fetchPutShifts () {
+        Promise.allSettled([
+          this.fetchShifts()
+        ])
+        if(this.user.vip==='vip1'||this.user.vip==='vipAll') {
+          fetch(process.env.VUE_APP_DOMAIN+'/vouchers/'+this.shifts[this.itemShift].id, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': ('Bearer '+this.token)
+            },
+            body: JSON.stringify({
+              "data": {
+                "count": (Number(this.shifts[this.itemShift].attributes.count)+1)
+              }
+            }),
+            redirect: 'follow'
+          })
+          return true
+        } else {
+          if(this.shifts[this.itemShift].attributes.count <= 0) {
+            return false
+          }
+          return true
+        }
+
+      },
       switchOpenSelect (props) {
         props === 1 ? this.isChildrenSelect = !this.isChildrenSelect : this.isParentsSelect = !this.isParentsSelect
       },
@@ -190,10 +221,10 @@
           let order = {
             date: date,
             number: date,
-            price: String(this.shifts[this.itemShift].price),
+            price: this.sum,
             order_type:'(Поланая оплата)',
-            order_name: this.shifts[this.itemShift].service_name,
-            order_cashback: false,
+            order_name: this.shifts[this.itemShift].attributes.service_name,
+            order_id: this.orderId,
             parent: {
               parent_name: this.parents[this.isParentSelect].fName,
               parent_sname: this.parents[this.isParentSelect].sName,
@@ -248,35 +279,10 @@
         } else {
           this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
         }
-      },
-      fetchPutShifts () {
-        return Promise.allSettled([
-            this.fetchShifts()
-          ]).then(() => {
-            if (this.shifts[this.itemShift].attributes.count <= 0) {
-              return false
-            } else {
-              console.log('fetchRQER')
-              fetch(process.env.VUE_APP_DOMAIN + '/vouchers/' + this.shifts[this.itemShift].id, {
-                method: 'PUT',
-                headers: {
-                  'Content-Type': 'application/json',
-                  'Authorization': ('Bearer ' + this.token)
-                },
-                body: JSON.stringify({
-                  "data": {
-                    "count": (Number(this.shifts[this.itemShift].attributes.count) - 1)
-                  }
-                }),
-                redirect: 'follow'
-              })
-              .then(response => response.json())
-              .then(() => {
-              })
-              return true
-            }
-          })
       }
+    },
+    mounted () {
+      this.orderId = Math.floor(Math.random() * 100000000) + 1
     }
   }
 </script>

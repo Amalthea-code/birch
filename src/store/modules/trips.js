@@ -13,8 +13,8 @@ export default {
     }
   },
   actions: {
-    searchTrips ({ commit, getters }, id) {
-      commit('SET_FOUNDTRIPS', getters.GET_TRIPS.find( item => item.id == id))
+    searchTrips ({ commit, rootGetters }, id) {
+      commit('SET_FOUNDTRIPS', rootGetters['profile/GET_AUTORIZEDUSER'].orders.find( item => item.id == id))
     },
 
   },

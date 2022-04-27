@@ -101,13 +101,14 @@ export default {
             data: {
               date: order.date,
               number: order.date,
-              price: order.price,
+              price: String(order.price),
               tour: order.order_name,
               type: order.order_type,
               cashback: order.order_cashback,
               parents: order.parent,
               children: order.child,
               user: order.user,
+              keeperField: String(order.order_id) ,
               users_permissions_user: String(rootGetters['profile/GET_AUTORIZEDUSER'].id)
           }
       }),
