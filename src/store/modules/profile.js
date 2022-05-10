@@ -108,7 +108,8 @@ export default {
               parents: order.parent,
               children: order.child,
               user: order.user,
-              keeperField: String(order.order_id) ,
+              keeperField: String(order.order_id),
+              changeable: order.changeable,
               users_permissions_user: String(rootGetters['profile/GET_AUTORIZEDUSER'].id)
           }
       }),
@@ -118,6 +119,49 @@ export default {
         }
       }).then((response) => {
         return response.json()
+      })
+    },
+    fetchRecovery ({ commit }, mail) {
+      commit('SET_ANSWER', 'expect')
+      console.log(mail)
+      fetch('http://89.108.98.57:1337/api/auth/forgot-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: mail
+        })
+      }).then((response)=> {
+        return response.json()
+      }).then((data)=> {
+        if (data.ok) {
+          commit('SET_ANSWER', 'succes')
+        } else {
+          commit('SET_ANSWER', 'recoveryErr')
+        }
+      })
+    },
+    async fetchPassword ({ commit }, props) {
+      await fetch('http://89.108.98.57:1337/api/auth/reset-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          code: props.code,
+          password: props.password,
+          passwordConfirmation: props.passwordConfirmation
+        })
+      }).then((response)=> {
+        return response.json()
+      }).then((data)=> {
+          console.log(data)
+          localStorage.setItem('token', data.jwt)
+          commit('SET_AUTORIZEDUSER', data.user)
+          commit('SET_TOKEN', data.jwt)
+          commit('parents/SET_PARENTS', data.user.parents, { root: true })
+          commit('children/SET_CHILDREN', data.user.childrens, { root: true })
       })
     }
   },

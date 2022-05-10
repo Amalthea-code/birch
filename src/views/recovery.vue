@@ -2,11 +2,12 @@
   <div class="recovery">
     <div class="recovery__logo"><authorization /></div>
     <div class="recovery__title">Восстановлене</div>
-    <input class="recovery__input" placeholder="E-mail" @input="imput">
-    <button class="recovery__button">ВОССТАНОВИТЬ</button>
+    <input :class="{'recovery__input': true, 'recovery__input_error':(v$.imput.$dirty && v$.imput.$error)}" placeholder="E-mail" v-model="imput">
+    <button @click="enter" class="recovery__button">ВОССТАНОВИТЬ</button>
     <div class="recovery__link">
       <router-link to='/autorization'>Войти</router-link>
     </div>
+    <alert ref="alert" />
   </div>
 </template>
 
@@ -14,10 +15,13 @@
   import useVuelidate from '@vuelidate/core'
   import { required, email } from '@vuelidate/validators'
   import Authorization from '@/assets/images/icons/authorization'
+  import Alert from '@/components/elements/Alert'
+  import { mapActions } from 'vuex'
 
   export default {
     components: {
       Authorization,
+      Alert
     },
     setup () {
       return { v$: useVuelidate() }
@@ -29,9 +33,26 @@
     },
     validations () {
       return {
-        imput: { required, email }, // Matches this.firstName
+        imput: { required, email } // Matches this.firstName
       }
     },
+    methods: {
+      ...mapActions({
+        fetchRecovery: 'profile/fetchRecovery'
+      }),
+      enter () {
+        this.v$.$touch()
+        if (this.v$.$errors.length) {
+          this.$refs.alert.switchActive();
+        } else {
+          this.fetchRecovery(this.imput)
+          this.$router.push({ name: 'answer', params: { mode: 'recovery' }})
+        }
+        if (this.v$.$invalid) {
+          return;
+        }
+      }
+    }
   }
 </script>
 
@@ -102,6 +123,12 @@
     font-size: 18px;
     line-height: 25px;
     width: 100%;
+      &_error {
+        border-color: red;
+      }
+      &:focus-visible {
+        outline: none;
+      }
     @media screen and (max-width: 680px) {
       font-size: 14px;
       line-height: 20px;

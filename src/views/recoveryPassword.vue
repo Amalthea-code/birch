@@ -2,9 +2,11 @@
   <div class="recovery-password">
     <div class="recovery-password__logo"><authorization /></div>
     <div class="recovery-password__title">Восстановлене пароля</div>
-            <input class="recovery-password__input recovery-password__input-password" placeholder="Новый Пароль" :type="isPassword" v-model="password" autocomplete="on" :maxlength="maxLength" minlength="6"><span @click="switchPassword" class="password-hidden"><hidden/></span>
-            <input class="recovery-password__input recovery-password__input-password" placeholder="Повторите пароль" :type="isMorePassword" v-model="morePassword" autocomplete="on" :maxlength="maxLength" minlength="6"><span @click="switchMorePassword" class="password-hidden"><hidden/></span>
-    <button class="recovery-password__button">ВОССТАНОВИТЬ</button>
+    <div class="recovery-password__box">
+      <input class="recovery-password__input recovery-password__input_password" placeholder="Новый Пароль" :type="isPassword" v-model="password" autocomplete="on" :maxlength="maxLength" minlength="6"><span @click="switchPassword" class="password-hidden"><hidden/></span>
+      <input class="recovery-password__input recovery-password__input_password" placeholder="Повторите пароль" :type="isMorePassword" v-model="morePassword" autocomplete="on" :maxlength="maxLength" minlength="6"><span @click="switchMorePassword" class="password-hidden"><hidden/></span>
+    </div>
+    <button class="recovery-password__button" @click="enter">ВОССТАНОВИТЬ</button>
     <div class="recovery-password__link">
       <router-link to='/autorization'>Войти</router-link>
     </div>
@@ -12,9 +14,13 @@
 </template>
 
 <script>
+  import Authorization from '@/assets/images/icons/authorization'
+  import hidden from '@/assets/images/icons/hidden'
+  import { mapActions } from 'vuex'
   export default {
     components: {
-    
+      hidden,
+      Authorization
     },
     data () {
       return {
@@ -26,12 +32,31 @@
       }
     },
     methods: {
+      ...mapActions({
+        fetchPassword: 'profile/fetchPassword'
+      }),
       switchPassword () {
         this.isPassword === 'password' ? this.isPassword = 'text' : this.isPassword = 'password' 
       },
       switchMorePassword () {
         this.isMorePassword === 'password' ? this.isMorePassword = 'text' : this.isMorePassword = 'password' 
       },
+      enter() {
+        if (this.password === this.morePassword) {
+          Promise.allSettled([
+            this.fetchPassword({
+              code: this.$route.query.code,
+              password: this.password,
+              passwordConfirmation: this.morePassword
+            })
+          ]).then(() => {
+            this.$router.push({ name: 'authorization'})
+          })
+        }
+      }
+    },
+    mounted () {
+      console.log(this.$route.query.code)
     }
   }
 </script>
@@ -120,19 +145,15 @@
     font-size: 18px;
     line-height: 25px;
     width: 100%;
-    @media screen and (max-width: 680px) {
-      font-size: 14px;
-      line-height: 20px;
-    }
-    &-password {
+    &_password {
       width: calc(100% - 36px);
-    }
-    &::-webkit-inner-spin-button {
-      display: none;
     }
     @media screen and (max-width: 680px) {
       font-size: 16px;
-      line-height: 20px;
+      line-height: 24px;
+    }
+    &_error {
+      border-color: red;
     }
     &:focus-visible {
       outline: none;

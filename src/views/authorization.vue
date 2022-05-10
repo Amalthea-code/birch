@@ -10,7 +10,7 @@
     <div class="authorization__link">
       <router-link to='/registration'>Регистрация</router-link>
     </div>
-    <div v-if="false" class="authorization__link">
+    <div class="authorization__link">
       <router-link to='/recovery'>Забыли пароль?</router-link>
     </div>
     <div class="authorization__mein-button">

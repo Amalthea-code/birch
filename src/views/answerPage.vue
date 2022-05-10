@@ -16,6 +16,7 @@
       <span v-if="GET_ANSWER === 'succes' && mode === 'reg'">Личный кабинет<br /> успешно создан</span>
       <span v-if="GET_ANSWER === 'mailerr' && mode === 'reg'">Пользователь с&nbsp;таким email уже&nbsp;существует</span>
       <span v-if="GET_ANSWER === 'succes' && mode === 'mail'">Письмо отправлено на почту</span>
+      <span v-if="GET_ANSWER === 'succes' && mode === 'recovery'">Письмо отправлено на почту</span>
       <span v-if="GET_ANSWER === 'succes' && mode === 'autorisation'">Авторизация прошла успешно!</span>
       <span v-if="GET_ANSWER === 'fail'">Произошла ошибка.<br />Попробуйте ещё раз.</span>
     </div>

@@ -82,8 +82,8 @@
         <div class="payment__step-text">ВЫБЕРИТЕ ПУТЕВКУ</div>
         <div class="payment__step-box">
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
-            <input v-if="shift.attributes.count > 0 || this.user.vip === 'vip1' || this.user.vip === 'vipAll'" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
-            <label v-if="shift.attributes.count > 0 || this.user.vip === 'vip1' || this.user.vip === 'vipAll'" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
+            <input v-if="vipHendler(shift.attributes.count, index)" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
+            <label v-if="vipHendler(shift.attributes.count, index)" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
           </div>
         </div>
       </div>
@@ -148,7 +148,7 @@
         token: 'profile/GET_TOKEN'
       }),
       sum () {
-        return (this.user.vip === 'vip2' || this.user.vip === 'vipAll' ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
+        return (this.user.vipSale ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
       },
       value () {
         return this.shifts[this.itemShift].attributes.service_name
@@ -176,32 +176,57 @@
         fetchOrder: 'profile/fetchOrder',
         fetchShifts: 'shifts/fetchShifts'
       }),
-      fetchPutShifts () {
-        Promise.allSettled([
-          this.fetchShifts()
-        ])
-        if(this.user.vip==='vip1'||this.user.vip==='vipAll') {
-          fetch(process.env.VUE_APP_DOMAIN+'/vouchers/'+this.shifts[this.itemShift].id, {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': ('Bearer '+this.token)
-            },
-            body: JSON.stringify({
-              "data": {
-                "count": (Number(this.shifts[this.itemShift].attributes.count)+1)
-              }
-            }),
-            redirect: 'follow'
-          })
-          return true
-        } else {
-          if(this.shifts[this.itemShift].attributes.count <= 0) {
+      vipHendler (count, index) {
+        if (count > 0) { return true }
+        switch (index) {
+          case 0:
+            return this.user.vip1
+          case 1:
+            return this.user.vip2
+          case 2:
+            return this.user.vip3
+          case 3:
+            return this.user.vip4
+          case 4:
+            return this.user.vip5
+          case 5:
+            return this.user.vip6
+          default:
             return false
-          }
-          return true
         }
-
+      },
+      isVip (index) {
+        switch (index) {
+          case 0:
+            return this.user.vip1
+          case 1:
+            return this.user.vip2
+          case 2:
+            return this.user.vip3
+          case 3:
+            return this.user.vip4
+          case 4:
+            return this.user.vip5
+          case 5:
+            return this.user.vip6
+          default:
+            return false
+        }
+      },
+      async fetchPutShifts () {
+        await Promise.allSettled([
+          this.fetchShifts()
+        ]).then(()=> {
+          if(this.shifts[this.itemShift].attributes.count <= 0) {
+            if (this.user.vip === 'vip1' || this.user.vip === 'vipAll') {
+              return true
+            } else {
+              return false
+            }
+          } else {
+            return true
+          }
+        })
       },
       switchOpenSelect (props) {
         props === 1 ? this.isChildrenSelect = !this.isChildrenSelect : this.isParentsSelect = !this.isParentsSelect
@@ -225,6 +250,7 @@
             order_type:'(Поланая оплата)',
             order_name: this.shifts[this.itemShift].attributes.service_name,
             order_id: this.orderId,
+            changeable: Boolean(!this.isVip(this.itemShift)),
             parent: {
               parent_name: this.parents[this.isParentSelect].fName,
               parent_sname: this.parents[this.isParentSelect].sName,
