@@ -119,7 +119,7 @@
               'payment__step-button': true,
               'payment__step-button_disable': sum === 0 || !isAgreement || !selectChild || !selectParent,
             }"
-            @click="createOrder"
+            @click="fetchPutShifts"
             type="button"
           >
             ОПЛАТИТЬ
@@ -218,13 +218,54 @@
           this.fetchShifts()
         ]).then(()=> {
           if(this.shifts[this.itemShift].attributes.count <= 0) {
-            if (this.user.vip === 'vip1' || this.user.vip === 'vipAll') {
-              return true
-            } else {
-              return false
+            switch (this.itemShift) {
+              case 0:
+                if (this.user.vip1) {
+                  this.createOrder()
+                } else {
+                  this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
+                }
+                break
+              case 1:
+                if (this.user.vip2) {
+                  this.createOrder()
+                } else {
+                  this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
+                }
+                break
+              case 2:
+                if (this.user.vip3) {
+                  this.createOrder()
+                } else {
+                  this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
+                }
+                break
+              case 3:
+                if (this.user.vip4) {
+                  this.createOrder()
+                } else {
+                  this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
+                }
+                break
+              case 4:
+                if (this.user.vip5) {
+                  this.createOrder()
+                } else {
+                  this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
+                }
+                break
+              case 5:
+                if (this.user.vip6) {
+                  this.createOrder()
+                } else {
+                  this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
+                }
+                break
+              default:
+                this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
             }
           } else {
-            return true
+            this.createOrder()
           }
         })
       },
@@ -241,70 +282,66 @@
         }
       },
       createOrder () {
-        if (this.fetchPutShifts()) {
-          let date = new Date()
-          let order = {
-            date: date,
-            number: date,
-            price: this.sum,
-            order_type:'(Поланая оплата)',
-            order_name: this.shifts[this.itemShift].attributes.service_name,
-            order_id: this.orderId,
-            changeable: Boolean(!this.isVip(this.itemShift)),
-            parent: {
-              parent_name: this.parents[this.isParentSelect].fName,
-              parent_sname: this.parents[this.isParentSelect].sName,
-              parent_tname: this.parents[this.isParentSelect].tName,
-              parent_email: this.parents[this.isParentSelect].email,
-              parent_phone: this.parents[this.isParentSelect].phone,
-              parent_city: this.parents[this.isParentSelect].city,
-              parent_street: this.parents[this.isParentSelect].street,
-              parent_home: this.parents[this.isParentSelect].home,
-              parent_apartment: this.parents[this.isParentSelect].apartment,
-              parent_series: this.parents[this.isParentSelect].series,
-              parent_issued: this.parents[this.isParentSelect].issued,
-              parent_datepassport: this.parents[this.isParentSelect].datepassport,
-              parent_isparent: this.parents[this.isParentSelect].isparent,
-            },
-            child: {
-              child_name: this.childen[this.isChildSelect].fName,
-              child_sname: this.childen[this.isChildSelect].sName,
-              child_tname: this.childen[this.isChildSelect].tName,
-              child_totalyear: this.childen[this.isChildSelect].totalYear,
-              child_birthday: this.childen[this.isChildSelect].birth,
-              child_city: this.childen[this.isChildSelect].city,
-              child_street: this.childen[this.isChildSelect].street,
-              child_home: this.childen[this.isChildSelect].home,
-              child_apartment: this.childen[this.isChildSelect].apartment,
-              child_series: this.childen[this.isChildSelect].series,
-              child_issued: this.childen[this.isChildSelect].issued,
-              child_datepassport: this.childen[this.isChildSelect].datepassport,
-              child_birthсertificate: this.childen[this.isChildSelect].birthCertificate,
-              child_gender: this.childen[this.isChildSelect].gender,
-            },
-            user: {
-              user_name: this.user.fName,
-              user_sname: this.user.sName,
-              user_tname: this.user.tName,
-              user_phone: this.user.phone,
-              user_email: this.user.email,
-              user_city: this.user.city,
-              user_street: this.user.street,
-              user_apartment: this.user.apartament,
-              user_home: this.user.home,
-              user_series: this.user.series,
-              user_datepassport: this.user.datePassport,
-              user_issued: this.user.issued
-            }
+        let date = new Date()
+        let order = {
+          date: date,
+          number: date,
+          price: this.sum,
+          order_type:'(Поланая оплата)',
+          order_name: this.shifts[this.itemShift].attributes.service_name,
+          order_id: this.orderId,
+          changeable: Boolean(!this.isVip(this.itemShift)),
+          parent: {
+            parent_name: this.parents[this.isParentSelect].fName,
+            parent_sname: this.parents[this.isParentSelect].sName,
+            parent_tname: this.parents[this.isParentSelect].tName,
+            parent_email: this.parents[this.isParentSelect].email,
+            parent_phone: this.parents[this.isParentSelect].phone,
+            parent_city: this.parents[this.isParentSelect].city,
+            parent_street: this.parents[this.isParentSelect].street,
+            parent_home: this.parents[this.isParentSelect].home,
+            parent_apartment: this.parents[this.isParentSelect].apartment,
+            parent_series: this.parents[this.isParentSelect].series,
+            parent_issued: this.parents[this.isParentSelect].issued,
+            parent_datepassport: this.parents[this.isParentSelect].datepassport,
+            parent_isparent: this.parents[this.isParentSelect].isparent,
+          },
+          child: {
+            child_name: this.childen[this.isChildSelect].fName,
+            child_sname: this.childen[this.isChildSelect].sName,
+            child_tname: this.childen[this.isChildSelect].tName,
+            child_totalyear: this.childen[this.isChildSelect].totalYear,
+            child_birthday: this.childen[this.isChildSelect].birth,
+            child_city: this.childen[this.isChildSelect].city,
+            child_street: this.childen[this.isChildSelect].street,
+            child_home: this.childen[this.isChildSelect].home,
+            child_apartment: this.childen[this.isChildSelect].apartment,
+            child_series: this.childen[this.isChildSelect].series,
+            child_issued: this.childen[this.isChildSelect].issued,
+            child_datepassport: this.childen[this.isChildSelect].datepassport,
+            child_birthсertificate: this.childen[this.isChildSelect].birthCertificate,
+            child_gender: this.childen[this.isChildSelect].gender,
+          },
+          user: {
+            user_name: this.user.fName,
+            user_sname: this.user.sName,
+            user_tname: this.user.tName,
+            user_phone: this.user.phone,
+            user_email: this.user.email,
+            user_city: this.user.city,
+            user_street: this.user.street,
+            user_apartment: this.user.apartament,
+            user_home: this.user.home,
+            user_series: this.user.series,
+            user_datepassport: this.user.datePassport,
+            user_issued: this.user.issued
           }
-          Promise.allSettled([
-            this.fetchOrder(order)
-          ]).then(() => {
-            this.$refs.form.submit()
-          })
-        } else {
-          this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
         }
+        Promise.allSettled([
+          this.fetchOrder(order)
+        ]).then(() => {
+          this.$refs.form.submit()
+        })
       }
     },
     mounted () {
