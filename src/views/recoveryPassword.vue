@@ -54,9 +54,6 @@
           })
         }
       }
-    },
-    mounted () {
-      console.log(this.$route.query.code)
     }
   }
 </script>

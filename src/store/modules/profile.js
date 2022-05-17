@@ -123,8 +123,7 @@ export default {
     },
     fetchRecovery ({ commit }, mail) {
       commit('SET_ANSWER', 'expect')
-      console.log(mail)
-      fetch('http://89.108.98.57:1337/api/auth/forgot-password', {
+      fetch(process.env.VUE_APP_DOMAIN + '/auth/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -143,7 +142,7 @@ export default {
       })
     },
     async fetchPassword ({ commit }, props) {
-      await fetch('http://89.108.98.57:1337/api/auth/reset-password', {
+      await fetch(process.env.VUE_APP_DOMAIN + '/auth/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
