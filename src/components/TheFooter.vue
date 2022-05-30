@@ -48,6 +48,7 @@
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1PjHdAT07xJCjJ7e2_isf0cju0-pX5crS/view"><doc/> Предварительный договор</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1rqH23OwoJ6ed1G1S1EmCXRpB6xv8EhmH/view"><doc/> Оферта</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view"><doc/> Политика конфиденциальности</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/17E-qJVzDCRrgdmCq-yDapHqSQ0ocxt1d/view"><doc/> Заявление на возврат</a>
         </div>
         <div class="footer__info-org">
           Автономная некоммерческая организация

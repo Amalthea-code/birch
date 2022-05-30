@@ -13,6 +13,9 @@
       <div class="cabinet__button" @click="output">Выйти из аккаунта</div>
     </div>
     <trips v-if="GET_AUTORIZEDUSER" :trips="GET_AUTORIZEDUSER.orders" />
+    <div class="cabinet__link">
+      <a target="_blank" href="https://drive.google.com/file/d/17E-qJVzDCRrgdmCq-yDapHqSQ0ocxt1d/view">Заявление на возврат</a>
+    </div>
   </div>
 </template>
 
