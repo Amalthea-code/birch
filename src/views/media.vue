@@ -4,6 +4,7 @@
       subTitle='Медиацентр'
       color='#5493CC'
     />
+    <web-cam />
     <gallery />
     <news-slider/>
     <networks />
@@ -18,6 +19,7 @@ import MainSection from '@/components/blocks/MainSection'
 import Networks from '@/components/blocks/Networks'
 import Gallery from '@/components/blocks/Gallery'
 import NewsSlider from '@/components/blocks/NewsSlider'
+import WebCam from '@/components/blocks/WebCam'
 
   export default {
     components: { 
@@ -25,6 +27,7 @@ import NewsSlider from '@/components/blocks/NewsSlider'
       MainSection,
       Gallery,
       NewsSlider,
+      WebCam,
       Maps
     },
     methods: {
