@@ -94,13 +94,14 @@
       </div>
     </div>
     <div class="payment__step-lust">
-        <div class="payment__step-left">
+        <div v-if="false" class="payment__step-left">
           <div class="payment__step-title">ШАГ 4</div>
           <div class="payment__step-text">СУММА</div>
           <div class="payment__step-element"><input name="cashback" :value="true" v-model="paymentSum" type="radio" id="cashback-2" class="payment__step-radio" checked><label for="cashback-2" class="payment__step-label">с кэшбеком по карте МИР</label></div>
           <div class="payment__step-hardly">Внимание! Перед оплатой нужно зарегистрировать карту МИР в программе лояльности для получения Кешбэка.</div>
           <div class="payment__step-hardly"><router-link to="/promotion">Ознакомьтесь с ИНСТРУКЦИЕЙ.</router-link></div>
         </div>
+        <div v-else />
         <div class="payment__step-right">
           <input class="payment__hidden-input" type="hidden" name='sum' :value='sum'/>
           <input class="payment__hidden-input" type="hidden" name='client_email' :value='user.email'/>

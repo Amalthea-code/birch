@@ -18,8 +18,8 @@
           БИК 044525411<br />
         </p>
         <div class="contacts__persons">
-          <div class="contacts__person"> <span>Директор:</span> Амхир Борис Константинович</div>
-          <div class="contacts__person"> <span>Исполнительный директор:</span> Крук Илья Леонидович</div>
+          <div class="contacts__person"> <span>Директор:</span> Крук Илья Леонидович</div>
+          <div class="contacts__person"> <span>Исполнительный директор:</span> Амхир Борис Константинович</div>
           <div class="contacts__person"> <span>Главный бухгалтер:</span> Назарова Елена Петровна</div>
         </div>
         <div class="contacts__block">
