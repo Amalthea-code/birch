@@ -1,7 +1,7 @@
 <template>
 <!-- https://berezka64.server.paykeeper.ru/ -->
 <!-- https://mir-berezka64.server.paykeeper.ru/payments/ -->
-  <form ref="form" accept-charset="utf-8" class="payment" method='POST' action="https://mir-berezka64.server.paykeeper.ru/create">
+  <form ref="form" accept-charset="utf-8" class="payment" method='POST' action="https://berezka64.server.paykeeper.ru/create">
     <div class="payment__title">{{user.sName + ' ' + user.fName + ' ' + user.tName}}</div>
     <div class="payment__text">Счет формируется на каждую путевку отдельно</div>
     <div class="payment__steps">

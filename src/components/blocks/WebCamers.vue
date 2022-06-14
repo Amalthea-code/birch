@@ -1,5 +1,5 @@
 <template>
-  <div class="camers">
+  <div v-if="false" class="camers">
     <h3 class="camers__title">ВЕБ-КАМЕРЫ</h3>
 
     <div class="camers__box">
