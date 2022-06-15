@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <main-section />
-    <mir-section />
+    <mir-section v-if="false" />
     <shift-selection />
     <reviews />
     <news-slider/>
