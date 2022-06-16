@@ -9,10 +9,8 @@
           <li class="conditions__card-text">Время заезда регламентировано, т.к. до обеда необходимо сформировать заявку с точным количеством детей на питание и размещение в отрядах. </li>
           <li class="conditions__card-text">Для комфортной психологической адаптации ребенка привозите его в строго установленное время. </li>
           <li class="conditions__card-text">Для ускорения прохождения процедуры регистрации при заезде, заранее распечатайте и подпишите
-            <a target="_blank" href="https://drive.google.com/file/d/1Fv5VQhWLZQFDqaqGs7Le98KqQrso_kFg/view" class="conditions__card-link">Памятку для родителей</a>
-            и 
             <a target="_blank" href="https://drive.google.com/file/d/1FrksnbaRWJDTsq2wEeAWZivOnWehMLHM/view" class="conditions__card-link">Медсогласие</a>.
-            Предъявите подписанные документы на заезде.</li>
+            Предъявите подписанный документ на заезде.</li>
           <li class="conditions__card-text">Отъезд осуществляется в последний день смены до 13:00.</li>
           <li class="conditions__card-text">Заезд и отъезд осуществляются силами родителей или опекунов.</li>
         </ul>
