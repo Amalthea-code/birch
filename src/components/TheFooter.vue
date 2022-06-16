@@ -7,7 +7,7 @@
           <a target="_blank" href="tel:+78452563107" class="footer__info-phone">Администрация: +7(8452) 56-31-07</a>
           <a target="_blank" href="tel:+79372256244" class="footer__info-phone">Отдел продаж путевок: +7(937) 225-62-44</a>
           <a target="_blank" href="tel:+78452256244" class="footer__info-phone">Отдел продаж путевок: +7(8452) 25-62-44 </a>
-          <p class="footer__info-phone"><strong>Время работы отдела продаж путёвок:</strong><br /> вт - сб с 11:00 до 17:00</p>
+          <p class="footer__info-phone"><strong>Время работы отдела продаж путёвок:</strong><br /> вт - сб с 11:00 до 16:00</p>
         </div>
         <div class="footer__info-mails">
           <div class="footer__info-mails-title">Электронная почта</div>
