@@ -8,6 +8,7 @@ import profile from "@/store/modules/profile"
 import vacancies from "@/store/modules/vacancies"
 import shifts from "@/store/modules/shifts"
 import gallery from "@/store/modules/gallery"
+import camers from "@/store/modules/camers"
 
 export default createStore({
   state: {
@@ -24,6 +25,7 @@ export default createStore({
     profile,
     shifts,
     vacancies,
+    camers,
     gallery
   }
 })

@@ -1,34 +1,50 @@
 <template>
   <div class="camers">
-    <h3 class="camers__title">ВЕБ-КАМЕРЫ</h3>
-
-    <div class="camers__box">
+    <h3 v-if="GET_CAMERS.length" class="camers__title">ВЕБ-КАМЕРЫ</h3>
+    <div v-if="GET_CAMERS.length" class="camers__box">
       <div class="camers__items">
-        <div v-if="select === 0" class="camers__item">
-          <iframe src="https://ipeye.ru/ipeye_service/api/iframe.php?iframe_player=1&dev=e851fb8225f04010afd0e642be6e7e09&autoplay=0&archive=1" width="100%" height="600" frameBorder="0" seamless="seamless" allowfullscreen>Ваш браузер не поддерживает фреймы!</iframe>
-        </div>
-        <div v-if="select === 1" class="camers__item">
-          <iframe src="https://ipeye.ru/ipeye_service/api/iframe.php?iframe_player=1&dev=6209f86bf2bd41c18a1b28ee0bfd2bfe&autoplay=0&archive=1" width="100%" height="600" frameBorder="0" seamless="seamless" allowfullscreen>Ваш браузер не поддерживает фреймы!</iframe>
-        </div>
-        <div v-if="select === 2" class="camers__item">
-          <iframe src="https://ipeye.ru/ipeye_service/api/iframe.php?iframe_player=1&dev=53ff6fd49e204cc28db2dea0ef638064&autoplay=0&archive=1" width="100%" height="600" frameBorder="0" seamless="seamless" allowfullscreen>Ваш браузер не поддерживает фреймы!</iframe>
+        <div v-for="(el, i) in GET_CAMERS" :key="i">
+          <div v-if="select === i && el.attributes.switch" class="camers__item">
+            <iframe :src="el.attributes.link" width="100%" height="600" frameBorder="0" seamless="seamless" allowfullscreen>Ваш браузер не поддерживает фреймы!</iframe>
+          </div>
         </div>
       </div>
       <div class="camers__tabs">
-        <div @click="select = 0" :class="{'camers__tab': true, 'camers__tab_active': select === 0}">Веселая площадка</div>
-        <div @click="select = 1" :class="{'camers__tab': true, 'camers__tab_active': select === 1}">Бассейн</div>
-        <div @click="select = 2" :class="{'camers__tab': true, 'camers__tab_active': select === 2}">Стадион</div>
+        <div v-for="(el, i) in GET_CAMERS" :key="i">
+          <div
+            v-if="el.attributes.switch"
+            :class="{'camers__tab': true, 'camers__tab_active': select === i}"
+            @click="select = i"
+          >
+            {{ el.attributes.name }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
   export default {
     data () {
       return {
         select: 0
       }
+    },
+    computed: {
+      ...mapGetters({
+        GET_CAMERS: 'camers/GET_CAMERS'
+      })
+    },
+    methods: {
+      ...mapActions({
+        fetchCamers: 'camers/fetchCamers'
+      })
+    },
+    mounted () {
+      this.fetchCamers()
     }
   }
 </script>

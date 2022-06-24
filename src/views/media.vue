@@ -35,7 +35,7 @@ import WebCamers from '@/components/blocks/WebCamers'
         fetchNews: 'news/fetchNews'
       })
     },
-    created () {
+    mounted () {
       this.fetchNews()
     }
   }
