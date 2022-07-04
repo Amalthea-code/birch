@@ -38,6 +38,7 @@
               Отдел продаж путевок: <a href="mailto: sales@berezka64.ru">sales@berezka64.ru</a><br />
               Бухгалтерия: <a href="mailto:nazarova.elena@berezka64.ru">nazarova.elena@berezka64.ru</a><br />
               Онлайн-проекты/реклама: <a href="mailto:project@berezka64.ru">project@berezka64.ru</a><br />
+              Отдел кадров: <a href="mailto:otdel.kadrov@berezka64.ru">otdel.kadrov@berezka64.ru</a><br />
             </p>
           </div>
         </div>

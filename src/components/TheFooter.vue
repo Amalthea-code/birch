@@ -15,6 +15,7 @@
           <a target="_blank" href="mailto:sales@berezka64.ru" class="footer__info-mail">Отдел продаж путевок: sales@berezka64.ru</a>
           <a target="_blank" href="mailto:nazarova.elena@berezka64.ru" class="footer__info-mail">Бухгалтерия: nazarova.elena@berezka64.ru</a>
           <a target="_blank" href="mailto:project@berezka64.ru" class="footer__info-mail">Онлайн-проекты/реклама: project@berezka64.ru</a>
+          <a target="_blank" href="mailto:otdel.kadrov@berezka64.ru" class="footer__info-mail">Отдел кадров: otdel.kadrov@berezka64.ru</a>
         </div>
         <div class="footer__info-socials">
           <a v-if="false" target="_blank" href="" class="footer__info-social">
@@ -50,6 +51,7 @@
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1rqH23OwoJ6ed1G1S1EmCXRpB6xv8EhmH/view"><doc/> Оферта</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view"><doc/> Политика конфиденциальности</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/17E-qJVzDCRrgdmCq-yDapHqSQ0ocxt1d/view"><doc/> Заявление на возврат</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXWsr1kL6cPM38sm9Ul4x-2L9kFim0oI/view"><doc/> Программа СОЦ Берёзка</a>
         </div>
         <div class="footer__info-org">
           Автономная некоммерческая организация
@@ -189,9 +191,11 @@
         font-size: 10px;
         font-weight: 500;
         line-height: 12px;
-        margin-right: 30px;
+        margin-right: 10px;
         svg {
           margin-right: 10px;
+          width: 16px;
+          height: 16px;
         }
         @media screen and (max-width: 680px) {
           width: 100%;
