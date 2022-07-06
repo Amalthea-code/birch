@@ -38,9 +38,7 @@
     </p>
     </info>
     <h2 class="docs-info__alert">Важно</h2>
-    <p class="docs-info__alert-text docs-info__alert-text_color">В&nbsp;связи с&nbsp;эпидемиологической обстановкой в&nbsp;стране, на&nbsp;основании постановления Правительства РФ&nbsp;и&nbsp;Главного санитарного врача&nbsp;РФ от&nbsp;29.03.2021 &#8470;&nbsp;10 3.1/2.4.3598-20, с&nbsp;2021 года изменены правила пребывания детей в&nbsp;загородных лагерях:</p>
-    <p class="docs-info__alert-text">Посещение детей родителями и&nbsp;родственниками, передача продуктов и&nbsp;вещей, на&nbsp;протяжение всей смены запрещены!</p>
-    <p class="docs-info__alert-text">Временный выезд детей из&nbsp;СОЦ в&nbsp;период всей смены запрещен.</p>
+    <p class="docs-info__alert-text">Дни посещений детей: Суббота -Воскресенье с&nbsp;11:00 до&nbsp;13:00 и&nbsp;с&nbsp;17:00 до&nbsp;19:00. Временный выезд детей из&nbsp;СОЦ в&nbsp;период всей смены запрещен. Передача продуктов строго запрещена!</p>
     <div class="docs-info__box">
       <div class="docs-info__box-item">
         <img src="@/assets/images/photo/docs-info-1.jpg" alt="" class="docs-info__box-image">
