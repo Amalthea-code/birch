@@ -548,7 +548,7 @@
               <ul>
                 <li class="docs-info__diet-list">Помидор свежий</li>
                 <li class="docs-info__diet-list">Рассольник «Ленинградский» на к/б сметанной</li>
-                <li class="docs-info__diet-list">Куры тушеные в сметанном соусе</li>
+                <li class="docs-info__diet-list">Куры тушеные в сметанном соусе с гарниром из макаронных изделий</li>
                 <li class="docs-info__diet-list">Компот из смеси сухофруктов</li>
                 <li class="docs-info__diet-list">Хлеб ржаной</li>
                 <li class="docs-info__diet-list">Хлеб пшеничный</li>
