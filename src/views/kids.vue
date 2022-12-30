@@ -3,6 +3,7 @@
     <main-section 
       subTitle='Детям'
       color='#5EC0A9'
+      colorBuy='#BAA3E4'
     />
     <events />
     <pool />

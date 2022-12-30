@@ -1,6 +1,8 @@
 <template>
   <div class="main">
-    <main-section />
+    <main-section 
+      colorBuy='#5493CC'
+    />
     <shift-selection />
     <reviews />
     <news-slider/>

@@ -7,6 +7,11 @@
         {{ subTitle }}
       </span>
     </p>
+    <router-link to="/#buy">
+      <span :style="{ backgroundColor: colorBuy }" class="main-section__buy-button">
+        Купить путевку
+      </span>
+    </router-link>
   </div>
 </template>
 
@@ -20,6 +25,10 @@ export default {
     color: {
       type: String,
       default: '#F98419'
+    },
+    colorBuy: {
+      type: String,
+      default: '#F98419'
     }
   }
 }
@@ -31,6 +40,9 @@ export default {
     background-position: center;
     height: 100vh;
     position: relative;
+    a {
+      text-decoration: none;
+    }
     &__image {
       position: absolute;
       top: 0;
@@ -81,6 +93,21 @@ export default {
         padding: 20px 24px;
         border-radius: 14px;
       }
+    }
+    &__buy-button {
+      box-sizing: border-box;
+      display: block;
+      position: relative;
+      z-index: 3;
+      font-family: RF Dewi Expanded;
+      font-size: 22px;
+      font-weight: 900;
+      color: white;
+      padding: 20px 24px;
+      border-radius: 14px;
+      width: 280px;
+      top: 40px;
+      left: calc(50% - 140px);
     }
     @media screen and (max-width: 1300px) {
       &__title {

@@ -3,6 +3,7 @@
     <main-section
       subTitle='Медиацентр'
       color='#5493CC'
+      colorBuy='#3FD33C'
     />
     <web-camers />
     <gallery />

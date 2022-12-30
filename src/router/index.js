@@ -253,7 +253,14 @@ const DEFAULT_TITLE = 'Лагерь "Березка"';
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  scrollBehavior() {
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        top: 60,
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
     return { top: 0 }
   },
 })

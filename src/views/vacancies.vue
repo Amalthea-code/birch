@@ -3,6 +3,7 @@
     <main-section
       subTitle='Вакансии'
       color='#FB6F8A'
+      colorBuy='#5493CC'
     />
     <vacancies />
   </div>

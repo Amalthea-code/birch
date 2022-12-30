@@ -1,5 +1,5 @@
 <template>
-  <div class="shift-selection">
+  <div class="shift-selection" id="buy">
     <h1 class="shift-selection__title">ВЫБЕРИ СМЕНУ</h1>
     <div class="shift-selection__box" v-if="selections.length">
       <shift-selection-item

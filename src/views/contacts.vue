@@ -3,6 +3,7 @@
     <main-section
       subTitle='Контакты'
       color='#F7B618'
+      colorBuy="#3FD33C"
     />
     <contacts />
     <maps />

@@ -3,6 +3,7 @@
     <main-section
       subTitle='Родителям'
       color='#BAA3E4'
+      colorBuy='#FB6F8A'
     />
     <docs />
     <conditions />
