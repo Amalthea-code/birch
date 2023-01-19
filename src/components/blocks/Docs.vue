@@ -2,6 +2,7 @@
   <div class="docs">
     <div class="docs__nav">
       <a href="#docs" class="docs__nav-link">Документы</a>
+      <a href="#comp" class="docs__nav-link">Компенсации</a>
       <a href="#structure" class="docs__nav-link">Cтруктура</a>
       <a href="#counselors" class="docs__nav-link">О вожатых</a>
       <a href="#nutrition" class="docs__nav-link">Питание</a>
@@ -14,14 +15,14 @@
       color="#F98419"
       backgroundColor='linear-gradient(258.58deg, #F98419 8.47%, #FF9C41 100%)'
     >
-    <ul>
-      <li class="docs__info-text">путевку*;</li>
-      <li class="docs__info-text">медицинскую справку (форма 079/у), полученную не ранее, чем за 3 дня до заезда**;</li>
-      <li class="docs__info-text">документ об отсутствии контактов с COVID-19 и эпидокружении , полученный не ранее, чем за 3 дня до заезда***;</li>
-      <li class="docs__info-text">копию свидетельства о рождении или паспорта;</li>
-      <li class="docs__info-text">копию страхового медицинского полиса.</li>
-    </ul>
-    <span class="docs__sub-info">Без указанных документов ребенок в СОЦ не допускается.</span>
+      <ul>
+        <li class="docs__info-text">путевку*;</li>
+        <li class="docs__info-text">медицинскую справку (форма 079/у), полученную не ранее, чем за 3 дня до заезда**;</li>
+        <li class="docs__info-text">документ об отсутствии контактов с COVID-19 и эпидокружении , полученный не ранее, чем за 3 дня до заезда***;</li>
+        <li class="docs__info-text">копию свидетельства о рождении или паспорта;</li>
+        <li class="docs__info-text">копию страхового медицинского полиса.</li>
+      </ul>
+      <span class="docs__sub-info">Без указанных документов ребенок в СОЦ не допускается.</span>
     </info>
     <div class="docs__info">
       <p class="docs__text">* После полной оплаты Путёвки Вы можете получить её на бумажном носителе при регистрации в день заезда в смену или забрать путёвку заранее в Отделе продаж в лагере по адресу: 410056, г. Саратов, Большая Кумысная поляна, АНО СОЦ «Берёзка», т.: +7 937 225-62-44</p>
@@ -32,6 +33,21 @@
       <br />
       <p class="docs__text">*** Справка об эпидокружении и отсутствии контакта с COVID-зараженными может быть выдана отдельно или вписана в форму 079/У.</p>
     </div>
+    <div class="docs__title" id="comp">КОМПЕНСАЦИИ</div>
+    <info
+      class="docs__card"
+      title="Для получения компенсации за путевку в лагерь от работодателя (если таковая предусмотрена работодателем), пришлите письмо на электронную почту sales@berezka64.ru со следующим содержанием:"
+      color="#F98419"
+      backgroundColor='rgb(186, 163, 228)'
+    >
+      <ul>
+        <li class="docs__info-text">Тема письма - Документы на компенсацию;</li>
+        <li class="docs__info-text">Текст - «Прошу подготовить документы для получения компенсации от работодателя на имя (ФИО получателя компенсации) по путевке (номер путевки, ФИО ребенка, дата рождения ребенка, номер смены)»;</li>
+        <li class="docs__info-text">Также укажите в письме необходимые от лагеря документы, требуемые работодателем для компенсации;</li>
+        <li class="docs__info-text">Сохраните чек и отрывной талон от путевки, которые придут вам на почту;</li>
+      </ul>
+      <span class="docs__sub-info">Получить все необходимые документы Вы сможете по окончании смены, предварительно позвонив по номеру телефона отдела продаж <a href="tel:+78452256244">+7(8452) 25-62-44</a>.</span>
+    </info>
   </div>
 </template>
 
@@ -129,6 +145,14 @@
             color: white;
           }
         }
+        &:nth-child(6) {
+          color: #3FD33C;
+          border-color: #3FD33C;
+          &:hover {
+            background-color: #3FD33C;
+            color: white;
+          }
+        }
       }
     }
     &__info {
@@ -169,6 +193,9 @@
       text-align: center;
       border-top: 1px solid #DFDFDF;
       padding: 16px 0 0;
+      a {
+        color: black;
+      }
       @media screen and (max-width: 680px) {
         font-size: 14px;
         line-height: 17px;

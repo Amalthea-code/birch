@@ -40,6 +40,7 @@
           </div>
         </div>
         <div v-else class="payment__step-slag">Добавьте родителя/опекуна в личном кабинете</div>
+        <input type="checkbox" class="payment__step-checkbox payment__step-checkbox_red" id="checkboxPer" v-model="isParentPaying"><label for="checkboxPer" class="payment__step-label payment__step-label_red">Плательщиком является опекун/родитель</label>
       </div>
       <div class="payment__step">
         <div class="payment__step-title">ШАГ 2</div>
@@ -82,8 +83,9 @@
         <div class="payment__step-text">ВЫБЕРИТЕ ПУТЕВКУ</div>
         <div class="payment__step-box">
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
-            <input v-if="vipHendler(shift.attributes.count, index)" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
-            <label v-if="vipHendler(shift.attributes.count, index)" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
+            <!-- v-if="vipHendler(shift.attributes.count, index)" -->
+            <input :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
+            <label :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
           </div>
         </div>
       </div>
@@ -160,6 +162,7 @@
     },
     data () {
       return {
+        isParentPaying: false,
         itemShift: 0,
         isChildrenSelect: false,
         isParentsSelect: false,
@@ -324,18 +327,18 @@
             child_gender: this.childen[this.isChildSelect].gender,
           },
           user: {
-            user_name: this.user.fName,
-            user_sname: this.user.sName,
-            user_tname: this.user.tName,
-            user_phone: this.user.phone,
+            user_name: this.isParentPaying ? this.parents[this.isParentSelect].fName : this.user.fName,
+            user_sname: this.isParentPaying ? this.parents[this.isParentSelect].sName : this.user.sName,
+            user_tname: this.isParentPaying ? this.parents[this.isParentSelect].tName : this.user.tName,
+            user_phone: this.isParentPaying ? this.parents[this.isParentSelect].phone : this.user.phone,
             user_email: this.user.email,
-            user_city: this.user.city,
-            user_street: this.user.street,
-            user_apartment: this.user.apartament,
-            user_home: this.user.home,
-            user_series: this.user.series,
-            user_datepassport: this.user.datePassport,
-            user_issued: this.user.issued
+            user_city: this.isParentPaying ? this.parents[this.isParentSelect].city : this.user.city,
+            user_street: this.isParentPaying ? this.parents[this.isParentSelect].street : this.user.street,
+            user_apartment: this.isParentPaying ? this.parents[this.isParentSelect].apartment : this.user.apartment,
+            user_home: this.isParentPaying ? this.parents[this.isParentSelect].home : this.user.home,
+            user_series: this.isParentPaying ? this.parents[this.isParentSelect].series : this.user.series,
+            user_datepassport: this.isParentPaying ? this.parents[this.isParentSelect].datePassport : this.user.datePassport,
+            user_issued: this.isParentPaying ? this.parents[this.isParentSelect].issued : this.user.issued
           }
         }
         Promise.allSettled([
@@ -587,6 +590,16 @@
             }
           }
         }
+        &_red {
+          &::before {
+            border-color: red;
+          }
+          &:checked {
+            &::after {
+              background-color: red;
+            }
+          }
+        }
       }
       &-radio {
         margin: 0 34px 0 0;
@@ -643,6 +656,9 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 23px;
+        &_red {
+          color: red;
+        }
         a {
           color: #000;
         }
@@ -662,6 +678,7 @@
     width: 100%;
     height: 68px;
     position: relative;
+    margin: 0 0 20px;
     &_active {
       .select__box {
         height: auto;
