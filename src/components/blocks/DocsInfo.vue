@@ -62,7 +62,7 @@
           </p>
         </div>
       </div>
-      <div class="docs-info__box-item">
+      <div v-if="false" class="docs-info__box-item">
         <img src="@/assets/images/photo/docs-info-3.jpg" alt="" class="docs-info__box-image">
         <div class="docs-info__box-block">
           <div class="docs-info__box-title docs-info__box-title_red">Медпункт</div>
@@ -486,6 +486,8 @@
         <img src="@/assets/images/photo/counselors-1.jpg" alt="" class="docs-info__counselors-image">
         <p class="docs-info__counselors-text">
           Каждый новый сезон, начиная с 1 апреля мы ведем набор вожатых по линии студенческих отрядов педагогической направленности.
+          <br /><br />
+          Ваши резюме на вакансию вожатого можете прислать на электронную почту отдела кадров <a href="mailto:otdel.kadrov@berezka64.ru">otdel.kadrov@berezka64.ru</a>
           <br /><br />
           Преимущественно к нам приходят работать наши бывшие березовцы.  Благодаря этому в Березке уже сформирован настоящий костяк профессионалов, которые работают в лагере не первый год. В начале мая начинаются курсы подготовки, по завершении которых вожатый получает Сертификат об окончании курсов.
           <br /><br />

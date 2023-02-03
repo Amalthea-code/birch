@@ -8,7 +8,7 @@
       </span>
     </p>
     <router-link to="/#buy">
-      <span :style="{ backgroundColor: colorBuy }" class="main-section__buy-button">
+      <span class="main-section__buy-button">
         Купить путевку
       </span>
     </router-link>
@@ -102,11 +102,13 @@ export default {
       font-family: RF Dewi Expanded;
       font-size: 22px;
       font-weight: 900;
-      color: white;
+      color: black;
+      background-color: white;
       padding: 20px 24px;
-      border-radius: 14px;
-      width: 280px;
+      border-radius: 50px;
+      width: 284px;
       top: 40px;
+      border: solid 2px black;
       left: calc(50% - 140px);
     }
     @media screen and (max-width: 1300px) {
