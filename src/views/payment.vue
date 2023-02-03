@@ -83,9 +83,8 @@
         <div class="payment__step-text">ВЫБЕРИТЕ ПУТЕВКУ</div>
         <div class="payment__step-box">
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
-            <!-- v-if="vipHendler(shift.attributes.count, index)" -->
-            <input :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
-            <label :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
+            <input v-if="vipHendler(shift.attributes.count, index)" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
+            <label v-if="vipHendler(shift.attributes.count, index)" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
           </div>
         </div>
       </div>
@@ -285,6 +284,13 @@
           this.switchOpenSelect(1)
         }
       },
+      calcTotalYear (year) {
+        const date = new Date()
+        const birth = new Date(year.split('.').reverse().join('/'))
+        let fall = (birth.getTime() - date.getTime()) / 1000
+        fall /= (60 * 60 * 24)
+        return Math.abs(Math.round(fall/365.25))
+      },
       createOrder () {
         let date = new Date()
         let order = {
@@ -314,7 +320,7 @@
             child_name: this.childen[this.isChildSelect].fName,
             child_sname: this.childen[this.isChildSelect].sName,
             child_tname: this.childen[this.isChildSelect].tName,
-            child_totalyear: this.childen[this.isChildSelect].totalYear,
+            child_totalyear: this.calcTotalYear(this.childen[this.isChildSelect].birth),
             child_birthday: this.childen[this.isChildSelect].birth,
             child_city: this.childen[this.isChildSelect].city,
             child_street: this.childen[this.isChildSelect].street,

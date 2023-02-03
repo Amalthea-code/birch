@@ -205,8 +205,8 @@
       </div>
       <div id="administration" class="administration">
         <div class="administration__title">АДМИНИСТРАЦИЯ:</div>
-        <div class="administration__text"><strong>Амхир Борис Константинович</strong> – директор лагеря с 1976 г.</div>
-        <div class="administration__text"><strong>Крук Илья Леонидович</strong> – исполнительный директор с 2021 г.</div>
+        <div class="administration__text"><strong>Крук Илья Леонидович</strong> – директор лагеря</div>
+        <div class="administration__text"><strong>Амхир Борис Константинович</strong> – исполнительный директор</div>
         <div class="administration__text"><strong>Стрелкова Ольга Сергеевна</strong> – заместитель директора по хозяйственно - административным вопросам с 1977 г.</div>
         <div class="administration__text"><strong>Горобец Елена Ивановна</strong> – заместитель директора по воспитательной работе с 1995 г.</div>
       </div>
@@ -338,7 +338,7 @@
             image: require('@/assets/images/icons/infrastructure-4.png')
           },
           {
-            text: 'Бассейн открытый 25X10 с аквагоркой и 2-мя каскадами',
+            text: 'Бассейн открытый 25X10 с аквагоркой и 2-мя каскадами, с подогревом.',
             image: require('@/assets/images/icons/infrastructure-5.png')
           },
           {
