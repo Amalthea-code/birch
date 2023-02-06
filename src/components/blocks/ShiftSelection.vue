@@ -1,5 +1,15 @@
 <template>
   <div class="shift-selection" id="buy">
+    <h1 class="shift-selection__title">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>
+    <p class="shift-selection__contein-info shift-selection__alert-info">
+      Расписание смен Лета_2023 
+      и цены будут известны 
+      не ранее марта.<br/>
+      Мы обязательно проинформируем вас 
+      о старте продаж 
+      путёвок<br/> на нашем сайте и в соцсетях
+    </p>
+
     <h1 class="shift-selection__title">ВЫБЕРИ СМЕНУ</h1>
     <div class="shift-selection__box" v-if="selections.length">
       <shift-selection-item
@@ -68,6 +78,7 @@ import { mapGetters, mapActions } from 'vuex'
       @media screen and (max-width: 680px) {
         max-width: 300px;
       }
+
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 64px;
@@ -189,6 +200,16 @@ import { mapGetters, mapActions } from 'vuex'
         width: 100%;
         margin: 38px 0 0;
       }
+      @media screen and (max-width: 680px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+    &__alert-info {
+      text-align: center;
+      padding: 0 0 240px;
+      width: 100%;
+      font-size: 22px;
       @media screen and (max-width: 680px) {
         font-size: 14px;
         line-height: 18px;
