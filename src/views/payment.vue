@@ -170,14 +170,14 @@
         isAgreement: null,
         selectParent: null,
         selectChild: null,
-        paymentSum: null,
-        orderId: null
+        paymentSum: null
       }
     },
     methods: {
       ...mapActions({
         fetchOrder: 'profile/fetchOrder',
-        fetchShifts: 'shifts/fetchShifts'
+        fetchShifts: 'shifts/fetchShifts',
+        fetchOrderNumber: 'profile/fetchOrderNumber'
       }),
       vipHendler (count, index) {
         if (count > 0) { return true }
@@ -299,7 +299,7 @@
           price: this.sum,
           order_type:'(Поланая оплата)',
           order_name: this.shifts[this.itemShift].attributes.service_name,
-          order_id: this.orderId,
+          order_id: this.fetchOrderNumber(),
           changeable: Boolean(!this.isVip(this.itemShift)),
           parent: {
             parent_name: this.parents[this.isParentSelect].fName,
@@ -353,9 +353,6 @@
           this.$refs.form.submit()
         })
       }
-    },
-    mounted () {
-      this.orderId = Math.floor(Math.random() * 100000000) + 1
     }
   }
 </script>
