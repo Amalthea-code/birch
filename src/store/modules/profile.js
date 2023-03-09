@@ -169,9 +169,9 @@ export default {
         headers: {
           'Content-Type': 'application/json'
         }
-      })
-      const data = await response.json()
-      return data.data[0].id + 1
+      });
+      const data = await response.json();
+      return data.data[0].id + 1;
     },
   },
   getters: {
