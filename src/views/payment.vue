@@ -150,7 +150,7 @@
         token: 'profile/GET_TOKEN'
       }),
       sum () {
-        return (this.user.vipSale ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
+        return 1
       },
       value () {
         return this.shifts[this.itemShift].attributes.service_name
@@ -161,6 +161,7 @@
     },
     data () {
       return {
+        orderId: null,
         isParentPaying: false,
         itemShift: 0,
         isChildrenSelect: false,
@@ -170,14 +171,14 @@
         isAgreement: null,
         selectParent: null,
         selectChild: null,
-        paymentSum: null,
-        orderId: null
+        paymentSum: null
       }
     },
     methods: {
       ...mapActions({
         fetchOrder: 'profile/fetchOrder',
-        fetchShifts: 'shifts/fetchShifts'
+        fetchShifts: 'shifts/fetchShifts',
+        fetchOrderNumber: 'profile/fetchOrderNumber'
       }),
       vipHendler (count, index) {
         if (count > 0) { return true }
@@ -291,7 +292,7 @@
         fall /= (60 * 60 * 24)
         return Math.abs(Math.round(fall/365.25))
       },
-      createOrder () {
+      async createOrder () {
         let date = new Date()
         let order = {
           date: date,
@@ -299,7 +300,7 @@
           price: this.sum,
           order_type:'(Поланая оплата)',
           order_name: this.shifts[this.itemShift].attributes.service_name,
-          order_id: this.orderId,
+          order_id: await this.calcFetchOrderNumber(),
           changeable: Boolean(!this.isVip(this.itemShift)),
           parent: {
             parent_name: this.parents[this.isParentSelect].fName,
@@ -352,10 +353,12 @@
         ]).then(() => {
           this.$refs.form.submit()
         })
+      },
+      async calcFetchOrderNumber() {
+        const result = await this.fetchOrderNumber()
+        this.orderId = result
+        return result
       }
-    },
-    mounted () {
-      this.orderId = Math.floor(Math.random() * 100000000) + 1
     }
   }
 </script>

@@ -162,7 +162,17 @@ export default {
           commit('parents/SET_PARENTS', data.user.parents, { root: true })
           commit('children/SET_CHILDREN', data.user.childrens, { root: true })
       })
-    }
+    },
+    async fetchOrderNumber () {
+      const response = await fetch(process.env.VUE_APP_DOMAIN + '/orders?sort=id:desc', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const data = await response.json();
+      return data.data[0].id + 1;
+    },
   },
   getters: {
     GET_PROFILE: (state) => {
