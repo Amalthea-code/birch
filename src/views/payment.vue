@@ -1,6 +1,6 @@
-<template>
 <!-- https://berezka64.server.paykeeper.ru/ -->
 <!-- https://mir-berezka64.server.paykeeper.ru/payments/ -->
+<template>
   <form ref="form" accept-charset="utf-8" class="payment" method='POST' action="https://berezka64.server.paykeeper.ru/create">
     <div class="payment__title">{{user.sName + ' ' + user.fName + ' ' + user.tName}}</div>
     <div class="payment__text">Счет формируется на каждую путевку отдельно</div>
@@ -150,7 +150,7 @@
         token: 'profile/GET_TOKEN'
       }),
       sum () {
-        return 1
+        return (this.user.vipSale ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
       },
       value () {
         return this.shifts[this.itemShift].attributes.service_name
