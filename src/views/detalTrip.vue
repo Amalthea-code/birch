@@ -31,7 +31,7 @@
         <br /><br />
         Для уточнения информации по сумме возврата согласно договору свяжитесь с менеджером по телефону +79372256244 или напишите запрос на электронную почту: sales@berezka64.ru
       </div>
-      <a href="https://drive.google.com/file/d/17E-qJVzDCRrgdmCq-yDapHqSQ0ocxt1d/view" target="blank" class="detal-trip__how-button">СКАЧАТЬ ЗАЯВЛЕНИЕ НА ВОЗВРАТ</a>
+      <a href="https://drive.google.com/file/d/1Alt6UEiJEraBA2NFIga1amoZmRciTmIn/view" target="blank" class="detal-trip__how-button">СКАЧАТЬ ЗАЯВЛЕНИЕ НА ВОЗВРАТ</a>
     </div>
   </div>
 </template>

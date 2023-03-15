@@ -14,7 +14,7 @@
     </div>
     <trips v-if="GET_AUTORIZEDUSER" :trips="GET_AUTORIZEDUSER.orders" />
     <div class="cabinet__link">
-      <a target="_blank" href="https://drive.google.com/file/d/17E-qJVzDCRrgdmCq-yDapHqSQ0ocxt1d/view">Заявление на возврат</a>
+      <a target="_blank" href="https://drive.google.com/file/d/1Alt6UEiJEraBA2NFIga1amoZmRciTmIn/view">Заявление на возврат</a>
     </div>
   </div>
 </template>
