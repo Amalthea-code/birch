@@ -7,7 +7,7 @@
       backgroundColor="linear-gradient(268.41deg, rgba(156, 132, 210, 0.96) 6.43%, #BAA3E4 95.7%)"
     >
       <div class="contacts__box">
-        <div class="contacts__address"><span>Юр. адрес:</span>  410012, Саратовская область, г. Саратов, ул. Аткарская, д. 29 оф. 30</div>
+        <div class="contacts__address"><span>Юр. адрес:</span>  410012, Саратовская область, г. Саратов, ул. Аткарская, д. 29А, оф. 30</div>
         <div class="contacts__address"><span>Адрес местонахождения:</span> 410071, Саратовская область, г. Саратов, ул. Большая Кумысная поляна</div>
         <p class="contacts__text">
           Телефон:<a href="tel:88452563107"> 8(8452) 56-31-07</a><br />
