@@ -298,9 +298,9 @@
           date: date,
           number: date,
           price: this.sum,
-          order_type:'(Поланая оплата)',
+          order_type:'(Полная оплата)',
           order_name: this.shifts[this.itemShift].attributes.service_name,
-          order_id: await this.calcFetchOrderNumber(),
+          order_id: this.orderId,
           changeable: Boolean(!this.isVip(this.itemShift)),
           parent: {
             parent_name: this.parents[this.isParentSelect].fName,
@@ -354,11 +354,14 @@
           this.$refs.form.submit()
         })
       },
-      async calcFetchOrderNumber() {
-        const result = await this.fetchOrderNumber()
-        this.orderId = result
-        return result
-      }
+      // async calcFetchOrderNumber() {
+      //   const result = await this.fetchOrderNumber()
+      //   this.orderId = result
+      //   return result
+      // }
+    },
+    mounted () {
+      this.orderId = Math.floor(Math.random() * 100000000) + 1
     }
   }
 </script>
