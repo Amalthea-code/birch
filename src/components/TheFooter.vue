@@ -48,8 +48,8 @@
         <div class="footer__info-docs-box">
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1aXEdluLKFMNgdgH5QwjwznySvlsXZXuN/view"><doc/> Памятка для родителей</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1YMLf64ALddnS5jX1RCW4FLIW4BBRO07X/view"><doc/> Медсогласие</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1PjHdAT07xJCjJ7e2_isf0cju0-pX5crS/view"><doc/> Предварительный договор</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1zwmXqUc5eR8Ll80irgH11Jxym-gynwKa/view"><doc/> Оферта</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1zwmXqUc5eR8Ll80irgH11Jxym-gynwKa/view"><doc/> Предварительный договор</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1_5ZbnQztEmP8ZrrAwj8f_yIXSasw1vnj/view"><doc/> Оферта</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view"><doc/> Политика конфиденциальности</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1Alt6UEiJEraBA2NFIga1amoZmRciTmIn/view"><doc/> Заявление на возврат</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXWsr1kL6cPM38sm9Ul4x-2L9kFim0oI/view"><doc/> Программа СОЦ Берёзка</a>
