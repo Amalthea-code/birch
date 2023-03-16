@@ -70,10 +70,9 @@ export default {
       }).then((response) => {
         return response.json()
       }).then((data) => {
-        if (data.jwt) {
-          commit('SET_ANSWER', 'succes')
+        if (data.id) {
+          commit('SET_ANSWER', 'succes reg')
         }
-        console.log(data)
         if (data.error.message === 'Email is already taken') {
           commit('SET_ANSWER', 'mailerr')
         }
