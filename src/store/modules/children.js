@@ -73,6 +73,22 @@ export default {
       }).then((response) => {
         return response.json();
       })
+    },
+    rewriteChild ({rootGetters}, {id, year}) {
+      fetch(process.env.VUE_APP_DOMAIN + '/childrens/' + id, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': ('Bearer ' + rootGetters['profile/GET_TOKEN'])
+        },
+        body: JSON.stringify({
+          data: {
+            totalYear: year,
+          }
+        })
+      }).then((response) => {
+        return response.json();
+      })
     }
   },
   getters: {

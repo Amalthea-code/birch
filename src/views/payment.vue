@@ -178,7 +178,8 @@
       ...mapActions({
         fetchOrder: 'profile/fetchOrder',
         fetchShifts: 'shifts/fetchShifts',
-        fetchOrderNumber: 'profile/fetchOrderNumber'
+        fetchOrderNumber: 'profile/fetchOrderNumber',
+        rewriteChild: 'children/rewriteChild'
       }),
       vipHendler (count, index) {
         if (count > 0) { return true }
@@ -285,11 +286,15 @@
           this.switchOpenSelect(1)
         }
       },
-      calcTotalYear (year) {
+      calcTotalYear () {
         const date = new Date()
-        const birth = new Date(year.split('.').reverse().join('/'))
+        const birth = new Date(this.childen[this.isChildSelect].birth.split('.').reverse().join('/'))
         let fall = (birth.getTime() - date.getTime()) / 1000
         fall /= (60 * 60 * 24)
+        this.rewriteChild({
+          id: this.childen[this.isChildSelect].id,
+          year: String(Math.abs(Math.round(fall/365.25)))
+        })
         return Math.abs(Math.round(fall/365.25))
       },
       async createOrder () {
@@ -321,7 +326,7 @@
             child_name: this.childen[this.isChildSelect].fName,
             child_sname: this.childen[this.isChildSelect].sName,
             child_tname: this.childen[this.isChildSelect].tName,
-            child_totalyear: this.calcTotalYear(this.childen[this.isChildSelect].birth),
+            child_totalyear: this.calcTotalYear(),
             child_birthday: this.childen[this.isChildSelect].birth,
             child_city: this.childen[this.isChildSelect].city,
             child_street: this.childen[this.isChildSelect].street,
