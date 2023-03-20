@@ -5,7 +5,7 @@
       На данный момент информации о запуске программы детского кешбэка в 2023 году нет
     </p>
 
-    <h1 class="shift-selection__title">ВЫБЕРИ СМЕНУ</h1>
+    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лета 2023 г.</h1>
     <div class="shift-selection__box" v-if="selections.length">
       <shift-selection-item
         v-for="(selection, index) in selections"
@@ -79,14 +79,23 @@ import { mapGetters, mapActions } from 'vuex'
       font-size: 64px;
       font-weight: 900;
       line-height: 77px;
+      &_little {
+        font-size: 40px;
+      }
       @media screen and (max-width: 1300px) {
         font-size: 46px;
         line-height: 55px;
         margin: 28px 0 0;
+        &_little {
+          font-size: 36px;
+        }
       }
       @media screen and (max-width: 680px) {
         font-size: 24px;
         line-height: 29px;
+        &_little {
+          font-size: 16px;
+        }
       }
     }
     &__sub-title {
@@ -202,7 +211,7 @@ import { mapGetters, mapActions } from 'vuex'
     }
     &__alert-info {
       text-align: center;
-      padding: 0 0 240px;
+      padding: 0 0 60px;
       width: 100%;
       font-size: 22px;
       @media screen and (max-width: 680px) {

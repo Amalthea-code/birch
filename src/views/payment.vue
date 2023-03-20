@@ -116,6 +116,12 @@
               'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' || this.user.vip === 'vipAll' ? true : false
             }"
           >{{ sum }} руб.</div>
+          <div class="payment__info">
+            <h4 class="payment__info-title">Информация о путевке</h4> 
+            Информацию о Вашей покупке с указанием смены, сроков поездки, данными на родителя и ребенка Вы можете увидеть в путёвке, которая придёт Вам в виде письма на электронную почту. Также Вы получите по почте чеки от ОФД и PayKeeper. Распечатайте путёвку в формате А4 и предъявите ее вместе с остальными необходимыми документами в день заезда. ВСЯ ИНФОРМАЦИЯ ПО ДОКУМЕНТАМ, СПРАВКАМ, УСЛОВИЯМ ПРОЖИВАНИЯ ЕСТЬ НА САЙТЕ В РАЗДЕЛЕ <router-link to="/parents">"РОДИТЕЛЯМ"</router-link>
+            <br /><br />
+            Если в течении 5 рабочих дней Вы не получили путёвку на свой электронный адрес, то напишите обращение в отдел продаж на почту: <a href="mailto:sales@berezka64.ru">sales@berezka64.ru</a>
+          </div>
           <button
             :class="{
               'payment__step-button': true,
@@ -688,6 +694,22 @@
           font-size: 14px;
           line-height: 18px;
         }
+      }
+    }
+    &__info {
+      &-title {
+        font-family: RF Dewi Expanded;
+        font-size: 24px;
+        font-weight: 900;
+        color: #f05156;
+      }
+      display: block;
+      font-family: Montserrat;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 900;
+      a {
+        color: #baa3e4;
       }
     }
   }

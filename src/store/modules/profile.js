@@ -73,7 +73,7 @@ export default {
         if (data.id) {
           commit('SET_ANSWER', 'succes reg')
         }
-        if (data.error.message === 'Email is already taken') {
+        if (data?.error?.message === 'Email is already taken') {
           commit('SET_ANSWER', 'mailerr')
         }
       })

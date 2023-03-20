@@ -7,7 +7,10 @@
         {{ subTitle }}
       </span>
     </p>
-    <router-link to="/#buy">
+    <router-link
+      to="/#buy"
+      v-if="false"
+    >
       <span class="main-section__buy-button">
         Купить путевку
       </span>
