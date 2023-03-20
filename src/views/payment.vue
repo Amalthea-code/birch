@@ -102,8 +102,13 @@
           <div class="payment__step-hardly">Внимание! Перед оплатой нужно зарегистрировать карту МИР в программе лояльности для получения Кешбэка.</div>
           <div class="payment__step-hardly"><router-link to="/promotion">Ознакомьтесь с ИНСТРУКЦИЕЙ.</router-link></div>
         </div>
-        <div v-else />
-        <div class="payment__step-right">
+        <div class="payment__step-left payment__info">
+          <h4 class="payment__info-title">Информация о путевке</h4> 
+          Информацию о Вашей покупке с указанием смены, сроков поездки, данными на родителя и ребенка Вы можете увидеть в путёвке, которая придёт Вам в виде письма на электронную почту. Также Вы получите по почте чеки от ОФД и PayKeeper. Распечатайте путёвку в формате А4 и предъявите ее вместе с остальными необходимыми документами в день заезда. ВСЯ ИНФОРМАЦИЯ ПО ДОКУМЕНТАМ, СПРАВКАМ, УСЛОВИЯМ ПРОЖИВАНИЯ ЕСТЬ НА САЙТЕ В РАЗДЕЛЕ <router-link to="/parents">"РОДИТЕЛЯМ"</router-link>
+          <br /><br />
+          Если в течении 10 рабочих дней Вы не получили путёвку на свой электронный адрес, то напишите обращение в отдел продаж на почту: <a href="mailto:sales@berezka64.ru">sales@berezka64.ru</a>
+        </div>
+        <div class="payment__step-right payment__step-pay">
           <input class="payment__hidden-input" type="hidden" name='sum' :value='sum'/>
           <input class="payment__hidden-input" type="hidden" name='client_email' :value='user.email'/>
           <input class="payment__hidden-input" type="hidden" name='client_phone' :value="user.phone"/>
@@ -116,12 +121,6 @@
               'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' || this.user.vip === 'vipAll' ? true : false
             }"
           >{{ sum }} руб.</div>
-          <div class="payment__info">
-            <h4 class="payment__info-title">Информация о путевке</h4> 
-            Информацию о Вашей покупке с указанием смены, сроков поездки, данными на родителя и ребенка Вы можете увидеть в путёвке, которая придёт Вам в виде письма на электронную почту. Также Вы получите по почте чеки от ОФД и PayKeeper. Распечатайте путёвку в формате А4 и предъявите ее вместе с остальными необходимыми документами в день заезда. ВСЯ ИНФОРМАЦИЯ ПО ДОКУМЕНТАМ, СПРАВКАМ, УСЛОВИЯМ ПРОЖИВАНИЯ ЕСТЬ НА САЙТЕ В РАЗДЕЛЕ <router-link to="/parents">"РОДИТЕЛЯМ"</router-link>
-            <br /><br />
-            Если в течении 5 рабочих дней Вы не получили путёвку на свой электронный адрес, то напишите обращение в отдел продаж на почту: <a href="mailto:sales@berezka64.ru">sales@berezka64.ru</a>
-          </div>
           <button
             :class="{
               'payment__step-button': true,
@@ -449,12 +448,18 @@
           line-height: 18px;
         }
       }
+      &-pay {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
       &-lust {
         display: flex;
         justify-content: space-between;
         padding: 48px 0 138px;
         @media screen and (max-width: 680px) {
-          flex-wrap: wrap;
+          padding: 0 0 138px;
+          flex-wrap: wrap-reverse;
         }
       }
       &-left {

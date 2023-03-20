@@ -1,6 +1,6 @@
 <template>
   <div class="shift-selection" id="buy">
-    <h1 class="shift-selection__title">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>
+    <h1 class="shift-selection__title shift-selection__title_little">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>
     <p class="shift-selection__contein-info shift-selection__alert-info">
       На данный момент информации о запуске программы детского кешбэка в 2023 году нет
     </p>
@@ -81,6 +81,7 @@ import { mapGetters, mapActions } from 'vuex'
       line-height: 77px;
       &_little {
         font-size: 40px;
+        text-align: center;
       }
       @media screen and (max-width: 1300px) {
         font-size: 46px;
