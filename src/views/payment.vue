@@ -2,7 +2,7 @@
 <!-- https://mir-berezka64.server.paykeeper.ru/payments/ -->
 <template>
   <form ref="form" accept-charset="utf-8" class="payment" method='POST' action="https://berezka64.server.paykeeper.ru/create">
-    <div class="payment__title">{{user.sName + ' ' + user.fName + ' ' + user.tName}}</div>
+    <div v-if="user" class="payment__title">{{user.sName + ' ' + user.fName + ' ' + user.tName}}</div>
     <div class="payment__text">Счет формируется на каждую путевку отдельно</div>
     <div class="payment__steps">
       <div class="payment__step">
@@ -81,7 +81,7 @@
       <div class="payment__step">
         <div class="payment__step-title">ШАГ 3</div>
         <div class="payment__step-text">ВЫБЕРИТЕ ПУТЕВКУ</div>
-        <div class="payment__step-box">
+        <div v-if="shifts.length" class="payment__step-box">
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
             <input v-if="vipHendler(shift.attributes.count, index)" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
             <label v-if="vipHendler(shift.attributes.count, index)" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
@@ -108,7 +108,7 @@
           <br /><br />
           Если в течении 10 рабочих дней Вы не получили путёвку на свой электронный адрес, то напишите обращение в отдел продаж на почту: <a href="mailto:sales@berezka64.ru">sales@berezka64.ru</a>
         </div>
-        <div class="payment__step-right payment__step-pay">
+        <div v-if="user" class="payment__step-right payment__step-pay">
           <input class="payment__hidden-input" type="hidden" name='sum' :value='sum'/>
           <input class="payment__hidden-input" type="hidden" name='client_email' :value='user.email'/>
           <input class="payment__hidden-input" type="hidden" name='client_phone' :value="user.phone"/>
@@ -155,10 +155,21 @@
         token: 'profile/GET_TOKEN'
       }),
       sum () {
-        return (this.user.vipSale ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
+        if (this.user && this.shifts.length) {
+          return (this.user.vipSale ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
+        } else {
+          return 'Идет расчет'
+        }
+        
+        
       },
       value () {
-        return this.shifts[this.itemShift].attributes.service_name
+        if (this.shifts.length) {
+          return this.shifts[this.itemShift].attributes.service_name
+        } else {
+          return 'Идет загрузка'
+        }
+        
       },
       nameFull () {
         return this.user.sName + ' ' + this.user.fName + ' ' + this.user.tName
@@ -184,7 +195,8 @@
         fetchOrder: 'profile/fetchOrder',
         fetchShifts: 'shifts/fetchShifts',
         fetchOrderNumber: 'profile/fetchOrderNumber',
-        rewriteChild: 'children/rewriteChild'
+        rewriteChild: 'children/rewriteChild',
+        fetchUserData: 'profile/fetchUserData'
       }),
       vipHendler (count, index) {
         if (count > 0) { return true }
@@ -372,6 +384,8 @@
     },
     mounted () {
       this.orderId = Math.floor(Math.random() * 100000000) + 1
+      this.shifts.length ? null : this.fetchShifts()
+      this.user ? null : this.fetchUserData()
     }
   }
 </script>
