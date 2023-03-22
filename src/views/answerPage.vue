@@ -21,6 +21,7 @@
       <span v-if="GET_ANSWER === 'succes' && mode === 'recovery'">Письмо отправлено на почту</span>
       <span v-if="GET_ANSWER === 'succes' && mode === 'autorisation'">Авторизация прошла успешно!</span>
       <span v-if="GET_ANSWER === 'fail'">Произошла ошибка.<br />Попробуйте ещё раз.</span>
+      <span v-if="GET_ANSWER === 'password'">Неверный пароль.<br />Попробуйте ещё раз.</span>
     </div>
     <div class="answer-page__button">
       <button @click="enter">ВОЙТИ</button>

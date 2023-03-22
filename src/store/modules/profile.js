@@ -36,6 +36,12 @@ export default {
       }).then((response) => {
         return response.json();
       }).then((data) => {
+        if (data.error) {
+          if (data.error.message === 'Invalid identifier or password') {
+            commit('SET_ANSWER', 'password')
+          }
+        }
+
         if (data.jwt) {
           localStorage.setItem('token', data.jwt)
           commit('SET_ANSWER', 'succes')
@@ -70,10 +76,10 @@ export default {
       }).then((response) => {
         return response.json()
       }).then((data) => {
-        if (data.id) {
+        if (data.user.id) {
           commit('SET_ANSWER', 'succes reg')
         }
-        if (data?.error?.message === 'Email is already taken') {
+        if (data.error.message === 'Email is already taken') {
           commit('SET_ANSWER', 'mailerr')
         }
       })
