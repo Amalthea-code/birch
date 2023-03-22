@@ -12,7 +12,6 @@
       <span class="answer-page__logo-right" />
     </div>
     <div class="answer-page__title">
-      
       <span v-if="GET_ANSWER === 'expect'">Ожидаем ответ...</span>
       <span v-if="GET_ANSWER === 'succes reg'">Вам на почту отправлено письмо с подтверждением регистрации</span>
       <span v-if="GET_ANSWER === 'succes' && mode === 'reg'">Личный кабинет<br /> успешно создан</span>
