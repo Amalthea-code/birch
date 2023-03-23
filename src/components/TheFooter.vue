@@ -52,7 +52,7 @@
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1_5ZbnQztEmP8ZrrAwj8f_yIXSasw1vnj/view"><doc/> Оферта</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1B0XxfxdY9JYtG6GEaQafvMOu_EdKm-rL/view"><doc/> Анкета</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view"><doc/> Политика конфиденциальности</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1Alt6UEiJEraBA2NFIga1amoZmRciTmIn/view"><doc/> Заявление на возврат</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1GhEeE-89XKDt4tuQVmY5TKAFIB927-oB/view"><doc/> Заявление на возврат</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXWsr1kL6cPM38sm9Ul4x-2L9kFim0oI/view"><doc/> Программа СОЦ Берёзка</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1lwvc3NQJEDF2WHYHhIakU4Fy4FhLrClR/view"><doc/> Меры поддержки</a>
         </div>

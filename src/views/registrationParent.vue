@@ -1,7 +1,7 @@
 <template>
   <form class="registration-parent">
     <div class="registration-parent__title">Данные родителя/опекуна</div>
-      <div class="registration-parent__radio">
+      <div v-if="false" class="registration-parent__radio">
         <div class="registration-parent__radio-title">Плательщиком является родитель/официальный опекун?</div>
         <div class="registration-parent__radio-box">
           <input @click="filledParent" type="radio" value="да" id="parent-1" name="parent" class="registration-parent__radio-input" v-model="isTreatment">
@@ -156,7 +156,8 @@
       },
       createParent () {
         this.v$.$touch()
-        if (this.v$.$errors.length || (this.isTreatment !== 'нет' && this.isTreatment !== 'да')) {
+        // || (this.isTreatment !== 'нет' && this.isTreatment !== 'да')
+        if (this.v$.$errors.length) {
           this.$refs.alert.switchActive();
         } else {
           this.collector()
