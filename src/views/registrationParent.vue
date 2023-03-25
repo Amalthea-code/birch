@@ -220,7 +220,6 @@
           line-height: 18px;
         }
       }
-      &-box {}
       &-input {
         margin: 0 34px 0 0;
         width: 0px;

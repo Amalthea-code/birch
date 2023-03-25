@@ -90,7 +90,7 @@
       </div>
       <div class="payment__step">
         <div class="payment__step-box_agreement">
-          <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1_5ZbnQztEmP8ZrrAwj8f_yIXSasw1vnj/view">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view">обработку персональных данных</a></label>
+          <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1PxjUDG-HHtzjnbN6SmuZ6mJPI_NYVS-9/view">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view">обработку персональных данных</a></label>
         </div>
       </div>
     </div>
