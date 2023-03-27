@@ -160,8 +160,6 @@
         } else {
           return 'Идет расчет'
         }
-        
-        
       },
       value () {
         if (this.shifts.length) {
@@ -194,7 +192,6 @@
       ...mapActions({
         fetchOrder: 'profile/fetchOrder',
         fetchShifts: 'shifts/fetchShifts',
-        fetchOrderNumber: 'profile/fetchOrderNumber',
         rewriteChild: 'children/rewriteChild',
         fetchUserData: 'profile/fetchUserData'
       }),
@@ -303,8 +300,14 @@
           this.switchOpenSelect(1)
         }
       },
-      calcTotalYear () {
-        const date = new Date()
+      async calcTotalYear () {
+        const date = await fetch('http://worldtimeapi.org/api/timezone/Europe/London').then((res) => {
+          return res.json()
+        }).then((res) => {
+          let time = new Date(res.utc_datetime).getTime();
+          let timePlus = new Date(time + (4 * 60 * 60 * 1000));
+          return timePlus
+        })
         const birth = new Date(this.childen[this.isChildSelect].birth.split('.').reverse().join('/'))
         let fall = (birth.getTime() - date.getTime()) / 1000
         fall /= (60 * 60 * 24)
@@ -312,6 +315,8 @@
           id: this.childen[this.isChildSelect].id,
           year: String(Math.abs(Math.round(fall/365.25)))
         })
+        console.log(Math.abs(Math.round(fall/365.25)))
+        console.log(birth)
         return Math.abs(Math.round(fall/365.25))
       },
       async createOrder () {
@@ -343,7 +348,7 @@
             child_name: this.childen[this.isChildSelect].fName,
             child_sname: this.childen[this.isChildSelect].sName,
             child_tname: this.childen[this.isChildSelect].tName,
-            child_totalyear: this.calcTotalYear(),
+            child_totalyear: await this.calcTotalYear(),
             child_birthday: this.childen[this.isChildSelect].birth,
             child_city: this.childen[this.isChildSelect].city,
             child_street: this.childen[this.isChildSelect].street,
@@ -375,12 +380,7 @@
         ]).then(() => {
           this.$refs.form.submit()
         })
-      },
-      // async calcFetchOrderNumber() {
-      //   const result = await this.fetchOrderNumber()
-      //   this.orderId = result
-      //   return result
-      // }
+      }
     },
     mounted () {
       this.orderId = Math.floor(Math.random() * 100000000) + 1

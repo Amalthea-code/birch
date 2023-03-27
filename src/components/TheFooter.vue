@@ -48,7 +48,7 @@
         <div class="footer__info-docs-box">
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1VMW7rwQH3VvhDa-4ILMLFS8S9ehNnGag/view"><doc/> Памятка для родителей</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1k9TbO9NbuYBuixcsa1ql0Y-vowYZyJV9/view"><doc/> Медсогласие</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1zwmXqUc5eR8Ll80irgH11Jxym-gynwKa/view"><doc/> Договор окозания услуг</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1kzbxSx2PrUhSpDiX8JeF9hGuDE0rOVpP/view"><doc/> Договор окозания услуг</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1PxjUDG-HHtzjnbN6SmuZ6mJPI_NYVS-9/view"><doc/> Оферта</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXEV0BeCkjvDnKs0C0_RR085yAD6BOFl/view"><doc/> Анкета</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/17Vl_RN0LAu2auWmSwDpCZ5VJ-K5bAduQ/view"><doc/> Политика конфиденциальности</a>
