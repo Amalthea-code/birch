@@ -301,7 +301,7 @@
         }
       },
       async calcTotalYear () {
-        const date = await fetch('http://worldtimeapi.org/api/timezone/Europe/London').then((res) => {
+        const date = await fetch('https://worldtimeapi.org/api/timezone/Europe/London').then((res) => {
           return res.json()
         }).then((res) => {
           let time = new Date(res.utc_datetime).getTime();
