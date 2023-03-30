@@ -1,7 +1,7 @@
 <template>
   <div class="recovery">
     <div class="recovery__logo"><authorization /></div>
-    <div class="recovery__title">Восстановлене</div>
+    <div class="recovery__title">Восстановление</div>
     <input :class="{'recovery__input': true, 'recovery__input_error':(v$.imput.$dirty && v$.imput.$error)}" placeholder="E-mail" v-model="imput">
     <button @click="enter" class="recovery__button">ВОССТАНОВИТЬ</button>
     <div class="recovery__link">

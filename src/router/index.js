@@ -214,7 +214,7 @@ const routes = [
         name: 'recovery',
         component: () => import('../views/recovery.vue'),
         meta: {
-          title: ' - Восстановлене'
+          title: ' - Восстановление'
         }
       },
       {
@@ -222,7 +222,7 @@ const routes = [
         name: 'recoveryPassword',
         component: () => import('../views/recoveryPassword.vue'),
         meta: {
-          title: ' - Восстановлене пароля'
+          title: ' - Восстановление пароля'
         }
       },
       {

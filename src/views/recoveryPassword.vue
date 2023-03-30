@@ -1,7 +1,7 @@
 <template>
   <div class="recovery-password">
     <div class="recovery-password__logo"><authorization /></div>
-    <div class="recovery-password__title">Восстановлене пароля</div>
+    <div class="recovery-password__title">Восстановление пароля</div>
     <div class="recovery-password__box">
       <input class="recovery-password__input recovery-password__input_password" placeholder="Новый Пароль" :type="isPassword" v-model="password" autocomplete="on" :maxlength="maxLength" minlength="6"><span @click="switchPassword" class="password-hidden"><hidden/></span>
       <input class="recovery-password__input recovery-password__input_password" placeholder="Повторите пароль" :type="isMorePassword" v-model="morePassword" autocomplete="on" :maxlength="maxLength" minlength="6"><span @click="switchMorePassword" class="password-hidden"><hidden/></span>
