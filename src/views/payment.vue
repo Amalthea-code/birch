@@ -375,11 +375,13 @@
             user_issued: this.isParentPaying ? this.parents[this.isParentSelect].issued : this.user.issued
           }
         }
-        Promise.allSettled([
-          this.fetchOrder(order)
-        ]).then(() => {
+        try {
+          await this.fetchOrder(order)
           this.$refs.form.submit()
-        })
+        }
+        catch {
+          this.$refs.alert.switchActive(('Произошла ошибка. Попробуйте еще раз'))
+        }
       }
     },
     mounted () {

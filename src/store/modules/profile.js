@@ -99,32 +99,36 @@ export default {
         commit('children/SET_CHILDREN', data.childrens, { root: true })
       })
     },
-    fetchOrder ({ rootGetters }, order) {
-      fetch(process.env.VUE_APP_DOMAIN + '/orders', {
+    async fetchOrder ({ rootGetters }, order) {
+      await fetch(process.env.VUE_APP_DOMAIN + '/orders', {
         method: 'POST',
         body: JSON.stringify({
-            data: {
-              date: order.date,
-              number: order.date,
-              price: String(order.price),
-              tour: order.order_name,
-              type: order.order_type,
-              cashback: order.order_cashback,
-              parents: order.parent,
-              children: order.child,
-              user: order.user,
-              keeperField: String(order.order_id),
-              changeable: order.changeable,
-              users_permissions_user: String(rootGetters['profile/GET_AUTORIZEDUSER'].id)
+          data: {
+            date: order.date,
+            number: order.date,
+            price: String(order.price),
+            tour: order.order_name,
+            type: order.order_type,
+            cashback: order.order_cashback,
+            parents: order.parent,
+            children: order.child,
+            user: order.user,
+            keeperField: String(order.order_id),
+            changeable: order.changeable,
+            users_permissions_user: String(rootGetters['profile/GET_AUTORIZEDUSER'].id)
           }
-      }),
+        }),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': ('Bearer ' + rootGetters['profile/GET_TOKEN'])
         }
-      }).then((response) => {
-        return response.json()
-      })
+      }).then((response)=> {
+        if (response.status === 200) {
+          return response.json()
+        } else {
+          throw new Error;
+        }
+      });
     },
     fetchRecovery ({ commit }, mail) {
       commit('SET_ANSWER', 'expect')
