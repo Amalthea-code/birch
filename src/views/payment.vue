@@ -301,13 +301,8 @@
         }
       },
       async calcTotalYear () {
-        const date = await fetch('https://worldtimeapi.org/api/timezone/Europe/London').then((res) => {
-          return res.json()
-        }).then((res) => {
-          let time = new Date(res.utc_datetime).getTime();
-          let timePlus = new Date(time + (4 * 60 * 60 * 1000));
-          return timePlus
-        })
+        let time = new Date().getTime();
+        let date = new Date(time + (4 * 60 * 60 * 1000));
         const birth = new Date(this.childen[this.isChildSelect].birth.split('.').reverse().join('/'))
         let fall = (birth.getTime() - date.getTime()) / 1000
         fall /= (60 * 60 * 24)
