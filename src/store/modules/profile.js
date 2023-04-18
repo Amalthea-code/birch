@@ -84,8 +84,8 @@ export default {
         }
       })
     },
-    fetchUserData ({ commit, rootGetters }) {
-      fetch(process.env.VUE_APP_DOMAIN + '/users/me', {
+    async fetchUserData ({ commit, rootGetters }) {
+      await fetch(process.env.VUE_APP_DOMAIN + '/users/me', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

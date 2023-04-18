@@ -129,7 +129,7 @@
             @click="fetchPutShifts"
             type="button"
           >
-            ОПЛАТИТЬ
+          {{ this.$route.hash !== "#created" ? 'ОПЛАТИТЬ' : 'СОЗДАТЬ ЗАЯВКУ' }}
           </button>
         </div>
     </div>
@@ -372,11 +372,13 @@
         }
         try {
           await this.fetchOrder(order)
-          this.$refs.form.submit()
+          this.$route.hash !== "#created" ? this.$refs.form.submit() : null
+          this.$route.hash === "#created" ? this.$router.push({ name: 'cabinet'}) : null
         }
         catch {
           this.$refs.alert.switchActive(('Произошла ошибка. Попробуйте еще раз'))
         }
+        
       }
     },
     mounted () {

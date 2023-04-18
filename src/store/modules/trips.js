@@ -14,6 +14,7 @@ export default {
   },
   actions: {
     searchTrips ({ commit, rootGetters }, id) {
+      console.log(rootGetters['profile/GET_AUTORIZEDUSER'].orders.find( item => item.id == id))
       commit('SET_FOUNDTRIPS', rootGetters['profile/GET_AUTORIZEDUSER'].orders.find( item => item.id == id))
     },
 

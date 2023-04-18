@@ -18,6 +18,15 @@
     <div class="cabinet__link">
       <a target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view">Заявление на возврат</a>
     </div>
+    <div class="cabinet__box">
+      <div class="cabinet__info">
+        <h4 class="cabinet__info-title">Информация о заявке на путевку</h4>
+        Данная заявка позволяет создать, оцифровать, продублировать уже РАНЕЕ ОПЛАЧЕННУЮ ПУТЕВКУ, которая после модерации появится в разделе "Мои путевки".
+      </div>
+      <div class="cabinet__link">
+          <span @click="createdOrder">ОФОРМИТЬ ЗАЯВКУ НА ПУТЕВКУ</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -49,10 +58,15 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
         SET_TOKEN: 'profile/SET_TOKEN'
       }),
       output () {
-      localStorage.removeItem('token')
-      this.SET_TOKEN(null)
-      this.$router.push({ path: '/autorization'})
-    }
+        localStorage.removeItem('token')
+        this.SET_TOKEN(null)
+        this.$router.push({ path: '/autorization'})
+      },
+      createdOrder () {
+        if (confirm('Данная заявка позволяет создать, оцифровать, продублировать уже РАНЕЕ ОПЛАЧЕННУЮ ПУТЕВКУ! которая после модерации появится в разделе "Мои путевки". Вы уверенны, что хотите заполнить ЗАЯВКУ НА ПУТЕВКУ?')) {
+          this.$router.push({ name: 'payment', hash: '#created' })
+        }
+      }
     },
     created () {
       this.fetchShifts()
@@ -94,6 +108,17 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
       display: flex;
       justify-content: center;
       a {
+        font-family: RF Dewi Expanded;
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 22px;
+        border-radius: 30px;
+        padding: 22px 84px;
+        border: 2px solid #000;
+        color: black;
+        text-decoration: none;
+      }
+      span {
         font-family: RF Dewi Expanded;
         font-size: 18px;
         font-weight: 900;
