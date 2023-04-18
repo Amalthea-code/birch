@@ -135,8 +135,38 @@ import { mapActions, mapGetters } from 'vuex'
       }
     }
     &__mail {
-      &-text {}
-      &-button {}
+      &-text {
+        margin: 20px 0 0;
+        font-family: Montserrat;
+        font-size: 18px;
+        line-height: 22px;
+        color: #f05156;
+        @media screen and (max-width: 680px) {
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+      &-button {
+        cursor: pointer;
+        font-family: RF Dewi Expanded;
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 22px;
+        border: 2px solid #000;
+        border-radius: 30px;
+        padding: 22px 38px;
+        background-color: white;
+        margin: 16px 0 0;
+        display: inline-block;
+        color: #000;
+        text-decoration: none;
+        text-transform: uppercase;
+        @media screen and (max-width: 680px)  {
+          font-size: 16px;
+          line-height: 20px;
+          padding: 18px 14px;
+        }
+      }
     }
     &__item {
       width: 25%;
