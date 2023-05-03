@@ -19,12 +19,12 @@
       <a target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view">Заявление на возврат</a>
     </div>
     <div class="cabinet__box">
-      <div class="cabinet__info">
+      <div class="cabinet__info cabinet__info_red">
         <h4 class="cabinet__info-title">Информация о заявке на путевку</h4>
-        Данная заявка позволяет создать, оцифровать, продублировать уже РАНЕЕ ОПЛАЧЕННУЮ ПУТЕВКУ, которая после модерации появится в разделе "Мои путевки".
+        Если вы не получили путевку на свою электронную почту, оформите заявку на повторную отправку путевки.
       </div>
       <div class="cabinet__link">
-          <span @click="createdOrder">ОФОРМИТЬ ЗАЯВКУ НА ПУТЕВКУ</span>
+          <span @click="createdOrder">ЗАЯВКА НА ПОВТОРНУЮ ОТПРАВКУ ПУТЕВКИ</span>
       </div>
     </div>
   </div>
@@ -63,7 +63,7 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
         this.$router.push({ path: '/autorization'})
       },
       createdOrder () {
-        if (confirm('Данная заявка позволяет создать, оцифровать, продублировать уже РАНЕЕ ОПЛАЧЕННУЮ ПУТЕВКУ! которая после модерации появится в разделе "Мои путевки". Вы уверенны, что хотите заполнить ЗАЯВКУ НА ПУТЕВКУ?')) {
+        if (confirm('Данная заявка позволяет повторно создать РАНЕЕ ОПЛАЧЕННУЮ ПУТЕВКУ, которая после модерации появится в разделе "Мои путевки". Вы уверены что хотите заполнить ЗАЯВКУ НА ПУТЕВКУ?')) {
           this.$router.push({ name: 'payment', hash: '#created' })
         }
       }
@@ -160,6 +160,9 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
       }
     }
     &__info {
+      &_red {
+        color: #f05156;
+      }
       &-title {
         font-family: RF Dewi Expanded;
         font-size: 24px;

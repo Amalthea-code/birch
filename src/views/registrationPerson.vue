@@ -25,7 +25,7 @@
             <input :class="{'registration-person__input': true, 'registration-person__input_error':(v$.apartment.$dirty && v$.apartment.$error)}" placeholder="Квартира" type="text" v-model="apartment" :maxlength="maxLength">
             <div class="apartment-alert">Если это частный дом укажите в&nbsp;поле Квартира&nbsp;&mdash; 0</div>
             <input id="registration-person" class="registration-person__input-checkbox" type="checkbox" v-model="isTreatment"/>
-            <label for="registration-person" class="registration-person__input-label">Я согласен на <a href="">обработку персональных данных</a></label>
+            <label for="registration-person" class="registration-person__input-label">Я согласен на <a target="_blank" href="https://drive.google.com/file/d/17Vl_RN0LAu2auWmSwDpCZ5VJ-K5bAduQ/view">обработку персональных данных</a></label>
             <button type="button" @click="registration" class="registration-person__button">зарегистрироваться</button>
           </div>
           <div class="registration-person__box">

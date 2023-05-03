@@ -23,7 +23,7 @@
         Вы можете повторно отправить копию путевки себе на почту которую указывали при регистрации.
       </div>
       <button @click="postMail" class="detal-trip__mail-button">
-        Отправить копию на почту
+        ОТПРАВИТЬ КОПИЮ ПУТЕВКИ НА ПОЧТУ
       </button>
     </div>
     <div v-if="false" class="detal-trip__info">
@@ -95,6 +95,7 @@ import { mapActions, mapGetters } from 'vuex'
         }).then((response) => {
           return response.json()
         }).then((data) => {
+          alert('Письмо успешно отправлено!')
           console.log(data)
         })
       }

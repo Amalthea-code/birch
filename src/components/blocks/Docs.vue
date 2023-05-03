@@ -3,6 +3,7 @@
     <div class="docs__nav">
       <a href="#docs" class="docs__nav-link">Документы</a>
       <a href="#comp" class="docs__nav-link">Компенсации</a>
+      <a href="#conditions" class="docs__nav-link">Условия заезда</a>
       <a href="#structure" class="docs__nav-link">Cтруктура</a>
       <a href="#counselors" class="docs__nav-link">О вожатых</a>
       <a href="#nutrition" class="docs__nav-link">Питание</a>
@@ -21,6 +22,7 @@
         <li class="docs__info-text">документ об отсутствии контактов с COVID-19 и эпидокружении , полученный не ранее, чем за 3 дня до заезда***;</li>
         <li class="docs__info-text">копию свидетельства о рождении или паспорта;</li>
         <li class="docs__info-text">копию страхового медицинского полиса.</li>
+        <li class="docs__info-text">прием в лагерь детей, которые не были вакцинированы согласно Национальному календарю профилактических прививок для детей, возможен только при предъявлении оформленного родителями официального документа-отказа, заверенного подписью уполномоченного врача и официальной печатью поликлиники. При отсутствии данного документа лагерь не имеет права принимать невакцинированного ребенка.</li>
       </ul>
       <span class="docs__sub-info">Без указанных документов ребенок в СОЦ не допускается.</span>
     </info>
@@ -93,7 +95,7 @@
         font-weight: 600;
         line-height: 20px;
         display: inline-block;
-        margin: 0 12px 0 0;
+        margin: 8px 12px 0 0;
         border: 2px solid;
         padding: 12px 24px;
         border-radius: 50px;
@@ -150,6 +152,14 @@
           border-color: #3FD33C;
           &:hover {
             background-color: #3FD33C;
+            color: white;
+          }
+        }
+        &:nth-child(7) {
+          color: #1A66AC;
+          border-color: #1A66AC;
+          &:hover {
+            background-color: #1A66AC;
             color: white;
           }
         }

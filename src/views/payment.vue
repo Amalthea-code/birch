@@ -83,14 +83,14 @@
         <div class="payment__step-text">ВЫБЕРИТЕ ПУТЕВКУ</div>
         <div v-if="shifts.length" class="payment__step-box">
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
-            <input v-if="vipHendler(shift.attributes.count, index)" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
-            <label v-if="vipHendler(shift.attributes.count, index)" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
+            <input v-if="this.$route.hash === '#created' || vipHendler(shift.attributes.count, index)" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
+            <label v-if="this.$route.hash === '#created' || vipHendler(shift.attributes.count, index)" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
           </div>
         </div>
       </div>
-      <div class="payment__step">
+      <div v-if="this.$route.hash !== '#created'" class="payment__step">
         <div class="payment__step-box_agreement">
-          <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1PxjUDG-HHtzjnbN6SmuZ6mJPI_NYVS-9/view">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/1G0F96Or4EWSIJ8QYkfW8OXj8XJlTxGG8/view">обработку персональных данных</a></label>
+          <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1PxjUDG-HHtzjnbN6SmuZ6mJPI_NYVS-9/view">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/17Vl_RN0LAu2auWmSwDpCZ5VJ-K5bAduQ/view">обработку персональных данных</a></label>
         </div>
       </div>
     </div>
@@ -102,11 +102,14 @@
           <div class="payment__step-hardly">Внимание! Перед оплатой нужно зарегистрировать карту МИР в программе лояльности для получения Кешбэка.</div>
           <div class="payment__step-hardly"><router-link to="/promotion">Ознакомьтесь с ИНСТРУКЦИЕЙ.</router-link></div>
         </div>
-        <div class="payment__step-left payment__info">
+        <div v-if="this.$route.hash !== '#created'" class="payment__step-left payment__info">
           <h4 class="payment__info-title">Информация о путевке</h4> 
           Информацию о Вашей покупке с указанием смены, сроков поездки, данными на родителя и ребенка Вы можете увидеть в путёвке, которая придёт Вам в виде письма на электронную почту. Также Вы получите по почте чеки от ОФД и PayKeeper. Распечатайте путёвку в формате А4 и предъявите ее вместе с остальными необходимыми документами в день заезда. ВСЯ ИНФОРМАЦИЯ ПО ДОКУМЕНТАМ, СПРАВКАМ, УСЛОВИЯМ ПРОЖИВАНИЯ ЕСТЬ НА САЙТЕ В РАЗДЕЛЕ <router-link to="/parents">"РОДИТЕЛЯМ"</router-link>
           <br /><br />
           Если в течении 10 рабочих дней Вы не получили путёвку на свой электронный адрес, то напишите обращение в отдел продаж на почту: <a href="mailto:sales@berezka64.ru">sales@berezka64.ru</a>
+        </div>
+        <div v-else class="payment__step-left payment__info">
+          <h4 class="payment__info-title">ПОСЛЕ МОДЕРАЦИИ ВАШЕЙ ЗАЯВКИ, В ВАШЕМ ЛИЧНОМ КАБИНЕТЕ ПОЯВИТСЯ КНОПКА - ОТПРАВИТЬ КОПИЮ ПУТЕВКИ НА ПОЧТУ</h4>
         </div>
         <div v-if="user" class="payment__step-right payment__step-pay">
           <input class="payment__hidden-input" type="hidden" name='sum' :value='sum'/>
@@ -115,7 +118,8 @@
           <input class="payment__hidden-input" type="hidden" name='clientid' :value="nameFull"/>
           <input class="payment__hidden-input" type="hidden" name='service_name' :value="value"/>
           <input class="payment__hidden-input" type="hidden" name='orderid' :value="orderId"/>
-          <div @click="fetchPayKeeper" 
+          <div
+            v-if="this.$route.hash !== '#created'"
             :class="{
               'payment__step-sum': true,
               'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' || this.user.vip === 'vipAll' ? true : false
@@ -182,7 +186,7 @@
         isParentsSelect: false,
         isChildSelect: null,
         isParentSelect: null,
-        isAgreement: null,
+        isAgreement: this.$route.hash !== '#created' ? false : true,
         selectParent: null,
         selectChild: null,
         paymentSum: null
@@ -239,42 +243,42 @@
           if(this.shifts[this.itemShift].attributes.count <= 0) {
             switch (this.itemShift) {
               case 0:
-                if (this.user.vip1) {
+                if (this.user.vip1 || this.$route.hash === "#created") {
                   this.createOrder()
                 } else {
                   this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
                 }
                 break
               case 1:
-                if (this.user.vip2) {
+                if (this.user.vip2 || this.$route.hash === "#created") {
                   this.createOrder()
                 } else {
                   this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
                 }
                 break
               case 2:
-                if (this.user.vip3) {
+                if (this.user.vip3 || this.$route.hash === "#created") {
                   this.createOrder()
                 } else {
                   this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
                 }
                 break
               case 3:
-                if (this.user.vip4) {
+                if (this.user.vip4 || this.$route.hash === "#created") {
                   this.createOrder()
                 } else {
                   this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
                 }
                 break
               case 4:
-                if (this.user.vip5) {
+                if (this.user.vip5 || this.$route.hash === "#created") {
                   this.createOrder()
                 } else {
                   this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
                 }
                 break
               case 5:
-                if (this.user.vip6) {
+                if (this.user.vip6 || this.$route.hash === "#created") {
                   this.createOrder()
                 } else {
                   this.$refs.alert.switchActive(('Путевки на выбранную смену закончились'))
@@ -374,6 +378,7 @@
           await this.fetchOrder(order)
           this.$route.hash !== "#created" ? this.$refs.form.submit() : null
           this.$route.hash === "#created" ? this.$router.push({ name: 'cabinet'}) : null
+          this.$route.hash === "#created" ? alert('ПОСЛЕ МОДЕРАЦИИ ВАШЕЙ ЗАЯВКИ, В ВАШЕМ ЛИЧНОМ КАБИНЕТЕ ПОЯВИТСЯ КНОПКА - ОТПРАВИТЬ КОПИЮ ПУТЕВКИ НА ПОЧТУ') : null
         }
         catch {
           this.$refs.alert.switchActive(('Произошла ошибка. Попробуйте еще раз'))
