@@ -325,7 +325,7 @@
           date: date,
           number: date,
           price: this.sum,
-          order_type:'(Полная оплата)',
+          order_type: this.$route.hash === '#created' ? 'Модерация' : 'Покупка',
           order_name: this.shifts[this.itemShift].attributes.service_name,
           order_id: this.orderId,
           changeable: Boolean(!this.isVip(this.itemShift)),
