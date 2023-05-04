@@ -71,14 +71,14 @@
       }
     }
     &__block {
-      padding: 0 calc((100vw - 1080px)/2) 100px;
+      padding: 0 calc((100vw - 1080px)/2) 10px;
       overflow: scroll;
 
       @media screen and (max-width: 1300px) {
-        padding: 0 calc((100vw - 620px)/2) 100px;
+        padding: 0 calc((100vw - 620px)/2) 10px;
       }
       @media screen and (max-width: 680px) {
-        padding: 0 calc((100vw - 300px)/2) 100px;
+        padding: 0 calc((100vw - 300px)/2) 10px;
       }
     }
   }

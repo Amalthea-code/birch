@@ -15,17 +15,17 @@
       <div class="cabinet__button" @click="output">Выйти из аккаунта</div>
     </div>
     <trips v-if="GET_AUTORIZEDUSER" :trips="GET_AUTORIZEDUSER.orders" />
-    <div class="cabinet__link">
-      <a target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view">Заявление на возврат</a>
-    </div>
     <div class="cabinet__box">
       <div class="cabinet__info cabinet__info_red">
-        <h4 class="cabinet__info-title">Информация о заявке на путевку</h4>
+        <h4 class="cabinet__info-title center">ИНФОРМАЦИЯ О ЗАЯВКЕ НА ПОВТОРНУЮ ОТПРАВКУ ПУТЕВКИ</h4>
         Если вы не получили путевку на свою электронную почту, оформите заявку на повторную отправку путевки.
       </div>
       <div class="cabinet__link">
           <span @click="createdOrder">ЗАЯВКА НА ПОВТОРНУЮ ОТПРАВКУ ПУТЕВКИ</span>
       </div>
+    </div>
+    <div class="cabinet__link">
+      <a target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view">Заявление на возврат</a>
     </div>
   </div>
 </template>
@@ -128,8 +128,9 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
         border: 2px solid #000;
         color: black;
         text-decoration: none;
+        cursor: pointer;
       }
-      margin: 0 0 124px;
+      margin: 0 0 34px;
       @media screen and (max-width: 680px) {
         a {
           font-size: 16px;
@@ -168,13 +169,16 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
         font-size: 24px;
         font-weight: 900;
         color: #f05156;
+        &.center {
+          text-align: center;
+        }
       }
       display: block;
       font-family: Montserrat;
       font-size: 16px;
       line-height: 24px;
       font-weight: 900;
-      margin: 60px 0;
+      margin: 36px 0;
       a {
         color: #baa3e4;
       }

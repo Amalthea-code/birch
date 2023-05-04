@@ -94,9 +94,8 @@ import { mapActions, mapGetters } from 'vuex'
           })
         }).then((response) => {
           return response.json()
-        }).then((data) => {
-          alert('Письмо успешно отправлено!')
-          console.log(data)
+        }).then(() => {
+          alert("Письмо успешно отправлено!");
         })
       }
 

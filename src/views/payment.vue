@@ -3,7 +3,7 @@
 <template>
   <form ref="form" accept-charset="utf-8" class="payment" method='POST' action="https://berezka64.server.paykeeper.ru/create">
     <div v-if="user" class="payment__title">{{user.sName + ' ' + user.fName + ' ' + user.tName}}</div>
-    <div class="payment__text">Счет формируется на каждую путевку отдельно</div>
+    <div v-if="this.$route.hash !== '#created'" class="payment__text">Счет формируется на каждую путевку отдельно</div>
     <div class="payment__steps">
       <div class="payment__step">
         <div class="payment__step-title">ШАГ 1</div>
@@ -40,7 +40,8 @@
           </div>
         </div>
         <div v-else class="payment__step-slag">Добавьте родителя/опекуна в личном кабинете</div>
-        <input type="checkbox" class="payment__step-checkbox payment__step-checkbox_red" id="checkboxPer" v-model="isParentPaying"><label for="checkboxPer" class="payment__step-label payment__step-label_red">Плательщиком является опекун/родитель</label>
+        <input v-if="this.$route.hash !== '#created'" type="checkbox" class="payment__step-checkbox payment__step-checkbox_red" id="checkboxPer" v-model="isParentPaying">
+        <label v-if="this.$route.hash !== '#created'" for="checkboxPer" class="payment__step-label payment__step-label_red">Плательщиком является опекун/родитель</label>
       </div>
       <div class="payment__step">
         <div class="payment__step-title">ШАГ 2</div>
