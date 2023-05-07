@@ -121,6 +121,7 @@ import { mapActions, mapGetters } from 'vuex'
       max-width: 620px;
     }
     @media screen and (max-width: 680px) {
+      padding: 20px;
       max-width: 300px;
     }
     &__box {

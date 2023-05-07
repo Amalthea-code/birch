@@ -255,6 +255,9 @@ const router = createRouter({
   routes,
   scrollBehavior(to) {
     if (to.hash) {
+      if (to.hash === '#created') {
+        return { top: 0 }
+      }
       return {
         top: 60,
         el: to.hash,
