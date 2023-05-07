@@ -92,8 +92,6 @@ import { mapActions, mapGetters } from 'vuex'
             price: this.foundTrips.price,
             user_email: this.foundTrips.user.user_email
           })
-        }).then((response) => {
-          return response.json()
         }).then(() => {
           alert('Письмо успешно отправлено!');
         })
