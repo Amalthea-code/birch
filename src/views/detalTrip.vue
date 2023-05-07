@@ -95,10 +95,9 @@ import { mapActions, mapGetters } from 'vuex'
         }).then((response) => {
           return response.json()
         }).then(() => {
-          alert("Письмо успешно отправлено!");
+          alert('Письмо успешно отправлено!');
         })
       }
-
     },
     mounted () {
       this.fetchUserData().then(()=> {

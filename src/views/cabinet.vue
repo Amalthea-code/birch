@@ -162,6 +162,7 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
     }
     &__info {
       &_red {
+        text-align: center;
         color: #f05156;
       }
       &-title {
