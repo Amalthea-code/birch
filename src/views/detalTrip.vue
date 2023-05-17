@@ -92,8 +92,12 @@ import { mapActions, mapGetters } from 'vuex'
             price: this.foundTrips.price,
             user_email: this.foundTrips.user.user_email
           })
-        }).then(() => {
-          alert('Письмо успешно отправлено!');
+        }).then((response) => {
+          if (response.status === 200) {
+            alert('Письмо успешно отправлено!');
+          } else {
+            alert('Повторите позже');
+          }
         })
       }
     },
