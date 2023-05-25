@@ -22,9 +22,9 @@
       <div class="detal-trip__mail-text">
         Вы можете повторно отправить копию путевки себе на почту которую указывали при регистрации.
       </div>
-      <button @click="postMail" class="detal-trip__mail-button">
+      <div @click="postMail" class="detal-trip__mail-button">
         ОТПРАВИТЬ КОПИЮ ПУТЕВКИ НА ПОЧТУ
-      </button>
+      </div>
     </div>
     <div v-if="false" class="detal-trip__info">
       <div class="detal-trip__info-text">Оставшиеся 50% от общей стоимости путевки оплачиваются не позднее 14 календарных дней до начала смены.</div>
@@ -73,32 +73,39 @@ import { mapActions, mapGetters } from 'vuex'
         this.status = this.foundTrips.status
       },
       async postMail () {
-        await fetch('https://berezka64.ru/rewritemail.php', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-          },
-          body: JSON.stringify({
-            keeperField: this.foundTrips.keeperField,
-            voucher_id_utf: this.foundTrips.tour,
-            child_sname: this.foundTrips.children.child_sname,
-            child_name: this.foundTrips.children.child_name,
-            child_totalYear: this.foundTrips.children.child_totalyear,
-            child_address: this.foundTrips.children.child_city + ' ' + this.foundTrips.children.child_street + ' ' + this.foundTrips.children.child_home + ' ' + this.foundTrips.children.child_apartment,
-            user_sname: this.foundTrips.parents.parent_sname,
-            user_name: this.foundTrips.parents.parent_name,
-            user_tname: this.foundTrips.parents.parent_tname,
-            user_phone: this.foundTrips.parents.parent_phone,
-            price: this.foundTrips.price,
-            user_email: this.foundTrips.user.user_email
+        try {
+          await fetch('https://berezka64.ru/rewritemail.php', {
+            method: 'POST',
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify({
+              keeperField: this.foundTrips.keeperField,
+              voucher_id_utf: this.foundTrips.tour,
+              child_sname: this.foundTrips.children.child_sname,
+              child_name: this.foundTrips.children.child_name,
+              child_totalYear: this.foundTrips.children.child_totalyear,
+              child_address: this.foundTrips.children.child_city + ' ' + this.foundTrips.children.child_street + ' ' + this.foundTrips.children.child_home + ' ' + this.foundTrips.children.child_apartment,
+              user_sname: this.foundTrips.parents.parent_sname,
+              user_name: this.foundTrips.parents.parent_name,
+              user_tname: this.foundTrips.parents.parent_tname,
+              user_phone: this.foundTrips.parents.parent_phone,
+              price: this.foundTrips.price,
+              user_email: this.foundTrips.user.user_email
+            })
+          }).then((response) => {
+            if (response.status === 200) {
+              alert('Письмо успешно отправлено!');
+            } else {
+              alert('Повторите позже');
+            }
           })
-        }).then((response) => {
-          if (response.status === 200) {
-            alert('Письмо успешно отправлено!');
-          } else {
-            alert('Повторите позже');
-          }
-        })
+        }
+        catch (err) {
+          alert('Повторите позже. Код ошибки:' + err);
+        }
+  
       }
     },
     mounted () {
