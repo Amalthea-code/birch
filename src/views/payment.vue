@@ -172,7 +172,13 @@
         } else {
           return 'Идет загрузка'
         }
-        
+      },
+      valueDate () {
+        if (this.shifts.length) {
+          return this.shifts[this.itemShift].attributes.service_date
+        } else {
+          return 'Идет загрузка'
+        }
       },
       nameFull () {
         return this.user.sName + ' ' + this.user.fName + ' ' + this.user.tName
@@ -306,7 +312,7 @@
         }
       },
       async calcTotalYear () {
-        let time = new Date().getTime();
+        let time = new Date(this.valueDate).getTime();
         let date = new Date(time + (4 * 60 * 60 * 1000));
         const birth = new Date(this.childen[this.isChildSelect].birth.split('.').reverse().join('/'))
         let fall = (birth.getTime() - date.getTime()) / 1000
