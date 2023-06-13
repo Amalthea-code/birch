@@ -81,12 +81,12 @@
       <div class="docs-info__structure-text">Берёзка принимает ребят от&nbsp;6&nbsp;до&nbsp;17&nbsp;лет. В&nbsp;лагере в&nbsp;зависимости от&nbsp;заполняемости смены формируются отряды по&nbsp;20-25 детей в&nbsp;каждом. Дети распределяются в&nbsp;отряды по&nbsp;возрастам с&nbsp;разницей 1-2&nbsp;года.</div>
       <div class="docs-info__structure-box">
         <ul>
-          <li class="docs-info__structure-list">Дети проживают в деревянных корпусах
+          <li class="docs-info__structure-list">Дети проживают в отапливаемых деревянных корпусах
             <span class="docs-info__structure-list_blue">«Капелька»,</span>
             <span class="docs-info__structure-list_red">«Улыбка»,</span>
             <span class="docs-info__structure-list_orange">«Чебурашка»</span>
             и в кирпичных корпусах
-            <span class="docs-info__structure-list_green">«Малыш»,</span>
+            <span class="docs-info__structure-list_green">«Лесной»,</span>
             <span class="docs-info__structure-list_violet">«Радуга» и «Дружба».</span>
           </li>
           <li class="docs-info__structure-list">Во всех корпусах оборудованы комфортабельные санузлы, душевые с горячей водой и питьевые фонтанчики.</li>
@@ -602,7 +602,7 @@
       <h3 class="docs-info__safety-title">Безопасность</h3>
       <div class="docs-info__safety-box">
         <p class="docs-info__safety-text">
-          В лагере установлено видеонаблюдение на 24 камеры. 
+          В лагере установлено видеонаблюдение на 40 камеры.
           <br /><br />
           Летом вся территория охраняется сотрудниками ЧОП.
           <br /><br />
