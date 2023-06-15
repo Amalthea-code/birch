@@ -312,18 +312,35 @@
         }
       },
       async calcTotalYear () {
-        let time = new Date(this.valueDate).getTime();
-        let date = new Date(time + (4 * 60 * 60 * 1000));
-        const birth = new Date(this.childen[this.isChildSelect].birth.split('.').reverse().join('/'))
-        let fall = (birth.getTime() - date.getTime()) / 1000
-        fall /= (60 * 60 * 24)
+        // let time = new Date(this.valueDate).getTime();
+        // let date = new Date(time + (4 * 60 * 60 * 1000));
+        // const birth = new Date(this.childen[this.isChildSelect].birth.split('.').reverse().join('/'))
+        // let fall = (birth.getTime() - date.getTime()) / 1000
+        // fall /= (60 * 60 * 24)
+        // this.rewriteChild({
+        //   id: this.childen[this.isChildSelect].id,
+        //   year: String(Math.abs(Math.round(fall/365.25)))
+        // })
+        // // console.log(Math.abs(Math.ceil(fall/365.25)))
+        // // console.log(birth)
+        // return Math.abs(Math.round(fall/365.25))
+        let dateGo = new Date(this.valueDate); // Дата заезда в лагерь
+        const birth = new Date(this.childen[this.isChildSelect].birth.split('.').reverse().join('-'))//дата рождения
+        let dobnow = new Date(dateGo.getFullYear(), birth.getMonth(), birth.getDate()); //ДР в текущем году
+        let age; //Возраст
+
+        //Возраст = текущий год - год рождения
+        age = dateGo.getFullYear() - birth.getFullYear();
+        //Если ДР в этом году ещё предстоит, то вычитаем из age один год
+        if (dateGo < dobnow) {
+          age = age-1;
+        }
         this.rewriteChild({
           id: this.childen[this.isChildSelect].id,
-          year: String(Math.abs(Math.round(fall/365.25)))
+          year: age
         })
-        console.log(Math.abs(Math.round(fall/365.25)))
-        console.log(birth)
-        return Math.abs(Math.round(fall/365.25))
+
+        return age
       },
       async createOrder () {
         let date = new Date()
