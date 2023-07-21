@@ -2,6 +2,7 @@
   <form class="authorization">
     <div class="authorization__logo"><authorization /></div>
     <div class="authorization__title">Авторизация</div>
+    <p class="title_auth">Покупка путёвок осуществляется <br> через личный кабинет</p>
     <div class="authorization__box">
       <input :class="{'authorization__input': true, 'authorization__input_error':(v$.email.$dirty && v$.email.$error)}" autocomplete="email" placeholder="E-mail" type="text" v-model="email">
       <input :class="{'authorization__input': true, 'authorization__input_password': true, 'authorization__input_error':(v$.password.$dirty && v$.password.$error)}" autocomplete="current-password" placeholder="Пароль" :type="isPassword" v-model="password"><span @click="switchPassword" class="password-hidden"><hidden/></span>
@@ -91,6 +92,12 @@ import Authorization from '@/assets/images/icons/authorization'
 </script>
 
 <style lang="scss" scoped>
+
+.title_auth {
+  font-size: 20px;
+  text-align: center;
+  font-family: Montserrat;
+}
   .password-hidden {
     cursor: pointer;
     display: inline-block;

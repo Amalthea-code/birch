@@ -18,6 +18,7 @@ export default {
       }).then((response) => {
         return response.json();
       }).then((data) => {
+        console.log(data.data);
         commit('SET_SHIFTS', data.data)
       });
     }

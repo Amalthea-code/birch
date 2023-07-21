@@ -17,6 +17,7 @@
         :number="selection.attributes.number"
         :date="selection.attributes.date"
         :price="selection.attributes.price"
+        :discount="selection.attributes.with_discount"
       />
     </div>
     <div class="shift-selection__button">

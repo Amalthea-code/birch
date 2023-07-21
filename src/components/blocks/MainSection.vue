@@ -7,6 +7,8 @@
         {{ subTitle }}
       </span>
     </p>
+    <h2 class="discount-text"><span>АКЦИЯ</span> <br> с 00:01 22 июля 2023 года! <br>
+Мы снизили цену на 5 смену <span class="backtiks">(17 - 30 августа)</span>! <br> Новая цена <span style="color:yellow;">27000 руб.</span> <br> <span class="backtiks">(данная скидка действует только на те путевки, которые будут приобретены с момента запуска акции)</span></h2>
     <router-link
       to="/#buy"
       v-if="false"
@@ -38,6 +40,48 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+  .discount-text {
+    color: white;
+    width: 80%;
+    max-width: 1400px;
+    margin: 10px auto;
+    font-family: RF Dewi Expanded;
+    font-size: 35px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    
+    span:nth-child(1) {
+      font-size: 60px;
+      color: yellow;
+
+      @media screen and (max-width: 1300px) {
+        font-size: 50px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 40px;
+      }
+    }
+
+    .backtiks {
+      font-size: 30px;
+
+      @media screen and (max-width: 1300px) {
+        font-size: 25px;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 20px;
+      }
+    }
+
+    @media screen and (max-width: 1300px) {
+      font-size: 32px;
+    }
+    @media screen and (max-width: 680px) {
+      font-size: 22px;
+    }
+  }
   .main-section {
     background-size: cover;
     background-position: center;
@@ -77,7 +121,7 @@ export default {
       position: relative;
       z-index: 3;
       width: 100%;
-      padding-top: 40vh;
+      padding-top: 20vh;
     }
     &__sub-title {
       display: flex;
