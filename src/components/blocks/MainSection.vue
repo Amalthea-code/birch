@@ -7,8 +7,8 @@
         {{ subTitle }}
       </span>
     </p>
-    <h2 class="discount-text"><span>АКЦИЯ</span> <br> с 00:01 22 июля 2023 года! <br>
-Мы снизили цену на 5 смену <span class="backtiks">(17 - 30 августа)</span>! <br> Новая цена <span style="color:yellow;">27000 руб.</span> <br> <span class="backtiks">(данная скидка действует только на те путевки, которые будут приобретены с момента запуска акции)</span></h2>
+    <h2 class="discount-text"><span>АКЦИЯ</span> <br> с 00:01 <br class="mob"> 22 июля 2023 года! <br>
+Мы снизили цену <br class="mob"> на 5 смену <br class="mob"> <span class="backtiks">(17 - 30 августа)</span>! <br> Новая цена <br class="mob"> <span style="color:yellow;">27000 руб.</span> <br > <span class="backtiks">(данная скидка действует только на те путевки, которые будут приобретены с момента запуска акции)</span></h2>
     <router-link
       to="/#buy"
       v-if="false"
@@ -40,6 +40,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.desk {
+  @media screen and (max-width: 680px) {
+    display: none;
+  }
+}
+
+.mob {
+  display: none;
+
+  @media screen and (max-width: 680px) {
+    display: block;
+  }
+}
 
   .discount-text {
     color: white;
