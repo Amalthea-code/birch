@@ -161,21 +161,21 @@
       }),
       sum () {
         if (this.user && this.shifts.length) {
-          return (this.user.vipSale ? (Number(this.shifts[this.itemShift].attributes.with_discount) || Number(this.shifts[this.itemShift].attributes.vip_price)) : (Number(this.shifts[this.itemShift].attributes.with_discount) || Number(this.shifts[this.itemShift].attributes.price)))
+          return (this.user.vipSale ? (Number(this.shifts[this.itemShift]?.attributes.with_discount) || Number(this.shifts[this.itemShift]?.attributes.vip_price)) : (Number(this.shifts[this.itemShift]?.attributes.with_discount) || Number(this.shifts[this.itemShift]?.attributes.price)))
         } else {
           return 'Идет расчет'
         }
       },
       value () {
         if (this.shifts.length) {
-          return this.shifts[this.itemShift].attributes.service_name
+          return this.shifts[this.itemShift]?.attributes.service_name
         } else {
           return 'Идет загрузка'
         }
       },
       valueDate () {
         if (this.shifts.length) {
-          return this.shifts[this.itemShift].attributes.service_date
+          return this.shifts[this.itemShift]?.attributes.service_date
         } else {
           return 'Идет загрузка'
         }
