@@ -161,7 +161,7 @@
       }),
       sum () {
         if (this.user && this.shifts.length) {
-          return (this.user.vipSale ? Number(this.shifts[this.itemShift].attributes.vip_price) : Number(this.shifts[this.itemShift].attributes.price))
+          return (this.user.vipSale ? (Number(this.shifts[this.itemShift].attributes.with_discount) || Number(this.shifts[this.itemShift].attributes.vip_price)) : (Number(this.shifts[this.itemShift].attributes.with_discount) || Number(this.shifts[this.itemShift].attributes.price)))
         } else {
           return 'Идет расчет'
         }
