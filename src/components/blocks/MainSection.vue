@@ -101,6 +101,11 @@ export default {
     background-position: center;
     height: 100vh;
     position: relative;
+
+    @media screen and (max-width: 680px) {
+      height: auto;
+      padding-bottom: 20px;
+    }
     a {
       text-decoration: none;
     }
