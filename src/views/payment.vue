@@ -120,7 +120,7 @@
           <input class="payment__hidden-input" type="hidden" name='service_name' :value="value"/>
           <input class="payment__hidden-input" type="hidden" name='orderid' :value="orderId"/>
           <div
-            v-if="this.$route.hash !== '#created'"
+            v-if="(this.$route.hash !== '#created' && itemShift)"
             :class="{
               'payment__step-sum': true,
               'payment__step-sum_special': this.user.vip === 'vip2' || this.user.vip === 'vip1' || this.user.vip === 'vipAll' ? true : false
@@ -188,7 +188,7 @@
       return {
         orderId: null,
         isParentPaying: false,
-        itemShift: 0,
+        itemShift: null,
         isChildrenSelect: false,
         isParentsSelect: false,
         isChildSelect: null,
