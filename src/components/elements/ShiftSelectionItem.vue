@@ -2,9 +2,12 @@
   <div :class="['shift-selection-item', 'shift-selection-item-' + index]">
     <div class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
     <div class="shift-selection-item__box">
+      <h3 v-if="discount" class="doscount-hedaing">АКЦИЯ</h3>
       <p class="shift-selection-item__date" v-html="date" />
       <hr v-if="price > 0" align="center" width="40%" size="1" class="shift-selection-item__line"/>
-      <div v-if="price > 0" class="shift-selection-item__price"> {{ price }} руб.</div>
+      <div v-if="price > 0" :class="{'shift-selection-item__price': true, 'disc': discount}"> {{ discount || price }} руб.
+        <div v-if="discount"> {{ price }} руб.</div>
+      </div>
     </div>
   </div>
 </template>
@@ -27,12 +30,28 @@
       index: {
         default: 0,
         type: Number,
+      },
+      discount: {
+        default: 0,
+        type: Number
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+
+.shift-selection-item__price.disc {
+  color:red;
+  // font-size: 24px;
+}
+.doscount-hedaing {
+  color:red;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 10px;
+  font-family: RF Dewi Expanded;
+}
 .shift-selection-item {
   padding: 48px 0 0;
   position: relative;
@@ -93,6 +112,17 @@
     font-weight: 500;
     text-align: center;
     margin-top: 26px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    div {
+      position: absolute;
+      font-size: 16px;
+      top: -20px;
+      text-decoration: line-through;
+      color: black;
+    }
   }
 
   &-0 {
