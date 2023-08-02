@@ -15,7 +15,7 @@
         <div class="footer__info-mails">
           <div class="footer__info-mails-title">Электронная почта</div>
           <a target="_blank" href="mailto:admin@berezka64.ru" class="footer__info-mail">Администрация: admin@berezka64.ru</a>
-          <a target="_blank" href="mailto:sales@berezka64.ru" class="footer__info-mail">Отдел продаж путевок: sales@berezka64.ru</a>
+          <a target="_blank" href="mailto:sales-b@berezka64.ru" class="footer__info-mail">Отдел продаж путевок: sales-b@berezka64.ru</a>
           <a target="_blank" href="mailto:nazarova.elena@berezka64.ru" class="footer__info-mail">Бухгалтерия: nazarova.elena@berezka64.ru</a>
           <a target="_blank" href="mailto:project@berezka64.ru" class="footer__info-mail">Онлайн-проекты/реклама: project@berezka64.ru</a>
           <a target="_blank" href="mailto:otdel.kadrov@berezka64.ru" class="footer__info-mail">Отдел кадров: otdel.kadrov@berezka64.ru</a>

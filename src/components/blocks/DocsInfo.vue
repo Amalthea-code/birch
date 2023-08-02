@@ -498,7 +498,7 @@
         <h4 class="docs-info__program-title">Программа обучения состоит из нескольких блоков:</h4>
         <div class="docs-info__program-box">
           <div class="docs-info__program-item">Этико-педагогическая культура</div>
-          <div class="docs-info__program-item">Спецмодуль «Профилактика распостронения covid-19 в детском лагере и санитарно-эпидемиологическая подготовка вожатого»</div>
+          <div class="docs-info__program-item">Спецмодуль «Профилактика распространения covid-19 в детском лагере и санитарно-эпидемиологическая подготовка вожатого»</div>
           <div class="docs-info__program-item">Нормативно-правовые и психолого-педагогические основы</div>
           <div class="docs-info__program-item">мастер-классы</div>
           <div class="docs-info__program-item">Практическая сессия</div>
