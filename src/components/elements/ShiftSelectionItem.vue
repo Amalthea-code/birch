@@ -1,6 +1,7 @@
 <template>
   <div :class="['shift-selection-item', 'shift-selection-item-' + index]">
-    <div class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
+    <div v-if="headingText" class="shift-selection-item__title text">{{ headingText }}</div>
+    <div v-else class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
     <div class="shift-selection-item__box">
       <h3 v-if="discount" class="doscount-hedaing">АКЦИЯ</h3>
       <p class="shift-selection-item__date" v-html="date" />
@@ -20,6 +21,10 @@
         type: Number
       },
       date: {
+        default: '',
+        type: String,
+      },
+      headingText: {
         default: '',
         type: String,
       },
@@ -124,7 +129,11 @@
       color: black;
     }
   }
-
+  .shift-selection-item__title {
+    &.text {
+      font-size: 30px;
+    }
+  }
   &-0 {
     .shift-selection-item__title {
       background-color: #3FD33C;
