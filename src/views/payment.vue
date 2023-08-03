@@ -84,8 +84,9 @@
         <div class="payment__step-text">ВЫБЕРИТЕ ПУТЕВКУ</div>
         <div class="payment__step-box">
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
-            <input v-if="this.$route.hash === '#created' || vipHendler(shift.attributes.count, index)" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
-            <label v-if="this.$route.hash === '#created' || vipHendler(shift.attributes.count, index)" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift.attributes.number }} смена</strong> (<span v-html="shift.attributes.date" />)</label>
+            {{ shift?.attributes.Service_name }}
+            <input v-if="this.$route.hash === '#created' || vipHendler(shift?.attributes.count, index)" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
+            <label v-if="this.$route.hash === '#created' || vipHendler(shift?.attributes.count, index)" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift?.attributes.service_name || shift?.attributes.prepaid ||  shift?.attributes.surcharge || shift?.attributes.number + ' смена' }} </strong> (<span v-html="shift?.attributes.date" />)</label>
           </div>
         </div>
       </div>
@@ -160,11 +161,7 @@
         token: 'profile/GET_TOKEN',
       }),
       sum () {
-        if(this.shifts[this.itemShift]?.attributes?.is_prepaid) {
-          console.log(this.shifts[this.itemShift]?.attributes?.is_prepaid)
-          return this.pricePre
-        }
-        else if (this.user && this.shifts.length) {
+        if (this.user && this.shifts.length) {
           return (this.user.vipSale ? (Number(this.shifts[this.itemShift]?.attributes.with_discount) || Number(this.shifts[this.itemShift]?.attributes.vip_price)) : (Number(this.shifts[this.itemShift]?.attributes.with_discount) || Number(this.shifts[this.itemShift]?.attributes.price)))
         } else {
           return 'Идет расчет'
@@ -252,7 +249,7 @@
         await Promise.allSettled([
           this.fetchShifts()
         ]).then(()=> {
-          if(this.shifts[this.itemShift].attributes.count <= 0) {
+          if(this.shifts[this.itemShift]?.attributes.count <= 0) {
             switch (this.itemShift) {
               case 0:
                 if (this.user.vip1 || this.$route.hash === "#created") {
@@ -354,7 +351,7 @@
           number: date,
           price: this.sum,
           order_type: this.$route.hash === '#created' ? 'Модерация' : 'Покупка',
-          order_name: this.shifts[this.itemShift].attributes.service_name,
+          order_name: this.shifts[this.itemShift]?.attributes.service_name,
           order_id: this.orderId,
           changeable: Boolean(!this.isVip(this.itemShift)),
           parent: {
