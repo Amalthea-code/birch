@@ -86,7 +86,7 @@
           <div class="payment__step-element" v-for="(shift, index) in shifts" :key="index">
             {{ shift?.attributes.Service_name }}
             <input v-if="this.$route.hash === '#created' || vipHendler(shift?.attributes.count, index)" :value="index" type="radio" :id="('shift-' + index)" class="payment__step-radio" v-model="itemShift">
-            <label v-if="this.$route.hash === '#created' || vipHendler(shift?.attributes.count, index)" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift?.attributes.service_name || shift?.attributes.prepaid ||  shift?.attributes.surcharge || shift?.attributes.number + ' смена' }} </strong> (<span v-html="shift?.attributes.date" />)</label>
+            <label v-if="this.$route.hash === '#created' || vipHendler(shift?.attributes.count, index)" :for="('shift-' + index)" class="payment__step-label"><strong> {{ shift?.attributes.service_name || shift?.attributes.prepaid ||  shift?.attributes.surcharge || shift?.attributes.number + ' смена' }} </strong></label>
           </div>
         </div>
       </div>
