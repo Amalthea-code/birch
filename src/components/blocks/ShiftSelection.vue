@@ -8,7 +8,7 @@
       <br/><br/>
       Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя.
     </p>
-    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лета 2023 г.</h1>
+    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен 2023 г.</h1>
     <div class="shift-selection__box" v-if="selections.length">
       <shift-selection-item
         v-for="(selection, index) in selections"

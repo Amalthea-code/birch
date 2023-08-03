@@ -195,10 +195,10 @@
     }
   }
   &-5 {
-    background: url(/img/listik.cb49c751.png) top/105% 115% no-repeat;
+    background: url('../../assets/images/photo/listik.png') top/105% 115% no-repeat;
     padding: 200px 70px 0;
     @media screen and (max-width: 540px) {
-      background: url(/img/listik.cb49c751.png) top/105% 70% no-repeat;
+      background: url('../../assets/images/photo/listik.png') top/105% 70% no-repeat;
       padding: 150px 30px 70px;
     }
     .shift-selection-item__title {
