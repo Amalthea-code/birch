@@ -50,8 +50,8 @@
         <div class="footer__info-docs-box">
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1VMW7rwQH3VvhDa-4ILMLFS8S9ehNnGag/view"><doc/> Памятка для родителей</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1MSq6kXrE3XSYj3D1pxAINw8CHlAbpu43/view"><doc/> Медсогласие</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1kzbxSx2PrUhSpDiX8JeF9hGuDE0rOVpP/view"><doc/> Договор окозания услуг</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/10jOFIzXdn_x5o3lLDIAonA7DU9BcDEad/view"><doc/> Оферта</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/13mMseopbXus7n-LHqyqcxbnVtk_-73E0/view"><doc/> Договор оказания услуг</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas/view"><doc/> Оферта</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXEV0BeCkjvDnKs0C0_RR085yAD6BOFl/view"><doc/> Анкета</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/17Vl_RN0LAu2auWmSwDpCZ5VJ-K5bAduQ/view"><doc/> Политика конфиденциальности</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view"><doc/> Заявление на возврат</a>

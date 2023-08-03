@@ -131,7 +131,7 @@
   }
   .shift-selection-item__title {
     &.text {
-      font-size: 30px;
+      font-size: 22px;
     }
   }
   &-0 {
@@ -195,15 +195,31 @@
     }
   }
   &-5 {
+    background: url(/img/listik.cb49c751.png) top/105% 115% no-repeat;
+    padding: 200px 70px 0;
+    @media screen and (max-width: 540px) {
+      background: url(/img/listik.cb49c751.png) top/105% 70% no-repeat;
+      padding: 150px 30px 70px;
+    }
     .shift-selection-item__title {
-      background-color: #9C84D2;
+      background-color: rgba(163, 21, 46, 1);
+      &.text {
+        top: 30%;
+        @media screen and (max-width: 540px) {
+          top: 20%;
+        }
+      }
     }
     .shift-selection-item__box {
-      border-color: #9C84D2;
+      border-color: rgba(163, 21, 46, 1);
+      background: #FFF;
+      
+      color: #000;
     }
+    
     .shift-selection-item__line {
       border-style: solid;
-      border-color: #9C84D2;
+      border-color: rgba(163, 21, 46, 1);
     }
   }
 }
