@@ -1,5 +1,5 @@
 <template>
-  <div :class="['shift-selection-item', 'shift-selection-item-' + index]">
+  <div :id="headingText === 'ОСЕННЯЯ смена' ? 'autumn' : ''" :class="['shift-selection-item', 'shift-selection-item-' + index]">
     <div v-if="headingText" class="shift-selection-item__title text">{{ headingText }}</div>
     <div v-else class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
     <div class="shift-selection-item__box">
