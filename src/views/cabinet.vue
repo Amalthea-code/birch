@@ -72,9 +72,11 @@ import { mapActions, mapGetters, mapMutations } from 'vuex'
       this.fetchShifts()
     },
     mounted () {
-      if (this.returnFetch) {
+      console.log('mounted');
+      // if (this.returnFetch) {
+      //   console.log('fetch ok');
         this.fetchUserData()
-      }
+      // }
     }
   }
 </script>
