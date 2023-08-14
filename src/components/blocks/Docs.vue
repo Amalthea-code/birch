@@ -44,7 +44,7 @@
     >
     <!-- <span class="docs__info-text">Для получения компенсации за путевку в лагерь от работодателя (если таковая предусмотрена работодателем), пришлите письмо на электронную почту sales-b@berezka64.ru со следующим содержанием:</span> -->
       <ul>
-        <li class="docs__info-text">Вы можете самостоятельно распечатать <a class="docs__info-text-link" target="_blank" href="https://drive.google.com/file/d/13mMseopbXus7n-LHqyqcxbnVtk_-73E0/view?usp=drive_link">ДОГОВОР ОКАЗАНИЯ УСЛУГ</a> в 2-х экземплярах, заполнить и привезти на подпись в рабочее время отдела продаж;</li>
+        <li class="docs__info-text">Вы можете самостоятельно распечатать <a class="docs__info-text-link" target="_blank" href="https://drive.google.com/file/d/13mMseopbXus7n-LHqyqcxbnVtk_-73E0/view">ДОГОВОР ОКАЗАНИЯ УСЛУГ</a> в 2-х экземплярах, заполнить и привезти на подпись в рабочее время отдела продаж;</li>
         <li class="docs__info-text">Распечатайте и заполните <a class="docs__info-text-link" target="_blank" href="https://drive.google.com/file/d/1g349740HBdC6wS2FZt1BZ8SCeYtV6qXb/view?usp=sharing">СПРАВКУ О ПРЕБЫВАНИИ РЕБЕНКА В ЛАГЕРЕ</a>. Дата окончания смены является датой выдачи справки. Поставить печать на справку вы можете в рабочее время отдела продаж, не ранее 2-х дней до окончания смены;</li>
         <li class="docs__info-text">Отрывным талоном является часть путевки, которая остается у вас после регистрации ребенка на заезде в лагерь;</li>
         <li class="docs__info-text">Подтверждением оплаты является чек об оплате, который приходит на вашу электронную почту сразу после оплаты путевки;</li>
