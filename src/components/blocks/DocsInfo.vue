@@ -39,7 +39,7 @@
     </p>
     </info>
     <h2 class="docs-info__alert">Важно</h2>
-    <p class="docs-info__alert-text">Дни посещений детей: Суббота -Воскресенье с&nbsp;11:00 до&nbsp;13:00 и&nbsp;с&nbsp;17:00 до&nbsp;19:00. Временный выезд детей из&nbsp;СОЦ в&nbsp;период всей смены запрещен. Передача продуктов строго запрещена!</p>
+    <p class="docs-info__alert-text">Посещения детей запрещены из-за угрозы распространения энтеровируса в регионе по рекомендации  Роспотребнадзора. Временный выезд детей из&nbsp;СОЦ в&nbsp;период всей смены запрещен. Передача продуктов строго запрещена!</p>
     <div class="docs-info__box">
       <div class="docs-info__box-item">
         <img src="@/assets/images/photo/docs-info-1.jpg" alt="" class="docs-info__box-image">

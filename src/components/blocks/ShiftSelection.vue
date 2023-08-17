@@ -2,7 +2,7 @@
   <div class="shift-selection" id="buy">
     <h1 class="shift-selection__title shift-selection__title_little">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>
     <p class="shift-selection__contein-info shift-selection__alert-info">
-      <strong>Для тех, кто приобрел путевки на 5 СМЕНУ и хочет записаться в определённый отряд! <br> Бронирование мест в отрядах осуществляется 13 АВГУСТА, с 11:00 до 13:00 и с 16:00 до 19:00 часов, по номеру телефона: <a href="tel:+79172023343">+7(917) 202-33-43</a> Горобец Елена Ивановна</strong><br><br>
+      <!-- <strong>Для тех, кто приобрел путевки на 5 СМЕНУ и хочет записаться в определённый отряд! <br> Бронирование мест в отрядах осуществляется 13 АВГУСТА, с 11:00 до 13:00 и с 16:00 до 19:00 часов, по номеру телефона: <a href="tel:+79172023343">+7(917) 202-33-43</a> Горобец Елена Ивановна</strong><br><br> -->
       <strong style="color: red;">Впервые! Осенние каникулы в Берёзке! Всего одна <a style="color: red;" href="#autumn">смена</a>! С 28 октября по 5 ноября. Не упусти свой шанс круто провести 9 дней с друзьями!</strong>
       <br/><br/>
       На данный момент информации о запуске программы детского кешбэка в 2023 году нет.
@@ -123,6 +123,7 @@ import { mapGetters, mapActions } from 'vuex'
     &__box {
       display: flex;
       justify-content: space-evenly;
+      align-items: baseline;
       flex-wrap: wrap;
       margin-top: 90px;
       margin: 0 0 70px;
