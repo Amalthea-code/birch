@@ -39,7 +39,7 @@ import { mapActions, mapGetters } from 'vuex'
     },
     created () {
       this.fetchNews()
-      this.searchNews(this.$route.params.id)
+      this.searchNews(this.$route.params.id || 8)
       this.getProps()
     }
   }

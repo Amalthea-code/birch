@@ -1,7 +1,7 @@
 <template>
   <div :class="[{'wrapper-item-full-width': headingText === 'ОСЕННЯЯ смена'}, 'wrapper-item']">
     <div :id="headingText === 'ОСЕННЯЯ смена' ? 'autumn' : ''" :class="['shift-selection-item', 'shift-selection-item-' + index]">
-    <div v-if="headingText" class="shift-selection-item__title text">{{ headingText }} <div class="info">i <span class="tooltiptext">Информацию по программе Осенней смены смотрите <a target="_blank" href="https://berezka64.ru/news/8">здесь</a></span></div></div>
+    <div v-if="headingText" class="shift-selection-item__title text">{{ headingText }} <div class="info">i <span class="tooltiptext">Информацию по программе Осенней смены смотрите <router-link to="/news/8">здесь</router-link></span></div></div>
     <div v-else class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
     <div class="shift-selection-item__box">
       <h3 v-if="discount" class="doscount-hedaing">АКЦИЯ</h3>
@@ -206,9 +206,12 @@
     }
   }
   &-5 {
-    width: 350px;
+    
     background: url(/img/listik.cb49c751.png) top/105% 115% no-repeat;
     padding: 200px 70px 0;
+    @media screen and (max-width: 1300px) {
+      width: 300px;
+    }
     @media screen and (max-width: 540px) {
       background: url(/img/listik.cb49c751.png) top/105% 70% no-repeat;
       padding: 150px 30px 70px;
@@ -236,7 +239,7 @@
         .tooltiptext {
           visibility: hidden;
           padding: 10px;
-          min-width: 300px;
+          min-width: 280px;
           background-color: rgb(177, 79, 79);
           color: #fff;
           text-align: center;
@@ -245,6 +248,7 @@
 
           /* Position the tooltip */
           position: absolute;
+          transform: translate(-20%, 0);
           z-index: 1;
         }
 

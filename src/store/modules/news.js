@@ -12,6 +12,7 @@ export default {
       state.news = state.news.concat(payload)
     },
     SET_FOUNDNEWS(state, payload) {
+      console.log(payload);
       state.foundNews = payload;
     },
   },
