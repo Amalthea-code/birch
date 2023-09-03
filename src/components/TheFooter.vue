@@ -57,6 +57,7 @@
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view"><doc/> Заявление на возврат</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXWsr1kL6cPM38sm9Ul4x-2L9kFim0oI/view"><doc/> Программа СОЦ Берёзка</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1lwvc3NQJEDF2WHYHhIakU4Fy4FhLrClR/view"><doc/> Меры поддержки</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1g349740HBdC6wS2FZt1BZ8SCeYtV6qXb/view"><doc/> Справка о пребывании</a>
         </div>
         <div class="footer__info-org">
           Автономная некоммерческая организация
@@ -175,6 +176,7 @@
         justify-content: space-between;
         &-box {
           display: flex;
+          flex-wrap: wrap;
           @media screen and (max-width: 1300px) {
             flex-wrap: wrap;
           }
