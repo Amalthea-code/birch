@@ -1,6 +1,11 @@
 <template>
   <div class="holiday">
-    <div class="holiday__title">Семейный отдых</div>
+    <div class="docs__nav">
+      <a href="#family" class="docs__nav-link">Семейный отдых</a>
+      <a href="#parking" class="docs__nav-link">Парковка</a>
+      <a href="#contacts" class="docs__nav-link">Контакты</a>
+    </div>
+    <div id="family" class="holiday__title">Семейный отдых</div>
     <info-block
       v-for="(item,index) in relaxation"
       :key="index"
@@ -15,7 +20,7 @@
     />
     <div class="holiday-outro">
       <div class="holiday-outro__box">
-        <div class="holiday-outro__title">ПАРКОВКА</div>
+        <div id="parking" class="holiday-outro__title">ПАРКОВКА</div>
         <div class="holiday-outro__text">
           На территории лагеря, возле Зимнего корпуса работает платная стоянка. 
           <br /><br />
@@ -27,7 +32,7 @@
     </div>
     <div class="holiday-outro">
       <div class="holiday-outro__box">
-        <div class="holiday-outro__title">КОНТАКТЫ</div>
+        <div id="contacts" class="holiday-outro__title">КОНТАКТЫ</div>
         <div class="holiday-outro__text">
           <strong>Велопрокат:</strong> <a href="tel:+79873038754">+7(987) 303-87-54</a><br /><br />
           <strong>Прокат лыж:</strong> <a href="tel:+78452563107">+7(8452) 56-31-07</a><br /><br />
@@ -191,6 +196,84 @@
 </script>
 
 <style lang="scss" scoped>
+.docs__nav {
+  padding-bottom: 40px;
+      &-link {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        display: inline-block;
+        margin: 8px 12px 0 0;
+        border: 2px solid;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: background-color .3s, color .3s;
+        @media screen and (max-width: 1300px) {
+          font-size: 14px;
+          line-height: 18px;
+          padding: 8px 14px;
+          margin: 0 12px 18px 0;
+        }
+        &:nth-child(1) {
+          color: #9DCEFC;
+          border-color: #9DCEFC;
+          &:hover {
+            background-color: #9DCEFC;
+            color: white;
+          }
+        }
+        &:nth-child(2) {
+          color: #F98419;
+          border-color: #F98419;
+          &:hover {
+            background-color: #F98419;
+            color: white;
+          }
+        }
+        &:nth-child(3) {
+          color: #FB6F8A;
+          border-color: #FB6F8A;
+          &:hover {
+            background-color: #FB6F8A;
+            color: white;
+          }
+        }
+        &:nth-child(4) {
+          color: #5EC0A9;
+          border-color: #5EC0A9;
+          &:hover {
+            background-color: #5EC0A9;
+            color: white;
+          }
+        }
+        &:nth-child(5) {
+          color: #676FB2;
+          border-color: #676FB2;
+          &:hover {
+            background-color: #676FB2;
+            color: white;
+          }
+        }
+        &:nth-child(6) {
+          color: #3FD33C;
+          border-color: #3FD33C;
+          &:hover {
+            background-color: #3FD33C;
+            color: white;
+          }
+        }
+        &:nth-child(7) {
+          color: #1A66AC;
+          border-color: #1A66AC;
+          &:hover {
+            background-color: #1A66AC;
+            color: white;
+          }
+        }
+      }
+    }
   .holiday {
     padding: 70px calc((100vw - 1080px)/2) 20px;
     @media screen and (max-width: 1300px) {

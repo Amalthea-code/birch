@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery">
+  <div id="foto" class="gallery">
     <h3 class="gallery__title">фотогалерея</h3>
     <div class="gallery__box">
       <img

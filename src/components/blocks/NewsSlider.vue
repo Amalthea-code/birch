@@ -1,5 +1,5 @@
 <template>
-  <div class="news-slider">
+  <div id="newsour" class="news-slider">
     <div class="news-slider__title">Наши новости</div>
     <swiper
       class="news-slider__box"
