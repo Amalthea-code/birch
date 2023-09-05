@@ -180,12 +180,14 @@
           /><label for="checkbox" class="payment__step-label"
             >Я принимаю условия
             <a
+              style="color: red;"
               target="_blank"
               href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas"
               >договора оферты</a
-            >
+            >(нажать на ссылку для обязательного ознакомления с договором) 
             и даю согласие на
             <a
+              style="color: red;"
               target="_blank"
               href="https://drive.google.com/file/d/17Vl_RN0LAu2auWmSwDpCZ5VJ-K5bAduQ/view"
               >обработку персональных данных</a

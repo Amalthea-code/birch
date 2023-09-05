@@ -50,7 +50,6 @@
 
 .wrapper-item-full-width {
   flex-basis: 100%;
-  order: -1;
   display: flex;
   justify-content: center;
 }

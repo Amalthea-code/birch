@@ -11,20 +11,22 @@
     <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;">Обращаем ваше внимание на то, что электронный адрес Отдела продаж изменился. Новый адрес: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a></p>
     <h1 class="shift-selection__title shift-selection__title_little">Расписание смен 2023 г.</h1>
     <div class="shift-selection__box" v-if="selections.length">
-      <shift-selection-item
-        v-for="(selection, index) in selections"
+      <div :class="['wrapper-temp', {order: selection.attributes.text_name}]" v-for="(selection, index) in selections" :key="index">
+        <shift-selection-item
         :headingText="selection.attributes.text_name"
-        :key="index"
         :index="index"
         :number="selection.attributes.number"
         :date="selection.attributes.date"
         :price="selection.attributes.price"
         :discount="selection.attributes.with_discount"
       />
+      <div v-if="selection.attributes.text_name" class="shift-selection__button">
+        <router-link to="/payment">купить путёвку</router-link>
+      </div>
     </div>
-    <div class="shift-selection__button">
-      <router-link to="/payment">купить путёвку</router-link>
+      
     </div>
+    
     <div class="shift-selection__contein">
       <div class="shift-selection__contein-box">
         <img src="@/assets/images/photo/shift-selection.jpg" alt="" class="shift-selection__contein-image">
@@ -66,6 +68,17 @@ import { mapGetters, mapActions } from 'vuex'
 </script>
 
 <style lang="scss" scoped>
+.order {
+  order: -1;
+  width: 100%;
+}
+.wrapper-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
   .shift-selection {
       max-width: 1080px;
       margin: 0 auto;
