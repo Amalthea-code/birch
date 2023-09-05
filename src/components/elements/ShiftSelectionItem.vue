@@ -77,7 +77,7 @@
     }
     @media screen and (max-width: 680px) {
       width: 100%;
-      margin-bottom: 60px;
+      margin-bottom: 10px;
     }
   &__title {
     text-align: center;
@@ -213,7 +213,7 @@
     }
     @media screen and (max-width: 540px) {
       background: url(/img/listik.cb49c751.png) top/105% 70% no-repeat;
-      padding: 150px 30px 70px;
+      padding: 150px 30px 0;
     }
     .shift-selection-item__title {
       position: relative;
