@@ -1,6 +1,21 @@
 <template>
   <div id="foto" class="gallery">
     <h3 class="gallery__title">фотогалерея</h3>
+    <a href="https://disk.yandex.ru/d/kEjbTtpQa1jehw" target="_blank">ФОТОХРОНИКА 1 СМЕНА 2023</a>
+    <a href="https://disk.yandex.ru/d/Qk1tkDiyFV7BnA" target="_blank">ФОТОХРОНИКА 2 СМЕНА 2023</a>
+    <a href="https://disk.yandex.ru/d/UbRMMorwiMDCkQ" target="_blank">ФОТОХРОНИКА 3 СМЕНА 2023</a>
+    <a href="https://disk.yandex.ru/d/dpCTzWca94I4FA" target="_blank">ФОТОХРОНИКА 4 СМЕНА 2023</a>
+    <a href="https://disk.yandex.ru/d/6gu7Eo6RsWmJZQ" target="_blank">ФОТОХРОНИКА 5 СМЕНА 2023</a>
+    <div class="top-galery">
+     <div
+      v-for="(item, index) in 28"
+      :key="index"
+      >
+      <img
+        :src="require(`@/assets/images/gallery/gallery/galery${index+=1}.jpg`)" alt="Фото из галереи" class="gallery__item"
+      >
+     </div>
+  </div>
     <div class="gallery__box">
       <img
         v-for="(image, index) in images"
@@ -52,10 +67,33 @@
 </script>
 
 <style lang="scss" scoped>
+.top-galery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+
+  @media screen and (max-width: 1300px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 680px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  img {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
   .gallery {
     max-width: 1080px;
     margin: 0 auto;
     padding: 0 0 70px;
+
+    a {
+      display: block;
+      margin-bottom: 10px;
+    }
 
     &__title {
       font-family: RF Dewi Expanded;
