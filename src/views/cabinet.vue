@@ -27,6 +27,9 @@
     <div class="cabinet__link">
       <a target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view">Заявление на возврат</a>
     </div>
+    <div class="cabinet__link">
+      <a :style="{border: 'none', color: 'red', textDecoration: 'none', textAlign: 'center', fontSize: '20px'}" target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view">Ознакомьтесь с Условиями возврата в Оферте, п. 4.4.</a>
+    </div>
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
-  <div :class="[{'wrapper-item-full-width': headingText === 'ОСЕННЯЯ смена'}, 'wrapper-item']">
-    <div :id="headingText === 'ОСЕННЯЯ смена' ? 'autumn' : ''" :class="['shift-selection-item', 'shift-selection-item-' + index]">
-    <div v-if="headingText" class="shift-selection-item__title text">{{ headingText }} <div class="info">i <span class="tooltiptext">Информацию по программе Осенней смены смотрите <router-link to="/news/8">здесь</router-link></span></div></div>
-    <div v-else class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
+  <div :class="['wrapper-item-full-width', 'wrapper-item']">
+    <div :class="['shift-selection-item', 'shift-selection-item-' + index]">
+    <!-- <div v-if="headingText" class="shift-selection-item__title text">{{ headingText }} <div class="info">i <span class="tooltiptext">Информацию по программе Осенней смены смотрите <router-link to="/news/8">здесь</router-link></span></div></div> -->
+    <div class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
     <div class="shift-selection-item__box">
       <h3 v-if="discount" class="doscount-hedaing">АКЦИЯ</h3>
       <p class="shift-selection-item__date" v-html="date" />
