@@ -28,7 +28,7 @@
       <a target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view">Заявление на возврат</a>
     </div>
     <div class="cabinet__link">
-      <a :style="{border: 'none', color: 'red', textDecoration: 'none', textAlign: 'center', fontSize: '20px'}" target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view">Ознакомьтесь с Условиями возврата в Оферте, п. 4.4.</a>
+      <span :style="{border: 'none', color: 'red', textAlign: 'center', fontSize: '20px'}">Ознакомьтесь с Условиями возврата в <a :style="{border: 'none', padding: '0', color: 'blue', fontSize: '20px',  textDecoration: 'underline'}" target="_blank" href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas">Оферте, п. 4.4.</a> </span>
     </div>
   </div>
 </template>

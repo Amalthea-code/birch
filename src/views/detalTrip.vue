@@ -31,8 +31,8 @@
       <button class="detal-trip__info-button">ОПЛАТИТЬ</button>
     </div>
     <div class="detal-trip__how">
-      <div class="detal-trip__how-title">Как вернуть</div>
-      <a href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas" target="blank" class="detal-trip__how-button">Условия возврата</a>
+      <!-- <div class="detal-trip__how-title">Как вернуть</div> -->
+      <a :style="{marginBottom: '20px'}" href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas" target="blank" class="detal-trip__how-button">Условия возврата путевки</a>
       <div class="detal-trip__how-text">
         Распечатайте, заполните и подпишите заявление на возврат.
         <br /><br />
