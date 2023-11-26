@@ -20,6 +20,38 @@
           <div class="registration-child__box">
             <input :class="{'registration-child__input': true, 'registration-child__input_error':(v$.birthday.$dirty && v$.birthday.$error)}" placeholder="Дата рождения" type="text" v-model="birthday" v-mask="'##.##.####'">
             <input :class="{'registration-child__input': true, 'registration-child__input_error':(v$.old.$dirty && v$.old.$error)}" placeholder="Возраст (полных лет на день заезда в смену)" type="text" v-model="old" v-mask="'##'">
+            <div class="registration-child__radio-box">
+              <div style="margin-bottom: 30px;">
+                <label class="registration-child__radio-label">Наличие аллергических реакций</label>
+                <div :style="{paddingBottom: '10px', marginTop: '10px', borderBottom: (v$.isAlergic?.$dirty && v$.isAlergic.$error)  ? '2px solid red' : ''}">
+                  <input :value="true" id="alergic" type="radio" class="registration-child__radio-input" v-model="isAlergic">
+                  <label for="alergic"  :class="[ 'registration-child__radio-label', {} ]">Есть</label>
+                  <input :value="false" id="alergic1" type="radio" class="registration-child__radio-input" v-model="isAlergic">
+                  <label for="alergic1"  class="registration-child__radio-label">Нет</label>
+                </div>
+                <input v-if="isAlergic" :class="{'registration-child__input': true, 'registration-child__input_error':(v$.alergic.$dirty && v$.alergic.$error)}" placeholder="Опишите подробнее" type="text" v-model="alergic">
+              </div>
+              <div style="margin-bottom: 30px;">
+                <label class="registration-child__radio-label">Наличие хронических заболеваний у Ребенка, в том числе требующих постоянного приема лекарственных препаратов</label>
+                <div :style="{paddingBottom: '10px', marginTop: '10px', borderBottom: (v$.isHronic?.$dirty && v$.isHronic.$error)  ? '2px solid red' : ''}">
+                  <input :value="true" id="hronic" type="radio" class="registration-child__radio-input" v-model="isHronic">
+                  <label for="hronic"  class="registration-child__radio-label">Есть</label>
+                  <input :value="false" id="hronic1" type="radio" class="registration-child__radio-input" v-model="isHronic">
+                  <label for="hronic1"  class="registration-child__radio-label">Нет</label>
+                </div>
+                <input v-if="isHronic" :class="{'registration-child__input': true, 'registration-child__input_error':(v$.hronic.$dirty && v$.hronic.$error)}" placeholder="Опишите подробнее" type="text" v-model="hronic">
+              </div>
+              <div style="margin-bottom: 30px;">
+                <label class="registration-child__radio-label">Наличие поведенческих, психологических проблем и проблем в адаптации к новым социальным условиям</label>
+                <div :style="{paddingBottom: '10px', marginTop: '10px', borderBottom: (v$.isPsycholog?.$dirty && v$.isPsycholog.$error)  ? '2px solid red' : ''}">
+                  <input :value="true" id="psycholog" type="radio" class="registration-child__radio-input" v-model="isPsycholog">
+                  <label for="psycholog"  class="registration-child__radio-label">Есть</label>
+                  <input :value="false" id="psycholog1" type="radio" class="registration-child__radio-input" v-model="isPsycholog">
+                  <label for="psycholog1"  class="registration-child__radio-label">Нет</label>
+                </div>
+                <input v-if="isPsycholog" :class="{'registration-child__input': true, 'registration-child__input_error':(v$.psycholog.$dirty && v$.psycholog.$error)}" placeholder="Опишите подробнее" type="text" v-model="psycholog">
+              </div>
+          </div>
           </div>
         </div>
         <div class="registration-child__block">
@@ -30,6 +62,10 @@
             <input :class="{'registration-child__input': true, 'registration-child__input_error':(v$.home.$dirty && v$.home.$error)}" placeholder="Дом, корпус" type="text" v-model="home">
             <input :class="{'registration-child__input': true, 'registration-child__input_error':(v$.apartment.$dirty && v$.apartment.$error)}" placeholder="Квартира" type="text" v-model="apartment">
             <div class="apartment-alert">Если это частный дом укажите в&nbsp;поле Квартира&nbsp;&mdash; 0</div>
+            <div :style="{marginTop: '30px', borderBottom: isConfirm === false  ? '2px solid red' : ''}">
+              <input type="checkbox" id="oferta" name="oferta" class="registration-child__radio-input" v-model="isConfirm">
+              <label style="color: red;" for="oferta" class="registration-child__radio-label">Я информирован и согласен с тем, что согласно <a style="color: blue;" target="_blank" href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas/edit">Оферте</a> несу полную ответственность за достоверность предоставленной мною информации.</label>
+            </div>
             <button type="button" class="registration-child__button" @click="createChild">Сохранить</button>
           </div>
           <div class="registration-child__box">
@@ -65,6 +101,13 @@
           child: {},
           maxLength: 50,
           isTreatment: null,
+          isPsycholog: null,
+          isHronic: null,
+          isAlergic: null,
+          isConfirm: false,
+          psycholog: '',
+          hronic: '',
+          alergic: '',
           surName: '',
           name: '',
           lastName: '',
@@ -122,6 +165,13 @@
           city: { required },
           birthday: { required },
           old: { required },
+          isPsycholog: { required },
+          isHronic: { required },
+          isAlergic: { required },
+          psycholog: { required },
+          hronic: { required },
+          alergic: { required },
+          isConfirm: { required },
       }
     },
     methods: {
@@ -135,7 +185,8 @@
         this.v$.$touch()
                   
           
-        if (this.v$.$errors.length || ((this.series === '' && this.date === '' && this.issued === '') && this.birthCertificate === '') || (this.isTreatment !== 'мальчик' && this.isTreatment !== 'девочка')) {
+        if (this.v$.$errors.length || ((this.series === '' && this.date === '' && this.issued === '') && this.birthCertificate === '') || (this.isTreatment !== 'мальчик' && this.isTreatment !== 'девочка')||
+    this.isConfirm === false) {
           this.$refs.alert.switchActive();
         } else {
           this.collector()
@@ -148,7 +199,7 @@
         }
       },
       collector () {
-        this.child.sName = this.surName
+        this.child.sName = this.surName,
         this.child.username = this.name,
         this.child.tName = this.lastName,
         this.child.totalYear = this.old,
@@ -160,8 +211,11 @@
         this.child.series = this.series,
         this.child.datePassport = this.date,
         this.child.issued = this.issued,
-        this.child.gender = this.isTreatment
-        this.child.birthCertificate = this.birthCertificate
+        this.child.gender = this.isTreatment,
+        this.child.birthCertificate = this.birthCertificate,
+        this.child.alergic = this.alergic,
+        this.child.hronic = this.hronic,
+        this.child.psycholog = this.psycholog
       }
     }
   }

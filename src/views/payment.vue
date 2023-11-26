@@ -579,6 +579,9 @@ export default {
           child_birthсertificate:
             this.childen[this.isChildSelect].birthCertificate,
           child_gender: this.childen[this.isChildSelect].gender,
+          child_alergic: this.childen[this.isChildSelect].alergic,
+          child_hronic: this.childen[this.isChildSelect].hronic,
+          child_psycholog: this.childen[this.isChildSelect].psycholog,
         },
         user: {
           user_name: this.isParentPaying

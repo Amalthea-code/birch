@@ -52,7 +52,10 @@ export default {
             issued: getters.GET_CHILD.issued,
             gender: getters.GET_CHILD.gender,
             birthCertificate: getters.GET_CHILD.birthCertificate,
-            users_permissions_user: String(rootGetters['profile/GET_AUTORIZEDUSER'].id)
+            users_permissions_user: String(rootGetters['profile/GET_AUTORIZEDUSER'].id),
+            alergic: getters.GET_CHILD.alergic,
+            hronic: getters.GET_CHILD.hronic,
+            psycholog: getters.GET_CHILD.psycholog
           }
         }),
         headers: {
