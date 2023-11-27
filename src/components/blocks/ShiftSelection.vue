@@ -5,11 +5,10 @@
       <!-- <strong>Для тех, кто приобрел путевки на 5 СМЕНУ и хочет записаться в определённый отряд! <br> Бронирование мест в отрядах осуществляется 13 АВГУСТА, с 11:00 до 13:00 и с 16:00 до 19:00 часов, по номеру телефона: <a href="tel:+79172023343">+7(917) 202-33-43</a> Горобец Елена Ивановна</strong><br><br> -->
       <!-- <strong style="color: red;">ВНИМАНИЕ! ОТКРЫТА ПРЕДПРОДАЖА НА СЕЗОН "ЛЕТО_2024". СПЕЦЦЕНА ДЕЙСТВУЕТ ДО 15 ДЕКАБРЯ. КОЛИЧЕСТВО ПУТЕВОК ПО ДАННОМУ ПРЕДЛОЖЕНИЮ ОГРАНИЧЕНО!</strong> -->
       <!-- <br/><br/> -->
-      На данный момент информации о запуске программы детского кешбэка в 2023 году нет.
       <!-- Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
     </p>
     <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;">Обращаем ваше внимание на то, что электронный адрес Отдела продаж изменился. Новый адрес: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a></p>
-    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024.</h1>
+    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024</h1>
     <div class="shift-selection__box" v-if="selections.length">
       <div :class="['wrapper-temp', {order: selection.attributes.text_name}]" v-for="(selection, index) in selections" :key="index">
         <shift-selection-item
