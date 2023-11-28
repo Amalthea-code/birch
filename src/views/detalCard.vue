@@ -1,5 +1,6 @@
 <template>
   <div class="detal-card">
+    <router-link style="text-decoration: none; color: blue;" to="/cabinet">Закрыть</router-link>
     <img :src="(this.$route.path.replace(/[^a-zа-яё]/gi, '') === 'parent' ? require('@/assets/images/icons/parent.png') : require('@/assets/images/icons/child.png'))" alt="" class="detal-card__image">
     <div class="detal-card__title">Данные 
       <span v-if="this.$route.path.replace(/[^a-zа-яё]/gi, '') === 'parent'">родителя/опекуна</span>
@@ -32,6 +33,30 @@
         <div class="detal-card__item"><span>Дом, корпус:</span><span>{{ home }}</span></div>
         <div class="detal-card__item"><span>Квартира:</span><span>{{ apartment }}</span></div>
       </div>
+      <div class="detal-card__box">
+        <div class="detal-card__item"><span>Город/населенный пункт:</span><span>{{ city }}</span></div>
+        <div class="detal-card__item"><span>Улица:</span><span>{{ street }}</span></div>
+        <div class="detal-card__item"><span>Дом, корпус:</span><span>{{ home }}</span></div>
+        <div class="detal-card__item"><span>Квартира:</span><span>{{ apartment }}</span></div>
+      </div>
+      <div  v-if="alergic" class="detal-card__block-title">
+        <span>Аллергических реакций</span>
+      </div>
+      <div  v-if="alergic" class="detal-card__box">
+        <div class="detal-card__item"><span>{{ alergic }}</span></div>
+      </div>
+      <div  v-if="hronic" class="detal-card__block-title">
+        <span>Хронических заболеваний у Ребенка, в том числе требующих постоянного приема лекарственных препаратов</span>
+      </div>
+      <div  v-if="hronic" class="detal-card__box">
+        <div class="detal-card__item"><span>{{ hronic }}</span></div>
+      </div>
+      <div v-if="psycholog" class="detal-card__block-title">
+        <span>Психологические проблем и проблем в адаптации к новым социальным условиям</span>
+      </div>
+      <div v-if="psycholog" class="detal-card__box">
+        <div class="detal-card__item"><span>{{ psycholog }}</span></div>
+      </div>
     </div>
   </div>
 </template>
@@ -54,7 +79,10 @@ import { mapActions, mapGetters } from 'vuex'
         home: null,
         apartment: null,
         phone: null,
-        id: null
+        id: null,
+        psycholog: null,
+        hronic: null,
+        alergic: null
       }
     },
     computed: {
@@ -83,6 +111,9 @@ import { mapActions, mapGetters } from 'vuex'
         this.home = this.foundChild.home
         this.apartment = this.foundChild.apartment
         this.id = this.foundChild.id
+        this.psycholog = this.foundChild.psycholog
+        this.hronic = this.foundChild.hronic
+        this.alergic = this.foundChild.alergic
       },
       getParent () {
         this.surName = this.foundParent.sName
@@ -133,6 +164,7 @@ import { mapActions, mapGetters } from 'vuex'
     padding: 24px 54px;
     border-radius: 20px;
     position: relative;
+    max-width: 500px;
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 36px;

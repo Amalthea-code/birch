@@ -1,47 +1,29 @@
 <template>
   <div class="newspage">
-    <h1 class="newspage__title">{{ title }}</h1>
-    <div class="newspage__date">{{ date.replace(/-/g, '.') }}</div>
-    <img :src="image" alt="" class="newspage__image">
-    <p class="newspage__text" v-html="text"/>
+    <h1 class="newspage__title">{{ this.foundNews?.attributes.title }}</h1>
+    <div class="newspage__date">{{ this.foundNews?.attributes.publish_date?.replace(/-/g, '.') }}</div>
+    <img :src="'https://berezka64.ru/server' + this.foundNews?.attributes.preview.data?.attributes.url" alt="" class="newspage__image">
+    <p class="newspage__text" v-html="this.foundNews?.attributes.description"/>
   </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
   export default {
-    data () {
-      return {
-        title: '',
-        date: '',
-        text: '',
-        image: ''
-      }
-    },
     computed: {
       ...mapGetters({
         foundNews: 'news/GET_FOUNDNEWS',
-        GET_NEWS: 'news/GET_NEWS'
       }),
     },
     methods: {
       ...mapActions({
-        searchNews: 'news/searchNews',
-        fetchNews: 'news/fetchNews'
+        fetchNewsId: 'news/fetchNewsId',
       }),
-      getProps () {
-        this.title = this.foundNews.attributes.title
-        this.date = this.foundNews.attributes.publish_date
-        this.text = this.foundNews.attributes.description
-        this.image = "https://berezka64.ru/server" + this.foundNews.attributes.preview.data.attributes.url
-      }
 
     },
     created () {
-      this.fetchNews()
-      this.searchNews(this.$route.params.id)
-      this.getProps()
-    }
+      this.fetchNewsId(this.$route.params.id)
+    },
   }
 </script>
 

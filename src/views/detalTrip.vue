@@ -31,7 +31,8 @@
       <button class="detal-trip__info-button">ОПЛАТИТЬ</button>
     </div>
     <div class="detal-trip__how">
-      <div class="detal-trip__how-title">Как вернуть</div>
+      <!-- <div class="detal-trip__how-title">Как вернуть</div> -->
+      <a :style="{marginBottom: '20px'}" href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas" target="blank" class="detal-trip__how-button">Условия возврата путевки</a>
       <div class="detal-trip__how-text">
         Распечатайте, заполните и подпишите заявление на возврат.
         <br /><br />
@@ -39,7 +40,7 @@
         <br /><br />
         Для уточнения информации по сумме возврата согласно договору свяжитесь с менеджером по телефону +79372256244 или напишите запрос на электронную почту: sales-b@berezka64.ru
       </div>
-      <a href="https://drive.google.com/file/d/1Alt6UEiJEraBA2NFIga1amoZmRciTmIn/view" target="blank" class="detal-trip__how-button">СКАЧАТЬ ЗАЯВЛЕНИЕ НА ВОЗВРАТ</a>
+      <a href="https://drive.google.com/file/d/1vYS_v1XX8Ex7Ey3_A1OKtF1W1qmALBj6/view?usp=sharing" target="blank" class="detal-trip__how-button">СКАЧАТЬ ЗАЯВЛЕНИЕ НА ВОЗВРАТ</a>
     </div>
   </div>
 </template>

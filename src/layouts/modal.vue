@@ -12,7 +12,6 @@
 
 <style lang="scss" scoped>
   .modal {
-    overflow: hidden;
     background: linear-gradient(265.82deg, #5EC0A9 4.04%, rgba(13, 175, 150, 0.81) 64.05%);
     position: relative;
     &::before {
@@ -31,6 +30,5 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    min-width: 100vw;
   }
 </style>

@@ -2,7 +2,7 @@
   <div class="newsitem">
     <img :src="image" alt="" class="newsitem__image">
     <div class="newsitem__title">{{ title }}</div>
-    <p class="newsitem__text">{{ text }}</p>
+    <p v-html="text" class="newsitem__text"></p>
     <div class="newsitem__date">{{ date }}</div>
   </div>
 </template>

@@ -1,7 +1,8 @@
 <template>
-  <div :class="['shift-selection-item', 'shift-selection-item-' + index]">
-    <div v-if="headingText" class="shift-selection-item__title text">{{ headingText }}</div>
-    <div v-else class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
+  <div :class="['wrapper-item-full-width', 'wrapper-item']">
+    <div :class="['shift-selection-item', 'shift-selection-item-' + index]">
+    <!-- <div v-if="headingText" class="shift-selection-item__title text">{{ headingText }} <div class="info">i <span class="tooltiptext">Информацию по программе Осенней смены смотрите <router-link to="/news/8">здесь</router-link></span></div></div> -->
+    <div class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
     <div class="shift-selection-item__box">
       <h3 v-if="discount" class="doscount-hedaing">АКЦИЯ</h3>
       <p class="shift-selection-item__date" v-html="date" />
@@ -10,6 +11,7 @@
         <div v-if="discount"> {{ price }} руб.</div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -46,6 +48,14 @@
 
 <style lang="scss" scoped>
 
+.wrapper-item-full-width {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+.wrapper-item {
+  width: fit-content;
+}
 .shift-selection-item__price.disc {
   color:red;
   // font-size: 24px;
@@ -60,14 +70,14 @@
 .shift-selection-item {
   padding: 48px 0 0;
   position: relative;
-  width: 32%;
+  width: 350px;
   margin-bottom: 20px;
     @media screen and (max-width: 1300px) {
-      width: 48%;
+      width: 300px;
     }
     @media screen and (max-width: 680px) {
       width: 100%;
-      margin-bottom: 60px;
+      margin-bottom: 10px;
     }
   &__title {
     text-align: center;
@@ -195,14 +205,56 @@
     }
   }
   &-5 {
-    background: url('../../assets/images/photo/listik.png') top/105% 115% no-repeat;
+    
+    background: url(/img/listik.cb49c751.png) top/105% 115% no-repeat;
     padding: 200px 70px 0;
+    @media screen and (max-width: 1300px) {
+      width: 300px;
+    }
     @media screen and (max-width: 540px) {
-      background: url('../../assets/images/photo/listik.png') top/105% 70% no-repeat;
-      padding: 150px 30px 70px;
+      background: url(/img/listik.cb49c751.png) top/105% 70% no-repeat;
+      padding: 150px 30px 0;
     }
     .shift-selection-item__title {
+      position: relative;
       background-color: rgba(163, 21, 46, 1);
+      transform: translate(-50%, -50%);
+
+      .info {
+        font-size: 12px;
+        color: white;
+        background-color: #a5a1a1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        right: 25px;
+        cursor: pointer;
+
+        .tooltiptext {
+          visibility: hidden;
+          padding: 10px;
+          min-width: 280px;
+          background-color: rgb(177, 79, 79);
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          font-size: 12px;
+
+          /* Position the tooltip */
+          position: absolute;
+          transform: translate(-20%, 0);
+          z-index: 1;
+        }
+
+        &:hover .tooltiptext {
+          visibility: visible;
+        }
+      }
       &.text {
         top: 30%;
         @media screen and (max-width: 540px) {

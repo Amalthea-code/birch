@@ -10,10 +10,10 @@
       style="text-decoration: none;"
     >
       <news-item
-        :title='oneNews.attributes.title'
-        :text='oneNews.attributes.description'
-        :date='oneNews.attributes.publish_date'
-        :image='"https://berezka64.ru/server" + oneNews.attributes.preview.data.attributes.url'
+        :title='oneNews?.attributes?.title'
+        :text='oneNews?.attributes?.description'
+        :date='oneNews?.attributes?.publish_date'
+        :image='"https://berezka64.ru/server" + oneNews?.attributes?.preview.data?.attributes?.url'
         :id='oneNews.id'
       />
     </router-link>

@@ -2,29 +2,30 @@
   <div class="shift-selection" id="buy">
     <h1 class="shift-selection__title shift-selection__title_little">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>
     <p class="shift-selection__contein-info shift-selection__alert-info">
-      <!-- <strong>Для тех, кто приобрел путевки на 4 смену и хочет записаться в определённый отряд. Бронирование мест в отрядах на 4 смену осуществляется 26 и 28 июля с 11 до 13 и с 16 до 19 по номеру телефона: <a href="tel:+79172023343">+7(917) 202-33-43</a> Горобец Елена Ивановна</strong> -->
-      <strong style="color: red;;">Впервые! Осенние каникулы в Берёзке! Всего одна смена! С 28 октября по 5 ноября. Не упусти свой шанс круто провести 9 дней с друзьями!</strong>
-      <br/><br/>
-      На данный момент информации о запуске программы детского кешбэка в 2023 году нет.
-      <!-- <br/><br/>
-      Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
+      <!-- <strong>Для тех, кто приобрел путевки на 5 СМЕНУ и хочет записаться в определённый отряд! <br> Бронирование мест в отрядах осуществляется 13 АВГУСТА, с 11:00 до 13:00 и с 16:00 до 19:00 часов, по номеру телефона: <a href="tel:+79172023343">+7(917) 202-33-43</a> Горобец Елена Ивановна</strong><br><br> -->
+      <!-- <strong style="color: red;">ВНИМАНИЕ! ОТКРЫТА ПРЕДПРОДАЖА НА СЕЗОН "ЛЕТО_2024". СПЕЦЦЕНА ДЕЙСТВУЕТ ДО 15 ДЕКАБРЯ. КОЛИЧЕСТВО ПУТЕВОК ПО ДАННОМУ ПРЕДЛОЖЕНИЮ ОГРАНИЧЕНО!</strong> -->
+      <!-- <br/><br/> -->
+      <!-- Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
     </p>
-    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен 2023 г.</h1>
+    <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;">Обращаем ваше внимание на то, что электронный адрес Отдела продаж изменился.<br /> Новый адрес: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a></p>
+    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024</h1>
     <div class="shift-selection__box" v-if="selections.length">
-      <shift-selection-item
-        v-for="(selection, index) in selections"
+      <div :class="['wrapper-temp', {order: selection.attributes.text_name}]" v-for="(selection, index) in selections" :key="index">
+        <shift-selection-item
         :headingText="selection.attributes.text_name"
-        :key="index"
         :index="index"
         :number="selection.attributes.number"
         :date="selection.attributes.date"
         :price="selection.attributes.price"
         :discount="selection.attributes.with_discount"
       />
+      <div v-if="selection.attributes.text_name" class="shift-selection__button">
+        <router-link to="/payment">купить путёвку</router-link>
+      </div>
     </div>
-    <div class="shift-selection__button">
-      <router-link to="/payment">купить путёвку</router-link>
+      
     </div>
+    
     <div class="shift-selection__contein">
       <div class="shift-selection__contein-box">
         <img src="@/assets/images/photo/shift-selection.jpg" alt="" class="shift-selection__contein-image">
@@ -66,6 +67,17 @@ import { mapGetters, mapActions } from 'vuex'
 </script>
 
 <style lang="scss" scoped>
+.order {
+  order: -1;
+  width: 100%;
+}
+.wrapper-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
   .shift-selection {
       max-width: 1080px;
       margin: 0 auto;
@@ -123,6 +135,7 @@ import { mapGetters, mapActions } from 'vuex'
     &__box {
       display: flex;
       justify-content: space-evenly;
+      align-items: baseline;
       flex-wrap: wrap;
       margin-top: 90px;
       margin: 0 0 70px;
@@ -218,7 +231,7 @@ import { mapGetters, mapActions } from 'vuex'
     }
     &__alert-info {
       text-align: center;
-      padding: 0 0 60px;
+      padding: 0 0 30px;
       width: 100%;
       font-size: 22px;
       @media screen and (max-width: 680px) {
