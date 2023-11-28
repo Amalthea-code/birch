@@ -28,8 +28,8 @@ const routes = [
         
       },
       {
-        path: '/orders-success',
-        name: 'orders-success',
+        path: '/orders-confirmation',
+        name: 'orders-confirmation',
         component: () => import('../views/ordersSuccess.vue'),
         meta: {
           title: 'orders-success'

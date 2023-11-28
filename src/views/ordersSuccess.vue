@@ -31,7 +31,7 @@ const requestOptions = {
 
 const sendData = (e) => {
   e.preventDefault();
-  fetch("https://berezka64.ru/server/api/6075", requestOptions)
+  fetch("https://berezka64.ru/order-success/"+valueID.value, requestOptions)
   .then(response => response.text())
   .then(result => {
     suc.value = true
