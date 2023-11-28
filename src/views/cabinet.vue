@@ -25,10 +25,10 @@
       </div>
     </div>
     <div class="cabinet__link">
-      <a target="_blank" href="https://drive.google.com/file/d/1td22QY0bpHrNwI_U9EYGmL_ghL-YbmNI/view">Заявление на возврат</a>
+      <a target="_blank" href="https://drive.google.com/file/d/1vYS_v1XX8Ex7Ey3_A1OKtF1W1qmALBj6/view?usp=sharing">Заявление на возврат</a>
     </div>
     <div class="cabinet__link">
-      <span :style="{border: 'none', color: 'red', textAlign: 'center', fontSize: '20px'}">Ознакомьтесь с Условиями возврата в <a :style="{border: 'none', padding: '0', color: 'blue', fontSize: '20px',  textDecoration: 'underline'}" target="_blank" href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas">Оферте, п. 4.4.</a> </span>
+      <span :style="{border: 'none', color: 'red', textAlign: 'center', fontSize: '20px'}">Ознакомьтесь с Условиями возврата в <a :style="{border: 'none', padding: '0', color: 'blue', fontSize: '20px',  textDecoration: 'underline'}" target="_blank" href="https://drive.google.com/file/d/1cWhQAyVmdy8nAHdWFCje6nxoMDVYm2F7/view?usp=sharing">Оферте, п. 4.4.</a> </span>
     </div>
   </div>
 </template>

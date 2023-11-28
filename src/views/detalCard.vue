@@ -1,5 +1,6 @@
 <template>
   <div class="detal-card">
+    <router-link style="text-decoration: none; color: blue;" to="/cabinet">Закрыть</router-link>
     <img :src="(this.$route.path.replace(/[^a-zа-яё]/gi, '') === 'parent' ? require('@/assets/images/icons/parent.png') : require('@/assets/images/icons/child.png'))" alt="" class="detal-card__image">
     <div class="detal-card__title">Данные 
       <span v-if="this.$route.path.replace(/[^a-zа-яё]/gi, '') === 'parent'">родителя/опекуна</span>

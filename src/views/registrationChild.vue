@@ -64,7 +64,7 @@
             <div class="apartment-alert">Если это частный дом укажите в&nbsp;поле Квартира&nbsp;&mdash; 0</div>
             <div :style="{marginTop: '30px', borderBottom: isConfirm === false  ? '2px solid red' : ''}">
               <input type="checkbox" id="oferta" name="oferta" class="registration-child__radio-input" v-model="isConfirm">
-              <label style="color: red;" for="oferta" class="registration-child__radio-label">Я информирован и согласен с тем, что согласно <a style="color: blue;" target="_blank" href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas/edit">Оферте</a> несу полную ответственность за достоверность предоставленной мною информации.</label>
+              <label style="color: red;" for="oferta" class="registration-child__radio-label">Я информирован и согласен с тем, что согласно <a style="color: blue;" target="_blank" href="https://drive.google.com/file/d/1cWhQAyVmdy8nAHdWFCje6nxoMDVYm2F7/view?usp=sharing">Оферте</a> несу полную ответственность за достоверность предоставленной мною информации.</label>
             </div>
             <button type="button" class="registration-child__button" @click="createChild">Сохранить</button>
           </div>

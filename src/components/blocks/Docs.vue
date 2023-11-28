@@ -34,7 +34,7 @@
           распечатанное и заполненное
           <a
             class="docs__info-text-link"
-            href="https://drive.google.com/file/d/1MSq6kXrE3XSYj3D1pxAINw8CHlAbpu43/view"
+            href="https://drive.google.com/file/d/1QFXs9NEDjusVu-zRT9vDTkFSyiWDSE3y/view?usp=sharing"
             target="_blank"
             >Медсогласие</a
           >
@@ -102,7 +102,7 @@
           <a
             class="docs__info-text-link"
             target="_blank"
-            href="https://drive.google.com/file/d/13mMseopbXus7n-LHqyqcxbnVtk_-73E0/view"
+            href="https://drive.google.com/file/d/1ZuTsGflpKmwtLcToS1VwiWDFxrxNYNMc/view?usp=sharing"
             >ДОГОВОР ОКАЗАНИЯ УСЛУГ</a
           >
           в 2-х экземплярах, заполнить и привезти на подпись в рабочее время
@@ -113,7 +113,7 @@
           <a
             class="docs__info-text-link"
             target="_blank"
-            href="https://drive.google.com/file/d/1g349740HBdC6wS2FZt1BZ8SCeYtV6qXb/view?usp=sharing"
+            href="https://drive.google.com/file/d/1JJ1hkgYPaP15BE-7o25veTiT6gWe7Z9g/view?usp=sharing"
             >СПРАВКУ О ПРЕБЫВАНИИ РЕБЕНКА В ЛАГЕРЕ</a
           >. Дата окончания смены является датой выдачи справки. Поставить
           печать на справку вы можете в рабочее время отдела продаж, не ранее

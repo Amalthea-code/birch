@@ -182,7 +182,7 @@
             <a
               style="color: red;"
               target="_blank"
-              href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas"
+              href="https://drive.google.com/file/d/1cWhQAyVmdy8nAHdWFCje6nxoMDVYm2F7/view?usp=sharing"
               >договора оферты</a
             >(нажать на ссылку для обязательного ознакомления с договором) 
             и даю согласие на

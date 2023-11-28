@@ -91,7 +91,7 @@
       </div>
       <div v-if="this.$route.hash !== '#created'" class="payment__step">
         <div class="payment__step-box_agreement">
-          <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1PzE128wMzUdH7eof1qokfbQ4vmOLynas">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/17Vl_RN0LAu2auWmSwDpCZ5VJ-K5bAduQ/view">обработку персональных данных</a></label>
+          <input type="checkbox" class="payment__step-checkbox" id="checkbox" v-model="isAgreement"><label for="checkbox" class="payment__step-label">Я принимаю условия <a target="_blank" href="https://drive.google.com/file/d/1cWhQAyVmdy8nAHdWFCje6nxoMDVYm2F7/view?usp=sharing">договора оферты</a> и даю согласие на <a target="_blank" href="https://drive.google.com/file/d/17Vl_RN0LAu2auWmSwDpCZ5VJ-K5bAduQ/view">обработку персональных данных</a></label>
         </div>
       </div>
     </div>

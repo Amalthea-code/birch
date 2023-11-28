@@ -28,6 +28,15 @@ const routes = [
         
       },
       {
+        path: '/orders-success',
+        name: 'orders-success',
+        component: () => import('../views/ordersSuccess.vue'),
+        meta: {
+          title: 'orders-success'
+        }
+        
+      },
+      {
         path: '/parents',
         name: 'parents',
         component: () => import('../views/parents.vue'),
