@@ -189,7 +189,7 @@
             <a
               style="color: red;"
               target="_blank"
-              href="https://drive.google.com/file/d/17Vl_RN0LAu2auWmSwDpCZ5VJ-K5bAduQ/view"
+              href="https://drive.google.com/file/d/1zge-f9YhbayYkMEg86rBzfFHWQ1So7sU/view"
               >обработку персональных данных</a
             ></label
           >

@@ -3,7 +3,12 @@
     <h1 class="shift-selection__title shift-selection__title_little">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>
     <p class="shift-selection__contein-info shift-selection__alert-info">
       <!-- <strong>Для тех, кто приобрел путевки на 5 СМЕНУ и хочет записаться в определённый отряд! <br> Бронирование мест в отрядах осуществляется 13 АВГУСТА, с 11:00 до 13:00 и с 16:00 до 19:00 часов, по номеру телефона: <a href="tel:+79172023343">+7(917) 202-33-43</a> Горобец Елена Ивановна</strong><br><br> -->
-      <!-- <strong style="color: red;">ВНИМАНИЕ! ОТКРЫТА ПРЕДПРОДАЖА НА СЕЗОН "ЛЕТО_2024". СПЕЦЦЕНА ДЕЙСТВУЕТ ДО 15 ДЕКАБРЯ. КОЛИЧЕСТВО ПУТЕВОК ПО ДАННОМУ ПРЕДЛОЖЕНИЮ ОГРАНИЧЕНО!</strong> -->
+      <strong style="color: red;">АКЦИЯ С 29 НОЯБРЯ!
+МЫ ОТКРЫЛИ ПРЕДПРОДАЖИ ПУТЕВОК 
+НА ЛЕТО_2024
+КОЛИЧЕСТВО ПУТЕВОК ОГРАНИЧЕНО!
+ДАННАЯ ЦЕНА АКТУАЛЬНА НА ВРЕМЯ АКЦИИ!
+УСПЕЙ КУПИТЬ ПО ВЫГОДНОЙ ЦЕНЕ!</strong>
       <!-- <br/><br/> -->
       <!-- Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
     </p>
@@ -19,10 +24,10 @@
         :price="selection.attributes.price"
         :discount="selection.attributes.with_discount"
       />
-      <div v-if="selection.attributes.text_name" class="shift-selection__button">
+    </div>
+      <div  class="shift-selection__button">
         <router-link to="/payment">купить путёвку</router-link>
       </div>
-    </div>
       
     </div>
     

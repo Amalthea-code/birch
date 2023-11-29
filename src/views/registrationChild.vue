@@ -23,33 +23,33 @@
             <div class="registration-child__radio-box">
               <div style="margin-bottom: 30px;">
                 <label class="registration-child__radio-label">Наличие аллергических реакций</label>
-                <div :style="{paddingBottom: '10px', marginTop: '10px', borderBottom: (v$.isAlergic?.$dirty && v$.isAlergic.$error)  ? '2px solid red' : ''}">
-                  <input :value="true" id="alergic" type="radio" class="registration-child__radio-input" v-model="isAlergic">
+                <!-- <div :style="{paddingBottom: '10px', marginTop: '10px', borderBottom: (v$.isAlergic?.$dirty && v$.isAlergic.$error)  ? '2px solid red' : ''}">
+                  <input name="alergic" :value="true" id="alergic" type="radio" class="registration-child__radio-input" v-model="isAlergic">
                   <label for="alergic"  :class="[ 'registration-child__radio-label', {} ]">Есть</label>
-                  <input :value="false" id="alergic1" type="radio" class="registration-child__radio-input" v-model="isAlergic">
+                  <input name="alergic" :value="false" id="alergic1" type="radio" class="registration-child__radio-input" v-model="isAlergic">
                   <label for="alergic1"  class="registration-child__radio-label">Нет</label>
-                </div>
-                <input v-if="isAlergic" :class="{'registration-child__input': true, 'registration-child__input_error':(v$.alergic.$dirty && v$.alergic.$error)}" placeholder="Опишите подробнее" type="text" v-model="alergic">
+                </div> -->
+                <input  :class="{'registration-child__input': true, 'registration-child__input_error':(v$.alergic.$dirty && v$.alergic.$error)}" placeholder="Укажите достоверную информацию или напишите 'нет'" type="text" v-model="alergic">
               </div>
               <div style="margin-bottom: 30px;">
                 <label class="registration-child__radio-label">Наличие хронических заболеваний у Ребенка, в том числе требующих постоянного приема лекарственных препаратов</label>
-                <div :style="{paddingBottom: '10px', marginTop: '10px', borderBottom: (v$.isHronic?.$dirty && v$.isHronic.$error)  ? '2px solid red' : ''}">
+                <!-- <div :style="{paddingBottom: '10px', marginTop: '10px', borderBottom: (v$.isHronic?.$dirty && v$.isHronic.$error)  ? '2px solid red' : ''}">
                   <input :value="true" id="hronic" type="radio" class="registration-child__radio-input" v-model="isHronic">
                   <label for="hronic"  class="registration-child__radio-label">Есть</label>
                   <input :value="false" id="hronic1" type="radio" class="registration-child__radio-input" v-model="isHronic">
                   <label for="hronic1"  class="registration-child__radio-label">Нет</label>
-                </div>
-                <input v-if="isHronic" :class="{'registration-child__input': true, 'registration-child__input_error':(v$.hronic.$dirty && v$.hronic.$error)}" placeholder="Опишите подробнее" type="text" v-model="hronic">
+                </div> -->
+                <input :class="{'registration-child__input': true, 'registration-child__input_error':(v$.hronic.$dirty && v$.hronic.$error)}" placeholder="Укажите достоверную информацию или напишите 'нет'" type="text" v-model="hronic">
               </div>
               <div style="margin-bottom: 30px;">
                 <label class="registration-child__radio-label">Наличие поведенческих, психологических проблем и проблем в адаптации к новым социальным условиям</label>
-                <div :style="{paddingBottom: '10px', marginTop: '10px', borderBottom: (v$.isPsycholog?.$dirty && v$.isPsycholog.$error)  ? '2px solid red' : ''}">
+                <!-- <div :style="{paddingBottom: '10px', marginTop: '10px', borderBottom: (v$.isPsycholog?.$dirty && v$.isPsycholog.$error)  ? '2px solid red' : ''}">
                   <input :value="true" id="psycholog" type="radio" class="registration-child__radio-input" v-model="isPsycholog">
                   <label for="psycholog"  class="registration-child__radio-label">Есть</label>
                   <input :value="false" id="psycholog1" type="radio" class="registration-child__radio-input" v-model="isPsycholog">
                   <label for="psycholog1"  class="registration-child__radio-label">Нет</label>
-                </div>
-                <input v-if="isPsycholog" :class="{'registration-child__input': true, 'registration-child__input_error':(v$.psycholog.$dirty && v$.psycholog.$error)}" placeholder="Опишите подробнее" type="text" v-model="psycholog">
+                </div> -->
+                <input  :class="{'registration-child__input': true, 'registration-child__input_error':(v$.psycholog.$dirty && v$.psycholog.$error)}" placeholder="Укажите достоверную информацию или напишите 'нет'" type="text" v-model="psycholog">
               </div>
           </div>
           </div>
@@ -91,6 +91,9 @@
   import Alert from '@/components/elements/Alert'
   export default {
     setup () {
+      // setInputs() {
+
+      // }
       return { v$: useVuelidate() }
     },
     components: {
@@ -165,9 +168,9 @@
           city: { required },
           birthday: { required },
           old: { required },
-          isPsycholog: { required },
-          isHronic: { required },
-          isAlergic: { required },
+          // isPsycholog: { required },
+          // isHronic: { required },
+          // isAlergic: { required },
           psycholog: { required },
           hronic: { required },
           alergic: { required },
