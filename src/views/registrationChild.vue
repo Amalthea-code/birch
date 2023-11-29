@@ -29,7 +29,7 @@
                   <input name="alergic" :value="false" id="alergic1" type="radio" class="registration-child__radio-input" v-model="isAlergic">
                   <label for="alergic1"  class="registration-child__radio-label">Нет</label>
                 </div> -->
-                <input  :class="{'registration-child__input': true, 'registration-child__input_error':(v$.alergic.$dirty && v$.alergic.$error)}" placeholder="Укажите достоверную информацию или напишите 'нет'" type="text" v-model="alergic">
+                <input  :class="{'registration-child__input2': true,'registration-child__input': true, 'registration-child__input_error':(v$.alergic.$dirty && v$.alergic.$error)}" placeholder="Укажите достоверную информацию или напишите 'нет'" type="text" v-model="alergic">
               </div>
               <div style="margin-bottom: 30px;">
                 <label class="registration-child__radio-label">Наличие хронических заболеваний у Ребенка, в том числе требующих постоянного приема лекарственных препаратов</label>
@@ -39,7 +39,7 @@
                   <input :value="false" id="hronic1" type="radio" class="registration-child__radio-input" v-model="isHronic">
                   <label for="hronic1"  class="registration-child__radio-label">Нет</label>
                 </div> -->
-                <input :class="{'registration-child__input': true, 'registration-child__input_error':(v$.hronic.$dirty && v$.hronic.$error)}" placeholder="Укажите достоверную информацию или напишите 'нет'" type="text" v-model="hronic">
+                <input :class="{'registration-child__input2': true,'registration-child__input': true, 'registration-child__input_error':(v$.hronic.$dirty && v$.hronic.$error)}" placeholder="Укажите достоверную информацию или напишите 'нет'" type="text" v-model="hronic">
               </div>
               <div style="margin-bottom: 30px;">
                 <label class="registration-child__radio-label">Наличие поведенческих, психологических проблем и проблем в адаптации к новым социальным условиям</label>
@@ -49,7 +49,7 @@
                   <input :value="false" id="psycholog1" type="radio" class="registration-child__radio-input" v-model="isPsycholog">
                   <label for="psycholog1"  class="registration-child__radio-label">Нет</label>
                 </div> -->
-                <input  :class="{'registration-child__input': true, 'registration-child__input_error':(v$.psycholog.$dirty && v$.psycholog.$error)}" placeholder="Укажите достоверную информацию или напишите 'нет'" type="text" v-model="psycholog">
+                <input  :class="{'registration-child__input2': true,'registration-child__input': true, 'registration-child__input_error':(v$.psycholog.$dirty && v$.psycholog.$error)}" placeholder="Укажите достоверную информацию или напишите 'нет'" type="text" v-model="psycholog">
               </div>
           </div>
           </div>
@@ -230,6 +230,10 @@
     font-size: 16px;
     line-height: 20px;
     color: #F05156;
+  }
+
+  .registration-child__input2::placeholder {
+    font-size: 16px;
   }
   .registration-child {
     margin: 0 auto;
