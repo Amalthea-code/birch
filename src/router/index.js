@@ -119,6 +119,15 @@ const routes = [
         }
       },
       {
+        path: '/rootPayment',
+        name: 'root-payment',
+        component: () => import('../views/rootPayment.vue'),
+        meta: { 
+          requiresAuth: true,
+          title: ' - Правила оплаты'
+        }
+      },
+      {
         path: '/cabinet',
         name: 'cabinet',
         props: true,

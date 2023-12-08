@@ -305,6 +305,7 @@
         >
           {{ this.$route.hash !== "#created" ? "ОПЛАТИТЬ" : "СОЗДАТЬ ЗАЯВКУ" }}
         </button>
+       <router-link v-if="this.$route.hash !== '#created'" target="_blank" style="color: red; font-size: 30px; font-weight: bold; margin-top: 20px" to="/rootPayment">Правила оплаты</router-link>
       </div>
     </div>
     <alert ref="alert" />
