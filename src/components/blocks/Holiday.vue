@@ -162,33 +162,33 @@
               },
             ]
           },
-          {
-            title: 'СЕМЕЙНЫЕ НОМЕРА И САУНА',
-            color: '#F7B618',
-            text: 'В Зимнем корпусе есть возможность проживания в семейных номерах со всеми удобствами и аренды сауны с бассейном.<br /><br /><strong>Контакты:</strong><br /><br /><a href="tel:+79878090745" style="color: black">+7(987) 809-07-45</a> (Стрелкова Ольга Сергеевна)',
-            aligin: 'right',
-            slider: true,
-            infoBox: true,
-            backgroundColor: 'linear-gradient(258.87deg, #F7B618 0%, #F5C54E 94.92%)',
-            images: [
-              {
-                alt: '',
-                url: require('@/assets/images/relaxation/s1.jpg')
-              },
-              {
-                alt: '',
-                url: require('@/assets/images/relaxation/s2.jpg')
-              },
-              {
-                alt: '',
-                url: require('@/assets/images/relaxation/s3.jpg')
-              },
-              {
-                alt: '',
-                url: require('@/assets/images/relaxation/s4.jpg')
-              },
-            ]
-          },
+          // {
+          //   title: 'СЕМЕЙНЫЕ НОМЕРА И САУНА',
+          //   color: '#F7B618',
+          //   text: 'В Зимнем корпусе есть возможность проживания в семейных номерах со всеми удобствами и аренды сауны с бассейном.<br /><br /><strong>Контакты:</strong><br /><br /><a href="tel:+79878090745" style="color: black">+7(987) 809-07-45</a> (Стрелкова Ольга Сергеевна)',
+          //   aligin: 'right',
+          //   slider: true,
+          //   infoBox: true,
+          //   backgroundColor: 'linear-gradient(258.87deg, #F7B618 0%, #F5C54E 94.92%)',
+          //   images: [
+          //     {
+          //       alt: '',
+          //       url: require('@/assets/images/relaxation/s1.jpg')
+          //     },
+          //     {
+          //       alt: '',
+          //       url: require('@/assets/images/relaxation/s2.jpg')
+          //     },
+          //     {
+          //       alt: '',
+          //       url: require('@/assets/images/relaxation/s3.jpg')
+          //     },
+          //     {
+          //       alt: '',
+          //       url: require('@/assets/images/relaxation/s4.jpg')
+          //     },
+          //   ]
+          // },
         ]
       }
     }
