@@ -305,7 +305,7 @@
         >
           {{ this.$route.hash !== "#created" ? "ОПЛАТИТЬ" : "СОЗДАТЬ ЗАЯВКУ" }}
         </button>
-       <router-link v-if="this.$route.hash !== '#created'" target="_blank" style="color: red; font-size: 30px; font-weight: bold; margin-top: 20px" to="/rootPayment">Правила оплаты</router-link>
+       <router-link class="rootPayment" v-if="this.$route.hash !== '#created'" target="_blank" to="/rootPayment">Правила оплаты</router-link>
       </div>
     </div>
     <alert ref="alert" />
@@ -645,6 +645,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.rootPayment {
+  color: #f05156;
+  font-size: 30px; 
+  font-weight: bold;
+  margin-top: 20px;
+  font-family: RF Dewi Expanded;
+}
 .payment {
   padding: 178px 0 0;
   margin: 0 auto;
