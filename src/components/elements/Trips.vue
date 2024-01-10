@@ -53,13 +53,14 @@
 
 <style lang="scss" scoped>
   .trips {
+    margin: 0 auto 50px;
+    max-width: 1080px;
     &__title {
       font-family: RF Dewi Expanded;
       font-size: 36px;
       font-weight: 900;
       line-height: 46px;
-      margin: 0 auto 50px;
-      max-width: 1080px;
+      
 
       @media screen and (max-width: 1300px) {
         max-width: 620px;
@@ -71,14 +72,15 @@
       }
     }
     &__block {
-      padding: 0 calc((100vw - 1080px)/2) 10px;
-      overflow: scroll;
+      overflow: auto;
+      // padding: 0 calc((100vw - 1080px)/2) 10px;
+      //overflow: scroll;
 
       @media screen and (max-width: 1300px) {
-        padding: 0 calc((100vw - 620px)/2) 10px;
+        // padding: 0 calc((100vw - 620px)/2) 10px;
       }
       @media screen and (max-width: 680px) {
-        padding: 0 calc((100vw - 300px)/2) 10px;
+        // padding: 0 calc((100vw - 300px)/2) 10px;
       }
     }
   }
