@@ -55,9 +55,9 @@
       return {
         relaxation: [
           {
-            title: 'ВЕЛОПРОКАТ',
+            title: 'KATOK',
             color: '#43D440',
-            text: 'Располагается рядом с лагерем, соседние ворота.<br /><br />Работает с весны по осень в сухую погоду. <br /><br />График работы можно уточнить по номеру телефона <a href="tel:+79873038754" style="color: black">+7(987) 303-87-54</a>. <br /><br />Стоимость проката: 200-300 руб./час',
+            text: '<b>График работы:</b><br>Ежедневно с 10.00 до 21.00 <br><br> <b>Прокат коньков:</b><br> Дети от 12 лет и взрослые - 250р.<br> Дети до 12 лет - 150р.<br><br> <b>Выход на лед со своими коньками:</b><br> Взрослые - 200 ₽ <br> Дети от 6 до 12 лет - 100 ₽<br>Дети до 6 лет - бесплатно',
             aligin: 'right',
             slider: true,
             infoBox: true,
@@ -65,7 +65,15 @@
             images: [
               {
                 alt: '',
-                url: require('@/assets/images/relaxation/1.jpg')
+                url: require('@/assets/images/relaxation/k1.jpg')
+              },
+              {
+                alt: '',
+                url: require('@/assets/images/relaxation/k2.jpg')
+              },
+              {
+                alt: '',
+                url: require('@/assets/images/relaxation/k3.jpg')
               },
             ]
           },
@@ -159,6 +167,21 @@
               {
                 alt: '',
                 url: require('@/assets/images/relaxation/b7.png')
+              },
+            ]
+          },
+          {
+            title: 'ВЕЛОПРОКАТ',
+            color: '#43D440',
+            text: 'Располагается рядом с лагерем, соседние ворота.<br /><br />Работает с весны по осень в сухую погоду. <br /><br />График работы можно уточнить по номеру телефона <a href="tel:+79873038754" style="color: black">+7(987) 303-87-54</a>. <br /><br />Стоимость проката: 200-300 руб./час',
+            aligin: 'right',
+            slider: true,
+            infoBox: true,
+            backgroundColor: 'linear-gradient(266.46deg, #3FD33C 0.89%, #5FD65C 99.37%)',
+            images: [
+              {
+                alt: '',
+                url: require('@/assets/images/relaxation/1.jpg')
               },
             ]
           },
