@@ -61,7 +61,7 @@
             aligin: 'right',
             slider: true,
             infoBox: true,
-            backgroundColor: 'linear-gradient(266.46deg, #3FD33C 0.89%, #5FD65C 99.37%)',
+            backgroundColor: 'linear-gradient(266.46deg, rgb(48 18 211) 0.89%, rgb(61 36 189) 99.37%)',
             images: [
               {
                 alt: '',
