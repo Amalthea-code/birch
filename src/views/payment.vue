@@ -284,12 +284,12 @@
           v-if="this.$route.hash !== '#created' && itemShift"
           :class="{
             'payment__step-sum': true,
-            'payment__step-sum_special':
-              this.user.vip === 'vip2' ||
-              this.user.vip === 'vip1' ||
-              this.user.vip === 'vipAll'
-                ? true
-                : false,
+            // 'payment__step-sum_special':
+            //   this.user.vip === 'vip2' ||
+            //   this.user.vip === 'vip1' ||
+            //   this.user.vip === 'vipAll'
+            //     ? true
+            //     : false,
           }"
         >
           {{ sum }} руб.
