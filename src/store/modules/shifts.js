@@ -22,7 +22,6 @@ export default {
       }).then((response) => {
         return response.json();
       }).then((data) => {
-        console.log(data.data);
         commit('SET_SHIFTS', data.data)
         const obj1 = {
           id: 7,

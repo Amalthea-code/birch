@@ -298,7 +298,7 @@
           :class="{
             'payment__step-button': true,
             'payment__step-button_disable':
-              sum === 0 || !isAgreement || !selectChild || !selectParent,
+              sum === 0 || !itemShift || !isAgreement || isChildSelect === null || isParentSelect === null,
           }"
           @click="fetchPutShifts"
           type="button"
@@ -494,6 +494,7 @@ export default {
         : (this.isParentsSelect = !this.isParentsSelect);
     },
     switchActiveSelect(props, selects) {
+      console.log(props);
       if (selects === "parent") {
         this.isParentSelect = props;
         this.switchOpenSelect(0);

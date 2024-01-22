@@ -7,8 +7,9 @@
       backgroundColor="linear-gradient(268.41deg, rgba(156, 132, 210, 0.96) 6.43%, #BAA3E4 95.7%)"
     >
       <div class="contacts__box">
-        <div class="contacts__address"><span>Юр. адрес:</span>Саратовская область, г. Саратов,  ул.Новоузенская, зд.250, стр.1</div>
+        <div class="contacts__address"><span>Юр. адрес:</span> 410053, Саратовская область, г. Саратов,  ул.Новоузенская, зд.250, стр.1</div>
         <div class="contacts__address"><span>Адрес местонахождения:</span> 410053, Саратовская область, г. Саратов, ул. Новоузенская, зд.250, стр.1</div>
+        <div class="contacts__address"><span>Почтовый адрес:</span> Саратовская область, г. Саратов, Большая Кумысная поляна, а/я 1344</div>
         <p class="contacts__text">
           Телефон:<a href="tel:88452563107"> 8(8452) 56-31-07</a><br />
           ИНН/КПП 6455072031/645101001<br />
