@@ -281,7 +281,7 @@
           :value="orderId"
         />
         <div
-          v-if="this.$route.hash !== '#created' && itemShift"
+          v-if="this.$route.hash !== '#created' && itemShift !== null"
           :class="{
             'payment__step-sum': true,
             // 'payment__step-sum_special':
@@ -298,7 +298,7 @@
           :class="{
             'payment__step-button': true,
             'payment__step-button_disable':
-              sum === 0 || !itemShift || !isAgreement || isChildSelect === null || isParentSelect === null,
+              sum === 0 || itemShift === null || !isAgreement || isChildSelect === null || isParentSelect === null,
           }"
           @click="fetchPutShifts"
           type="button"
