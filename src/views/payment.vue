@@ -5,8 +5,8 @@
     ref="form"
     accept-charset="utf-8"
     class="payment"
-    method="POST"
-    action="https://berezka64.server.paykeeper.ru/create"
+    :method="this.$route.hash !== '#created' ? 'POST' : null"
+    :action="this.$route.hash !== '#created' ? 'https://berezka64.server.paykeeper.ru/create' : null"
   >
     <div v-if="user" class="payment__title">
       {{ user.sName + " " + user.fName + " " + user.tName }}
@@ -295,6 +295,7 @@
           {{ sum }} руб.
         </div>
         <button
+          v-if="this.$route.hash !== '#created'"
           :class="{
             'payment__step-button': true,
             'payment__step-button_disable':
@@ -303,7 +304,18 @@
           @click="fetchPutShifts"
           type="button"
         >
-          {{ this.$route.hash !== "#created" ? "ОПЛАТИТЬ" : "СОЗДАТЬ ЗАЯВКУ" }}
+        ОПЛАТИТЬ
+        </button>
+        <button
+        v-else
+        @click.prevent="createOrder"
+        :class="{
+            'payment__step-button': true,
+            'payment__step-button_disable':
+            itemShift === null || isChildSelect === null || isParentSelect === null,
+          }" 
+        >
+          СОЗДАТЬ ЗАЯВКУ
         </button>
        <router-link class="rootPayment" v-if="this.$route.hash !== '#created'" target="_blank" to="/rootPayment">Правила оплаты</router-link>
       </div>

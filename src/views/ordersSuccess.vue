@@ -8,7 +8,6 @@ const valueID = ref('');
 const error = ref(false)
 const error2 = ref(false)
 const suc = ref(false)
-
 const sendPasss = (e) => {
   e.preventDefault();
   if (valuePass.value === pass) {
