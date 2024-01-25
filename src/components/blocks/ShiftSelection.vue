@@ -2,7 +2,8 @@
   <div class="shift-selection" id="buy">
     <h1 class="shift-selection__title shift-selection__title_little">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>
     <p class="shift-selection__contein-info shift-selection__alert-info">
-      <strong>На данный момент Акция-предпродажа завершена. О основном старте продаж путевок мы сообщим в наших социальных сетях</strong>
+      <strong>На данныйй момент Акция-предпродажа завершена. О основном старте продаж путевок мы сообщим в наших социальных сетях" 
+на новый текст: "На данный момент на сайте ведутся технические работы по подготовке к продажам путёвок. О старте продаж мы сообщим в наших социальных сетях</strong>
     </p>
     <div :style="{display: 'flex', justifyContent: 'center', marginBottom: '30px'}">
       <a target="_blank" href="https://t.me/berezka64_camp" class="footer__info-social">
