@@ -2,7 +2,7 @@
   <div class="shift-selection" id="buy">
     <h1 class="shift-selection__title shift-selection__title_little">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>
     <p class="shift-selection__contein-info shift-selection__alert-info">
-      <strong>На данный момент на сайте ведутся технические работы по подготовке к продажам путёвок. О старте продаж мы сообщим в наших социальных сетях</strong>
+      <strong>ВНИМАНИЕ! Продажи путевок на летний сезон 2024 г. открыты! Путевки можно приобрести через личный кабинет на сайте, после регистрации</strong>
     </p>
     <div :style="{display: 'flex', justifyContent: 'center', marginBottom: '30px'}">
       <a target="_blank" href="https://t.me/berezka64_camp" class="footer__info-social">
