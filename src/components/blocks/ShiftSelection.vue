@@ -27,7 +27,7 @@
       <!-- <br/><br/> -->
       <!-- Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
    
-    <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;">Обращаем ваше внимание на то, что электронный адрес Отдела продаж изменился.<br /> Новый адрес: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a></p>
+    <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;"><strong>Электронный адрес Отдела продаж летних путëвок: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a> <br> телефон: <a style="color: red;" href="tel:+79372256244">+7(937) 225-62-44</a> <br> Время работы: <br>Вт, Ср, Чт, Пт, Сб <br> с 11:00 до 16:00</strong></p>
     <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024</h1>
     <div class="shift-selection__box" v-if="selections.length">
       <div :class="['wrapper-temp', {order: selection.attributes.text_name}]" v-for="(selection, index) in selections" :key="index">
