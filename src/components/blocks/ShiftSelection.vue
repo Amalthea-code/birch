@@ -1,3 +1,4 @@
+<!-- eslint-disable no-irregular-whitespace -->
 <template>
   <div class="shift-selection" id="buy">
     <h1 class="shift-selection__title shift-selection__title_little">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>
@@ -26,9 +27,20 @@
 УСПЕЙ КУПИТЬ ПО ВЫГОДНОЙ ЦЕНЕ!</strong> -->
       <!-- <br/><br/> -->
       <!-- Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
-   
     <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;"><strong>Электронный адрес Отдела продаж летних путëвок: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a> <br> телефон: <a style="color: red;" href="tel:+79372256244">+7(937) 225-62-44</a> <br> Время работы: <br>Вт, Ср, Чт, Пт, Сб <br> с 11:00 до 16:00</strong></p>
+    <div class="important-info">
+      ВАЖНАЯ ИНФОРМАЦИЯ о компенсациях по путёвкам от правительства Саратовской области.<br>
+      Компенсация предоставляется МНОГОДЕТНЫМ СЕМЬЯМ, независимо от финансового положения семьи. <br>
+      Компенсируется часть путевки на каждого ребенка в семье, но только по 1 путевке в год за летний период 2024 года. <br>
+      Компенсация в размере 50% от стоимости из расчета 1248 руб/сутки (по установленной среднесуточной расценке Министерства труда и соцразвития). <br>
+      ИТОГО: <br>
+      14 дней - 8736 руб. компенсации после пребывания в лагере; <br>
+      21 день - 13104 руб. компенсации после пребывания в лагер<br>Уважаемые родители, уточняйте всю информацию по компенсациям только по телефонам горячей линии Минсоцразвития 
+      98-26-54, 65-33-20 <br><br><br>
+      P. S.: Справку о пребывании ребенка в лагере вы можете скачать на нашем сайте в подвале страницы на оранжевом поле и привезти к нам на подпись уже после окончания той смены, в которой отдохнет ваш ребенок.
+    </div>
     <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024</h1>
+    <div class="info"></div>
     <div class="shift-selection__box" v-if="selections.length">
       <div :class="['wrapper-temp', {order: selection.attributes.text_name}]" v-for="(selection, index) in selections" :key="index">
         <shift-selection-item
@@ -90,6 +102,16 @@ import { mapGetters, mapActions } from 'vuex'
 .order {
   order: -1;
   width: 100%;
+}
+
+.important-info {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 600;
+  border: 4px solid red;
+  border-radius: 30px;
+  padding: 30px;
+  margin-top: 30px;
 }
 .wrapper-temp {
   display: flex;
