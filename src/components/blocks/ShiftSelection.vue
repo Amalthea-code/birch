@@ -27,7 +27,7 @@
 УСПЕЙ КУПИТЬ ПО ВЫГОДНОЙ ЦЕНЕ!</strong> -->
       <!-- <br/><br/> -->
       <!-- Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
-    <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;"><strong>Электронный адрес Отдела продаж летних путëвок: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a> <br> телефон: <a style="color: red;" href="tel:+79372256244">+7(937) 225-62-44</a> <br> Время работы: <br>Вт, Ср, Чт, Пт, Сб <br> с 11:00 до 16:00</strong></p>
+    <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;"><strong>Электронный адрес Отдела продаж летних путëвок: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a> <br> телефон: <a style="color: red;" href="tel:+79372256244">+7(937) 225-62-44</a> <br> Время работы: <br>Пн, Вт, Ср, Чт, Пт <br> с 10:00 до 17:00</strong></p>
     <div class="important-info">
       ВАЖНАЯ ИНФОРМАЦИЯ о компенсациях по путёвкам от правительства Саратовской области.<br>
       Компенсация предоставляется МНОГОДЕТНЫМ СЕМЬЯМ, независимо от финансового положения семьи. <br>
@@ -39,6 +39,8 @@
       98-26-54, 65-33-20 <br><br><br>
       P. S.: Справку о пребывании ребенка в лагере вы можете скачать на нашем сайте в подвале страницы на оранжевом поле и привезти к нам на подпись уже после окончания той смены, в которой отдохнет ваш ребенок.
     </div>
+    <div style="font-size: 20px; font-weight: 500; font-family: Montserrat; margin-top: 20px; text-align: center;" class="info">Если вы не успели купить путёвку на желаемую смену, напишите заявку в Лист ожидания на электронную почту отдела продаж:
+      <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a>. Форма заявки - в теме письма пишите ЛИСТ ОЖИДАНИЯ СМЕНА N_, в самом письме пишите: СМЕНА , ФИО ребенка полностью, полных лет, ФИО родителя, контактный телефон и электронную почту родителя. При появлении свободной путёвки мы с вами свяжемся в порядке очереди.</div>
     <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024</h1>
     <div class="info"></div>
     <div class="shift-selection__box" v-if="selections.length">
