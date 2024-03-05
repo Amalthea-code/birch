@@ -10,7 +10,8 @@
           <a target="_blank" href="tel:+79271654678" class="footer__info-phone">Бухгалтер: +7 (927) 165-46-78</a>
           <a target="_blank" href="tel:+79372245663" class="footer__info-phone">Отдел кадров: +7 (937) 224-56-63</a>
           <a v-if="false" target="_blank" href="tel:+79869880433" class="footer__info-phone">Медпункт: +7(986) 988-04-33</a>
-          <p class="footer__info-phone"><strong>Время работы отдела продаж путёвок:</strong><br /> вт - сб с 11:00 до 16:00</p>
+          <p class="footer__info-phone"><strong>Время работы отдела продаж путёвок:</strong><br/> Пн, Вт, Ср, Чт, Пт с
+            10:00 до 17:00</p>
         </div>
         <div class="footer__info-mails">
           <div class="footer__info-mails-title">Электронная почта</div>
