@@ -59,6 +59,7 @@
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXWsr1kL6cPM38sm9Ul4x-2L9kFim0oI/view"><doc/> Программа СОЦ Берёзка</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1lwvc3NQJEDF2WHYHhIakU4Fy4FhLrClR/view"><doc/> Меры поддержки</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1JJ1hkgYPaP15BE-7o25veTiT6gWe7Z9g/view?usp=sharing"><doc/> Справка о пребывании</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1qS61SASVEqAI6iTu95n_AlA_SfxIDFE8/view?usp=drivesdk"><doc/> Положение и приказы о противодействии коррупции</a>
         </div>
         <div class="footer__info-org">
           Автономная некоммерческая организация
