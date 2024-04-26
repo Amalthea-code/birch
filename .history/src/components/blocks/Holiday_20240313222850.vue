@@ -54,21 +54,6 @@
     data () {
       return {
         relaxation: [
-        {
-            title: 'ВЕЛОПРОКАТ',
-            color: '#43D440',
-            text: 'Располагается рядом с лагерем, соседние ворота.<br /><br />Работает с весны по осень в сухую погоду. <br /><br />График работы можно уточнить по номеру телефона <a href="tel:+79873038754" style="color: black">+7(987) 303-87-54</a>. <br /><br />Стоимость проката: 300 руб./час',
-            aligin: 'right',
-            slider: true,
-            infoBox: true,
-            backgroundColor: 'linear-gradient(266.46deg, #3FD33C 0.89%, #5FD65C 99.37%)',
-            images: [
-              {
-                alt: '',
-                url: require('@/assets/images/relaxation/1.jpg')
-              },
-            ]
-          },
           {
             title: 'KATOK',
             color: '#43D440',
@@ -182,6 +167,21 @@
               {
                 alt: '',
                 url: require('@/assets/images/relaxation/b7.png')
+              },
+            ]
+          },
+          {
+            title: 'ВЕЛОПРОКАТ',
+            color: '#43D440',
+            text: 'Располагается рядом с лагерем, соседние ворота.<br /><br />Работает с весны по осень в сухую погоду. <br /><br />График работы можно уточнить по номеру телефона <a href="tel:+79873038754" style="color: black">+7(987) 303-87-54</a>. <br /><br />Стоимость проката: 200-300 руб./час',
+            aligin: 'right',
+            slider: true,
+            infoBox: true,
+            backgroundColor: 'linear-gradient(266.46deg, #3FD33C 0.89%, #5FD65C 99.37%)',
+            images: [
+              {
+                alt: '',
+                url: require('@/assets/images/relaxation/1.jpg')
               },
             ]
           },
