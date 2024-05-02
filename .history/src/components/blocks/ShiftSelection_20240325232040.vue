@@ -1,10 +1,10 @@
 <!-- eslint-disable no-irregular-whitespace -->
 <template>
   <div class="shift-selection" id="buy">
-    <!-- <h1 class="shift-selection__title shift-selection__title_little">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>;-->
-    <!--<p class="shift-selection__contein-info shift-selection__alert-info">
+    <h1 class="shift-selection__title shift-selection__title_little">ДОРОГИЕ БЕРЁЗОВЦЫ!</h1>
+    <p class="shift-selection__contein-info shift-selection__alert-info">
       <strong>ВНИМАНИЕ! Продажи путёвок на Лето_2024 г. открыты! Путёвки можно приобрести, зарегистрировавшись в личном кабинете</strong>
-    </p>-->
+    </p>
     <div :style="{display: 'flex', gap: '10px', justifyContent: 'center', alignItems: 'center', marginBottom: '30px', marginTop: '20px'}">
       <p><strong :style="{fontFamily: 'Montserrat', fontSize: '20px'}">Мы в соцсетях</strong></p>
       <a target="_blank" href="https://t.me/berezka64_camp" class="footer__info-social">
@@ -29,12 +29,19 @@
       <!-- Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
     <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;"><strong>Электронный адрес Отдела продаж летних путëвок: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a> <br> телефон: <a style="color: red;" href="tel:+79372256244">+7(937) 225-62-44</a> <br> Время работы: <br>Пн, Вт, Ср, Чт, Пт <br> с 10:00 до 17:00</strong></p>
     <div class="important-info">
-      <a style="color: black;" href="/parents#comp">Компенсация по путёвкам</a>
-      
+      ВАЖНАЯ ИНФОРМАЦИЯ о компенсациях по путёвкам от правительства Саратовской области.<br>
+      Компенсация предоставляется МНОГОДЕТНЫМ СЕМЬЯМ, независимо от финансового положения семьи. <br>
+      Компенсируется часть путевки на каждого ребенка в семье, но только по 1 путевке в год за летний период 2024 года. <br>
+      Компенсация в размере 50% от стоимости из расчета 1248 руб/сутки (по установленной среднесуточной расценке Министерства труда и соцразвития). <br>
+      ИТОГО: <br>
+      14 дней - 8736 руб. компенсации после пребывания в лагере; <br>
+      21 день - 13104 руб. компенсации после пребывания в лагере<br>Уважаемые родители, уточняйте всю информацию по компенсациям только по телефонам горячей линии Минсоцразвития 
+      98-26-54, 65-33-20 <br><br><br>
+      P. S.: Справку о пребывании ребенка в лагере вы можете скачать на нашем сайте в подвале страницы на оранжевом поле и привезти к нам на подпись уже после окончания той смены, в которой отдохнет ваш ребенок.
     </div>
-    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024</h1>
-    <div style="font-size: 20px; font-weight: 500; font-family: Montserrat; margin: 20px; text-align: center;" class="info">Если вы не успели купить путёвку на желаемую смену, напишите заявку в Лист ожидания на электронную почту отдела продаж:
+    <div style="font-size: 20px; font-weight: 500; font-family: Montserrat; margin-top: 20px; text-align: center;" class="info">Если вы не успели купить путёвку на желаемую смену, напишите заявку в Лист ожидания на электронную почту отдела продаж:
       <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a>. Форма заявки - в теме письма пишите ЛИСТ ОЖИДАНИЯ СМЕНА N_, в самом письме пишите: СМЕНА , ФИО ребенка полностью, полных лет, ФИО родителя, контактный телефон и электронную почту родителя. При появлении свободной путёвки мы с вами свяжемся в порядке очереди.</div>
+    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024</h1>
     <div class="info"></div>
     <div class="shift-selection__box" v-if="selections.length">
       <div :class="['wrapper-temp', {order: selection.attributes.text_name}]" v-for="(selection, index) in selections" :key="index">
@@ -105,10 +112,8 @@ import { mapGetters, mapActions } from 'vuex'
   font-weight: 600;
   border: 4px solid red;
   border-radius: 30px;
-  padding: 10px;
+  padding: 30px;
   margin-top: 30px;
-  display: flex;
-  justify-content: center;
 }
 .wrapper-temp {
   display: flex;

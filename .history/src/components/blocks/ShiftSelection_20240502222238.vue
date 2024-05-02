@@ -33,7 +33,7 @@
       
     </div>
     <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024</h1>
-    <div style="font-size: 20px; font-weight: 500; font-family: Montserrat; margin: 20px; text-align: center;" class="info">Если вы не успели купить путёвку на желаемую смену, напишите заявку в Лист ожидания на электронную почту отдела продаж:
+    <div style="font-size: 20px; font-weight: 500; font-family: Montserrat; margin-top: 20px; text-align: center;" class="info">Если вы не успели купить путёвку на желаемую смену, напишите заявку в Лист ожидания на электронную почту отдела продаж:
       <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a>. Форма заявки - в теме письма пишите ЛИСТ ОЖИДАНИЯ СМЕНА N_, в самом письме пишите: СМЕНА , ФИО ребенка полностью, полных лет, ФИО родителя, контактный телефон и электронную почту родителя. При появлении свободной путёвки мы с вами свяжемся в порядке очереди.</div>
     <div class="info"></div>
     <div class="shift-selection__box" v-if="selections.length">

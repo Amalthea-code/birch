@@ -29,12 +29,12 @@
       <!-- Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
     <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;"><strong>Электронный адрес Отдела продаж летних путëвок: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a> <br> телефон: <a style="color: red;" href="tel:+79372256244">+7(937) 225-62-44</a> <br> Время работы: <br>Пн, Вт, Ср, Чт, Пт <br> с 10:00 до 17:00</strong></p>
     <div class="important-info">
-      <a style="color: black;" href="/parents#comp">Компенсация по путёвкам</a>
+      <a href="/parents#comp">Компенсация по путёвкам</a>
       
     </div>
-    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024</h1>
-    <div style="font-size: 20px; font-weight: 500; font-family: Montserrat; margin: 20px; text-align: center;" class="info">Если вы не успели купить путёвку на желаемую смену, напишите заявку в Лист ожидания на электронную почту отдела продаж:
+    <div style="font-size: 20px; font-weight: 500; font-family: Montserrat; margin-top: 20px; text-align: center;" class="info">Если вы не успели купить путёвку на желаемую смену, напишите заявку в Лист ожидания на электронную почту отдела продаж:
       <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a>. Форма заявки - в теме письма пишите ЛИСТ ОЖИДАНИЯ СМЕНА N_, в самом письме пишите: СМЕНА , ФИО ребенка полностью, полных лет, ФИО родителя, контактный телефон и электронную почту родителя. При появлении свободной путёвки мы с вами свяжемся в порядке очереди.</div>
+    <h1 class="shift-selection__title shift-selection__title_little">Расписание смен Лето-2024</h1>
     <div class="info"></div>
     <div class="shift-selection__box" v-if="selections.length">
       <div :class="['wrapper-temp', {order: selection.attributes.text_name}]" v-for="(selection, index) in selections" :key="index">
@@ -105,10 +105,8 @@ import { mapGetters, mapActions } from 'vuex'
   font-weight: 600;
   border: 4px solid red;
   border-radius: 30px;
-  padding: 10px;
+  padding: 30px;
   margin-top: 30px;
-  display: flex;
-  justify-content: center;
 }
 .wrapper-temp {
   display: flex;
