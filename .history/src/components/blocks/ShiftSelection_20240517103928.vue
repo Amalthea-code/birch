@@ -96,8 +96,7 @@ import { mapGetters, mapActions } from 'vuex'
 <style lang="scss" scoped>
 .discont_info_main {
   color: red;
-  font-size: 24px;
-  font-family: RF Dewi Expanded;
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
 }
