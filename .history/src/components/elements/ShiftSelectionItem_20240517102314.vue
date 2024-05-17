@@ -4,7 +4,7 @@
     <!-- <div v-if="headingText" class="shift-selection-item__title text">{{ headingText }} <div class="info">i <span class="tooltiptext">Информацию по программе Осенней смены смотрите <router-link to="/news/8">здесь</router-link></span></div></div> -->
     <div class="shift-selection-item__title">{{ number }}-Я<br /><span>смена</span></div>
     <div class="shift-selection-item__box">
-      <h3 v-if="discount" class="doscount-hedaing">АКЦИЯ -25%</h3>
+      <h3 v-if="discount" class="doscount-hedaing">АКЦИЯ</h3>
       <p class="shift-selection-item__date" v-html="date" />
       <hr v-if="price > 0" align="center" width="40%" size="1" class="shift-selection-item__line"/>
       <div v-if="price > 0" :class="{'shift-selection-item__price': true, 'disc': discount}"> {{ discount || price }} руб.
