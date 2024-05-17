@@ -28,7 +28,7 @@
 УСПЕЙ КУПИТЬ ПО ВЫГОДНОЙ ЦЕНЕ!</strong> -->
       <!-- <br/><br/> -->
       <!-- Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
-    <p class="shift-selection__contein-info shift-selection__alert-info"><strong>Электронный адрес Отдела продаж летних путëвок: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a> <br> телефон: <a href="tel:+79372256244">+7(937) 225-62-44</a> <br> Время работы: <br>Пн, Вт, Ср, Чт, Пт <br> с 10:00 до 17:00</strong></p>
+    <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;"><strong>Электронный адрес Отдела продаж летних путëвок: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a> <br> телефон: <a style="color: red;" href="tel:+79372256244">+7(937) 225-62-44</a> <br> Время работы: <br>Пн, Вт, Ср, Чт, Пт <br> с 10:00 до 17:00</strong></p>
     <div class="important-info">
       <a style="color: white; text-align: center; text-transform: uppercase;" href="/parents#comp">Компенсации по путёвкам</a>
       

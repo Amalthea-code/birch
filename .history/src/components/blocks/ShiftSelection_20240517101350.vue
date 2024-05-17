@@ -5,7 +5,7 @@
     <!--<p class="shift-selection__contein-info shift-selection__alert-info">;
       <strong>ВНИМАНИЕ! Продажи путёвок на Лето_2024 г. открыты! Путёвки можно приобрести, зарегистрировавшись в личном кабинете</strong>;
     </p>-->
-    <p class="discont_info_main">АКЦИЯ! -25% на 1 смену. Поторопись, оcталось мало!</p>
+    <p class="discont_info_main">АКЦИЯ! -25% на 1 смену. Поторопись, омталось мало!</p>
     <div :style="{display: 'flex', gap: '10px', justifyContent: 'center', alignItems: 'center', marginBottom: '30px', marginTop: '20px'}">
       <p><strong :style="{fontFamily: 'Montserrat', fontSize: '20px'}">Мы в соцсетях</strong></p>
       <a target="_blank" href="https://t.me/berezka64_camp" class="footer__info-social">
@@ -28,7 +28,7 @@
 УСПЕЙ КУПИТЬ ПО ВЫГОДНОЙ ЦЕНЕ!</strong> -->
       <!-- <br/><br/> -->
       <!-- Если вы не успели купить путевку, напишите заявку в Лист ожидания на адрес отдела продаж: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru.</a> Форма заявки: в теме письма напишите Лист ожидания; в самом письме: смена, ФИО ребенка полностью, возраст ребенка полных лет, ФИО родителя, контактный телефон родителя, электронный адрес родителя. -->
-    <p class="shift-selection__contein-info shift-selection__alert-info"><strong>Электронный адрес Отдела продаж летних путëвок: <a href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a> <br> телефон: <a href="tel:+79372256244">+7(937) 225-62-44</a> <br> Время работы: <br>Пн, Вт, Ср, Чт, Пт <br> с 10:00 до 17:00</strong></p>
+    <p class="shift-selection__contein-info shift-selection__alert-info" style="color: red;"><strong>Электронный адрес Отдела продаж летних путëвок: <a style="color: red;" href="mailto:sales-b@berezka64.ru">sales-b@berezka64.ru</a> <br> телефон: <a style="color: red;" href="tel:+79372256244">+7(937) 225-62-44</a> <br> Время работы: <br>Пн, Вт, Ср, Чт, Пт <br> с 10:00 до 17:00</strong></p>
     <div class="important-info">
       <a style="color: white; text-align: center; text-transform: uppercase;" href="/parents#comp">Компенсации по путёвкам</a>
       
@@ -53,6 +53,7 @@
       </div>
       
     </div>
+     
     <div class="shift-selection__contein">
       <div class="shift-selection__contein-box">
         <img src="@/assets/images/photo/shift-selection.jpg" alt="" class="shift-selection__contein-image">
@@ -94,13 +95,6 @@ import { mapGetters, mapActions } from 'vuex'
 </script>
 
 <style lang="scss" scoped>
-.discont_info_main {
-  color: red;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-}
-
 .order {
   order: -1;
   width: 100%;
