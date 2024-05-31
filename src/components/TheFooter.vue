@@ -53,6 +53,7 @@
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1QFXs9NEDjusVu-zRT9vDTkFSyiWDSE3y/view?usp=sharing"><doc/> Медсогласие</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1ZuTsGflpKmwtLcToS1VwiWDFxrxNYNMc/view?usp=sharing"><doc/> Договор оказания услуг</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1cWhQAyVmdy8nAHdWFCje6nxoMDVYm2F7/view?usp=sharing"><doc/> Оферта</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1_iw_DsQ4iluzOIqFEx7gF4UnYmUce-ki/view?usp=sharing"><doc/> Памятка по безопасности для детей и родителей</a>
           <!-- <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXEV0BeCkjvDnKs0C0_RR085yAD6BOFl/view"><doc/> Анкета</a> -->
           <!-- <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/17Vl_RN0LAu2auWmSwDpCZ5VJ-K5bAduQ/view"><doc/> Политика конфиденциальности</a> -->
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1vYS_v1XX8Ex7Ey3_A1OKtF1W1qmALBj6/view?usp=sharing"><doc/> Заявление на возврат</a>
