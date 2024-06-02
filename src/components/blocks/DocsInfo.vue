@@ -44,7 +44,7 @@
     </p>
     </info>
     <h2 class="docs-info__alert">Важно</h2>
-    <p class="docs-info__alert-text">Посещения детей запрещены из-за угрозы распространения энтеровируса в регионе по рекомендации  Роспотребнадзора. Временный выезд детей из&nbsp;СОЦ в&nbsp;период всей смены запрещен. Передача продуктов строго запрещена!</p>
+    <p class="docs-info__alert-text">Родительский день - суббота 10:00 - 12:00 и 17:00 - 19:00. В остальные дни вы можете передать или забрать вещи через вашего вожатого.</p>
     <div class="docs-info__box">
       <div class="docs-info__box-item">
         <img src="@/assets/images/photo/docs-info-1.jpg" alt="" class="docs-info__box-image">
