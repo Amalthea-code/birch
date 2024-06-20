@@ -21,7 +21,7 @@
         <div class="contacts__persons">
           <div class="contacts__person"> <span>Директор:</span> Крук Илья Леонидович</div>
           <div class="contacts__person"> <span>Исполнительный директор:</span> Амхир Борис Константинович</div>
-          <div class="contacts__person"> <span>Главный бухгалтер:</span> Назарова Елена Петровна</div>
+          <div class="contacts__person"> <span>Главный бухгалтер:</span> Артамонова Ирэна Алексеевна</div>
         </div>
         <div class="contacts__block">
           <div class="contacts__item">

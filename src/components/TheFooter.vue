@@ -60,7 +60,12 @@
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXWsr1kL6cPM38sm9Ul4x-2L9kFim0oI/view"><doc/> Программа СОЦ Берёзка</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1lwvc3NQJEDF2WHYHhIakU4Fy4FhLrClR/view"><doc/> Меры поддержки</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1JJ1hkgYPaP15BE-7o25veTiT6gWe7Z9g/view?usp=sharing"><doc/> Справка о пребывании</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1iaKMcxjXnQdH1BVzW1Ds4AnM1qAGr4y9/view?usp=sharing"><doc/> Сан-эпид.заключение 2024</a>
           <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1qS61SASVEqAI6iTu95n_AlA_SfxIDFE8/view?usp=drivesdk"><doc/> Положение и приказы о противодействии коррупции</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1Ufvw5bgkv4sDgdBcvSJA2PWMasdf0xx7/view?usp=sharing"><doc/>Тематические смены 2024</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1KgowcwnULgGBhiWluO1Il2BgjThbhmQu/view?usp=sharing"><doc/>План 1 смены 2024</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1exy2U__mrnTR13y7V-lgnuMB7uLYcY28/view?usp=sharing"><doc/>План 2 смены 2024</a>
+          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/18YxruSwDCT1jyWcDPa1sGXymiHEJPGRq/view?usp=sharing"><doc/>Памятка для родителей</a>
         </div>
         <div class="footer__info-org">
           Автономная некоммерческая организация

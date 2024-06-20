@@ -1,11 +1,18 @@
 <template>
   <div id="foto" class="gallery">
     <h3 class="gallery__title">фотогалерея</h3>
-    <a href="https://disk.yandex.ru/d/kEjbTtpQa1jehw" target="_blank">ФОТОХРОНИКА 1 СМЕНА 2023</a>
-    <a href="https://disk.yandex.ru/d/Qk1tkDiyFV7BnA" target="_blank">ФОТОХРОНИКА 2 СМЕНА 2023</a>
-    <a href="https://disk.yandex.ru/d/UbRMMorwiMDCkQ" target="_blank">ФОТОХРОНИКА 3 СМЕНА 2023</a>
-    <a href="https://disk.yandex.ru/d/dpCTzWca94I4FA" target="_blank">ФОТОХРОНИКА 4 СМЕНА 2023</a>
-    <a href="https://disk.yandex.ru/d/6gu7Eo6RsWmJZQ" target="_blank">ФОТОХРОНИКА 5 СМЕНА 2023</a>
+    <div class="wrapper__fotoHronivc">
+      <div>
+        <a href="https://disk.yandex.ru/d/kEjbTtpQa1jehw" target="_blank">ФОТОХРОНИКА 1 СМЕНА 2023</a>
+        <a href="https://disk.yandex.ru/d/Qk1tkDiyFV7BnA" target="_blank">ФОТОХРОНИКА 2 СМЕНА 2023</a>
+        <a href="https://disk.yandex.ru/d/UbRMMorwiMDCkQ" target="_blank">ФОТОХРОНИКА 3 СМЕНА 2023</a>
+        <a href="https://disk.yandex.ru/d/dpCTzWca94I4FA" target="_blank">ФОТОХРОНИКА 4 СМЕНА 2023</a>
+        <a href="https://disk.yandex.ru/d/6gu7Eo6RsWmJZQ" target="_blank">ФОТОХРОНИКА 5 СМЕНА 2023</a>
+      </div>
+      <div>
+        <a href="https://disk.yandex.ru/d/I37HcAQlhP9uUA" target="_blank">ФОТОХРОНИКА 1 СМЕНА 2024</a>
+      </div>
+    </div>
     <div class="top-galery">
      <div
       v-for="(item, index) in 28"
@@ -67,6 +74,10 @@
 </script>
 
 <style lang="scss" scoped>
+.wrapper__fotoHronivc {
+  display: flex;
+  gap: 24px;
+}
 .top-galery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
