@@ -3,25 +3,21 @@
     <h3 class="gallery__title">фотогалерея</h3>
     <div class="wrapper__fotoHronivc">
       <div>
-        <a href="https://disk.yandex.ru/d/kEjbTtpQa1jehw" target="_blank">ФОТОХРОНИКА 1 СМЕНА 2023</a>
-        <a href="https://disk.yandex.ru/d/Qk1tkDiyFV7BnA" target="_blank">ФОТОХРОНИКА 2 СМЕНА 2023</a>
-        <a href="https://disk.yandex.ru/d/UbRMMorwiMDCkQ" target="_blank">ФОТОХРОНИКА 3 СМЕНА 2023</a>
-        <a href="https://disk.yandex.ru/d/dpCTzWca94I4FA" target="_blank">ФОТОХРОНИКА 4 СМЕНА 2023</a>
-        <a href="https://disk.yandex.ru/d/6gu7Eo6RsWmJZQ" target="_blank">ФОТОХРОНИКА 5 СМЕНА 2023</a>
+        <a v-for="(item, index) in Object.entries(linksFotoHronic)" :key="index" :href="item[1]" target="_blank">{{ item[0] }}</a>
       </div>
 <!--      <div>-->
 <!--        <a href="https://disk.yandex.ru/d/I37HcAQlhP9uUA" target="_blank">ФОТОХРОНИКА 1 СМЕНА 2024</a>-->
 <!--      </div>-->
     </div>
     <div class="top-galery">
-     <div
+      <div
       v-for="(item, index) in 28"
       :key="index"
       >
-      <img
-        :src="require(`@/assets/images/gallery/gallery/galery${index+=1}.jpg`)" alt="Фото из галереи" class="gallery__item"
-      >
-     </div>
+        <img
+          :src="require(`@/assets/images/gallery/gallery/galery${index+=1}.jpg`)" alt="Фото из галереи" class="gallery__item"
+        >
+      </div>
   </div>
     <div class="gallery__box">
       <img
@@ -38,6 +34,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
   export default {
     data () {
       return {
@@ -69,7 +67,12 @@
           }
         ]
       }
-    }
+    },
+    computed: {
+      ...mapGetters({
+        linksFotoHronic: 'links/GET_LINKS_FOTOHTONIC'
+      })
+    },
   }
 </script>
 

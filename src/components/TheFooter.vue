@@ -49,23 +49,7 @@
       </div>
       <div class="footer__info-docs">
         <div class="footer__info-docs-box">
-          <!-- <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1VMW7rwQH3VvhDa-4ILMLFS8S9ehNnGag/view"><doc/> Памятка для родителей</a> -->
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1QFXs9NEDjusVu-zRT9vDTkFSyiWDSE3y/view?usp=sharing"><doc/> Медсогласие</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1ZuTsGflpKmwtLcToS1VwiWDFxrxNYNMc/view?usp=sharing"><doc/> Договор оказания услуг</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1cWhQAyVmdy8nAHdWFCje6nxoMDVYm2F7/view?usp=sharing"><doc/> Оферта</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1_iw_DsQ4iluzOIqFEx7gF4UnYmUce-ki/view?usp=sharing"><doc/> Памятка по безопасности для детей и родителей</a>
-          <!-- <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXEV0BeCkjvDnKs0C0_RR085yAD6BOFl/view"><doc/> Анкета</a> -->
-          <!-- <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/17Vl_RN0LAu2auWmSwDpCZ5VJ-K5bAduQ/view"><doc/> Политика конфиденциальности</a> -->
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1vYS_v1XX8Ex7Ey3_A1OKtF1W1qmALBj6/view?usp=sharing"><doc/> Заявление на возврат</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1nXWsr1kL6cPM38sm9Ul4x-2L9kFim0oI/view"><doc/> Программа СОЦ Берёзка</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1lwvc3NQJEDF2WHYHhIakU4Fy4FhLrClR/view"><doc/> Меры поддержки</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1JJ1hkgYPaP15BE-7o25veTiT6gWe7Z9g/view?usp=sharing"><doc/> Справка о пребывании</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1iaKMcxjXnQdH1BVzW1Ds4AnM1qAGr4y9/view?usp=sharing"><doc/> Сан-эпид.заключение 2024</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1qS61SASVEqAI6iTu95n_AlA_SfxIDFE8/view?usp=drivesdk"><doc/> Положение и приказы о противодействии коррупции</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1Ufvw5bgkv4sDgdBcvSJA2PWMasdf0xx7/view?usp=sharing"><doc/>Тематические смены 2024</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1KgowcwnULgGBhiWluO1Il2BgjThbhmQu/view?usp=sharing"><doc/>План 1 смены 2024</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/1exy2U__mrnTR13y7V-lgnuMB7uLYcY28/view?usp=sharing"><doc/>План 2 смены 2024</a>
-          <a class="footer__info-doc" target="_blank" href="https://drive.google.com/file/d/18YxruSwDCT1jyWcDPa1sGXymiHEJPGRq/view?usp=sharing"><doc/>Памятка для родителей</a>
+          <a v-for="(item, index) in Object.entries(linksFooter)" :key="index" class="footer__info-doc" target="_blank" :href="item[1]"><doc/>{{ item[0] }}</a>
         </div>
         <div class="footer__info-org">
           Автономная некоммерческая организация
@@ -81,9 +65,23 @@
 
 <script>
   import doc from '@/assets/images/icons/doc'
+import { mapActions, mapGetters } from 'vuex';
   export default {
     components: {
       doc
+    },
+    computed: {
+      ...mapGetters({
+        linksFooter: 'links/GET_LINKS_FOOTER'
+      })
+    },
+    methods: {
+      ...mapActions({
+        fetchLinks: 'links/fetchLinks',
+      })
+    },
+    mounted () {
+      this.fetchLinks();
     }
   }
 </script>

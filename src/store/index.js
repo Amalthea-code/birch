@@ -9,6 +9,7 @@ import vacancies from "@/store/modules/vacancies"
 import shifts from "@/store/modules/shifts"
 import gallery from "@/store/modules/gallery"
 import camers from "@/store/modules/camers"
+import links from '@/store/modules/links';
 
 export default createStore({
   state: {
@@ -26,6 +27,7 @@ export default createStore({
     shifts,
     vacancies,
     camers,
-    gallery
+    gallery,
+    links
   }
 })
